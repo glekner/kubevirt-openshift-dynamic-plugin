@@ -1,3 +1,4 @@
 [submodule "console"]
   path = console
   url = https://github.com/openshift/console.git
+  branch = master

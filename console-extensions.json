@@ -11,9 +11,7 @@
     "type": "console.page/route",
     "properties": {
       "path": "/foo",
-      "component": {
-        "$codeRef": "Foo"
-      }
+      "component": { "$codeRef": "Foo" }
     }
   }
 ]
