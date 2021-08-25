@@ -6,17 +6,35 @@
     "target": "es2016",
     "jsx": "react",
     "allowJs": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
     "noUnusedLocals": true,
+    "outDir": "./dist",
     "paths": {
-      "@openshift-console/dynamic-plugin-sdk/api": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api"
+      "@console/internal/*": ["./console/frontend/public/*"],
+      "@console/shared/*": ["./console/frontend/packages/console-shared/*"],
+      "@openshift-console/dynamic-plugin-sdk/api/*": [
+        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api/*"
       ],
-      "@openshift-console/dynamic-plugin-sdk/webpack": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack"
+      "@openshift-console/dynamic-plugin-sdk/webpack/*": [
+        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack/*"
       ]
     }
   },
-  "include": [
-    "src"
+  "extends": "./console/frontend/tsconfig",
+  "typeRoots": [
+    "node_modules/@types",
+    "./console/frontend/@types",
+    "./console/frontend/node_modules/@types"
   ],
+  "include": ["./src", "./console/frontend"],
+  "exclude": [
+    "**/dist",
+    "**/__mocks__/**",
+    "**/__tests__/**",
+    ".yarn",
+    "**/node_modules",
+    "./console/frontend/dynamic-demo-plugin",
+    "./console/frontend/ppackages/console-dynamic-plugin-sdk/scripts"
+  ]
 }
