@@ -1,0 +1,43 @@
+{
+  "name": "kubevirt-openshift-dynamic-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "yarn clean && NODE_ENV=production yarn ts-node ./node_modules/.bin/webpack --mode=production",
+    "build-dev": "yarn clean && NODE_ENV=development yarn ts-node ./node_modules/.bin/webpack --mode=development",
+    "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-helmet": "6.1.0",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@console/internal": "link:./console/frontend/public",
+    "@openshift-console/dynamic-plugin-sdk": "0.0.0-alpha16",
+    "@types/node": "14.x",
+    "comment-json": "4.0.6",
+    "lodash": "4.17.19",
+    "read-pkg": "5.1.0",
+    "ts-loader": "6.2.2",
+    "ts-node": "5.0.1",
+    "typescript": "3.8.3",
+    "webpack": "5.0.0-beta.16",
+    "webpack-cli": "4.5.0"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "consolePlugin": {
+    "name": "kubevirt",
+    "version": "0.0.0",
+    "exposedModules": {
+      "Foo": "./components/Foo"
+    },
+    "dependencies": {
+      "@console/pluginAPI": "*"
+    }
+  }
+}
