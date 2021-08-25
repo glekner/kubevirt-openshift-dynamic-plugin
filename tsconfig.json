@@ -8,15 +8,17 @@
     "allowJs": true,
     "noUnusedLocals": true,
     "paths": {
-      "@openshift-console/dynamic-plugin-sdk/api": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api"
+      "@console/internal/*": ["./console/frontend/public/*"],
+      "@console/shared/*": ["./console/frontend/packages/console-shared/*"],
+      "@openshift-console/dynamic-plugin-sdk/api/*": [
+        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api/*"
       ],
-      "@openshift-console/dynamic-plugin-sdk/webpack": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack"
+      "@openshift-console/dynamic-plugin-sdk/webpack/*": [
+        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack/*"
       ]
     }
   },
-  "include": [
-    "src"
-  ],
+  "outDir": "./dist",
+  "include": ["./src", "./console/frontend/public", "./console/frontend/packages/console-shared"],
+  "exclude": ["./dist", "**/__mocks__/**", "**/__tests__/**"]
 }
