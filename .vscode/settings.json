@@ -1,13 +1,12 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
     "console-extensions.json": "jsonc"
   },
   "json.schemas": [
     {
-      "fileMatch": [
-        "console-extensions.json"
-      ],
-      "url": "./node_modules/@openshift-console/dynamic-plugin-sdk/schema/console-extensions.json"
+      "fileMatch": ["console-extensions.json"],
+      "url": "node_modules/@openshift-console/dynamic-plugin-sdk/schema/console-extensions.json"
     }
   ],
   "[javascript]": {
@@ -27,5 +26,5 @@
   },
   "[jsonc]": {
     "editor.formatOnSave": true
-  },
+  }
 }

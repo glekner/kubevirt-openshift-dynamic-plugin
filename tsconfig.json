@@ -3,16 +3,25 @@
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "node",
+    "outDir": "dist",
     "target": "es2016",
+    "lib": ["es2016", "es2020.promise", "dom", "dom.iterable"],
     "jsx": "react",
     "allowJs": true,
+    "sourceMap": true,
     "experimentalDecorators": true,
-    "skipLibCheck": true,
     "noUnusedLocals": true,
-    "outDir": "./dist",
+    "skipLibCheck": true,
+    "rootDirs": ["src", "console/frontend"],
+    "typeRoots": [
+      "node_modules/@types",
+      "console/frontend/node_modules/@types",
+      "console/frontend/@types"
+    ],
+    "types": ["node", "jest", "console"],
     "paths": {
-      "@console/internal/*": ["./console/frontend/public/*"],
-      "@console/shared/*": ["./console/frontend/packages/console-shared/*"],
+      "@console/internal/*": ["console/frontend/public/*"],
+      "@console/shared/*": ["console/frontend/packages/console-shared/*"],
       "@openshift-console/dynamic-plugin-sdk/api/*": [
         "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api/*"
       ],
@@ -21,20 +30,6 @@
       ]
     }
   },
-  "extends": "./console/frontend/tsconfig",
-  "typeRoots": [
-    "node_modules/@types",
-    "./console/frontend/@types",
-    "./console/frontend/node_modules/@types"
-  ],
-  "include": ["./src", "./console/frontend"],
-  "exclude": [
-    "**/dist",
-    "**/__mocks__/**",
-    "**/__tests__/**",
-    ".yarn",
-    "**/node_modules",
-    "./console/frontend/dynamic-demo-plugin",
-    "./console/frontend/ppackages/console-dynamic-plugin-sdk/scripts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["**/node_modules", "**/dist"]
 }
