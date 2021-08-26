@@ -14,6 +14,7 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
   },
   module: {
     rules: [
@@ -29,6 +30,27 @@ const config: webpack.Configuration = {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]',
+        },
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /node_modules\/(?!(@patternfly)\/).*/,
+        use: [
+          { loader: 'cache-loader' },
+          { loader: 'thread-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [new ConsoleRemotePlugin()],
@@ -39,7 +61,7 @@ const config: webpack.Configuration = {
   },
   externals: {
     '@openshift-console/dynamic-plugin-sdk/api': 'api',
-  }
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {
