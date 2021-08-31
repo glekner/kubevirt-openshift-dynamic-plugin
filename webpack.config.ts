@@ -14,12 +14,14 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    // instead of adding the whole console/frontend/node_modules directory,
+    // try using https://github.com/dividab/tsconfig-paths-webpack-plugin
     modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
   },
   module: {
     rules: [
       {
-        test: /(\.jsx?)|(\.tsx?)$/,
+        test: /\.(jsx?|tsx?)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -31,18 +33,9 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
-        loader: 'file-loader',
-        options: {
-          name: 'assets/[name].[ext]',
-        },
-      },
-      {
-        test: /\.s?css$/,
-        exclude: /node_modules\/(?!(@patternfly)\/).*/,
+        test: /\.(css)$/,
+        exclude: /node_modules\/(?!(@patternfly)\/)/,
         use: [
-          { loader: 'cache-loader' },
-          { loader: 'thread-loader' },
           {
             loader: 'css-loader',
             options: {
@@ -50,6 +43,13 @@ const config: webpack.Configuration = {
             },
           },
         ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]',
+        },
       },
     ],
   },
