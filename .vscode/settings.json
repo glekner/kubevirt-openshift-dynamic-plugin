@@ -6,7 +6,7 @@
   "json.schemas": [
     {
       "fileMatch": ["console-extensions.json"],
-      "url": "node_modules/@openshift-console/dynamic-plugin-sdk/schema/console-extensions.json"
+      "url": "./console/frontend/node_modules/@console/dynamic-plugin-sdk/dist/schema/console-extensions.json"
     }
   ],
   "[javascript]": {
@@ -26,5 +26,11 @@
   },
   "[jsonc]": {
     "editor.formatOnSave": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/console": true
   }
 }
