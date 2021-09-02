@@ -4,6 +4,8 @@ import * as webpack from 'webpack';
 import * as path from 'path';
 import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/webpack';
 
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
 const config: webpack.Configuration = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
@@ -17,6 +19,18 @@ const config: webpack.Configuration = {
     // instead of adding the whole console/frontend/node_modules directory,
     // try using https://github.com/dividab/tsconfig-paths-webpack-plugin
     modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
+    alias: {
+      stream: 'stream-browserify',
+      http: 'stream-http',
+      path: 'path-browserify',
+      os: 'os-browserify/browser',
+      crypto: 'crypto-browserify',
+      timers: 'timers-browserify',
+      tty: 'tty-browserify',
+      vm: 'vm-browserify',
+      net: 'net-browserify',
+      fs: 'browserify-fs',
+    },
   },
   module: {
     rules: [
@@ -27,22 +41,60 @@ const config: webpack.Configuration = {
           {
             loader: 'ts-loader',
             options: {
-              configFile: path.resolve(__dirname, 'tsconfig.json'),
+              configFile: path.resolve(__dirname, 'console/frontend/tsconfig.json'),
+              transpileOnly: true,
             },
           },
         ],
       },
       {
-        test: /\.(css)$/,
+        test: /node_modules[\\\\|/](yaml-language-server)/,
+        loader: 'umd-compat-loader',
+      },
+      {
+        test: /prettier\/parser-yaml/,
+        loader: 'null-loader',
+      },
+      {
+        test: /prettier/,
+        loader: 'null-loader',
+      },
+      {
+        test: /node_modules[\\\\|/](vscode-json-languageservice)/,
+        loader: 'umd-compat-loader',
+      },
+      {
+        test: /\.(scss|css)$/,
         exclude: /node_modules\/(?!(@patternfly)\/)/,
         use: [
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
             },
           },
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                outputStyle: 'compressed',
+              },
+            },
+          },
         ],
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, 'console/frontend/node_modules/monaco-editor'),
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
@@ -51,9 +103,25 @@ const config: webpack.Configuration = {
           name: 'assets/[name].[ext]',
         },
       },
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader',
+      },
     ],
   },
-  plugins: [new ConsoleRemotePlugin()],
+  plugins: [
+    new ConsoleRemotePlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configFile: path.resolve(__dirname, 'console/frontend/tsconfig.json'),
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+      },
+    }),
+  ],
   devtool: 'source-map',
   optimization: {
     chunkIds: 'named',
