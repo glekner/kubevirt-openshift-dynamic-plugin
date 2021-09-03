@@ -16,8 +16,6 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    // instead of adding the whole console/frontend/node_modules directory,
-    // try using https://github.com/dividab/tsconfig-paths-webpack-plugin
     modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
     alias: {
       stream: 'stream-browserify',
@@ -30,6 +28,8 @@ const config: webpack.Configuration = {
       vm: 'vm-browserify',
       net: 'net-browserify',
       fs: 'browserify-fs',
+      prettier: false,
+      '@console/active-plugins': false,
     },
   },
   module: {
@@ -50,14 +50,6 @@ const config: webpack.Configuration = {
       {
         test: /node_modules[\\\\|/](yaml-language-server)/,
         loader: 'umd-compat-loader',
-      },
-      {
-        test: /prettier\/parser-yaml/,
-        loader: 'null-loader',
-      },
-      {
-        test: /prettier/,
-        loader: 'null-loader',
       },
       {
         test: /node_modules[\\\\|/](vscode-json-languageservice)/,

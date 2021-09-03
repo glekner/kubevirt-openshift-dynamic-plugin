@@ -95,7 +95,7 @@
     "properties": {
       "exact": false,
       "path": "/standalone/k8s/ns/:ns/virtualmachineinstances/:name/console",
-      "component": { "$codeRef": "standaloneConsole.VMConsolePage" }
+      "component": { "$codeRef": "standaloneConsole" }
     },
     "flags": {
       "required": ["KUBEVIRT"]

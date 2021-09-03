@@ -3,14 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "yarn install-console",
-    "clean-dist": "rm -rf dist",
-    "clean-modules": "rm -rf node_modules",
+    "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
     "install-console": "git submodule update --init console && (cd console/frontend ; yarn install)",
-    "build": "yarn clean-dist && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --mode=production",
-    "build-dev": "yarn clean-dist && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --mode=development --progress",
-    "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'",
-    "lint": "NODE_OPTIONS=--max-old-space-size=8192 yarn eslint ."
+    "build": "rm -rf dist && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
+    "build-dev": "rm -rf dist && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
+    "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
   "dependencies": {
     "browserify-fs": "^1.0.0",
@@ -19,8 +16,8 @@
     "graphql": "^15.5.2",
     "graphql-tag": "^2.10.3",
     "js-yaml": "^3.13.1",
+    "lodash-es": "^4.17.21",
     "net-browserify": "^0.2.4",
-    "null-loader": "^4.0.1",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "react": "17.0.1",
@@ -28,7 +25,6 @@
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "stream-browserify": "^3.0.0",
-    "lodash-es": "^4.17.21",
     "stream-http": "^3.2.0",
     "timers-browserify": "^2.0.12",
     "tty-browserify": "^0.0.1",
@@ -36,7 +32,7 @@
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
-    "@openshift-console/dynamic-plugin-sdk": "0.0.0-alpha16",
+    "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/node_modules/@console/dynamic-plugin-sdk/dist",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",

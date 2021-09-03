@@ -25,15 +25,9 @@
       "@openshift-console/dynamic-plugin-sdk/webpack/*": [
         "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack/*"
       ],
-      "@console/internal/*": ["console/frontend/public/*"],
-      "@console/shared/*": ["console/frontend/packages/console-shared/*"],
-      "@console/plugin-sdk/*": ["console/frontend/packages/console-plugin-sdk/*"],
-      "@console/dynamic-plugin-sdk/*": ["console/frontend/packages/console-dynamic-plugin-sdk"],
-      "@console/dev-console/*": ["console/frontend/packages/dev-console/*"],
-      "@console/knative-plugin/*": ["console/frontend/packages/knative-plugin/*"],
       "*": ["*", "console/frontend/node_modules/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "src/**/*.json"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
   "exclude": ["**/node_modules", "**/dist"]
 }
