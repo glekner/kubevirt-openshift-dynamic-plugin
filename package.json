@@ -1,12 +1,14 @@
 {
-  "name": "kubevirt-openshift-dynamic-plugin",
+  "name": "kubevirt-openshift-plugin",
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "pre-build": "rm -rf dist && yarn --cwd console/frontend build-plugin-sdk",
     "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
     "install-console": "git submodule update --init console && (cd console/frontend ; yarn install)",
-    "build": "rm -rf dist && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
-    "build-dev": "rm -rf dist && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
+    "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
+    "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
+    "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
   "dependencies": {
@@ -45,6 +47,7 @@
     "comment-json": "4.0.6",
     "css-loader": "6.2.0",
     "file-loader": "1.1.11",
+    "http-server": "^13.0.1",
     "node-sass": "^6.0.1",
     "read-pkg": "5.1.0",
     "resolve-url-loader": "2.x",
@@ -63,8 +66,9 @@
     "node": ">=14.x"
   },
   "consolePlugin": {
-    "name": "kubevirt",
+    "name": "kubevirt-plugin",
     "version": "0.0.0",
+    "displayName": "Kubevirt Plugin",
     "exposedModules": {
       "models": "./models/index.ts",
       "standaloneConsole": "./components/vms/vm-console/StandaloneVMConsolePage.tsx",
@@ -99,6 +103,9 @@
     },
     "dependencies": {
       "@console/pluginAPI": "*"
-    }
+    },
+    "disableStaticPlugins": [
+      "@console/kubevirt-plugin"
+    ]
   }
 }
