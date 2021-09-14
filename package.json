@@ -6,9 +6,9 @@
     "pre-build": "rm -rf dist && yarn --cwd console/frontend build-plugin-sdk",
     "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
     "install-console": "git submodule update --init console && (cd console/frontend ; yarn install)",
+    "dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node ./node_modules/.bin/webpack serve --progress",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
-    "dev": "yarn ts-node ./node_modules/.bin/webpack serve",
     "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
@@ -106,6 +106,9 @@
     },
     "dependencies": {
       "@console/pluginAPI": "*"
-    }
+    },
+    "disableStaticPlugins": [
+      "@console/kubevirt-plugin"
+    ]
   }
 }

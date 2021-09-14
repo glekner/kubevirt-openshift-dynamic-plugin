@@ -2,7 +2,7 @@
 
 import * as webpack from 'webpack';
 import * as path from 'path';
-import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/webpack';
+import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/lib/webpack/ConsoleRemotePlugin';
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
