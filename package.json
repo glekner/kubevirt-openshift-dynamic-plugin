@@ -8,6 +8,7 @@
     "install-console": "git submodule update --init console && (cd console/frontend ; yarn install)",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
+    "dev": "yarn ts-node ./node_modules/.bin/webpack serve",
     "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
@@ -44,6 +45,7 @@
     "@types/react-router-dom": "5.1.2",
     "@types/react-transition-group": "2.x",
     "@types/react-virtualized": "9.x",
+    "@types/webpack-dev-server": "^3.11.5",
     "comment-json": "4.0.6",
     "css-loader": "6.2.0",
     "file-loader": "1.1.11",
@@ -57,7 +59,8 @@
     "ts-node": "5.0.1",
     "typescript": "3.8.3",
     "webpack": "5.0.0-beta.16",
-    "webpack-cli": "4.5.0"
+    "webpack-cli": "4.5.x",
+    "webpack-dev-server": "^3.11.2"
   },
   "resolutions": {
     "lodash-es": "^4.17.21"
@@ -103,9 +106,6 @@
     },
     "dependencies": {
       "@console/pluginAPI": "*"
-    },
-    "disableStaticPlugins": [
-      "@console/kubevirt-plugin"
-    ]
+    }
   }
 }

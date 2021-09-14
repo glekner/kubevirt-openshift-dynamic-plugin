@@ -2,7 +2,7 @@
 
 import * as webpack from 'webpack';
 import * as path from 'path';
-import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/lib/webpack/ConsoleRemotePlugin';
+import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/webpack';
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -13,6 +13,14 @@ const config: webpack.Configuration = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]-bundle.js',
     chunkFilename: '[name]-chunk.js',
+  },
+  watchOptions: {
+    ignored: ['node_modules', 'dist'],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9001,
+    writeToDisk: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
