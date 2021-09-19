@@ -5,10 +5,12 @@
   "scripts": {
     "pre-build": "rm -rf dist && yarn --cwd console/frontend build-plugin-sdk",
     "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
-    "install-console": "git submodule update --init console && (cd console/frontend ; yarn install)",
+    "install-console": "./install-console.sh",
+    "reinstall-console": "rm -rf console/frontend/public/dist && yarn install-console",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
     "dev": "yarn pre-build && yarn ts-node ./node_modules/.bin/webpack serve --progress",
+    "run-bridge": "KUBEVIRT_PATH=http://localhost:9001/ cd console && source ./contrib/oc-environment.sh && ./bin/bridge --k8s-mode-off-cluster-thanos=$(oc -n openshift-monitoring get configmap sharing-config -o jsonpath='{.data.prometheusURL}') -plugins kubevirt-plugin=${KUBEVIRT_PATH}",
     "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
