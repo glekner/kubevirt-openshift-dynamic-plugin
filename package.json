@@ -9,7 +9,7 @@
     "reinstall-console": "rm -rf console/frontend/public/dist && yarn install-console",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
-    "dev": "yarn pre-build && yarn ts-node ./node_modules/.bin/webpack serve --progress",
+    "dev": "yarn pre-build && REACT_REFRESH=true yarn ts-node ./node_modules/.bin/webpack serve --progress",
     "run-bridge": "KUBEVIRT_PATH=http://localhost:9001/ cd console && source ./contrib/oc-environment.sh && ./bin/bridge --k8s-mode-off-cluster-thanos=$(oc -n openshift-monitoring get configmap sharing-config -o jsonpath='{.data.prometheusURL}') -plugins kubevirt-plugin=${KUBEVIRT_PATH}",
     "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
@@ -27,6 +27,7 @@
     "path-browserify": "^1.0.1",
     "react": "17.0.1",
     "react-helmet": "6.1.0",
+    "react-refresh": "^0.10.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "stream-browserify": "^3.0.0",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/node_modules/@console/dynamic-plugin-sdk/dist",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",
@@ -53,6 +55,7 @@
     "file-loader": "1.1.11",
     "http-server": "^13.0.1",
     "node-sass": "^6.0.1",
+    "react-refresh-typescript": "^2.0.2",
     "read-pkg": "5.1.0",
     "resolve-url-loader": "2.x",
     "sass-loader": "6.x",

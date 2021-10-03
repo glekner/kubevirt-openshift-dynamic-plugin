@@ -2,12 +2,18 @@
 
 import * as webpack from 'webpack';
 import * as path from 'path';
+import * as ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk/webpack';
 
+const ReactRefreshTypeScript = require('react-refresh-typescript');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+const REACT_REFRESH = process.env.REACT_REFRESH;
+const WDS_PORT = 8080;
+
 const config: webpack.Configuration = {
-  mode: 'development',
+  mode: isDevelopment ? 'development' : 'production',
   context: path.resolve(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,6 +24,7 @@ const config: webpack.Configuration = {
     ignored: ['node_modules', 'dist'],
   },
   devServer: {
+    hot: true,
     contentBase: path.join(__dirname, 'dist'),
     port: 9001,
     writeToDisk: true,
@@ -51,6 +58,9 @@ const config: webpack.Configuration = {
             options: {
               configFile: path.resolve(__dirname, 'console/frontend/tsconfig.json'),
               transpileOnly: true,
+              getCustomTransformers: () => ({
+                before: [...(REACT_REFRESH ? [ReactRefreshTypeScript()] : [])],
+              }),
             },
           },
         ],
@@ -121,6 +131,15 @@ const config: webpack.Configuration = {
         },
       },
     }),
+    ...(REACT_REFRESH
+      ? [
+          new ReactRefreshWebpackPlugin({
+            overlay: {
+              sockPort: WDS_PORT,
+            },
+          }),
+        ]
+      : []),
   ],
   devtool: 'source-map',
   optimization: {
