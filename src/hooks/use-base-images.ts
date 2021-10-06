@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {
-  useK8sWatchResources,
-  WatchK8sResource,
-} from '@console/internal/components/utils/k8s-watch-hook';
+import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
+import { useK8sWatchResources } from '@console/internal/components/utils/k8s-watch-hook';
 import { PersistentVolumeClaimModel, PodModel } from '@console/internal/models';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@console/internal/module/k8s';
 import { TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER } from '../constants';
@@ -77,15 +75,15 @@ export const useBaseImages = (
     const podValues = Object.values(pods);
 
     const loaded = [...pvcValues, ...dvValues, ...podValues].every(
-      (value: any) => value.loaded || !!value.loadError,
+      (value) => value.loaded || !!value.loadError,
     );
-    const loadError = pvcValues.find((value: any) => value.loadError);
+    const loadError = pvcValues.find((value) => value.loadError);
     const pvcData = pvcValues.reduce<PersistentVolumeClaimKind[]>(
-      (acc, pvc: any) => acc.concat(pvc.data),
+      (acc, pvc) => acc.concat(pvc.data),
       [],
     );
-    const dvData = dvValues.reduce<V1alpha1DataVolume[]>((acc, dv: any) => acc.concat(dv.data), []);
-    const podData = podValues.reduce<PodKind[]>((acc, pod: any) => acc.concat(pod.data), []);
+    const dvData = dvValues.reduce<V1alpha1DataVolume[]>((acc, dv) => acc.concat(dv.data), []);
+    const podData = podValues.reduce<PodKind[]>((acc, pod) => acc.concat(pod.data), []);
 
     return [pvcData, loaded, loadError, dvData, podData];
   }, [dvs, pods, pvcs]);

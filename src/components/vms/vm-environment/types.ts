@@ -1,4 +1,4 @@
-import { EnvVarSource } from '@console/internal/module/k8s/index';
+import { EnvVarSource } from '../../../../../../public/module/k8s/index';
 
 export enum SOURCES {
   configMapKind = 'configMap',

@@ -1,4 +1,4 @@
-import { FLAGS } from '@console/shared/src/constants/common';
+import { FLAGS } from '@console/shared';
 import {
   CUSTOM_FLAVOR,
   TEMPLATE_BASE_IMAGE_NAME_PARAMETER,

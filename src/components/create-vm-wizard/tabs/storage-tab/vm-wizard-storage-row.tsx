@@ -40,7 +40,7 @@ const menuActionRemove = (
   isDisabled: isDeleteDisabled,
   callback: () =>
     withProgress(
-      new Promise<void>((resolve) => {
+      new Promise((resolve) => {
         removeStorage(id);
         resolve();
       }),
@@ -52,9 +52,10 @@ export const getActions = (
   opts: VMWizardStorageRowActionOpts,
 ) => [menuActionEdit, menuActionRemove].map((a) => a(wizardStorageData, opts));
 
-export const VmWizardStorageRow: React.FC<
-  RowFunctionArgs<VMWizardStorageBundle, VMWizardStorageRowCustomData>
-> = ({
+export const VmWizardStorageRow: React.FC<RowFunctionArgs<
+  VMWizardStorageBundle,
+  VMWizardStorageRowCustomData
+>> = ({
   obj: { name, wizardStorageData, ...restData },
   customData: {
     isDisabled,
@@ -66,7 +67,7 @@ export const VmWizardStorageRow: React.FC<
     isUpdateDisabled,
   },
 }) => {
-  const validations: any = _.get(wizardStorageData, ['validation', 'validations'], {});
+  const validations = _.get(wizardStorageData, ['validation', 'validations'], {});
   return (
     <DiskSimpleRow
       data={{ ...restData, name }}

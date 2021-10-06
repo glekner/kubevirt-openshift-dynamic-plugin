@@ -20,6 +20,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { AccessModeSelector } from '@console/app/src/components/access-modes/access-mode';
 import { VolumeModeSelector } from '@console/app/src/components/volume-modes/volume-mode';
+import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
 import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import {
   ButtonBar,
@@ -32,10 +33,7 @@ import {
   useAccessReview2,
   useMultipleAccessReviews,
 } from '@console/internal/components/utils';
-import {
-  useK8sWatchResource,
-  WatchK8sResource,
-} from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import {
   PersistentVolumeClaimModel,
@@ -467,7 +465,7 @@ export const UploadPVCForm: React.FC<UploadPVCFormProps> = ({
             <Stack hasGutter>
               <StackItem>
                 <StorageClassDropdown
-                  name={t('kubevirt-plugin~Storage Class')}
+                  name={t('kubevirt-plugin~Storage class')}
                   onChange={(sc) => setStorageClassName(sc?.metadata?.name)}
                   data-test="storage-class-dropdown"
                 />
@@ -555,8 +553,9 @@ export const UploadPVCPage: React.FC<UploadPVCPageProps> = (props) => {
   const [error, setError] = React.useState<string>('');
   const [isAllocating, setIsAllocating] = React.useState(false);
   const [dvObj, setDvObj] = React.useState<V1alpha1DataVolume>(null);
-  const [commonTemplates, loadedTemplates, errorTemplates] =
-    useK8sWatchResource<TemplateKind[]>(templatesResource);
+  const [commonTemplates, loadedTemplates, errorTemplates] = useK8sWatchResource<TemplateKind[]>(
+    templatesResource,
+  );
 
   const goldenNamespacesResources = React.useMemo(() => {
     const goldenNamespaces = [
@@ -567,7 +566,7 @@ export const UploadPVCPage: React.FC<UploadPVCPageProps> = (props) => {
       ),
     ];
 
-    return goldenNamespaces.map((ns: string) => ({
+    return goldenNamespaces.map((ns) => ({
       group: DataVolumeModel.apiGroup,
       resource: DataVolumeModel.plural,
       verb: 'create' as K8sVerb,

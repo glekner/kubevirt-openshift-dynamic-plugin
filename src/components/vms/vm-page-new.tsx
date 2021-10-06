@@ -11,6 +11,7 @@ import {
 import { RocketIcon, VirtualMachineIcon } from '@patternfly/react-icons';
 import { sortable } from '@patternfly/react-table';
 import { TFunction } from 'i18next';
+import * as _ from 'lodash';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
@@ -347,6 +348,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       };
     });
   };
+  const debouncedFlatten = _.throttle(flatten, 1000);
 
   const createAccessReview = skipAccessReview ? null : { model: VirtualMachineModel, namespace };
   const modifiedProps = Object.assign({}, { mock: noProjectsAvailable }, props);
@@ -361,7 +363,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       rowFilters={[vmStatusFilterNew]}
       ListComponent={VMList}
       resources={resources}
-      flatten={flatten}
+      flatten={debouncedFlatten}
       label={VirtualMachineModel.labelPlural}
       customData={vmStatusResources}
     />

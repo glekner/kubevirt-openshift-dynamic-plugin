@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
 import { K8sResourceCommon } from '@console/internal/module/k8s/types';
-import { getName, getNamespace } from '@console/shared/src/selectors/common';
+import { getName, getNamespace } from '@console/shared';
 
 export const ActionMessage: React.FC<{
   obj: K8sResourceCommon;

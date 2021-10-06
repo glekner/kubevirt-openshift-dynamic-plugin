@@ -290,7 +290,22 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
     {
       kind: PodModel.kind,
       namespace,
-      prop: 'pods',
+      prop: 'kubevirtPods',
+      selector: {
+        matchLabels: {
+          app: 'kubevirt',
+        },
+      },
+    },
+    {
+      kind: PodModel.kind,
+      namespace,
+      prop: 'cdiPods',
+      selector: {
+        matchLabels: {
+          app: 'containerized-data-importer',
+        },
+      },
     },
     {
       kind: kubevirtReferenceForModel(VirtualMachineInstanceMigrationModel),
@@ -321,7 +336,8 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
   const flatten = ({
     vms,
     vmis,
-    pods,
+    kubevirtPods,
+    cdiPods,
     migrations,
     pvcs,
     dataVolumes,
@@ -329,7 +345,8 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
   }: {
     vms: FirehoseResult<VMKind[]>;
     vmis: FirehoseResult<VMIKind[]>;
-    pods: FirehoseResult<PodKind[]>;
+    kubevirtPods: FirehoseResult<PodKind[]>;
+    cdiPods: FirehoseResult<PodKind[]>;
     migrations: FirehoseResult;
     pvcs: FirehoseResult<PersistentVolumeClaimKind[]>;
     dataVolumes: FirehoseResult<V1alpha1DataVolume[]>;
@@ -337,7 +354,8 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
   }) => {
     const loadedVMs = getLoadedData(vms);
     const loadedVMIs = getLoadedData(vmis);
-    const loadedPods = getLoadedData(pods);
+    const loadedKubevirtPods = getLoadedData(kubevirtPods);
+    const loadedCDIPods = getLoadedData(cdiPods);
     const loadedMigrations = getLoadedData(migrations);
     const loadedVMImports = getLoadedData(vmImports);
     const loadedPVCs = getLoadedData(pvcs);
@@ -348,7 +366,8 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       ![
         loadedVMs,
         loadedVMIs,
-        loadedPods,
+        loadedKubevirtPods,
+        loadedCDIPods,
         loadedMigrations,
         loadedDataVolumes,
         isVMImportLoaded,
@@ -402,7 +421,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
           vmStatusBundle = getVMStatus({
             vm: objectBundle.vm,
             vmi: objectBundle.vmi,
-            pods: loadedPods,
+            pods: [...loadedKubevirtPods, ...loadedCDIPods],
             migrations: loadedMigrations,
             pvcs: loadedPVCs,
             dataVolumes: loadedDataVolumes,
@@ -428,6 +447,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       })
       .filter(({ vmImport, metadata }) => !(vmImport && metadata.vmImportStatus?.isCompleted()));
   };
+  const debouncedFlatten = _.throttle(flatten, 1000);
 
   const createAccessReview = skipAccessReview ? null : { model: VirtualMachineModel, namespace };
   const modifiedProps = Object.assign({}, { mock: noProjectsAvailable }, props);
@@ -441,7 +461,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       rowFilters={[vmStatusFilter]}
       ListComponent={VMList}
       resources={resources}
-      flatten={flatten}
+      flatten={debouncedFlatten}
       label={VirtualMachineModel.labelPlural}
     />
   );

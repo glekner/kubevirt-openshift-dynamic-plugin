@@ -22,7 +22,7 @@ import {
   SuccessStatus,
   WarningStatus,
   YellowExclamationTriangleIcon,
-} from '@console/shared/src/components/status';
+} from '@console/shared';
 import { BOOT_SOURCE_AVAILABLE, DataVolumeSourceType } from '../../constants';
 import { useCustomizeSourceModal } from '../../hooks/use-customize-source-modal';
 import { DataVolumeWrapper } from '../../k8s/wrapper/vm/data-volume-wrapper';

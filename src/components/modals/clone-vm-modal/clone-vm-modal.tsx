@@ -16,8 +16,8 @@ import {
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { Firehose } from '@console/internal/components/utils/firehose';
 import {
+  Firehose,
   FirehoseResource,
   FirehoseResult,
   HandlePromiseProps,

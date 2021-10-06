@@ -14,7 +14,7 @@ import {
   MsgBox,
 } from '@console/internal/components/utils';
 import store from '@console/internal/redux';
-import { RedExclamationCircleIcon } from '@console/shared/src/components/status';
+import { RedExclamationCircleIcon } from '@console/shared';
 
 const NotFound: React.FC<NotFoundProps> = ({ message }) => (
   <Box className="pf-u-text-align-center">
@@ -65,24 +65,27 @@ const ModalComponentWrapper: React.FC<ModalComponentWrapperProps> = ({
   );
 };
 
-export const createModalResourceLauncher: CreateModalResourceLauncher =
-  (Component, resources, resourcesToProps) => (props) => {
-    const getModalContainer: GetModalContainer = (onClose) => (
-      <Provider store={store}>
-        <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
-          <Firehose resources={resources}>
-            <ModalComponentWrapper
-              Component={Component}
-              onClose={onClose}
-              resourcesToProps={resourcesToProps}
-              modalProps={props}
-            />
-          </Firehose>
-        </Router>
-      </Provider>
-    );
-    return createModal(getModalContainer);
-  };
+export const createModalResourceLauncher: CreateModalResourceLauncher = (
+  Component,
+  resources,
+  resourcesToProps,
+) => (props) => {
+  const getModalContainer: GetModalContainer = (onClose) => (
+    <Provider store={store}>
+      <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
+        <Firehose resources={resources}>
+          <ModalComponentWrapper
+            Component={Component}
+            onClose={onClose}
+            resourcesToProps={resourcesToProps}
+            modalProps={props}
+          />
+        </Firehose>
+      </Router>
+    </Provider>
+  );
+  return createModal(getModalContainer);
+};
 
 type NotFoundProps = {
   message: string;

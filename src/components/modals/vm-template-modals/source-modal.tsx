@@ -7,10 +7,7 @@ import {
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
-import {
-  BlueInfoCircleIcon,
-  RedExclamationCircleIcon,
-} from '@console/shared/src/components/status';
+import { BlueInfoCircleIcon, RedExclamationCircleIcon } from '@console/shared';
 import { TemplateSourceStatusError } from '../../../statuses/template/types';
 import { SourceStatusErrorBody } from '../../vm-templates/vm-template-source';
 import { ModalFooter } from '../modal/modal-footer';

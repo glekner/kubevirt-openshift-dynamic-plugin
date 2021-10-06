@@ -57,7 +57,7 @@ export const getOwnedResources = <T extends K8sResourceKind>(
 };
 
 const getDeploymentPhase = (rc: K8sResourceKind): DEPLOYMENT_PHASE =>
-  _.get(rc, ['metadata', 'annotations', DEPLOYMENT_PHASE_ANNOTATION]) as DEPLOYMENT_PHASE;
+  _.get(rc, ['metadata', 'annotations', DEPLOYMENT_PHASE_ANNOTATION]);
 
 export const getOwnerNameByKind = (obj: K8sResourceCommon, kind: K8sKind): string => {
   return obj?.metadata?.ownerReferences?.find(

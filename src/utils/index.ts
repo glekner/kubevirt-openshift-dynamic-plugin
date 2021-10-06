@@ -301,13 +301,13 @@ export const alignWithDNS1123 = (str) => {
     return '';
   }
 
-  const chars = str.toLowerCase().replace(/\./g, '-').split('');
+  const chars = str
+    .toLowerCase()
+    .replace(/\./g, '-')
+    .split('');
 
   const firstValidCharIndex = chars.findIndex((c) => c.match(alphanumericRegex));
-  const lastValidCharIndex = _.findLastIndex(
-    chars,
-    (c: string) => c.match(alphanumericRegex) !== null,
-  );
+  const lastValidCharIndex = _.findLastIndex(chars, (c: string) => c.match(alphanumericRegex));
 
   if (firstValidCharIndex < 0) {
     return '';
@@ -441,9 +441,8 @@ export const compareOwnerReference = (
 
 export const generateVMName = (template: TemplateKind): string =>
   alignWithDNS1123(
-    `${
-      getParameterValue(template, TEMPLATE_BASE_IMAGE_NAME_PARAMETER) || getTemplateName(template)
-    }-${uniqueNamesGenerator({
+    `${getParameterValue(template, TEMPLATE_BASE_IMAGE_NAME_PARAMETER) ||
+      getTemplateName(template)}-${uniqueNamesGenerator({
       dictionaries: [adjectives, animals],
       separator: '-',
     })}`,

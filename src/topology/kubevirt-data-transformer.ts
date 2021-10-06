@@ -6,7 +6,7 @@ import {
   PodKind,
   referenceFor,
 } from '@console/internal/module/k8s';
-import { OverviewItem } from '@console/shared/src/types/resource';
+import { OverviewItem } from '@console/shared';
 import {
   getTopologyGroupItems,
   getTopologyNodeItem,

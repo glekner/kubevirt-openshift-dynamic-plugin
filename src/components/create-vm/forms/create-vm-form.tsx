@@ -20,9 +20,7 @@ import {
   useAccessReview2,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { BlueInfoCircleIcon } from '@console/shared/src/components/status';
-import { useFlag } from '@console/shared/src/hooks';
-import { FLAGS } from '@console/shared/src/constants';
+import { BlueInfoCircleIcon, FLAGS, useFlag } from '@console/shared';
 import { ROOT_DISK_INSTALL_NAME } from '../../../constants';
 import { DataVolumeSourceType, DEFAULT_DISK_SIZE } from '../../../constants/vm';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';

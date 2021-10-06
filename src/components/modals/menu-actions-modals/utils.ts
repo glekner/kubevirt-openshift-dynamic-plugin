@@ -1,5 +1,5 @@
 import { history } from '@console/internal/components/utils';
-import { VMGenericLikeEntityKind } from '../../../types/vmLike';
+import { VMGenericLikeEntityKind } from 'packages/kubevirt-plugin/src/types/vmLike';
 import { getName, getNamespace } from '../../../selectors';
 
 export const redirectToList = (vmi: VMGenericLikeEntityKind, tab?: 'templates' | '' | null) => {

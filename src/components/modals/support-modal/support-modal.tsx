@@ -8,7 +8,7 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { ExternalLink } from '@console/internal/components/utils';
-import { BlueInfoCircleIcon } from '@console/shared/src/components/status';
+import { BlueInfoCircleIcon } from '@console/shared';
 import { TEMPLATE_PROVIDER_ANNOTATION, TEMPLATE_SUPPORT_LEVEL } from '../../../constants';
 import { SUPPORT_URL } from '../../../constants/vm-templates/constants';
 import { TemplateSupport } from '../../../constants/vm-templates/support';

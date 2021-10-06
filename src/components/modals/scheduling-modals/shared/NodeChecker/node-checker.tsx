@@ -19,7 +19,7 @@ import {
   resourcePath,
 } from '@console/internal/components/utils';
 import { NodeKind } from '@console/internal/module/k8s';
-import { Status } from '@console/shared/src/components/status';
+import { Status } from '@console/shared';
 import { getName } from '../../../../../selectors';
 import {
   getSchedulingNodesMatchButtonLabel,

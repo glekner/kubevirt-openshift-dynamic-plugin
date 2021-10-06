@@ -19,12 +19,6 @@
     ],
     "types": ["node", "jest", "console"],
     "paths": {
-      "@openshift-console/dynamic-plugin-sdk/api/*": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/api/api/*"
-      ],
-      "@openshift-console/dynamic-plugin-sdk/webpack/*": [
-        "node_modules/@openshift-console/dynamic-plugin-sdk/lib/webpack/*"
-      ],
       "@console/internal/*": ["console/frontend/public/*"],
       "@console/shared/*": ["console/frontend/packages/console-shared/*"],
       "@console/plugin-sdk/*": ["console/frontend/packages/console-plugin-sdk/*"],

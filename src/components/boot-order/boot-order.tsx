@@ -21,11 +21,9 @@ export const BootOrder = ({ devices, setDevices }: BootOrderProps) => {
 
   // Relax bootOrder and use setDevice to update the parent componenet.
   const updateDevices = (newDevices: BootableDeviceType[]): void => {
-    _.filter(newDevices, (device) => device.value.bootOrder).forEach(
-      (source: BootableDeviceType, i) => {
-        source.value.bootOrder = i + 1;
-      },
-    );
+    _.filter(newDevices, (device) => device.value.bootOrder).forEach((source, i) => {
+      source.value.bootOrder = i + 1;
+    });
 
     setDevices(newDevices);
     setEditMode(false);

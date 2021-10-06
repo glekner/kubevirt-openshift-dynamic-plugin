@@ -6,6 +6,7 @@
     "pre-build": "rm -rf dist && yarn --cwd console/frontend build-plugin-sdk",
     "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
     "install-console": "./install-console.sh",
+    "update-console": "git submodule foreach git pull origin master",
     "reinstall-console": "rm -rf console/frontend/public/dist && yarn install-console",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
@@ -37,7 +38,8 @@
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
-    "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/node_modules/@console/dynamic-plugin-sdk/dist",
+    "@openshift-console/dynamic-plugin-sdk": "file:./console/frontend/packages/console-dynamic-plugin-sdk/dist/core",
+    "@openshift-console/dynamic-plugin-sdk-webpack": "file:./console/frontend/packages/console-dynamic-plugin-sdk/dist/webpack",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",
@@ -104,7 +106,9 @@
       "dashboardInventory": "./components/dashboards-page/overview-dashboard/inventory.tsx",
       "dashboardActivity": "./components/dashboards-page/overview-dashboard/activity.tsx",
       "topology": "./topology/topology-plugin.ts",
-      "kubevirtFlags": "./flags"
+      "kubevirtFlags": "./flags",
+      "topologySidebar": "./topology/vm-tab-sections.tsx",
+      "actions": "./actions/provider.ts"
     },
     "dependencies": {
       "@console/pluginAPI": "*"
