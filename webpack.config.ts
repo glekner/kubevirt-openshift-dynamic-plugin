@@ -37,6 +37,7 @@ const config: webpack.Configuration = {
       net: 'net-browserify',
       fs: 'browserify-fs',
       prettier: false,
+      internal: path.resolve(__dirname, 'console/frontend/public/'),
       '@console/active-plugins': false,
     },
   },
