@@ -10,6 +10,7 @@
     "reinstall-console": "rm -rf console/frontend/public/dist && yarn install-console",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
+    "build-sdk": "yarn --cwd console/frontend build-plugin-sdk",
     "dev": "rm -rf dist && yarn ts-node ./node_modules/.bin/webpack serve --progress",
     "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"

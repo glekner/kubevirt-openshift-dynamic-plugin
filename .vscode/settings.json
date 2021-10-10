@@ -29,6 +29,6 @@
   },
   "search.exclude": {
     "**/node_modules": true,
-    "console": true
+    "console/frontend/packages/kubevirt-plugin": true
   }
 }
