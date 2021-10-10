@@ -15,7 +15,7 @@ import {
   humanizeBinaryBytesWithoutB,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types/internal';
 import { k8sPatch } from '@console/internal/module/k8s';
 import { CUSTOM_FLAVOR } from '../../../constants';

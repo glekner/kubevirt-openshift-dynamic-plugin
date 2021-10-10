@@ -7,7 +7,7 @@ import {
   PersistentVolumeClaimModel,
   ProjectModel,
   StorageClassModel,
-} from '@console/internal/models';
+} from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types/internal';
 import { DUMMY_VM_NAME } from '../../../../constants/vm';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';

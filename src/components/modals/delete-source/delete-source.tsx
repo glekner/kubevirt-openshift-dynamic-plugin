@@ -7,7 +7,7 @@ import {
   ModalSubmitFooter,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { PersistentVolumeClaimModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { k8sKill } from '@console/internal/module/k8s';
 import { DataVolumeModel } from '../../../models';
 import { TemplateSourceStatus } from '../../../statuses/template/types';

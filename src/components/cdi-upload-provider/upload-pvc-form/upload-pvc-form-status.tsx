@@ -21,7 +21,7 @@ import { ErrorCircleOIcon, InProgressIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
 import { history, resourcePath } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PodModel } from '@console/internal/models';
+import { PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types/internal';
 import { killUploadPVC } from '../../../k8s/requests/cdi-upload/cdi-upload-requests';
 import { getName, getNamespace } from '../../../selectors/selectors';

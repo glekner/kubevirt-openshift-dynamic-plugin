@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ListDropdown } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { toShallowJS } from '../../../../utils/immutable';

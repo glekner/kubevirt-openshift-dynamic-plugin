@@ -1,4 +1,4 @@
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { apiVersionForModel } from '@console/internal/module/k8s';
 import { TemplateKind } from '@kubevirt-types/internal';
 import { getName } from '../../../selectors';

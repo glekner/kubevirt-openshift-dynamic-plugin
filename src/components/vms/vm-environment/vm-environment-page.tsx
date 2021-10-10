@@ -10,12 +10,7 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { k8sPatch } from '@console/internal/module/k8s';
-import {
-  ConfigMapModel,
-  SecretModel,
-  ServiceAccountModel,
-  TemplateModel,
-} from '@console/internal/models';
+import { ConfigMapModel, SecretModel, ServiceAccountModel, TemplateModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
   EnvVarSource,

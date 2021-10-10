@@ -12,7 +12,7 @@ import {
 } from '@console/internal/components/factory';
 import { LoadingBox, useAccessReview2 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { StorageClassModel } from '@console/internal/models';
+import { StorageClassModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
 import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types/internal';
 import {

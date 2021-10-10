@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useK8sGet } from '@console/internal/components/utils/k8s-get-hook';
-import { RouteModel } from '@console/internal/models';
+import { RouteModel } from '@kubevirt-models';
 import { ListKind, RouteKind } from '@kubevirt-types/internal';
 import { getCloudInitValues } from '../components/ssh-service/SSHForm/ssh-form-utils';
 import { VMIKind, VMKind } from '../types';

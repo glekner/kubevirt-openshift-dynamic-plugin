@@ -22,7 +22,7 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { NamespaceModel, PersistentVolumeClaimModel } from '@console/internal/models';
+import { NamespaceModel, PersistentVolumeClaimModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
 import {
   ConfigMapKind,

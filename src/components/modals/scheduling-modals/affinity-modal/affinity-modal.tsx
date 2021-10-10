@@ -21,7 +21,7 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { NodeModel } from '@console/internal/models';
+import { NodeModel } from '@kubevirt-models';
 import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { getAffinityPatch } from '../../../../k8s/patches/vm/vm-scheduling-patches';
@@ -69,9 +69,8 @@ export const AffinityModal = withHandlePromise<AffinityModalProps>(
     const [affinities, setAffinities] = React.useState<AffinityRowData[]>(
       getRowsDataFromAffinity(currentAffinity),
     );
-    const [focusedAffinity, setFocusedAffinity] = React.useState<AffinityRowData>(
-      defaultNewAffinity,
-    );
+    const [focusedAffinity, setFocusedAffinity] =
+      React.useState<AffinityRowData>(defaultNewAffinity);
 
     const [isEditing, setIsEditing] = React.useState(false);
     const [isCreating, setIsCreating] = React.useState(false);

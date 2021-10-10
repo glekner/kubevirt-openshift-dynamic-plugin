@@ -11,7 +11,7 @@ import {
 import { useSafetyFirst } from '@console/internal/components/safety-first';
 import { FieldLevelHelp, FirehoseResult } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PersistentVolumeClaimModel, TemplateModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
 import { CombinedDiskFactory } from '../../k8s/wrapper/vm/combined-disk';
 import { VMTemplateWrapper } from '../../k8s/wrapper/vm/vm-template-wrapper';

@@ -20,6 +20,7 @@
     "types": ["node", "jest", "console"],
     "paths": {
       "@kubevirt-types/*": ["src/types/*"],
+      "@kubevirt-models": ["src/models/index.ts"],
       "@console/internal/*": ["console/frontend/public/*"],
       "@console/shared/*": ["console/frontend/packages/console-shared/*"],
       "@console/plugin-sdk/*": ["console/frontend/packages/console-plugin-sdk/*"],

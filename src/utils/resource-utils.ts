@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { ReplicationControllerModel, DeploymentConfigModel } from '@console/internal/models';
+import { ReplicationControllerModel, DeploymentConfigModel } from '@kubevirt-models';
 import { K8sResourceKind, K8sResourceCommon, PodKind, K8sKind } from '@kubevirt-types/internal';
 import { getAnnotation } from '../selectors';
 import { ExtPodKind, OverviewItemAlerts, AllPodStatus } from '../types/pod';

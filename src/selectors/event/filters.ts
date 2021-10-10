@@ -1,4 +1,4 @@
-import { PodModel } from '@console/internal/models';
+import { PodModel } from '@kubevirt-models';
 import { EventInvolvedObject, EventKind } from '@kubevirt-types/internal';
 import { VIRT_LAUNCHER_POD_PREFIX } from '../../constants/vm';
 import {

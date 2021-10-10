@@ -10,7 +10,7 @@ import {
   LoadingInline,
   ResourceLink,
 } from '@console/internal/components/utils';
-import { NamespaceModel } from '@console/internal/models';
+import { NamespaceModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { PendingStatus } from '@console/shared';
 import { SuccessStatus } from '@console/shared/src/components/status/statuses';

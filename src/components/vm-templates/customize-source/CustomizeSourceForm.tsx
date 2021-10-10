@@ -27,7 +27,7 @@ import {
   StatusBox,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PersistentVolumeClaimModel, TemplateModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
 import {
   TEMPLATE_PROVIDER_ANNOTATION,

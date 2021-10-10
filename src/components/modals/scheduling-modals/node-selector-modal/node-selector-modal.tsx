@@ -8,7 +8,7 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { NodeModel } from '@console/internal/models';
+import { NodeModel } from '@kubevirt-models';
 import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { useIDEntities } from '../../../../hooks/use-id-entities';
@@ -40,13 +40,8 @@ export const NSModal = withHandlePromise(
     const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity);
     const loadError = getLoadError(nodes, NodeModel);
 
-    const [
-      selectorLabels,
-      setSelectorLabels,
-      onLabelAdd,
-      onLabelChange,
-      onLabelDelete,
-    ] = useIDEntities<IDLabel>(nodeSelectorToIDLabels(getVMLikeNodeSelector(vmLikeEntity)));
+    const [selectorLabels, setSelectorLabels, onLabelAdd, onLabelChange, onLabelDelete] =
+      useIDEntities<IDLabel>(nodeSelectorToIDLabels(getVMLikeNodeSelector(vmLikeEntity)));
 
     const qualifiedNodes = useNodeQualifier(nodes, 'label', selectorLabels);
     const [showCollisionAlert, reload] = useCollisionChecker<VMLikeEntityKind>(

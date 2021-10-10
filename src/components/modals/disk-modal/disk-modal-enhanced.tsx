@@ -7,7 +7,7 @@ import {
   PersistentVolumeClaimModel,
   ProjectModel,
   StorageClassModel,
-} from '@console/internal/models';
+} from '@kubevirt-models';
 import { k8sPatch } from '@console/internal/module/k8s';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types/internal';
 import { useStorageClassConfigMapWrapped } from '../../../hooks/storage-class-config-map';

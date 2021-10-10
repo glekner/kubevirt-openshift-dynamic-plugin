@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { k8sCreate, k8sPatchByName } from '@console/internal/module/k8s';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
 import { VMSettingsField } from '../../../components/create-vm-wizard/types';

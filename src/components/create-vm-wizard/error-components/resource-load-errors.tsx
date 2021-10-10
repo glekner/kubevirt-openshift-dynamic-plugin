@@ -1,7 +1,7 @@
 import { AlertVariant } from '@patternfly/react-core';
 import * as _ from 'lodash';
 import { connect } from 'react-redux';
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import { VirtualMachineModel } from '../../../models';
 import { getKubevirtAvailableModel } from '../../../models/kubevirtReferenceForModel';

@@ -35,11 +35,7 @@ import {
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import {
-  PersistentVolumeClaimModel,
-  StorageClassModel,
-  TemplateModel,
-} from '@console/internal/models';
+import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
 import { K8sVerb } from '@console/dynamic-plugin-sdk/src/api/common-types';
 import {
   ConfigMapKind,

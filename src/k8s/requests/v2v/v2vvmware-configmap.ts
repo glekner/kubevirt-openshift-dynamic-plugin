@@ -1,4 +1,4 @@
-import { ConfigMapModel } from '@console/internal/models';
+import { ConfigMapModel } from '@kubevirt-models';
 import { k8sGet } from '@console/internal/module/k8s';
 import {
   VMWARE_KUBEVIRT_VMWARE_CONFIG_MAP_NAME,

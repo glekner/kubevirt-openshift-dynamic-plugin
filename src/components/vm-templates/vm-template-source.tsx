@@ -12,7 +12,7 @@ import {
 import { InProgressIcon, PlusCircleIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel, PodModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { TemplateKind } from '@kubevirt-types/internal';
 import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';

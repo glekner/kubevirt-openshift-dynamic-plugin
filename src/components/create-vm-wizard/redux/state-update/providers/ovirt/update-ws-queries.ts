@@ -1,4 +1,4 @@
-import { DeploymentModel, PodModel, SecretModel } from '@console/internal/models';
+import { DeploymentModel, PodModel, SecretModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';
 import {

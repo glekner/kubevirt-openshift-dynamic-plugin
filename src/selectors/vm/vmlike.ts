@@ -1,4 +1,4 @@
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';
 import { getKubevirtAvailableModel } from '../../models/kubevirtReferenceForModel';

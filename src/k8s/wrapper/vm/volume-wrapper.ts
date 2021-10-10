@@ -4,7 +4,7 @@ import {
   PersistentVolumeClaimModel,
   SecretModel,
   ServiceAccountModel,
-} from '@console/internal/models';
+} from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import { VolumeType } from '../../../constants/vm/storage';
 import { DataVolumeModel } from '../../../models';

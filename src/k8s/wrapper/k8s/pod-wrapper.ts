@@ -1,4 +1,4 @@
-import { PodModel } from '@console/internal/models';
+import { PodModel } from '@kubevirt-models';
 import { ContainerSpec, PodKind, Volume } from '@kubevirt-types/internal';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
 import { K8sInitAddon } from '../common/util/k8s-mixin';

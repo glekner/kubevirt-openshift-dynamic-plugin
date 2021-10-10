@@ -1,4 +1,4 @@
-import { ServiceModel } from '@console/internal/models';
+import { ServiceModel } from '@kubevirt-models';
 import { k8sCreate, k8sKill } from '@console/internal/module/k8s';
 import {
   CLOUD_INIT_CONFIG_DRIVE,
