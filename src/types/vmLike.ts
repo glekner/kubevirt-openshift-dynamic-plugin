@@ -1,4 +1,4 @@
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { VMIKind, VMKind } from './vm';
 
 export type VMILikeEntityKind = VMKind | VMIKind;

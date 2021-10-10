@@ -1,10 +1,5 @@
 import * as _ from 'lodash';
-import {
-  PodKind,
-  K8sResourceKind,
-  NodeKind,
-  K8sResourceCommon,
-} from '@console/internal/module/k8s';
+import { PodKind, K8sResourceKind, NodeKind, K8sResourceCommon } from '@kubevirt-types/internal';
 
 export const getKind = (value) => _.get(value, 'kind') as K8sResourceKind['kind'];
 

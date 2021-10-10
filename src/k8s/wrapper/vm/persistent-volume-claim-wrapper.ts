@@ -1,5 +1,5 @@
 import { PersistentVolumeClaimModel } from '@console/internal/models';
-import { PersistentVolumeClaimKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import {
   BinaryUnit,
   stringValueUnitSplit,

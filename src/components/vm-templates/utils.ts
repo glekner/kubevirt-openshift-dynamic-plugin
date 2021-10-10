@@ -1,5 +1,5 @@
 import { history } from '@console/internal/components/utils';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { VMWizardName } from '../../constants';
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
 import {

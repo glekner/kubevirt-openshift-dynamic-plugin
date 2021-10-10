@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 
 enum commonTemplatesValidationRules {
   integer = 'integer',

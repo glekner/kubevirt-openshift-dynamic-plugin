@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { createSupportModal } from '../components/modals/support-modal/support-modal';
 import { TEMPLATE_WARN_SUPPORT } from '../constants';
 import { getTemplateSupport, isCommonTemplate } from '../selectors/vm-template/basic';

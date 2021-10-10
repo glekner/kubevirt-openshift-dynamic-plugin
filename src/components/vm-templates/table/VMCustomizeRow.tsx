@@ -11,7 +11,7 @@ import {
   ResourceLink,
 } from '@console/internal/components/utils';
 import { NamespaceModel } from '@console/internal/models';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { PendingStatus } from '@console/shared';
 import { SuccessStatus } from '@console/shared/src/components/status/statuses';
 import { getTemplateProvider } from '../../../selectors/vm-template/basic';
@@ -104,10 +104,9 @@ const VMCustomizeStatus: React.FC<VMCustomizeStatusProps> = ({
   );
 };
 
-const VMCustomizeRow: React.FC<RowFunctionArgs<
-  { vm: VMKind; template: TemplateKind },
-  VMTemplateRowProps
->> = ({ obj: { vm, template }, customData: { namespace, vmis, pvcs, dataVolumes, pods } }) => {
+const VMCustomizeRow: React.FC<
+  RowFunctionArgs<{ vm: VMKind; template: TemplateKind }, VMTemplateRowProps>
+> = ({ obj: { vm, template }, customData: { namespace, vmis, pvcs, dataVolumes, pods } }) => {
   const { t } = useTranslation();
   const dimensify = dimensifyRow(tableColumnClasses(!namespace));
 

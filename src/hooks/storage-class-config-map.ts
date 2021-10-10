@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { FirehoseResult } from '@console/internal/components/utils';
 import { ConfigMapModel } from '@console/internal/models';
-import { ConfigMapKind, k8sGet } from '@console/internal/module/k8s';
+import { ConfigMapKind } from '@kubevirt-types/internal';
+import { k8sGet } from '@console/internal/module/k8s';
 import {
   STORAGE_CLASS_CONFIG_MAP_NAME,
   STORAGE_CLASS_CONFIG_MAP_NAMESPACES,
@@ -11,9 +12,8 @@ import { joinGrammaticallyListOfItems } from '../utils';
 type UseConfigMapResult = [ConfigMapKind, boolean, string];
 
 export const useStorageClassConfigMap = (): UseConfigMapResult => {
-  const [storageClassConfigMap, setStorageClassConfigMap] = React.useState<ConfigMapKind>(
-    undefined,
-  );
+  const [storageClassConfigMap, setStorageClassConfigMap] =
+    React.useState<ConfigMapKind>(undefined);
   const [error, setError] = React.useState<string>(undefined);
 
   React.useEffect(() => {
@@ -61,11 +61,10 @@ export const useStorageClassConfigMap = (): UseConfigMapResult => {
 
   const isLoaded = storageClassConfigMap !== undefined;
 
-  return React.useMemo<UseConfigMapResult>(() => [storageClassConfigMap, isLoaded, error], [
-    storageClassConfigMap,
-    isLoaded,
-    error,
-  ]);
+  return React.useMemo<UseConfigMapResult>(
+    () => [storageClassConfigMap, isLoaded, error],
+    [storageClassConfigMap, isLoaded, error],
+  );
 };
 
 export const useStorageClassConfigMapWrapped = (): FirehoseResult<ConfigMapKind> => {

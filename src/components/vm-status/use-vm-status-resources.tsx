@@ -6,7 +6,7 @@ import {
   K8sResourceCommon,
   PersistentVolumeClaimKind,
   PodKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import { useDebounceCallback } from '../../hooks/use-debounce';
 import { useDeepCompareMemoize } from '../../hooks/use-deep-compare-memoize';
 import { DataVolumeModel, VirtualMachineInstanceMigrationModel } from '../../models';

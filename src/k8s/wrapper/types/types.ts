@@ -1,4 +1,5 @@
-import { K8sKind, K8sResourceKind } from '@console/internal/module/k8s/types';
+import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sKind } from '@console/dynamic-plugin-sdk/src/api/common-types';
 
 export interface K8sResourceKindMethods {
   getModel: () => K8sKind;

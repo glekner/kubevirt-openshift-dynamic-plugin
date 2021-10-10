@@ -3,7 +3,7 @@ import * as React from 'react';
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch, useSelector } from 'react-redux';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PersistentVolumeClaimKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import { PersistentVolumeClaimModel } from '@console/internal/models/index';
 import { vmWizardActions } from '../components/create-vm-wizard/redux/actions';
 import { ActionType } from '../components/create-vm-wizard/redux/types';

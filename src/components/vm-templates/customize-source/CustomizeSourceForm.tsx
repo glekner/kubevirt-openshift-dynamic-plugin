@@ -28,7 +28,7 @@ import {
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { PersistentVolumeClaimModel, TemplateModel } from '@console/internal/models';
-import { PersistentVolumeClaimKind, TemplateKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
 import {
   TEMPLATE_PROVIDER_ANNOTATION,
   TEMPLATE_SUPPORT_LEVEL,
@@ -93,20 +93,17 @@ const CustomizeSourceForm: React.FC<RouteComponentProps> = ({ location }) => {
     },
   });
 
-  const [
-    vmWithCustomBootSource,
-    loadvmWithCutomBootSource,
-    vmWithCustomBootSourceError,
-  ] = useK8sWatchResource<VMKind[]>({
-    kind: kubevirtReferenceForModel(VirtualMachineModel),
-    isList: true,
-    namespace,
-    selector: {
-      matchLabels: {
-        [VM_CUSTOMIZE_LABEL]: 'true',
+  const [vmWithCustomBootSource, loadvmWithCutomBootSource, vmWithCustomBootSourceError] =
+    useK8sWatchResource<VMKind[]>({
+      kind: kubevirtReferenceForModel(VirtualMachineModel),
+      isList: true,
+      namespace,
+      selector: {
+        matchLabels: {
+          [VM_CUSTOMIZE_LABEL]: 'true',
+        },
       },
-    },
-  });
+    });
 
   const templatesFromVms = React.useMemo(
     () =>

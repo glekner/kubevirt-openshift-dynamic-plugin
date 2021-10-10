@@ -24,7 +24,7 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { NamespaceModel, PersistentVolumeClaimModel, ProjectModel } from '@console/internal/models';
-import { K8sResourceKind, PersistentVolumeClaimKind } from '@console/internal/module/k8s';
+import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import { cloneVM } from '../../../k8s/requests/vm/clone';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';

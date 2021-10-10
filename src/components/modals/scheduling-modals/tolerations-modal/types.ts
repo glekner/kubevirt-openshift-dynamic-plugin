@@ -1,4 +1,4 @@
-import { Toleration } from '@console/internal/module/k8s';
+import { Toleration } from '@kubevirt-types/internal';
 import { IDLabel } from '../../../LabelsList/types';
 
 export type TolerationLabel = IDLabel & Toleration;

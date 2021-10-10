@@ -1,4 +1,5 @@
-import { K8sResourceKind, Patch } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
+import { Patch } from '../helpers/patch';
 
 type K8sError = K8sGetError | K8sCreateError | K8sPatchError | K8sKillError;
 type K8sGetObject = { name: string; namespace: string };

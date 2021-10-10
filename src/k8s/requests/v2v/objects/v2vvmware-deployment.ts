@@ -1,4 +1,4 @@
-import { ImagePullPolicy } from '@console/internal/module/k8s';
+import { ImagePullPolicy } from '@kubevirt-types/internal';
 import { DeploymentWrappper } from '../../../wrapper/k8s/deployment-wrapper';
 
 export const buildV2VVMwareDeployment = ({

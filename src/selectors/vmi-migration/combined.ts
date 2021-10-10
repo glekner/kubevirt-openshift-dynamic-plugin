@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { getNamespace } from '../selectors';
 import { getMigrationVMIName, isMigrating } from './selectors';
 

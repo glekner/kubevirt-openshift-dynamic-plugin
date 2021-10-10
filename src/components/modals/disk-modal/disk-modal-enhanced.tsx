@@ -8,11 +8,8 @@ import {
   ProjectModel,
   StorageClassModel,
 } from '@console/internal/models';
-import {
-  k8sPatch,
-  PersistentVolumeClaimKind,
-  StorageClassResourceKind,
-} from '@console/internal/module/k8s';
+import { k8sPatch } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types/internal';
 import { useStorageClassConfigMapWrapped } from '../../../hooks/storage-class-config-map';
 import { getUpdateDiskPatches } from '../../../k8s/patches/vm/vm-disk-patches';
 import { CombinedDiskFactory } from '../../../k8s/wrapper/vm/combined-disk';

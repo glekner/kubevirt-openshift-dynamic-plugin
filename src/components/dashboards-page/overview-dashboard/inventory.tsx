@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { OffIcon } from '@patternfly/react-icons';
 import * as _ from 'lodash';
-import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@console/internal/module/k8s';
+import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { StatusGroupMapper } from '@console/shared/src/components/dashboard/inventory-card/InventoryItem';
 import { InventoryStatusGroup } from '@console/shared/src/components/dashboard/inventory-card/status-group';
 import { createBasicLookup } from '@console/shared/src/utils/utils';

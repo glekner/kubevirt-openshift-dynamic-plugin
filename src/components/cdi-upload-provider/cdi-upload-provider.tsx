@@ -2,7 +2,7 @@ import * as React from 'react';
 import axios, { Canceler } from 'axios';
 import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { CDIConfigModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getUploadProxyURL } from '../../selectors/cdi';

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { useK8sWatchResources } from '@console/internal/components/utils/k8s-watch-hook';
-import { K8sResourceCommon, OwnerReference } from '@console/internal/module/k8s';
+import { K8sResourceCommon, OwnerReference } from '@kubevirt-types/internal';
 import { VolumeReferencedObject, VolumeWrapper } from '../k8s/wrapper/vm/volume-wrapper';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';
 import { getOwnerReferences } from '../selectors';

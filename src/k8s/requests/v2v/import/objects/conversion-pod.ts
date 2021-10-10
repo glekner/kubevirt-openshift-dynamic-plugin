@@ -1,4 +1,4 @@
-import { ImagePullPolicy } from '@console/internal/module/k8s';
+import { ImagePullPolicy } from '@kubevirt-types/internal';
 import {
   CONVERSION_BASE_NAME,
   CONVERSION_GENERATE_NAME,

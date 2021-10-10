@@ -1,5 +1,5 @@
 import { FirehoseResult } from '@console/internal/components/utils';
-import { DeploymentKind, K8sResourceKind, PodKind, PodPhase } from '@console/internal/module/k8s';
+import { DeploymentKind, K8sResourceKind, PodKind, PodPhase } from '@kubevirt-types/internal';
 
 export enum AllPodStatus {
   Running = 'Running',

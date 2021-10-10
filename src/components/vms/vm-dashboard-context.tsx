@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PodKind } from '@console/internal/module/k8s';
+import { PodKind } from '@kubevirt-types/internal';
 import { VMStatusBundle } from '../../statuses/vm/types';
 import { VMIKind, VMKind } from '../../types';
 

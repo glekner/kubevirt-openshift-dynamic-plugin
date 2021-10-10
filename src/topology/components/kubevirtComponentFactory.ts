@@ -8,7 +8,8 @@ import {
   withSelection,
 } from '@patternfly/react-topology';
 import { KebabOption, kebabOptionsToMenu } from '@console/internal/components/utils';
-import { K8sResourceKind, modelFor, referenceFor } from '@console/internal/module/k8s';
+import { modelFor, referenceFor } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { ModifyApplication } from '@console/topology/src/actions';
 import {
   CreateConnector,

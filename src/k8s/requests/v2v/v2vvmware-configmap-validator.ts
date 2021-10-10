@@ -1,4 +1,4 @@
-import { ConfigMapKind } from '@console/internal/module/k8s';
+import { ConfigMapKind } from '@kubevirt-types/internal';
 import { joinGrammaticallyListOfItems } from '@console/shared';
 import { VMImportProvider } from '../../../components/create-vm-wizard/types';
 import {

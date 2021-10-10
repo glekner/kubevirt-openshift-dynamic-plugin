@@ -1,5 +1,5 @@
 import { SecretModel, ServiceAccountModel } from '@console/internal/models';
-import { K8sResourceCommon } from '@console/internal/module/k8s';
+import { K8sResourceCommon } from '@kubevirt-types/internal';
 import { getVmwareField } from '../../../../components/create-vm-wizard/selectors/provider/vmware/selectors';
 import { getFieldValue } from '../../../../components/create-vm-wizard/selectors/vm-settings';
 import {
@@ -62,10 +62,7 @@ const createConversionPodSecret = async ({
     .filter((storage) => storage.type === VMWizardStorageType.V2V_VMWARE_IMPORT)
     .map(({ importData }) => importData.fileName);
 
-  const hostPath = (vm?.detail?.hostPath || '')
-    .split('/')
-    .map(encodeURIComponent)
-    .join('/');
+  const hostPath = (vm?.detail?.hostPath || '').split('/').map(encodeURIComponent).join('/');
 
   const secretWrapper = new SecretWrappper()
     .init({ namespace, generateName: CONVERSION_GENERATE_NAME })

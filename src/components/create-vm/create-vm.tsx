@@ -16,7 +16,7 @@ import { RouteComponentProps } from 'react-router';
 import { history, LoadingBox } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { ProjectModel } from '@console/internal/models';
-import { K8sResourceCommon, TemplateKind } from '@console/internal/module/k8s';
+import { K8sResourceCommon, TemplateKind } from '@kubevirt-types/internal';
 import { DataVolumeSourceType, VMWizardMode, VMWizardName, VolumeType } from '../../constants';
 import { useStorageClassConfigMap } from '../../hooks/storage-class-config-map';
 import { useErrorTranslation } from '../../hooks/use-error-translation';

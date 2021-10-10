@@ -1,4 +1,4 @@
-import { ConfigMapKind } from '@console/internal/module/k8s';
+import { ConfigMapKind } from '@kubevirt-types/internal';
 import {
   DataVolumeSourceType,
   DEFAULT_DISK_SIZE,

@@ -1,5 +1,5 @@
 import { FirehoseResource } from '@console/internal/components/utils';
-import { K8sKind } from '@console/internal/module/k8s';
+import { K8sKind } from '@kubevirt-types/internal';
 
 export type FirehoseResourceEnhanced = FirehoseResource & {
   model: K8sKind;

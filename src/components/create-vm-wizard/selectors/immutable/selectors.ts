@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { VMWizardInitialData } from '../../../../types/url';
 import { iGetIn, iGetLoadedData, toShallowJS } from '../../../../utils/immutable';
 import { CommonDataProp, VMWizardProps, VMWizardTab } from '../../types';
