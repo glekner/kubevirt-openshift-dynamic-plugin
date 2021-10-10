@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 import { observer } from '@patternfly/react-topology';
 import { asAccessReview, useAccessReview } from '@console/internal/components/utils';
-import { PodKind } from '@console/internal/module/k8s/types';
+import { PodKind } from '@kubevirt-types/internal';
 import { VMDetailsList, VMResourceSummary } from '../components/vms/vm-resource';
 import { VirtualMachineModel } from '../models';
 import { getKubevirtAvailableModel } from '../models/kubevirtReferenceForModel';

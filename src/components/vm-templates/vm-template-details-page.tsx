@@ -11,7 +11,7 @@ import {
   PersistentVolumeClaimKind,
   PodKind,
   TemplateKind,
-} from '@console/internal/module/k8s/types';
+} from '@kubevirt-types/internal';
 import { useBaseImages } from '../../hooks/use-base-images';
 import { useCustomizeSourceModal } from '../../hooks/use-customize-source-modal';
 import { useSupportModal } from '../../hooks/use-support-modal';
@@ -25,20 +25,21 @@ import { VMNics } from '../vm-nics';
 import { menuActionsCreator } from './menu-actions';
 import { VMTemplateDetails } from './vm-template-details';
 
-export const breadcrumbsForVMTemplatePage = (t: TFunction, match: VMTemplateMatch) => () => [
-  {
-    name: t('kubevirt-plugin~Virtualization'),
-    path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
-  },
-  {
-    name: t('kubevirt-plugin~Templates'),
-    path: `/k8s/ns/${match.params.ns || 'default'}/virtualization/templates`,
-  },
-  {
-    name: t('kubevirt-plugin~{{name}} Details', { name: match.params.name }),
-    path: `${match.url}`,
-  },
-];
+export const breadcrumbsForVMTemplatePage = (t: TFunction, match: VMTemplateMatch) => () =>
+  [
+    {
+      name: t('kubevirt-plugin~Virtualization'),
+      path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
+    },
+    {
+      name: t('kubevirt-plugin~Templates'),
+      path: `/k8s/ns/${match.params.ns || 'default'}/virtualization/templates`,
+    },
+    {
+      name: t('kubevirt-plugin~{{name}} Details', { name: match.params.name }),
+      path: `${match.url}`,
+    },
+  ];
 
 export const VMTemplateDetailsPage: React.FC<VMTemplateDetailsPageProps> = (props) => {
   const { t } = useTranslation();

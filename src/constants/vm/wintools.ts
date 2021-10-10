@@ -1,4 +1,4 @@
-import { ConfigMapKind } from '@console/internal/module/k8s';
+import { ConfigMapKind } from '@kubevirt-types/internal';
 import { getVmwareConfigMap } from '../../k8s/requests/v2v/v2vvmware-configmap';
 import { VIRTIO_WIN_IMAGE } from './constants';
 

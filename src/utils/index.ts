@@ -3,15 +3,10 @@ import { JSONSchema6 } from 'json-schema';
 import * as _ from 'lodash';
 import { toPath } from 'lodash';
 import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generator';
+import { MatchExpression } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
 import { FirehoseResult } from '@console/internal/components/utils';
 import { NamespaceModel, ProjectModel } from '@console/internal/models';
-import {
-  K8sKind,
-  K8sResourceKind,
-  MatchExpression,
-  OwnerReference,
-  TemplateKind,
-} from '@console/internal/module/k8s';
+import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types/internal';
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {
   getAPIVersion,
@@ -301,10 +296,7 @@ export const alignWithDNS1123 = (str) => {
     return '';
   }
 
-  const chars = str
-    .toLowerCase()
-    .replace(/\./g, '-')
-    .split('');
+  const chars = str.toLowerCase().replace(/\./g, '-').split('');
 
   const firstValidCharIndex = chars.findIndex((c) => c.match(alphanumericRegex));
   const lastValidCharIndex = _.findLastIndex(chars, (c: string) => c.match(alphanumericRegex));
@@ -441,8 +433,9 @@ export const compareOwnerReference = (
 
 export const generateVMName = (template: TemplateKind): string =>
   alignWithDNS1123(
-    `${getParameterValue(template, TEMPLATE_BASE_IMAGE_NAME_PARAMETER) ||
-      getTemplateName(template)}-${uniqueNamesGenerator({
+    `${
+      getParameterValue(template, TEMPLATE_BASE_IMAGE_NAME_PARAMETER) || getTemplateName(template)
+    }-${uniqueNamesGenerator({
       dictionaries: [adjectives, animals],
       separator: '-',
     })}`,

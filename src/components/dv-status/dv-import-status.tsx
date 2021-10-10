@@ -3,7 +3,7 @@ import { Alert, Progress, ProgressSize, Stack, StackItem } from '@patternfly/rea
 import { useTranslation } from 'react-i18next';
 import { ResourceLink } from '@console/internal/components/utils';
 import { PodModel } from '@console/internal/models';
-import { PodKind } from '@console/internal/module/k8s';
+import { PodKind } from '@kubevirt-types/internal';
 import { ErrorStatus, ProgressStatus } from '@console/shared';
 import { DataVolumeSourceType } from '../../constants/vm';
 import { DataVolumeWrapper } from '../../k8s/wrapper/vm/data-volume-wrapper';

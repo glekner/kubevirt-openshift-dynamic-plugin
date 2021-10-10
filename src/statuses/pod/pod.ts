@@ -1,4 +1,4 @@
-import { PodKind } from '@console/internal/module/k8s';
+import { PodKind } from '@kubevirt-types/internal';
 import { Status } from '..';
 import {
   findFailingContainerStatus,

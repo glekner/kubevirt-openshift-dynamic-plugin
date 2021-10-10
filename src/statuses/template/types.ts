@@ -1,4 +1,4 @@
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { V1alpha1DataVolume } from '../../types/api';
 
 export enum SOURCE_TYPE {

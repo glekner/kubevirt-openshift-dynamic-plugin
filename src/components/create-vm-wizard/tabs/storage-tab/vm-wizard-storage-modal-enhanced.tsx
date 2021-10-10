@@ -8,7 +8,7 @@ import {
   ProjectModel,
   StorageClassModel,
 } from '@console/internal/models';
-import { ConfigMapKind } from '@console/internal/module/k8s';
+import { ConfigMapKind } from '@kubevirt-types/internal';
 import { DUMMY_VM_NAME } from '../../../../constants/vm';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { DiskWrapper } from '../../../../k8s/wrapper/vm/disk-wrapper';

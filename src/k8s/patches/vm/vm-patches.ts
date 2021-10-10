@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind, Patch, TemplateKind } from '@console/internal/module/k8s';
+import { K8sResourceKind, TemplateKind } from '@kubevirt-types/internal';
 import { TEMPLATE_FLAVOR_LABEL, TEMPLATE_VM_SIZE_LABEL } from '../../../constants';
 import { getLabels } from '../../../selectors';
 import { isTemplate, isVM } from '../../../selectors/check-type';
@@ -10,7 +10,7 @@ import { DEFAULT_CPU, parseCPU } from '../../../selectors/vm/cpu';
 import { getCPU, getFlavor, getMemory } from '../../../selectors/vm/selectors';
 import { CPU, VMITemplate, VMKind } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
-import { PatchBuilder } from '../../helpers/patch';
+import { Patch, PatchBuilder } from '../../helpers/patch';
 import { getVMLikePatches } from '../vm-template';
 
 const getDomainPatches = (vm: VMKind): Patch[] => {

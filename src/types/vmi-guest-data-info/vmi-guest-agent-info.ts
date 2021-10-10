@@ -1,4 +1,4 @@
-import { ObjectMetadata } from '@console/internal/module/k8s';
+import { ObjectMetadata } from '@kubevirt-types/internal';
 
 // https://kubevirt.io/api-reference/v0.38.1/definitions.html#_v1_virtualmachineinstanceguestosinfo
 export type V1VirtualMachineInstanceGuestOSInfo = {

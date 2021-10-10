@@ -7,7 +7,7 @@ import {
 } from '@console/internal/components/dashboard/with-dashboard-resources';
 import { FirehoseResource, FirehoseResult, resourcePath } from '@console/internal/components/utils';
 import { EventModel } from '@console/internal/models';
-import { EventKind } from '@console/internal/module/k8s';
+import { EventKind } from '@kubevirt-types/internal';
 import ActivityBody, {
   PauseButton,
   RecentEventsBodyContent,
@@ -26,8 +26,10 @@ import { VMDashboardContext } from '../../vms/vm-dashboard-context';
 
 import './vm-activity.scss';
 
-const combinedVmFilter = (vm: VMILikeEntityKind): EventFilterFuncion => (event) =>
-  getVmEventsFilters(vm).some((filter) => filter(event.involvedObject, event));
+const combinedVmFilter =
+  (vm: VMILikeEntityKind): EventFilterFuncion =>
+  (event) =>
+    getVmEventsFilters(vm).some((filter) => filter(event.involvedObject, event));
 
 const getEventsResource = (namespace: string): FirehoseResource => ({
   isList: true,

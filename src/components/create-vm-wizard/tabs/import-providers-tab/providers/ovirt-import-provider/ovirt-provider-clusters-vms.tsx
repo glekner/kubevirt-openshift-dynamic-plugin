@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { useAccessReview2 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { StorageClassModel } from '@console/internal/models';
-import { StorageClassResourceKind } from '@console/internal/module/k8s';
+import { StorageClassResourceKind } from '@kubevirt-types/internal';
 import { getDefaultStorageClass } from '../../../../../../selectors/config-map/sc-defaults';
 import { iGet, iGetIn } from '../../../../../../utils/immutable';
 import { ignoreCaseSort } from '../../../../../../utils/sort';
@@ -27,8 +27,8 @@ type VMBundle = {
   clusterName: string;
 };
 
-const OvirtProviderClustersVMsConnected: React.FC<OvirtProviderClustersVMsConnectedProps> = React.memo(
-  ({ vmField, clusterField, ovirtProviderCR, onClusterChange, onVMChange }) => {
+const OvirtProviderClustersVMsConnected: React.FC<OvirtProviderClustersVMsConnectedProps> =
+  React.memo(({ vmField, clusterField, ovirtProviderCR, onClusterChange, onVMChange }) => {
     const { t } = useTranslation();
     const iVMs = iGetIn(ovirtProviderCR, ['data', 'spec', 'vms']);
 
@@ -109,8 +109,7 @@ const OvirtProviderClustersVMsConnected: React.FC<OvirtProviderClustersVMsConnec
         </FormFieldRow>
       </>
     );
-  },
-);
+  });
 
 type OvirtProviderClustersVMsConnectedProps = {
   vmField: any;

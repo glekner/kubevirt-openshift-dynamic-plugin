@@ -31,7 +31,7 @@ import {
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { NamespaceModel, NodeModel } from '@console/internal/models';
-import { K8sKind } from '@console/internal/module/k8s';
+import { K8sKind } from '@kubevirt-types/internal';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';

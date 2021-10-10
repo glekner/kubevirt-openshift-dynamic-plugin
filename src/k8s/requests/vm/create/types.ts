@@ -1,5 +1,5 @@
 import { Map as ImmutableMap } from 'immutable';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import {
   ImportProvidersSettings,
   VMSettings,

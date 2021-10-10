@@ -10,7 +10,8 @@ import {
 } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
 import { TemplateModel } from '@console/internal/models';
-import { k8sList, K8sResourceKind, TemplateKind } from '@console/internal/module/k8s';
+import { k8sList } from '@console/internal/module/k8s';
+import { K8sResourceKind, TemplateKind } from '@kubevirt-types/internal';
 import {
   TEMPLATE_FLAVOR_LABEL,
   TEMPLATE_TYPE_BASE,
@@ -38,9 +39,8 @@ const CreateVMTemplateYAMLConnected = connectToPlural(
         },
       })
         .then((templates) => {
-          const { osSelection, template: commonTemplate } = OSSelection.findSuitableOSAndTemplate(
-            templates,
-          );
+          const { osSelection, template: commonTemplate } =
+            OSSelection.findSuitableOSAndTemplate(templates);
 
           if (!commonTemplate) {
             throw new Error('no matching template');

@@ -1,4 +1,4 @@
-import { Selector } from '@console/internal/module/k8s';
+import { Selector } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
 import { IDEntity } from '../../../../types';
 
 export enum AffinityType {

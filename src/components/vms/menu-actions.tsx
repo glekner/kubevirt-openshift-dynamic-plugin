@@ -13,7 +13,7 @@ import {
   K8sResourceKind,
   PersistentVolumeClaimKind,
   PodKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import { YellowExclamationTriangleIcon } from '@console/shared';
 import { StatusGroup } from '../../constants/status-group';
 import { VMStatus } from '../../constants/vm/vm-status';

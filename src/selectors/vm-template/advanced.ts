@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { convertToBaseValue, humanizeBinaryBytes } from '@console/internal/components/utils';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { BootSourceState } from '../../components/create-vm/forms/boot-source-form-reducer';
 import { stringValueUnitSplit } from '../../components/form/size-unit-utils';
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../constants';

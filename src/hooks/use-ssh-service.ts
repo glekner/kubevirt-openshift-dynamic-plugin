@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { ServiceModel } from '@console/internal/models';
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { useActiveNamespace } from '@console/shared';
 import { sshActions, SSHActionsNames } from '../components/ssh-service/redux/actions';
 import {

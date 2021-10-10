@@ -1,4 +1,4 @@
-import { K8sResourceCommon, PersistentVolumeClaimKind } from '@console/internal/module/k8s';
+import { K8sResourceCommon, PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import {
   ANNOTATION_SOURCE_PROVIDER,
   BOOT_SOURCE_AVAILABLE,

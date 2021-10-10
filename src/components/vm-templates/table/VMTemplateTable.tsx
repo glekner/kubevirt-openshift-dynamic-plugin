@@ -6,7 +6,7 @@ import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { useBaseImages } from '../../../hooks/use-base-images';
 import { useNamespace } from '../../../hooks/use-namespace';
 import { usePinnedTemplates } from '../../../hooks/use-pinned-templates';
@@ -102,14 +102,14 @@ const VMTemplateTable: React.FC<VMTemplateTableProps> = (props) => {
     () => [...props.resources.dataVolumes.data, ...(baseImageDVs || [])],
     [props.resources.dataVolumes.data, baseImageDVs],
   );
-  const pvcs = React.useMemo(() => [...props.resources.pvcs.data, ...(baseImages || [])], [
-    props.resources.pvcs.data,
-    baseImages,
-  ]);
-  const pods = React.useMemo(() => [...props.resources.pods.data, ...(baseImagePods || [])], [
-    props.resources.pods.data,
-    baseImagePods,
-  ]);
+  const pvcs = React.useMemo(
+    () => [...props.resources.pvcs.data, ...(baseImages || [])],
+    [props.resources.pvcs.data, baseImages],
+  );
+  const pods = React.useMemo(
+    () => [...props.resources.pods.data, ...(baseImagePods || [])],
+    [props.resources.pods.data, baseImagePods],
+  );
 
   return (
     <Stack hasGutter className="kubevirt-vm-template-list">

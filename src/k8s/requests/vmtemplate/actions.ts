@@ -1,5 +1,6 @@
 import { TemplateModel } from '@console/internal/models';
-import { apiVersionForModel, TemplateKind } from '@console/internal/module/k8s';
+import { apiVersionForModel } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { getName } from '../../../selectors';
 import { K8sResourceWithModel } from '../../../types/k8s-resource-with-model';
 import { freeOwnedResources } from '../free-owned-resources';

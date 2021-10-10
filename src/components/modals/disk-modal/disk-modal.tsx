@@ -23,12 +23,12 @@ import {
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import { NamespaceModel, PersistentVolumeClaimModel } from '@console/internal/models';
+import { k8sCreate } from '@console/internal/module/k8s';
 import {
   ConfigMapKind,
-  k8sCreate,
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import {
   AccessMode,
   DataVolumeSourceType,
@@ -132,9 +132,8 @@ export const DiskModal = withHandlePromise((props: DiskModalProps) => {
     combinedDisk.getStorageClassName() || '',
   );
 
-  const [spAccessMode, spVolumeMode, spLoaded, isSPSettingProvided] = useStorageProfileSettings(
-    storageClassName,
-  );
+  const [spAccessMode, spVolumeMode, spLoaded, isSPSettingProvided] =
+    useStorageProfileSettings(storageClassName);
 
   const [applySP, setApplySP] = React.useState<boolean>(true);
 

@@ -1,4 +1,4 @@
-import { ConfigMapKind, ImagePullPolicy } from '@console/internal/module/k8s';
+import { ConfigMapKind, ImagePullPolicy } from '@kubevirt-types/internal';
 import { V2VConfigMapAttribute } from '../../constants/v2v';
 
 export const getV2VConnectionName = (value) => value && value.spec && value.spec.connection;

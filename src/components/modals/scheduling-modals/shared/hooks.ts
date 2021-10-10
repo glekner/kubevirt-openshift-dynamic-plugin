@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { NodeKind } from '@console/internal/module/k8s';
+import { NodeKind } from '@kubevirt-types/internal';
 import { getLabels, getNodeTaints } from '../../../../selectors';
 import { getLoadedData, isLoaded } from '../../../../utils';
 import { IDLabel } from '../../../LabelsList/types';

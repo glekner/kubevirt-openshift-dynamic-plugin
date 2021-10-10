@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { DEFAULT_RDP_PORT, TEMPLATE_VM_NAME_LABEL } from '../../constants/vm';
 import { VMIKind } from '../../types/vm';
 import { isConnectionEncrypted } from '../../utils/url';
@@ -49,8 +49,9 @@ export const getSerialConsoleConnectionDetails = (
 
   const protocol = isConnectionEncrypted() ? 'wss' : 'ws';
   return {
-    host: `${protocol}://${window.location.hostname}:${window.location.port ||
-      (isConnectionEncrypted() ? '443' : '80')}`,
+    host: `${protocol}://${window.location.hostname}:${
+      window.location.port || (isConnectionEncrypted() ? '443' : '80')
+    }`,
     path: `/${getVMISubresourcePath()}/${getVMIApiPath(vmi)}/console`, // CSRF Token will be added in WSFactory
   };
 };

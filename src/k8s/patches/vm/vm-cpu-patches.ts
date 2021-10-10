@@ -1,4 +1,3 @@
-import { Patch } from '@console/internal/module/k8s';
 import {
   getCPU,
   getResourcesLimitsCPUCount,
@@ -6,7 +5,7 @@ import {
 } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
-import { PatchBuilder } from '../../helpers/patch';
+import { Patch, PatchBuilder } from '../../helpers/patch';
 import { getVMLikePatches } from '../vm-template';
 
 export const getDedicatedCpuPatch = (

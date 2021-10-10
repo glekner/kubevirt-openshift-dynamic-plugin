@@ -5,7 +5,7 @@ import { match } from 'react-router';
 import { RowFilter } from '@console/dynamic-plugin-sdk';
 import { Flatten, ListPage, MultiListPage } from '@console/internal/components/factory';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@console/internal/models';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { CDI_APP_LABEL } from '../../constants';
 import {
   TEMPLATE_CUSTOMIZED_ANNOTATION,
@@ -84,8 +84,9 @@ const flatten: Flatten<
   ].filter((template) => template);
 };
 
-const VirtualMachineTemplatesPage: React.FC<VirtualMachineTemplatesPageProps &
-  React.ComponentProps<typeof ListPage>> = (props) => {
+const VirtualMachineTemplatesPage: React.FC<
+  VirtualMachineTemplatesPageProps & React.ComponentProps<typeof ListPage>
+> = (props) => {
   const { t } = useTranslation();
   const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData;
   const namespace = props.match.params.ns;

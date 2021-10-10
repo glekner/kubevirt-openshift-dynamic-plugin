@@ -3,7 +3,8 @@ import { Alert, AlertVariant } from '@patternfly/react-core';
 import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { TemplateModel } from '@console/internal/models';
-import { k8sKill, PersistentVolumeClaimKind, TemplateKind } from '@console/internal/module/k8s';
+import { k8sKill } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
 import {
   TEMPLATE_TYPE_BASE,
   TEMPLATE_TYPE_LABEL,
@@ -30,9 +31,8 @@ export const PVCDeleteAlertExtension: React.FC<{ pvc: PersistentVolumeClaimKind 
       matchLabels: { [TEMPLATE_TYPE_LABEL]: TEMPLATE_TYPE_BASE },
     },
   };
-  const [commonTemplates, loadedTemplates, errorTemplates] = useK8sWatchResource<TemplateKind[]>(
-    templatesResource,
-  );
+  const [commonTemplates, loadedTemplates, errorTemplates] =
+    useK8sWatchResource<TemplateKind[]>(templatesResource);
   const [goldenPvcs, loadedPvcs, errorPvcs] = useBaseImages(commonTemplates);
 
   const isGolden = goldenPvcs.find(

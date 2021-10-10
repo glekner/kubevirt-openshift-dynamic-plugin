@@ -9,6 +9,7 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
+import { k8sPatch } from '@console/internal/module/k8s';
 import {
   ConfigMapModel,
   SecretModel,
@@ -18,12 +19,10 @@ import {
 import {
   ConfigMapKind,
   EnvVarSource,
-  k8sPatch,
-  Patch,
   SecretKind,
   ServiceAccountKind,
   TemplateKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import { PatchBuilder } from '@console/shared/src/k8s/patch';
 import { getVMLikePatches } from '../../../k8s/patches/vm-template';
 import { VMWrapper } from '../../../k8s/wrapper/vm/vm-wrapper';
@@ -70,6 +69,7 @@ import {
 } from './selectors';
 import { EnvDisk, NameValuePairs, SOURCES } from './types';
 import { VMEnvironmentFooter } from './vm-environment-footer';
+import { Patch } from '../../../k8s/helpers/patch';
 
 import './vm-environment.scss';
 

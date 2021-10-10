@@ -37,7 +37,7 @@ import {
   PersistentVolumeClaimModel,
   PodModel,
 } from '@console/internal/models';
-import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@console/internal/module/k8s';
+import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
 import { useNamespace } from '../../hooks/use-namespace';

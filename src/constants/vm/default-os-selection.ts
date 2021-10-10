@@ -1,4 +1,4 @@
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { getName } from '../../selectors';
 import { isUpstream } from '../../utils/common';
 import { ObjectEnum } from '../object-enum';

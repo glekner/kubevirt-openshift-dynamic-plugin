@@ -2,7 +2,8 @@ import * as React from 'react';
 import { isEmpty } from 'lodash';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
 import { RouteModel } from '@console/internal/models';
-import { k8sCreate, RouteKind } from '@console/internal/module/k8s';
+import { k8sCreate } from '@console/internal/module/k8s';
+import { RouteKind } from '@kubevirt-types/internal';
 import { apiVersionForModel } from '@console/internal/module/k8s/k8s';
 import { ForkliftControllerModel, PackageManifestModel, SubscriptionModel } from '../models';
 import {

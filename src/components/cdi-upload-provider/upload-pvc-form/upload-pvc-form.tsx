@@ -40,14 +40,14 @@ import {
   StorageClassModel,
   TemplateModel,
 } from '@console/internal/models';
+import { K8sVerb } from '@console/dynamic-plugin-sdk/src/api/common-types';
 import {
   ConfigMapKind,
   K8sResourceKind,
-  K8sVerb,
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
   TemplateKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import {
   TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER,
   TEMPLATE_TYPE_BASE,
@@ -553,9 +553,8 @@ export const UploadPVCPage: React.FC<UploadPVCPageProps> = (props) => {
   const [error, setError] = React.useState<string>('');
   const [isAllocating, setIsAllocating] = React.useState(false);
   const [dvObj, setDvObj] = React.useState<V1alpha1DataVolume>(null);
-  const [commonTemplates, loadedTemplates, errorTemplates] = useK8sWatchResource<TemplateKind[]>(
-    templatesResource,
-  );
+  const [commonTemplates, loadedTemplates, errorTemplates] =
+    useK8sWatchResource<TemplateKind[]>(templatesResource);
 
   const goldenNamespacesResources = React.useMemo(() => {
     const goldenNamespaces = [

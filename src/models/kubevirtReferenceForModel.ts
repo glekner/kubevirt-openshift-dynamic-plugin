@@ -1,6 +1,6 @@
 import { modelForGroupKind } from '@console/internal/module/k8s/k8s-models';
 import { apiVersionForModel, referenceForModel } from '@console/internal/module/k8s/k8s-ref';
-import { K8sKind } from '@console/internal/module/k8s/types';
+import { K8sKind } from '@kubevirt-types/internal';
 
 export const getKubevirtModelAvailableVersion = (model: K8sKind): string =>
   modelForGroupKind(model.apiGroup, model.kind)?.apiVersion || model.apiVersion;

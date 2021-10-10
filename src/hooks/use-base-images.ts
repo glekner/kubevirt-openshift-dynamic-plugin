@@ -2,7 +2,7 @@ import * as React from 'react';
 import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
 import { useK8sWatchResources } from '@console/internal/components/utils/k8s-watch-hook';
 import { PersistentVolumeClaimModel, PodModel } from '@console/internal/models';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER } from '../constants';
 import { DataVolumeModel } from '../models';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';

@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
 import { ResourceLink, resourcePath } from '@console/internal/components/utils';
 import { history } from '@console/internal/components/utils/router';
 import { PersistentVolumeClaimModel, PodModel } from '@console/internal/models';
-import { PodKind } from '@console/internal/module/k8s';
+import { PodKind } from '@kubevirt-types/internal';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import {
   RedExclamationCircleIcon,

@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { resourcePath } from '@console/internal/components/utils';
 import { DeploymentModel, PodModel } from '@console/internal/models';
-import { K8sResourceKind, PodKind } from '@console/internal/module/k8s';
+import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
 import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
 import { getName, getNamespace } from '../../../../../selectors';
 import { PodDeploymentStatus } from '../../../../../statuses/pod-deployment/constants';
@@ -134,8 +134,8 @@ const vmwareStatusComponentResolver = {
   [PodDeploymentStatus.FAILED.getValue()]: DeploymentFailed,
 };
 
-const VmwareControllerStatusRowComponent: React.FC<VmwareControllerStatusRowComponentProps> = React.memo(
-  ({ id, hasErrors, deployment, deploymentPods, provider }) => {
+const VmwareControllerStatusRowComponent: React.FC<VmwareControllerStatusRowComponentProps> =
+  React.memo(({ id, hasErrors, deployment, deploymentPods, provider }) => {
     const status = getPodDeploymentStatus(
       toShallowJS(deployment, undefined, true),
       immutableListToShallowJS(deploymentPods),
@@ -156,8 +156,7 @@ const VmwareControllerStatusRowComponent: React.FC<VmwareControllerStatusRowComp
         <StatusComponent provider={provider} id={prefixedID(id, 'status')} {...status} />
       </FormRow>
     );
-  },
-);
+  });
 
 type VmwareControllerStatusRowComponentProps = {
   id: string;

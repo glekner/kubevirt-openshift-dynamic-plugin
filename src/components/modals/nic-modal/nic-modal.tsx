@@ -15,7 +15,7 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { K8sResourceKind } from '@console/internal/module/k8s';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';
 import {
   NetworkInterfaceModel,

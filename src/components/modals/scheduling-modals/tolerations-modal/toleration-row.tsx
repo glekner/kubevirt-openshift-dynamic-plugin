@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button, FormSelect, FormSelectOption, GridItem, TextInput } from '@patternfly/react-core';
 import { MinusCircleIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
-import { TaintEffect } from '@console/internal/module/k8s';
+import { TaintEffect } from '@kubevirt-types/internal';
 import { TOLERATIONS_EFFECTS } from '../shared/consts';
 import { TolerationLabel } from './types';
 

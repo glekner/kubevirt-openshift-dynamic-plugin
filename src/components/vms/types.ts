@@ -3,7 +3,7 @@ import {
   K8sResourceKind,
   PersistentVolumeClaimKind,
   PodKind,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-types/internal';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
 import { VMStatusBundle } from '../../statuses/vm/types';
 import { V1alpha1DataVolume } from '../../types/api';

@@ -1,4 +1,4 @@
-import { PersistentVolumeClaimKind } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
 import {
   CDI_CLONE_TOKEN_ANNOTAION,
   CDI_UPLOAD_POD_ANNOTATION,

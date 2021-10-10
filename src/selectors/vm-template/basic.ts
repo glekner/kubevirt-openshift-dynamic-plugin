@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next';
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import {
   ANNOTATIONS,
   TEMPLATE_DEPRECATED_ANNOTATION,

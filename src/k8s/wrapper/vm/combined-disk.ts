@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { K8sResourceKind } from '@console/internal/module/k8s/types';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import { StorageUISource } from '../../../components/modals/disk-modal/storage-ui-source';
 import { AccessMode, DiskType, VolumeMode, VolumeType } from '../../../constants/vm/storage';
 import { DataVolumeModel } from '../../../models';

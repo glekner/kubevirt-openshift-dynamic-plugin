@@ -6,7 +6,7 @@ import { asAccessReview, useAccessReview } from '@console/internal/components/ut
 import { history } from '@console/internal/components/utils/router';
 import { ScrollToTopOnMount } from '@console/internal/components/utils/scroll-to-top-on-mount';
 import { TemplateModel } from '@console/internal/models';
-import { TemplateKind } from '@console/internal/module/k8s/types';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { VMWizardMode, VMWizardName } from '../../constants';
 import {
   getTemplateName,

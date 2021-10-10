@@ -1,4 +1,4 @@
-import { TemplateKind } from '@console/internal/module/k8s';
+import { TemplateKind } from '@kubevirt-types/internal';
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
 import {
   DiskBus,

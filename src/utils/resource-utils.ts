@@ -1,14 +1,9 @@
 import * as _ from 'lodash';
 import { ReplicationControllerModel, DeploymentConfigModel } from '@console/internal/models';
-import {
-  K8sResourceKind,
-  K8sResourceCommon,
-  PodKind,
-  K8sKind,
-  apiVersionForModel,
-} from '@console/internal/module/k8s';
+import { K8sResourceKind, K8sResourceCommon, PodKind, K8sKind } from '@kubevirt-types/internal';
 import { getAnnotation } from '../selectors';
 import { ExtPodKind, OverviewItemAlerts, AllPodStatus } from '../types/pod';
+import { apiVersionForModel } from '@console/internal/module/k8s';
 
 // Annotation key for deployment config latest version
 export const DEPLOYMENT_CONFIG_LATEST_VERSION_ANNOTATION =
