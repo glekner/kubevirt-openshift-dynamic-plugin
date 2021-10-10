@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { DashboardItemProps } from '@console/internal/components/dashboard/with-dashboard-resources';
 import { resourcePath } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import DashboardCard from '@console/shared/src/components/dashboard/dashboard-card/DashboardCard';
 import DashboardCardBody from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardBody';
 import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
@@ -53,9 +53,8 @@ export const VMInventoryCard: React.FC<VMInventoryCardProps> = () => {
     [namespace],
   );
 
-  const [snapshots, snapshotsLoaded, snapshotsError] = useK8sWatchResource<VMSnapshot[]>(
-    snapshotResource,
-  );
+  const [snapshots, snapshotsLoaded, snapshotsError] =
+    useK8sWatchResource<VMSnapshot[]>(snapshotResource);
   const filteredSnapshots = snapshots.filter((snap) => getVmSnapshotVmName(snap) === name);
   const basePath = resourcePath(
     kubevirtReferenceForModel(getVMLikeModel(vmiLike)),

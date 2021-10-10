@@ -2,7 +2,7 @@ import * as React from 'react';
 import { DesktopViewer } from '@patternfly/react-console';
 import { Alert, Form, FormGroup } from '@patternfly/react-core';
 import { Dropdown } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
 import { DEFAULT_RDP_PORT, NetworkType, TEMPLATE_VM_NAME_LABEL } from '../../../constants';

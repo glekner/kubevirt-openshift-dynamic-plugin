@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Label, Tooltip } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { TemplateKind } from '@kubevirt-types/internal';
-import { getName } from '@console/shared/src';
 import { getTemplateProvider } from '../../selectors/vm-template/basic';
+import { getName } from '../../selectors';
 
 type VMTemplateLabelProps = {
   template: TemplateKind;

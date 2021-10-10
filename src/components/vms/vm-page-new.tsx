@@ -29,7 +29,7 @@ import {
   ResourceLink,
   Timestamp,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { NamespaceModel, NodeModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';

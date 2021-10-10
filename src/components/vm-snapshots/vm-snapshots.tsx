@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Button } from '@patternfly/react-core';
 import { sortable } from '@patternfly/react-table';
 import { useTranslation } from 'react-i18next';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
 import { useSafetyFirst } from '@console/internal/components/safety-first';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { VirtualMachineSnapshotModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../selectors';
@@ -103,9 +103,8 @@ export const VMSnapshotsPage: React.FC<VMTabProps> = ({ obj: vmLikeEntity, vmis:
     namespace,
   };
 
-  const [snapshots, snapshotsLoaded, snapshotsError] = useK8sWatchResource<VMSnapshot[]>(
-    snapshotResource,
-  );
+  const [snapshots, snapshotsLoaded, snapshotsError] =
+    useK8sWatchResource<VMSnapshot[]>(snapshotResource);
   const [mappedRelevantRestores, restoresLoaded, restoresError] = useMappedVMRestores(namespace);
 
   const [isLocked, setIsLocked] = useSafetyFirst(false);

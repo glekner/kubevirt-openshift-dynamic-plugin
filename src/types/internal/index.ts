@@ -1,12 +1,46 @@
 import {
   GroupVersionKind,
-  K8sKind,
   K8sResourceCommon,
+  K8sVerb,
   MatchLabels,
   Selector,
-} from '@console/dynamic-plugin-sdk/src/extensions/console-types';
+} from '@openshift-console/dynamic-plugin-sdk';
 
-export { K8sResourceCommon, K8sKind };
+export { K8sResourceCommon };
+
+export enum BadgeType {
+  DEV = 'Dev Preview',
+  TECH = 'Tech Preview',
+}
+
+export type K8sKind = {
+  abbr: string;
+  kind: string;
+  label: string;
+  labelKey?: string;
+  labelPlural: string;
+  labelPluralKey?: string;
+  plural: string;
+  propagationPolicy?: 'Foreground' | 'Background';
+
+  id?: string;
+  crd?: boolean;
+  apiVersion: string;
+  apiGroup?: string;
+  namespaced?: boolean;
+  selector?: Selector;
+  labels?: { [key: string]: string };
+  annotations?: { [key: string]: string };
+  verbs?: K8sVerb[];
+  shortNames?: string[];
+  badge?: BadgeType;
+  color?: string;
+
+  // Legacy option for supporing plural names in URL paths when `crd: true`.
+  // This should not be set for new models, but is needed to avoid breaking
+  // existing links as we transition to using the API group in URL paths.
+  legacyPluralURL?: boolean;
+};
 
 export type K8sResourceKind = K8sResourceCommon & {
   spec?: {
@@ -491,3 +525,9 @@ export type ServiceAccountKind = {
   imagePullSecrets?: { [key: string]: string };
   secrets?: SecretKind[] | { [key: string]: string };
 } & K8sResourceCommon;
+
+export type RowFunctionArgs<T = any, C = any> = {
+  obj: T;
+  columns: any[];
+  customData?: C;
+};

@@ -20,7 +20,7 @@ import {
   setQueryArgument,
   StatusBox,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import NamespacedPage, {
   NamespacedPageVariants,
 } from '@console/dev-console/src/components/NamespacedPage';

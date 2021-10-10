@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { match as RouterMatch } from 'react-router';
 import { compose } from 'redux';
 import { Firehose, history } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { connectToFlags } from '@console/internal/reducers/connectToFlags';

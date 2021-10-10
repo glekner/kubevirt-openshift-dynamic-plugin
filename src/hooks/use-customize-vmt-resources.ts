@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { CDI_APP_LABEL, TEMPLATE_VM_NAME_LABEL } from '../constants';

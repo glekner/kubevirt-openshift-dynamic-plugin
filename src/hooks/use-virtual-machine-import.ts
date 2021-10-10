@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { VMImportWrappper } from '../k8s/wrapper/vm-import/vm-import-wrapper';
 import { VMWrapper } from '../k8s/wrapper/vm/vm-wrapper';
 import { VirtualMachineImportModel } from '../models';

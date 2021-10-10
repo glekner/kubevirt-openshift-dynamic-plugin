@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { match } from 'react-router';
-import { RowFilter } from '@console/dynamic-plugin-sdk';
+import { RowFilter } from '@openshift-console/dynamic-plugin-sdk';
 import { Flatten, ListPage, MultiListPage } from '@console/internal/components/factory';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types/internal';

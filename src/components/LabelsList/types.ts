@@ -1,4 +1,4 @@
-import { MatchExpression } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
+import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
 import { TaintEffect } from '@kubevirt-types/internal';
 import { IDEntity } from '../../types';
 

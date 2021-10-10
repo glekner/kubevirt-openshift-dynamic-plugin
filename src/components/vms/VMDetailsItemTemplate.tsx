@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types/internal';
 import { VMTemplateLink } from '../vm-templates/vm-template-link';

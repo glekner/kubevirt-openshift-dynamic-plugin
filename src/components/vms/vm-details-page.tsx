@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { DetailsPage } from '@console/internal/components/factory';
 import { navFactory } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
-import { useK8sModel } from '@console/shared/src/hooks/useK8sModel';
+import { useK8sModel } from '@openshift-console/dynamic-plugin-sdk';
 import {
   VM_DETAIL_CONSOLES_HREF,
   VM_DETAIL_DETAILS_HREF,

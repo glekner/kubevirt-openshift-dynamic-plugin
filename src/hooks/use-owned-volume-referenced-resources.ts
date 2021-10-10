@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import * as React from 'react';
 import * as _ from 'lodash';
-import { useK8sWatchResources } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
 import { K8sResourceCommon, OwnerReference } from '@kubevirt-types/internal';
 import { VolumeReferencedObject, VolumeWrapper } from '../k8s/wrapper/vm/volume-wrapper';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';

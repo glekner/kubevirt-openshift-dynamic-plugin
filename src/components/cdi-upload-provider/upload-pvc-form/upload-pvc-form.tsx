@@ -20,23 +20,23 @@ import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { AccessModeSelector } from '@console/app/src/components/access-modes/access-mode';
 import { VolumeModeSelector } from '@console/app/src/components/volume-modes/volume-mode';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ButtonBar,
   ExternalLink,
   history,
   LoadingInline,
   RequestSizeInput,
-  ResourceLink,
   resourcePath,
   useAccessReview2,
   useMultipleAccessReviews,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
-import { K8sVerb } from '@console/dynamic-plugin-sdk/src/api/common-types';
+import { K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ConfigMapKind,
   K8sResourceKind,

@@ -1,5 +1,5 @@
 import { K8sResourceKind, OwnerReference } from '@kubevirt-types/internal';
-import { K8sKind } from '@console/dynamic-plugin-sdk/src/api/common-types';
+import { K8sKind } from '@kubevirt-types/internal';
 /* eslint-disable lines-between-class-members */
 import { ObjectEnum } from '../../../constants/object-enum';
 import {

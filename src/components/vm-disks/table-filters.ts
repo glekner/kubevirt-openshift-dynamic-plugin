@@ -1,4 +1,4 @@
-import { RowFilter } from '@console/dynamic-plugin-sdk';
+import { RowFilter } from '@openshift-console/dynamic-plugin-sdk';
 import { DiskType } from '../../constants/vm/storage';
 
 const typeReducer = (obj) => {

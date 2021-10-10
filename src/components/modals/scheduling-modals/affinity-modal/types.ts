@@ -1,4 +1,4 @@
-import { Selector } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
+import { Selector } from '@openshift-console/dynamic-plugin-sdk';
 import { IDEntity } from '../../../../types';
 
 export enum AffinityType {

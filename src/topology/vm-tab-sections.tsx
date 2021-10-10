@@ -6,7 +6,7 @@ import {
   K8sResourceCommon,
   NetworkAdapterType,
   PodsAdapterDataType,
-} from '@console/dynamic-plugin-sdk/src';
+} from '@openshift-console/dynamic-plugin-sdk';
 import { ResourceIcon, resourcePathFromModel } from '@console/internal/components/utils';
 import { getResource } from '@console/topology/src/utils';
 import { VirtualMachineModel } from '../models';
@@ -23,11 +23,10 @@ export const getVmSidePanelDetailsTabSection = (element: GraphElement) => {
 
 const usePodsAdapterForVm = (resource: K8sResourceCommon): PodsAdapterDataType => {
   const { podData, loaded, loadError } = usePodsForVm(resource);
-  return React.useMemo(() => ({ pods: podData?.pods ?? [], loaded, loadError }), [
-    loadError,
-    loaded,
-    podData,
-  ]);
+  return React.useMemo(
+    () => ({ pods: podData?.pods ?? [], loaded, loadError }),
+    [loadError, loaded, podData],
+  );
 };
 
 export const getVmSidePanelPodsAdapter = (

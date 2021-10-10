@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
-import { useK8sWatchResources } from '@console/internal/components/utils/k8s-watch-hook';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
 import { TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER } from '../constants';

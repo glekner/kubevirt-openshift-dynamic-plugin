@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Link, Redirect, RouteComponentProps } from 'react-router-dom';
 import { withStartGuide } from '@console/internal/components/start-guide';
-import { HorizontalNav } from '@console/internal/components/utils';
+import { HorizontalNav } from '@openshift-console/dynamic-plugin-sdk';
 import { FLAGS } from '@console/shared';
 import { useFlag } from '@console/shared/src/hooks/flag';
 import { VMWizardMode, VMWizardName } from '../../constants';

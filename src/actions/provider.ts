@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { CommonActionFactory } from '@console/app/src/actions/creators/common-factory';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { referenceFor } from '@console/internal/module/k8s';
-import { useK8sModel } from '@console/shared/src/hooks/useK8sModel';
+import { useK8sModel } from '@openshift-console/dynamic-plugin-sdk';
 import { VmActionFactory, VmImportActionFactory } from '../components/vms/menu-actions';
 import { StatusGroup } from '../constants/status-group';
 import { useVMStatus } from '../hooks/use-vm-status';

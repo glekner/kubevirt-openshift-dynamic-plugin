@@ -1,4 +1,4 @@
-import { SetFeatureFlag } from '@console/dynamic-plugin-sdk';
+import { SetFeatureFlag } from '@openshift-console/dynamic-plugin-sdk';
 import { fetchSwagger } from '@console/internal/module/k8s';
 import {
   FLAG_KUBEVIRT,
@@ -23,8 +23,9 @@ export const detectKubevirtVirtualMachines = async (setFeatureFlag: SetFeatureFl
 
         // Check for shchema features
         if (hasV1APIVersion) {
-          hasPrintableStatus = !!yamlOpenAPI['io.kubevirt.v1.VirtualMachine']?.properties?.status
-            ?.properties?.printableStatus;
+          hasPrintableStatus =
+            !!yamlOpenAPI['io.kubevirt.v1.VirtualMachine']?.properties?.status?.properties
+              ?.printableStatus;
         }
 
         setFeatureFlag(FLAG_KUBEVIRT, hasV1APIVersion || hasV1Alpha3APIVersion);

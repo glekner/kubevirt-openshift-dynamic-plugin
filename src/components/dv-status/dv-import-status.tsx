@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Alert, Progress, ProgressSize, Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { ResourceLink } from '@console/internal/components/utils';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types/internal';
 import { ErrorStatus, ProgressStatus } from '@console/shared';

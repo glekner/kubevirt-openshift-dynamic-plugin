@@ -30,7 +30,7 @@ import {
   ResourceLink,
   Timestamp,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { NamespaceModel, NodeModel, PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { VMWizardMode, VMWizardName } from '../../constants';

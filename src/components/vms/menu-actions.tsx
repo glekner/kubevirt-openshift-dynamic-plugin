@@ -5,7 +5,7 @@ import cn from 'classnames';
 import * as copy from 'copy-to-clipboard';
 import i18next from 'i18next';
 import { Trans, useTranslation } from 'react-i18next';
-import { Action } from '@console/dynamic-plugin-sdk';
+import { Action } from '@openshift-console/dynamic-plugin-sdk';
 import { confirmModal } from '@console/internal/components/modals';
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
 import {

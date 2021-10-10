@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { VirtualMachineRestoreModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getVmRestoreSnapshotName, getVmRestoreTime } from '../../selectors/snapshot/snapshot';
@@ -16,9 +16,8 @@ export const useMappedVMRestores = (
     namespace,
   };
 
-  const [restores, restoresLoaded, restoresError] = useK8sWatchResource<VMRestore[]>(
-    restoreResource,
-  );
+  const [restores, restoresLoaded, restoresError] =
+    useK8sWatchResource<VMRestore[]>(restoreResource);
 
   return React.useMemo(
     () => [

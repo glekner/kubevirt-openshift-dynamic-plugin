@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Alert, AlertVariant } from '@patternfly/react-core';
-import { WatchK8sResource } from '@console/dynamic-plugin-sdk';
-import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { TemplateModel } from '@kubevirt-models';
 import { k8sKill } from '@console/internal/module/k8s';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
