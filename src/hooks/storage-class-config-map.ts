@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { ConfigMapModel } from '@console/internal/models';
+import { ConfigMapModel } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types/internal';
 import { k8sGet } from '@console/internal/module/k8s';
 import {

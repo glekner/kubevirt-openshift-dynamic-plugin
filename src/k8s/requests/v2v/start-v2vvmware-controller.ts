@@ -1,4 +1,4 @@
-import { DeploymentModel, RoleModel } from '@console/internal/models';
+import { DeploymentModel, RoleModel } from '@kubevirt-models';
 import { ConfigMapKind, DeploymentKind, K8sResourceCommon } from '@kubevirt-types/internal';
 import { VMImportProvider } from '../../../components/create-vm-wizard/types';
 import { V2VVMWARE_DEPLOYMENT_NAME } from '../../../constants/v2v';

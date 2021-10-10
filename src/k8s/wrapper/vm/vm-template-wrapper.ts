@@ -1,4 +1,4 @@
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 /* eslint-disable lines-between-class-members */
 import { TemplateKind } from '@kubevirt-types/internal';
 import {

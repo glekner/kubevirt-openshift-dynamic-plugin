@@ -1,4 +1,4 @@
-import { ConfigMapModel } from '@console/internal/models';
+import { ConfigMapModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
 import { VMWrapper } from '../../../../../../k8s/wrapper/vm/vm-wrapper';
 import { VMKind } from '../../../../../../types';

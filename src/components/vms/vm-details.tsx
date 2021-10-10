@@ -11,7 +11,7 @@ import {
   StatusBox,
   useAccessReview,
 } from '@console/internal/components/utils';
-import { ServiceModel } from '@console/internal/models';
+import { ServiceModel } from '@kubevirt-models';
 import { K8sKind, PodKind } from '@kubevirt-types/internal';
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';
 import { GuestAgentInfoWrapper } from '../../k8s/wrapper/vm/guest-agent-info/guest-agent-info-wrapper';

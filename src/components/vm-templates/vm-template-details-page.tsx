@@ -5,7 +5,7 @@ import { match as routerMatch } from 'react-router';
 import { DetailsPage } from '@console/internal/components/factory/details';
 import { navFactory } from '@console/internal/components/utils/horizontal-nav';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import {
   K8sResourceKindReference,
   PersistentVolumeClaimKind,

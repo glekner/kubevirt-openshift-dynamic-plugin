@@ -5,7 +5,7 @@ import { toPath } from 'lodash';
 import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generator';
 import { MatchExpression } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { NamespaceModel, ProjectModel } from '@console/internal/models';
+import { NamespaceModel, ProjectModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types/internal';
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {

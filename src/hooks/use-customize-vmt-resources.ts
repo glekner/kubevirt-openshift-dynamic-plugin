@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { PersistentVolumeClaimModel, PodModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { CDI_APP_LABEL, TEMPLATE_VM_NAME_LABEL } from '../constants';
 import { DataVolumeModel, VirtualMachineInstanceModel, VirtualMachineModel } from '../models';

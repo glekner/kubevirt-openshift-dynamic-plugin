@@ -18,7 +18,7 @@ import {
   RequestSizeInput,
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { PersistentVolumeClaimModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types/internal';
 import { AccessMode, ANNOTATION_SOURCE_PROVIDER, VolumeMode } from '../../../constants';
 import { ProvisionSource } from '../../../constants/vm/provision-source';

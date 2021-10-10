@@ -9,7 +9,7 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { NodeModel } from '@console/internal/models';
+import { NodeModel } from '@kubevirt-models';
 import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { useIDEntities } from '../../../../hooks/use-id-entities';
@@ -43,15 +43,10 @@ export const TModal = withHandlePromise(
     const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity);
     const loadError = getLoadError(nodes, NodeModel);
 
-    const [
-      tolerationsLabels,
-      setTolerationsLabels,
-      onLabelAdd,
-      onLabelChange,
-      onLabelDelete,
-    ] = useIDEntities<TolerationLabel>(
-      getVMLikeTolerations(vmLikeEntity)?.map((toleration, id) => ({ ...toleration, id })),
-    );
+    const [tolerationsLabels, setTolerationsLabels, onLabelAdd, onLabelChange, onLabelDelete] =
+      useIDEntities<TolerationLabel>(
+        getVMLikeTolerations(vmLikeEntity)?.map((toleration, id) => ({ ...toleration, id })),
+      );
 
     const qualifiedNodes = useNodeQualifier(nodes, 'taint', tolerationsLabels);
 

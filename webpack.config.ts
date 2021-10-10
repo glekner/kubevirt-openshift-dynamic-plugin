@@ -26,6 +26,7 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
     alias: {
+      '@kubevirt-models': path.resolve(__dirname, 'src/models/index.ts'),
       stream: 'stream-browserify',
       http: 'stream-http',
       path: 'path-browserify',

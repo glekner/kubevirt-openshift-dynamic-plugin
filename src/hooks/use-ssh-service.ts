@@ -3,7 +3,7 @@ import * as React from 'react';
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch } from 'react-redux';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { ServiceModel } from '@console/internal/models';
+import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types/internal';
 import { useActiveNamespace } from '@console/shared';
 import { sshActions, SSHActionsNames } from '../components/ssh-service/redux/actions';

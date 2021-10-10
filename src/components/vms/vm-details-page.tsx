@@ -3,7 +3,7 @@ import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { DetailsPage } from '@console/internal/components/factory';
 import { navFactory } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@console/internal/models';
+import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { useK8sModel } from '@console/shared/src/hooks/useK8sModel';
 import {
   VM_DETAIL_CONSOLES_HREF,
@@ -39,20 +39,21 @@ import { VMDetailsFirehose } from './vm-details';
 import { VMEnvironmentFirehose } from './vm-environment/vm-environment-page';
 import { VMEvents } from './vm-events';
 
-export const breadcrumbsForVMPage = (t: TFunction, match: any) => () => [
-  {
-    name: t('kubevirt-plugin~Virtualization'),
-    path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
-  },
-  {
-    name: t('kubevirt-plugin~Virtual Machines'),
-    path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
-  },
-  {
-    name: t('kubevirt-plugin~{{name}} Details', { name: match.params.name }),
-    path: `${match.url}`,
-  },
-];
+export const breadcrumbsForVMPage = (t: TFunction, match: any) => () =>
+  [
+    {
+      name: t('kubevirt-plugin~Virtualization'),
+      path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
+    },
+    {
+      name: t('kubevirt-plugin~Virtual Machines'),
+      path: `/k8s/ns/${match.params.ns || 'default'}/virtualization`,
+    },
+    {
+      name: t('kubevirt-plugin~{{name}} Details', { name: match.params.name }),
+      path: `${match.url}`,
+    },
+  ];
 
 export const VirtualMachinesDetailsPage: React.FC<VirtualMachinesDetailsPageProps> = (props) => {
   const { name, ns: namespace } = props.match.params;

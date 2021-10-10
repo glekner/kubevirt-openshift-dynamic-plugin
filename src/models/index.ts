@@ -1,5 +1,7 @@
 import { K8sKind } from '@kubevirt-types/internal';
 
+export * from './internal';
+
 export const VirtualMachineModel: K8sKind = {
   label: 'Virtual Machine',
   labelPlural: 'Virtual Machines',

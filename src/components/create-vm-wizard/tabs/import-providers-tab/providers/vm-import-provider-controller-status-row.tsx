@@ -7,7 +7,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { resourcePath } from '@console/internal/components/utils';
-import { DeploymentModel, PodModel } from '@console/internal/models';
+import { DeploymentModel, PodModel } from '@kubevirt-models';
 import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
 import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
 import { getName, getNamespace } from '../../../../../selectors';

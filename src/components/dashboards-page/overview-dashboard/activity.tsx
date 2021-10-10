@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { ResourceLink } from '@console/internal/components/utils';
-import { PodModel, TemplateModel } from '@console/internal/models';
+import { PodModel, TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { K8sActivityProps } from '@console/plugin-sdk';
 import ActivityItem, {

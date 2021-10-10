@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NodeLink, ResourceLink, ResourceSummary } from '@console/internal/components/utils';
 import { Selector } from '@console/internal/components/utils/selector';
-import { PodModel } from '@console/internal/models';
+import { PodModel } from '@kubevirt-models';
 import { K8sKind, PodKind } from '@kubevirt-types/internal';
 import { ServiceKind } from '@console/knative-plugin/src/types';
 import { LABEL_USED_TEMPLATE_NAME, LABEL_USED_TEMPLATE_NAMESPACE } from '../../constants';

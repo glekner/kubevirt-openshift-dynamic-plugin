@@ -3,7 +3,7 @@ import { Grid, GridItem, Stack, StackItem, Title } from '@patternfly/react-core'
 import { Trans, useTranslation } from 'react-i18next';
 import { useAccessReview2 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { StorageClassModel } from '@console/internal/models';
+import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types/internal';
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER } from '../../../constants/vm/constants';
 import { getParameterValue } from '../../../selectors/selectors';

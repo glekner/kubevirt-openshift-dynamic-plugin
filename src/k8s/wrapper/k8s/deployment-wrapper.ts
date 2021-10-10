@@ -1,4 +1,4 @@
-import { DeploymentModel } from '@console/internal/models';
+import { DeploymentModel } from '@kubevirt-models';
 import { DeploymentKind, K8sResourceCommon, PodTemplate } from '@kubevirt-types/internal';
 import { Selector } from '@console/dynamic-plugin-sdk/src/extensions/console-types';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';

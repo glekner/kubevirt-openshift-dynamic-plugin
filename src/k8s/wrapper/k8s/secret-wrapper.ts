@@ -1,4 +1,4 @@
-import { SecretModel } from '@console/internal/models';
+import { SecretModel } from '@kubevirt-models';
 import { K8sResourceCommon } from '@kubevirt-types/internal';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
 import { K8sInitAddon } from '../common/util/k8s-mixin';

@@ -1,4 +1,4 @@
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../../models';
 
 export const diskImportKindMapping = {

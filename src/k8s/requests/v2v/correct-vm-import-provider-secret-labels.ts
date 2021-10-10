@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { SecretModel } from '@console/internal/models';
+import { SecretModel } from '@kubevirt-models';
 import { k8sGet, k8sPatch } from '@console/internal/module/k8s';
 import { SecretKind } from '@kubevirt-types/internal';
 import { VMImportProvider } from '../../../components/create-vm-wizard/types';

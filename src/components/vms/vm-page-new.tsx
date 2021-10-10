@@ -30,7 +30,7 @@ import {
   Timestamp,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { NamespaceModel, NodeModel } from '@console/internal/models';
+import { NamespaceModel, NodeModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import { VMWizardMode, VMWizardName } from '../../constants';

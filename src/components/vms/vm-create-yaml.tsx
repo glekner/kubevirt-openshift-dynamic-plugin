@@ -4,7 +4,7 @@ import { CreateYAMLProps } from '@console/internal/components/create-yaml';
 import { ErrorPage404 } from '@console/internal/components/error';
 import { AsyncComponent, LoadingBox } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
-import { TemplateModel } from '@console/internal/models';
+import { TemplateModel } from '@kubevirt-models';
 import { k8sList } from '@console/internal/module/k8s';
 import {
   TEMPLATE_FLAVOR_LABEL,
@@ -34,9 +34,8 @@ const VMCreateYAMLConnected = connectToPlural(
         },
       })
         .then(async (templates) => {
-          const { osSelection, template: commonTemplate } = OSSelection.findSuitableOSAndTemplate(
-            templates,
-          );
+          const { osSelection, template: commonTemplate } =
+            OSSelection.findSuitableOSAndTemplate(templates);
 
           if (!commonTemplate) {
             throw new Error('no matching template');

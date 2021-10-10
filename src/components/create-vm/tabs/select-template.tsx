@@ -27,7 +27,7 @@ import * as fuzzy from 'fuzzysearch';
 import { Trans, useTranslation } from 'react-i18next';
 import { createProjectModal } from '@console/internal/components/modals';
 import { humanizeBinaryBytes, ResourceName, StatusBox } from '@console/internal/components/utils';
-import { ProjectModel } from '@console/internal/models';
+import { ProjectModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
 import { FLAGS, VirtualizedGrid } from '@console/shared';
 import { useFlag } from '@console/shared/src/hooks/flag';

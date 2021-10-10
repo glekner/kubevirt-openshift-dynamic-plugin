@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { useK8sWatchResource } from '@console/internal/components/utils/k8s-watch-hook';
-import { EventModel } from '@console/internal/models';
+import { EventModel } from '@kubevirt-models';
 import { EventKind } from '@kubevirt-types/internal';
 import EventItem from '@console/shared/src/components/dashboard/activity-card/EventItem';
 import { NORMAL } from '../../constants';
