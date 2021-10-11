@@ -5,9 +5,9 @@ import {
   isTopologyDataModelFactory,
   TopologyDataModelFactory as DynamicTopologyDataModelFactory,
   TopologyDataModelFactory,
-} from '@console/dynamic-plugin-sdk';
+  useResolvedExtensions,
+} from '@openshift-console/dynamic-plugin-sdk';
 import { Firehose } from '@console/internal/components/utils';
-import { useExtensions } from '@console/plugin-sdk/src';
 import { ResourceDropdown } from '@console/shared';
 import { getNamespacedDynamicModelFactories, getBaseWatchedResources } from './utils';
 
@@ -45,8 +45,10 @@ interface ApplicationDropdownProps {
 
 const ApplicationDropdown: React.FC<ApplicationDropdownProps> = ({ namespace, ...props }) => {
   const { t } = useTranslation();
-  const modelFactories = useExtensions<TopologyDataModelFactory>(isTopologyDataModelFactory);
-  const dynamicModelFactories = useExtensions<DynamicTopologyDataModelFactory>(
+  const [modelFactories] = useResolvedExtensions<TopologyDataModelFactory>(
+    isTopologyDataModelFactory,
+  );
+  const [dynamicModelFactories] = useResolvedExtensions<DynamicTopologyDataModelFactory>(
     isDynamicTopologyDataModelFactory,
   );
 
@@ -58,7 +60,7 @@ const ApplicationDropdown: React.FC<ApplicationDropdownProps> = ({ namespace, ..
   const resources = React.useMemo(() => {
     let watchedBaseResources = getBaseWatchedResources(namespace);
     [...modelFactories, ...namespacedDynamicFactories].forEach((modelFactory) => {
-      const factoryResources = modelFactory.properties.resources?.(namespace);
+      const factoryResources = (modelFactory.properties.resources as any)?.(namespace);
       if (factoryResources) {
         watchedBaseResources = {
           ...factoryResources,

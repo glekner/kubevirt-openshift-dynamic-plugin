@@ -1,5 +1,5 @@
-import { LoadedExtension } from 'console/frontend/packages/console-dynamic-plugin-sdk/src/types';
 import {
+  ResolvedExtension,
   TopologyDataModelFactory as DynamicTopologyDataModelFactory,
   WatchK8sResources,
 } from '@console/dynamic-plugin-sdk';
@@ -16,7 +16,7 @@ export enum NamespacedPageVariants {
 }
 
 export const getNamespacedDynamicModelFactories = (
-  factories: LoadedExtension<DynamicTopologyDataModelFactory>[],
+  factories: ResolvedExtension<DynamicTopologyDataModelFactory>[],
 ) =>
   factories.map(({ properties, ...ext }) => {
     return {

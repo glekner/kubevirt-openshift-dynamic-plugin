@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { PodModel, TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
-import { K8sActivityProps } from '@console/plugin-sdk';
+import { K8sResourceKind } from '@kubevirt-types/internal';
 import ActivityItem, {
   ActivityProgress,
 } from '@console/shared/src/components/dashboard/activity-card/ActivityItem';
@@ -12,7 +12,9 @@ import { getName } from '../../../selectors';
 import { VMTemplateLink } from '../../vm-templates/vm-template-link';
 import { diskImportKindMapping } from './utils';
 
-export const DiskImportActivity: React.FC<K8sActivityProps> = ({ resource }) => {
+export const DiskImportActivity: React.FC<{
+  resource: K8sResourceKind;
+}> = ({ resource }) => {
   const progress = parseInt(resource?.status?.progress, 10);
   const { kind, name, uid } = resource.metadata.ownerReferences[0];
   const model = diskImportKindMapping[kind];
@@ -41,7 +43,9 @@ export const DiskImportActivity: React.FC<K8sActivityProps> = ({ resource }) => 
   );
 };
 
-export const V2VImportActivity: React.FC<K8sActivityProps> = ({ resource }) => {
+export const V2VImportActivity: React.FC<{
+  resource: K8sResourceKind;
+}> = ({ resource }) => {
   const vmName = _.get(resource.metadata.ownerReferences, '[0].name');
   return (
     <ActivityProgress

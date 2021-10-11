@@ -23,7 +23,6 @@
       "@kubevirt-models": ["src/models/index.ts"],
       "@console/internal/*": ["console/frontend/public/*"],
       "@console/shared/*": ["console/frontend/packages/console-shared/*"],
-      "@console/plugin-sdk/*": ["console/frontend/packages/console-plugin-sdk/*"],
       "@console/dynamic-plugin-sdk/*": ["console/frontend/packages/console-dynamic-plugin-sdk"],
       "*": ["*", "console/frontend/node_modules/*"]
     }

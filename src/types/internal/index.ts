@@ -1,5 +1,7 @@
 import {
+  FirehoseResult,
   GroupVersionKind,
+  HealthState,
   K8sResourceCommon,
   K8sVerb,
   MatchLabels,
@@ -549,3 +551,14 @@ export type RowFunctionArgs<T = any, C = any> = {
   columns: any[];
   customData?: C;
 };
+
+export type SubsystemHealth = {
+  message?: string;
+  state: HealthState;
+};
+
+export type URLHealthHandler<R> = (
+  response: R,
+  error: any,
+  additionalResource?: FirehoseResult<K8sResourceKind | K8sResourceKind[]>,
+) => SubsystemHealth;
