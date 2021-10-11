@@ -21,9 +21,8 @@ import {
   StatusBox,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import NamespacedPage, {
-  NamespacedPageVariants,
-} from '@console/dev-console/src/components/NamespacedPage';
+import { NamespacedPageVariants } from './NamespacedPage/NamespaceBarApplicationSelector/utils';
+import NamespacedPage from './NamespacedPage/NamespacedPage';
 import { ALL_NAMESPACES_KEY } from '../../../constants';
 import { BOOT_SOURCE_AVAILABLE, SUPPORT_URL } from '../../../constants/vm-templates';
 import { useStorageClassConfigMap } from '../../../hooks/storage-class-config-map';

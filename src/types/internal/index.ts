@@ -526,6 +526,24 @@ export type ServiceAccountKind = {
   secrets?: SecretKind[] | { [key: string]: string };
 } & K8sResourceCommon;
 
+export type Traffic = {
+  revisionName: string;
+  percent: number;
+  latestRevision?: boolean;
+  tag?: string;
+  url?: string;
+};
+
+export type ServiceKind = K8sResourceKind & {
+  metadata?: {
+    generation?: number;
+  };
+  status?: {
+    url?: string;
+    traffic?: Traffic[];
+  };
+};
+
 export type RowFunctionArgs<T = any, C = any> = {
   obj: T;
   columns: any[];
