@@ -1,8 +1,8 @@
 import {
-  ResolvedExtension,
   TopologyDataModelFactory as DynamicTopologyDataModelFactory,
   WatchK8sResources,
-} from '@console/dynamic-plugin-sdk';
+} from '@openshift-console/dynamic-plugin-sdk';
+import { ResolvedExtension } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 import {
   modelForGroupKind,
   referenceForExtensionModel,
