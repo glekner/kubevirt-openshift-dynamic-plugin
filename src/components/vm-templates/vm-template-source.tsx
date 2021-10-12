@@ -15,7 +15,7 @@ import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/com
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { TemplateKind } from '@kubevirt-types/internal';
-import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import {
   ErrorStatus,
   GreenCheckCircleIcon,

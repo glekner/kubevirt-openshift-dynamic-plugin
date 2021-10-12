@@ -12,7 +12,7 @@ import { TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { connectToFlags } from '@console/internal/reducers/connectToFlags';
 import { featureReducerName, FlagsObject } from '@console/internal/reducers/features';
-import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { FLAGS } from '@console/shared';
 import { VMWizardURLParams } from '../../constants/url-params';
 import {

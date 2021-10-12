@@ -1,6 +1,6 @@
 import { DeploymentModel, PodModel, SecretModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
-import { NetworkAttachmentDefinitionModel } from '@console/network-attachment-definition-plugin';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import {
   OVIRT_TYPE_LABEL,
   V2V_TEMPORARY_LABEL,
