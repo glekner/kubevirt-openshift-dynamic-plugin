@@ -8,8 +8,6 @@ import {
   TextInput,
 } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { AccessModeSelector } from '@console/app/src/components/access-modes/access-mode';
-import { VolumeModeSelector } from '@console/app/src/components/volume-modes/volume-mode';
 import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import {
   FieldLevelHelp,
@@ -20,6 +18,8 @@ import {
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types/internal';
+import { AccessModeSelector } from '../../access-modes/access-mode';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import { AccessMode, ANNOTATION_SOURCE_PROVIDER, VolumeMode } from '../../../constants';
 import { ProvisionSource } from '../../../constants/vm/provision-source';
 import { useStorageProfileSettings } from '../../../hooks/use-storage-profile-settings';

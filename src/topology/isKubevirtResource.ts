@@ -2,7 +2,7 @@ import { NodeModel, Model } from '@patternfly/react-topology';
 import { K8sResourceKind, K8sResourceKindReference } from '@kubevirt-types/internal';
 import { TYPE_VIRTUAL_MACHINE } from './components/const';
 
-interface OdcNodeModel extends NodeModel {
+export interface OdcNodeModel extends NodeModel {
   resource?: K8sResourceKind;
   resourceKind?: K8sResourceKindReference;
 }

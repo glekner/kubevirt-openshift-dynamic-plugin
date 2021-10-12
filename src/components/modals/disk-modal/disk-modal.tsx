@@ -10,8 +10,6 @@ import {
   TextInput,
 } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
-import { AccessModeSelector } from '@console/app/src/components/access-modes/access-mode';
-import { VolumeModeSelector } from '@console/app/src/components/volume-modes/volume-mode';
 import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import { initialAccessModes } from '@console/internal/components/storage/shared';
 import {
@@ -29,6 +27,8 @@ import {
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
 } from '@kubevirt-types/internal';
+import { AccessModeSelector } from '../../access-modes/access-mode';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import {
   AccessMode,
   DataVolumeSourceType,

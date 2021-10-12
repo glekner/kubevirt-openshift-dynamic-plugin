@@ -15,7 +15,6 @@ import * as _ from 'lodash';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
-import { QuickStartModel } from '@console/app/src/models';
 import {
   MultiListPage,
   RowFunctionArgs,
@@ -30,7 +29,7 @@ import {
   Timestamp,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { NamespaceModel, NodeModel } from '@kubevirt-models';
+import { NamespaceModel, NodeModel, QuickStartModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types/internal';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import { VMWizardMode, VMWizardName } from '../../constants';

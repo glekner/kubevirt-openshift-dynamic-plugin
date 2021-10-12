@@ -18,8 +18,6 @@ import { TFunction } from 'i18next';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
-import { AccessModeSelector } from '@console/app/src/components/access-modes/access-mode';
-import { VolumeModeSelector } from '@console/app/src/components/volume-modes/volume-mode';
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
@@ -44,6 +42,8 @@ import {
   StorageClassResourceKind,
   TemplateKind,
 } from '@kubevirt-types/internal';
+import { AccessModeSelector } from '../../access-modes/access-mode';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import {
   TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER,
   TEMPLATE_TYPE_BASE,

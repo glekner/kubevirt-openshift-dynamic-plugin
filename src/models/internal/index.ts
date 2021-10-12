@@ -1357,3 +1357,16 @@ export const NetworkAttachmentDefinitionModel: K8sKind = {
   crd: true,
   legacyPluralURL: true,
 };
+
+export const QuickStartModel: K8sKind = {
+  kind: 'ConsoleQuickStart',
+  label: 'ConsoleQuickStart',
+  labelPlural: 'ConsoleQuickStarts',
+  apiGroup: 'console.openshift.io',
+  apiVersion: 'v1',
+  abbr: 'CQS',
+  namespaced: false,
+  crd: true,
+  plural: 'consolequickstarts',
+  propagationPolicy: 'Background',
+};

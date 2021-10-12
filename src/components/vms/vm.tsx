@@ -15,7 +15,6 @@ import * as _ from 'lodash';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
-import { QuickStartModel } from '@console/app/src/models';
 import {
   MultiListPage,
   RowFunctionArgs,
@@ -31,19 +30,23 @@ import {
   Timestamp,
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { NamespaceModel, NodeModel, PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
-import { VMWizardMode, VMWizardName } from '../../constants';
-import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
-import { useNamespace } from '../../hooks/use-namespace';
-import { VMImportWrappper } from '../../k8s/wrapper/vm-import/vm-import-wrapper';
 import {
   DataVolumeModel,
   VirtualMachineImportModel,
   VirtualMachineInstanceMigrationModel,
   VirtualMachineInstanceModel,
   VirtualMachineModel,
-} from '../../models';
+  NamespaceModel,
+  NodeModel,
+  PersistentVolumeClaimModel,
+  PodModel,
+  QuickStartModel,
+} from '@kubevirt-models';
+import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { VMWizardMode, VMWizardName } from '../../constants';
+import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
+import { useNamespace } from '../../hooks/use-namespace';
+import { VMImportWrappper } from '../../k8s/wrapper/vm-import/vm-import-wrapper';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getCreationTimestamp, getLabels, getName, getNamespace, getUID } from '../../selectors';
 import { isVM, isVMI, isVMImport } from '../../selectors/check-type';
