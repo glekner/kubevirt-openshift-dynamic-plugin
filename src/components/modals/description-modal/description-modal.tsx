@@ -9,7 +9,7 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { K8sKind, k8sPatch } from '@console/internal/module/k8s';
 import { getUpdateDescriptionPatches } from '../../../k8s/patches/vm/vm-patches';
 import { getDescription } from '../../../selectors/selectors';

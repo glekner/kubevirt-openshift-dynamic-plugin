@@ -14,7 +14,7 @@ import { LoadingBox, useAccessReview2 } from '@console/internal/components/utils
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
-import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types/internal';
+import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types';
 import {
   TEMPLATE_BASE_IMAGE_NAME_PARAMETER,
   TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER,

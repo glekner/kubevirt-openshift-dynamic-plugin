@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { isVM } from '../../../selectors/check-type';
 import { selectVM } from '../../../selectors/vm-template/basic';
 import { VMKind } from '../../../types/vm';

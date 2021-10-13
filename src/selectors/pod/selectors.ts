@@ -1,5 +1,5 @@
 import { get } from 'lodash';
-import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { VMIKind, VMKind } from '../../types';
 import { createBasicLookup } from '../../utils';
 import { getPvcImportPodName, getPvcUploadPodName } from '../pvc/selectors';

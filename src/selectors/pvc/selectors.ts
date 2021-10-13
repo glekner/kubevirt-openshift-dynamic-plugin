@@ -1,4 +1,4 @@
-import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import {
   CDI_CLONE_TOKEN_ANNOTAION,
   CDI_UPLOAD_POD_ANNOTATION,

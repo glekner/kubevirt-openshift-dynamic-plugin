@@ -1,4 +1,4 @@
-import { PodKind } from '@kubevirt-types/internal';
+import { PodKind } from '@kubevirt-types';
 import { DataVolumeSourceType } from '../../constants';
 import { DataVolumeWrapper } from '../../k8s/wrapper/vm/data-volume-wrapper';
 import { getPodStatusPhase } from '../../selectors/pod/selectors';

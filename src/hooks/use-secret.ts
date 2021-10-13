@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { SecretModel } from '@kubevirt-models';
 import { k8sCreate, k8sUpdate } from '@console/internal/module/k8s';
-import { SecretKind, K8sKind } from '@kubevirt-types/internal';
+import { SecretKind, K8sKind } from '@kubevirt-types';
 
 type useSecretArgs = {
   secretName: string;

@@ -1,5 +1,5 @@
-import { K8sResourceKind } from '@kubevirt-types/internal';
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
+import { K8sKind } from '@kubevirt-types';
 
 export interface K8sResourceKindMethods {
   getModel: () => K8sKind;

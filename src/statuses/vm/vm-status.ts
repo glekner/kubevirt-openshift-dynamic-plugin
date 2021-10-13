@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { CONVERSION_PROGRESS_ANNOTATION } from '../../constants/v2v';
 import { VMStatus } from '../../constants/vm/vm-status';
 import { VMIPhase } from '../../constants/vmi/phase';

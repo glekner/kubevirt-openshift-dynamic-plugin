@@ -1,4 +1,4 @@
-import { K8sResourceCondition, K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceCondition, K8sResourceKind } from '@kubevirt-types';
 
 type Source = {
   id: string;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { getName, getNamespace } from '../../../selectors';
 import {
   getDataVolumeResources,

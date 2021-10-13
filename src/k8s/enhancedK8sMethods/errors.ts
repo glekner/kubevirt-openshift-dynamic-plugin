@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { Patch } from '../helpers/patch';
 
 type K8sError = K8sGetError | K8sCreateError | K8sPatchError | K8sKillError;

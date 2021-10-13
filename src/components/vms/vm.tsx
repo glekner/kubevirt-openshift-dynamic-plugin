@@ -42,7 +42,7 @@ import {
   PodModel,
   QuickStartModel,
 } from '@kubevirt-models';
-import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
 import { useNamespace } from '../../hooks/use-namespace';

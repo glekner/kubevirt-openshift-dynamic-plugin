@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { VMIKind } from '../../types';
 import { getLabels } from '../selectors';
 

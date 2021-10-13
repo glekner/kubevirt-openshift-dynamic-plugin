@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Label, Tooltip } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { getTemplateProvider } from '../../selectors/vm-template/basic';
 import { getName } from '../../selectors';
 

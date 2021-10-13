@@ -1,6 +1,6 @@
 import { TemplateModel } from '@kubevirt-models';
 /* eslint-disable lines-between-class-members */
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import {
   TEMPLATE_FLAVOR_LABEL,
   TEMPLATE_OS_LABEL,

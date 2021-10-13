@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { PodModel, TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import ActivityItem, {
   ActivityProgress,
 } from '@console/shared/src/components/dashboard/activity-card/ActivityItem';

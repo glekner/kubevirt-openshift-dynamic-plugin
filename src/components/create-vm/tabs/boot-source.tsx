@@ -4,7 +4,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { useAccessReview2 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassModel } from '@kubevirt-models';
-import { StorageClassResourceKind } from '@kubevirt-types/internal';
+import { StorageClassResourceKind } from '@kubevirt-types';
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER } from '../../../constants/vm/constants';
 import { getParameterValue } from '../../../selectors/selectors';
 import { getTemplateName } from '../../../selectors/vm-template/basic';

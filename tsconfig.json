@@ -19,8 +19,18 @@
     ],
     "types": ["node", "jest", "console"],
     "paths": {
-      "@kubevirt-types/*": ["src/types/*"],
-      "@kubevirt-models": ["src/models/index.ts"],
+      "@kubevirt-types": ["src/@kubevirt-internal/types"],
+      "@kubevirt-types/*": ["src/types/*", "src/@kubevirt-internal/types/*"],
+      "@kubevirt-models": ["src/@kubevirt-internal/models"],
+      "@kubevirt-models/*": ["src/models/*", "src/@kubevirt-internal/models/*"],
+      "@kubevirt-components": ["src/@kubevirt-internal/components"],
+      "@kubevirt-components/*": ["src/components/*", "src/@kubevirt-internal/components/*"],
+      "@kubevirt-utils": ["src/@kubevirt-internal/utils"],
+      "@kubevirt-utils/*": ["src/utils/*", "src/@kubevirt-internal/utils/*"],
+      "@kubevirt-constants": ["src/@kubevirt-internal/constants"],
+      "@kubevirt-constants/*": ["src/constants/*", "src/@kubevirt-internal/constants/*"],
+
+      // TODO: remove this once we have @openshift-console-kubevirt-internal
       "@console/internal/*": ["console/frontend/public/*"],
       "@console/shared/*": ["console/frontend/packages/console-shared/*"],
       "*": ["*", "console/frontend/node_modules/*"]

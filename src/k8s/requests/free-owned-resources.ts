@@ -1,4 +1,4 @@
-import { OwnerReference } from '@kubevirt-types/internal';
+import { OwnerReference } from '@kubevirt-types';
 import { k8sKill, k8sPatch } from '@console/internal/module/k8s';
 import { getOwnerReferences } from '../../selectors';
 import { K8sResourceWithModel } from '../../types/k8s-resource-with-model';

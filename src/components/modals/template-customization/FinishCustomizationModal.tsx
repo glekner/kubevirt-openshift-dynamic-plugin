@@ -9,7 +9,7 @@ import {
 } from '@console/internal/components/factory';
 import { ExternalLink, ResourceLink } from '@console/internal/components/utils';
 import { TemplateModel } from '@kubevirt-models';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants/vm-templates';
 import { ModalFooter } from '../modal/modal-footer';
 import './finish-customization-modal.scss';

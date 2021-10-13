@@ -7,13 +7,9 @@ import {
   MatchLabels,
   Selector,
 } from '@openshift-console/dynamic-plugin-sdk';
+import { BadgeType } from '../constants';
 
 export { K8sResourceCommon };
-
-export enum BadgeType {
-  DEV = 'Dev Preview',
-  TECH = 'Tech Preview',
-}
 
 export type K8sKind = {
   abbr: string;

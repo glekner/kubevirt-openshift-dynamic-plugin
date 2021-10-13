@@ -16,7 +16,7 @@ import { RouteComponentProps } from 'react-router';
 import { history, LoadingBox } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ProjectModel } from '@kubevirt-models';
-import { K8sResourceCommon, TemplateKind } from '@kubevirt-types/internal';
+import { K8sResourceCommon, TemplateKind } from '@kubevirt-types';
 import { DataVolumeSourceType, VMWizardMode, VMWizardName, VolumeType } from '../../constants';
 import { useStorageClassConfigMap } from '../../hooks/storage-class-config-map';
 import { useErrorTranslation } from '../../hooks/use-error-translation';

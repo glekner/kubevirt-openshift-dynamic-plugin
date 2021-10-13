@@ -1,4 +1,4 @@
-import { K8sKind, K8sResourceCommon } from '@kubevirt-types/internal';
+import { K8sKind, K8sResourceCommon } from '@kubevirt-types';
 import { referenceForModel } from '@console/internal/module/k8s/k8s';
 
 export type SubscriptionsKind = K8sResourceCommon & { spec: any };

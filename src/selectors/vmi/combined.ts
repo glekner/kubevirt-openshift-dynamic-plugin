@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { DEFAULT_RDP_PORT, TEMPLATE_VM_NAME_LABEL } from '../../constants/vm';
 import { VMIKind } from '../../types/vm';
 import { isConnectionEncrypted } from '../../utils/url';

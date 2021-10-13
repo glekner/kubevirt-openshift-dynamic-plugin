@@ -1,4 +1,4 @@
-import { K8sResourceCondition, K8sResourceKind, ObjectMetadata } from '@kubevirt-types/internal';
+import { K8sResourceCondition, K8sResourceKind, ObjectMetadata } from '@kubevirt-types';
 import {
   V1alpha1DataVolumeSpec,
   V1alpha1DataVolumeStatus,

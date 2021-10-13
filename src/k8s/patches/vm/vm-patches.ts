@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind, TemplateKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
 import { TEMPLATE_FLAVOR_LABEL, TEMPLATE_VM_SIZE_LABEL } from '../../../constants';
 import { getLabels } from '../../../selectors';
 import { isTemplate, isVM } from '../../../selectors/check-type';

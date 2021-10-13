@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
-import { K8sResourceCommon } from '@kubevirt-types/internal';
+import { K8sResourceCommon } from '@kubevirt-types';
 import { getName, getNamespace } from '@console/shared';
 
 export const ActionMessage: React.FC<{

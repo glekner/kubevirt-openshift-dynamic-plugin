@@ -7,8 +7,8 @@ import { getName, getNamespace } from '../selectors';
 import { isCommonTemplate } from '../selectors/vm-template/basic';
 import { VMKind } from '../types';
 import { VMWizardBootSourceParams, VMWizardInitialData } from '../types/url';
-import { k8sBasePath } from '../types/internal/utils';
-import { TemplateKind } from '../types/internal';
+import { k8sBasePath } from '@kubevirt-utils';
+import { TemplateKind } from '@kubevirt-types';
 
 const ELLIPSIS = '…';
 

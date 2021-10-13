@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import { LoadingBox } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { ConsoleType } from '../../../constants/vm/console-type';
 import { useEventListener } from '../../../hooks/use-event-listener';
 import { useRenderVNCConsole } from '../../../hooks/use-render-vnc-console';

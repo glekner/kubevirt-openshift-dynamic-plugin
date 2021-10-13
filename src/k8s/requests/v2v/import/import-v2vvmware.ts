@@ -1,5 +1,5 @@
 import { SecretModel, ServiceAccountModel } from '@kubevirt-models';
-import { K8sResourceCommon } from '@kubevirt-types/internal';
+import { K8sResourceCommon } from '@kubevirt-types';
 import { getVmwareField } from '../../../../components/create-vm-wizard/selectors/provider/vmware/selectors';
 import { getFieldValue } from '../../../../components/create-vm-wizard/selectors/vm-settings';
 import {

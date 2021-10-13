@@ -5,7 +5,7 @@ import { match } from 'react-router';
 import { RowFilter } from '@openshift-console/dynamic-plugin-sdk';
 import { Flatten, ListPage, MultiListPage } from '@console/internal/components/factory';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { CDI_APP_LABEL } from '../../constants';
 import {
   TEMPLATE_CUSTOMIZED_ANNOTATION,

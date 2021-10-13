@@ -41,7 +41,7 @@ import {
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
   TemplateKind,
-} from '@kubevirt-types/internal';
+} from '@kubevirt-types';
 import { AccessModeSelector } from '../../access-modes/access-mode';
 import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import {

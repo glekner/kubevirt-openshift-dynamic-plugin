@@ -1,4 +1,4 @@
-import { ConfigMapKind } from '@kubevirt-types/internal';
+import { ConfigMapKind } from '@kubevirt-types';
 import {
   DataVolumeSourceType,
   DEFAULT_DISK_SIZE,

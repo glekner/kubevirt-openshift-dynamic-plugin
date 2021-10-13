@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { getSimpleV2VPRoviderStatus, V2VProviderStatus } from '../../../../statuses/v2v';
 
 export const getVms = (providerCR: K8sResourceKind, defaultValue) =>

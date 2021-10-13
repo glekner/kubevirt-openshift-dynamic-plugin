@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { ReplicationControllerModel, DeploymentConfigModel } from '@kubevirt-models';
-import { K8sResourceKind, K8sResourceCommon, PodKind, K8sKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, K8sResourceCommon, PodKind, K8sKind } from '@kubevirt-types';
 import { getAnnotation } from '../selectors';
 import { ExtPodKind, OverviewItemAlerts, AllPodStatus } from '../types/pod';
 import { apiVersionForModel } from '@console/internal/module/k8s';

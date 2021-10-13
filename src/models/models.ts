@@ -1,4 +1,4 @@
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sKind } from '@kubevirt-types';
 
 // do not export
 export const ProcessedTemplatesModel: K8sKind = {

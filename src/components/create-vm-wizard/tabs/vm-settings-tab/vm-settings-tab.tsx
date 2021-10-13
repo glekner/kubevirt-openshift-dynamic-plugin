@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { useAccessReview2 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassModel } from '@kubevirt-models';
-import { StorageClassResourceKind } from '@kubevirt-types/internal';
+import { StorageClassResourceKind } from '@kubevirt-types';
 import { TemplateSupport } from '../../../../constants/vm-templates/support';
 import useV2VConfigMap from '../../../../hooks/use-v2v-config-map';
 import { getDefaultStorageClass } from '../../../../selectors/config-map/sc-defaults';

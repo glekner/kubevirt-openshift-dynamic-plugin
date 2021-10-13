@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Alert, AlertVariant } from '@patternfly/react-core';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { CDIUploadContext } from './cdi-upload-provider';
 import { UPLOAD_STATUS } from './consts';
 

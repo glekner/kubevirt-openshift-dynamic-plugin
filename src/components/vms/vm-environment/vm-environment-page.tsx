@@ -17,7 +17,7 @@ import {
   SecretKind,
   ServiceAccountKind,
   TemplateKind,
-} from '@kubevirt-types/internal';
+} from '@kubevirt-types';
 import { PatchBuilder } from '@console/shared/src/k8s/patch';
 import { getVMLikePatches } from '../../../k8s/patches/vm-template';
 import { VMWrapper } from '../../../k8s/wrapper/vm/vm-wrapper';

@@ -28,7 +28,7 @@ import {
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 import {
   TEMPLATE_PROVIDER_ANNOTATION,
   TEMPLATE_SUPPORT_LEVEL,

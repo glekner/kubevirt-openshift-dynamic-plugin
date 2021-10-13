@@ -16,7 +16,7 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { TemplateModel } from '@kubevirt-models';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { k8sPatch } from '@console/internal/module/k8s';
 import { CUSTOM_FLAVOR } from '../../../constants';
 import { useShowErrorToggler } from '../../../hooks/use-show-error-toggler';

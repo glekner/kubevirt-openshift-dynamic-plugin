@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LabelList, ResourceSummary } from '@console/internal/components/utils';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
 import { getDescription } from '../../selectors/selectors';
 import { getTemplateOperatingSystems } from '../../selectors/vm-template/advanced';

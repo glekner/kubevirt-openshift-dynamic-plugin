@@ -8,12 +8,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Action } from '@openshift-console/dynamic-plugin-sdk';
 import { confirmModal } from '@console/internal/components/modals';
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
-import {
-  K8sKind,
-  K8sResourceKind,
-  PersistentVolumeClaimKind,
-  PodKind,
-} from '@kubevirt-types/internal';
+import { K8sKind, K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { YellowExclamationTriangleIcon } from '@console/shared';
 import { StatusGroup } from '../../constants/status-group';
 import { VMStatus } from '../../constants/vm/vm-status';

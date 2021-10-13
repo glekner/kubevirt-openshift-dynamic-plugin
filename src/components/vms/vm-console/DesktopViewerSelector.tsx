@@ -4,7 +4,7 @@ import { Alert, Form, FormGroup } from '@patternfly/react-core';
 import { Dropdown } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ServiceModel } from '@kubevirt-models';
-import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PodKind } from '@kubevirt-types';
 import { DEFAULT_RDP_PORT, NetworkType, TEMPLATE_VM_NAME_LABEL } from '../../../constants';
 import { ConsoleType } from '../../../constants/vm/console-type';
 import { getRdpAddressPort } from '../../../selectors/service';

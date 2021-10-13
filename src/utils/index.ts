@@ -6,7 +6,7 @@ import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generato
 import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
 import { FirehoseResult } from '@console/internal/components/utils';
 import { NamespaceModel, ProjectModel } from '@kubevirt-models';
-import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types/internal';
+import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types';
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {
   getAPIVersion,

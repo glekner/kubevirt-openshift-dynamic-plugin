@@ -26,7 +26,23 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
     alias: {
-      '@kubevirt-models': path.resolve(__dirname, 'src/models/index.ts'),
+      '@kubevirt-models': [
+        path.resolve(__dirname, 'src/@kubevirt-internal/models/'),
+        path.resolve(__dirname, 'src/models/'),
+      ],
+      '@kubevirt-components': [
+        path.resolve(__dirname, 'src/@kubevirt-internal/components/'),
+        path.resolve(__dirname, 'src/components/'),
+      ],
+      '@kubevirt-utils': [
+        path.resolve(__dirname, 'src/@kubevirt-internal/utils/'),
+        path.resolve(__dirname, 'src/utils/'),
+      ],
+      '@kubevirt-constants': [
+        path.resolve(__dirname, 'src/@kubevirt-internal/constants/'),
+        path.resolve(__dirname, 'src/constants/'),
+      ],
+
       stream: 'stream-browserify',
       http: 'stream-http',
       path: 'path-browserify',

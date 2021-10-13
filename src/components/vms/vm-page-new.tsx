@@ -30,7 +30,7 @@ import {
 } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { NamespaceModel, NodeModel, QuickStartModel } from '@kubevirt-models';
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sKind } from '@kubevirt-types';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';

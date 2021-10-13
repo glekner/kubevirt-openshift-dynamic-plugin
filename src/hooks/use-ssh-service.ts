@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ServiceModel } from '@kubevirt-models';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { useActiveNamespace } from '@console/shared';
 import { sshActions, SSHActionsNames } from '../components/ssh-service/redux/actions';
 import {

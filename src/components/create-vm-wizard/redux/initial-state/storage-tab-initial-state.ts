@@ -1,4 +1,4 @@
-import { ConfigMapKind } from '@kubevirt-types/internal';
+import { ConfigMapKind } from '@kubevirt-types';
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../../../constants';
 import {
   DUMMY_VM_NAME,

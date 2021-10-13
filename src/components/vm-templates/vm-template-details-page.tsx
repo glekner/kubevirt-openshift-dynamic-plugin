@@ -11,7 +11,7 @@ import {
   PersistentVolumeClaimKind,
   PodKind,
   TemplateKind,
-} from '@kubevirt-types/internal';
+} from '@kubevirt-types';
 import { useBaseImages } from '../../hooks/use-base-images';
 import { useCustomizeSourceModal } from '../../hooks/use-customize-source-modal';
 import { useSupportModal } from '../../hooks/use-support-modal';

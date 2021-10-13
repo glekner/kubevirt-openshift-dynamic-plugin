@@ -28,7 +28,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { createProjectModal } from '@console/internal/components/modals';
 import { humanizeBinaryBytes, ResourceName, StatusBox } from '@console/internal/components/utils';
 import { ProjectModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { FLAGS, VirtualizedGrid } from '@console/shared';
 import { useFlag } from '@console/shared/src/hooks/flag';
 import { BOOT_SOURCE_AVAILABLE, BOOT_SOURCE_REQUIRED } from '../../../constants';

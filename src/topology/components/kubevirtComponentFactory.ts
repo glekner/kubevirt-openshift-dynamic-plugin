@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-topology';
 import { KebabOption, kebabOptionsToMenu } from '@console/internal/components/utils';
 import { modelFor, referenceFor } from '@console/internal/module/k8s';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { ModifyApplication } from '@console/topology/src/actions';
 import {
   CreateConnector,

@@ -1,5 +1,5 @@
 import { k8sKill } from '@console/internal/module/k8s';
-import { K8sKind, K8sResourceCommon, Options } from '@kubevirt-types/internal';
+import { K8sKind, K8sResourceCommon, Options } from '@kubevirt-types';
 
 export const k8sKillPropagated = (
   model: K8sKind,

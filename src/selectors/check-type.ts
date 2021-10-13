@@ -1,5 +1,5 @@
 import { TemplateModel } from '@kubevirt-models';
-import { K8sResourceCommon, TemplateKind } from '@kubevirt-types/internal';
+import { K8sResourceCommon, TemplateKind } from '@kubevirt-types';
 import {
   VirtualMachineImportModel,
   VirtualMachineInstanceModel,

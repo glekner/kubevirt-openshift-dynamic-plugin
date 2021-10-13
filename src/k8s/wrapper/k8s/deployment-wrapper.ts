@@ -1,5 +1,5 @@
 import { DeploymentModel } from '@kubevirt-models';
-import { DeploymentKind, K8sResourceCommon, PodTemplate } from '@kubevirt-types/internal';
+import { DeploymentKind, K8sResourceCommon, PodTemplate } from '@kubevirt-types';
 import { Selector } from '@openshift-console/dynamic-plugin-sdk';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
 import { K8sInitAddon } from '../common/util/k8s-mixin';

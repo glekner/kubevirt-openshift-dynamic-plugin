@@ -11,7 +11,7 @@ import {
   ResourceLink,
 } from '@console/internal/components/utils';
 import { NamespaceModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
 import { PendingStatus } from '@console/shared';
 import { SuccessStatus } from '@console/shared/src/components/status/statuses';
 import { getTemplateProvider } from '../../../selectors/vm-template/basic';

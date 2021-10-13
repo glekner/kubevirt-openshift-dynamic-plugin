@@ -6,7 +6,7 @@ import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
 import { FirehoseResult } from '@console/internal/components/utils';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
 import { useBaseImages } from '../../../hooks/use-base-images';
 import { useNamespace } from '../../../hooks/use-namespace';
 import { usePinnedTemplates } from '../../../hooks/use-pinned-templates';

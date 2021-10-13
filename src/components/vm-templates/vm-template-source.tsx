@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import {
   ErrorStatus,

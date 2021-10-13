@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { RouteModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
-import { RouteKind } from '@kubevirt-types/internal';
+import { RouteKind } from '@kubevirt-types';
 import { apiVersionForModel } from '@console/internal/module/k8s/k8s';
 import { ForkliftControllerModel, PackageManifestModel, SubscriptionModel } from '../models';
 import {

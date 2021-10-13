@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
-import { K8sResourceCommon, K8sResourceKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceCommon, K8sResourceKind, PodKind } from '@kubevirt-types';
 import { useDebounceCallback } from '../hooks/use-debounce';
 import { useDeepCompareMemoize } from '../hooks/use-deep-compare-memoize';
 import * as models from '../models';

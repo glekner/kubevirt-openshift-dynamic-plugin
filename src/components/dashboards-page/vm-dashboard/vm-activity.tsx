@@ -7,7 +7,7 @@ import {
 } from '@console/internal/components/dashboard/with-dashboard-resources';
 import { FirehoseResource, FirehoseResult, resourcePath } from '@console/internal/components/utils';
 import { EventModel } from '@kubevirt-models';
-import { EventKind } from '@kubevirt-types/internal';
+import { EventKind } from '@kubevirt-types';
 import ActivityBody, {
   PauseButton,
   RecentEventsBodyContent,

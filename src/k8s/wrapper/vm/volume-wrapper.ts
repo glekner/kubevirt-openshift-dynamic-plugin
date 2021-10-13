@@ -5,7 +5,7 @@ import {
   SecretModel,
   ServiceAccountModel,
 } from '@kubevirt-models';
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sKind } from '@kubevirt-types';
 import { VolumeType } from '../../../constants/vm/storage';
 import { DataVolumeModel } from '../../../models';
 import {

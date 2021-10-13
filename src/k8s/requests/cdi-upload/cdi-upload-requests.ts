@@ -1,5 +1,5 @@
 import { k8sCreate, k8sGet, k8sKill } from '@console/internal/module/k8s';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 /* eslint-disable camelcase, @typescript-eslint/camelcase,no-await-in-loop */
 import { CDI_BIND_REQUESTED_ANNOTATION } from '../../../components/cdi-upload-provider/consts';
 import { DataVolumeModel, UploadTokenRequestModel } from '../../../models';

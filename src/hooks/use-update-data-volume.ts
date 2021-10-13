@@ -3,7 +3,7 @@ import * as React from 'react';
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch, useSelector } from 'react-redux';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { PersistentVolumeClaimModel } from '@console/internal/models/index';
 import { vmWizardActions } from '../components/create-vm-wizard/redux/actions';
 import { ActionType } from '../components/create-vm-wizard/redux/types';

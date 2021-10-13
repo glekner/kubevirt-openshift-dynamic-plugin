@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import {
   CUSTOM_FLAVOR,
   TEMPLATE_DEFAULT_LABEL,

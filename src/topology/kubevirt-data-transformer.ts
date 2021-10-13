@@ -1,6 +1,6 @@
 import { Model } from '@patternfly/react-topology';
 import { getImageForIconClass } from '@console/internal/components/catalog/catalog-item-icon';
-import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { referenceFor } from '@console/internal/module/k8s';
 import { OverviewItem } from '@console/shared';
 import {

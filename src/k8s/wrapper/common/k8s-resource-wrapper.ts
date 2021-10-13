@@ -1,4 +1,4 @@
-import { K8sKind, K8sResourceCommon, OwnerReference } from '@kubevirt-types/internal';
+import { K8sKind, K8sResourceCommon, OwnerReference } from '@kubevirt-types';
 /* eslint-disable lines-between-class-members */
 import {
   getAnnotations,

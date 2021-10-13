@@ -18,7 +18,7 @@ import {
   ResourceLink,
   resourcePath,
 } from '@console/internal/components/utils';
-import { NodeKind } from '@kubevirt-types/internal';
+import { NodeKind } from '@kubevirt-types';
 import { Status } from '@console/shared';
 import { getName } from '../../../../../selectors';
 import {

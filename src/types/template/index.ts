@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 
 enum commonTemplatesValidationRules {
   integer = 'integer',

@@ -1,5 +1,5 @@
 import { Map as ImmutableMap } from 'immutable';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { operatingSystemsNative } from '../../../constants/vm-templates/os';
 import { getTemplateOperatingSystems } from '../../../selectors/vm-template/advanced';
 import { ITemplate } from '../../../types/template';

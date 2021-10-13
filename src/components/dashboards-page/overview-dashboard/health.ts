@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { URLHealthHandler } from '@kubevirt-types/internal';
+import { URLHealthHandler } from '@kubevirt-types';
 import { HealthState } from '@console/shared/src/components/dashboard/status-card/states';
 import {
   DataVolumeModel,

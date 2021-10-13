@@ -1,4 +1,4 @@
-import { PodKind } from '@kubevirt-types/internal';
+import { PodKind } from '@kubevirt-types';
 import { OS_WINDOWS_PREFIX } from '../../constants';
 import { VMGenericLikeEntityKind, VMILikeEntityKind } from '../../types/vmLike';
 import { buildOwnerReference, compareOwnerReference } from '../../utils';

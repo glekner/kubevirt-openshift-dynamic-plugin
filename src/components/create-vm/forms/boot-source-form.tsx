@@ -17,7 +17,7 @@ import {
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types';
 import { AccessModeSelector } from '../../access-modes/access-mode';
 import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import { AccessMode, ANNOTATION_SOURCE_PROVIDER, VolumeMode } from '../../../constants';

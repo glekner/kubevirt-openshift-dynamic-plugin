@@ -1,4 +1,4 @@
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { LABEL_USED_TEMPLATE_NAME, LABEL_USED_TEMPLATE_NAMESPACE } from '../../constants/vm';
 import { VMGenericLikeEntityKind } from '../../types/vmLike';
 import { TemplateValidations } from '../../utils/validations/template/template-validations';

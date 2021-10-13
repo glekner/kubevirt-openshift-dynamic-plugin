@@ -1,4 +1,4 @@
-import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PodKind } from '@kubevirt-types';
 import { VMStatus } from '../../constants/vm/vm-status';
 import { V1alpha1DataVolume } from '../../types/api';
 import { StatusBundle } from '../../types/status-bundle';

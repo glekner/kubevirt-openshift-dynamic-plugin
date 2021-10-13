@@ -1,5 +1,5 @@
 import { TemplateModel } from '@kubevirt-models';
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sKind } from '@kubevirt-types';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';
 import { getKubevirtAvailableModel } from '../../models/kubevirtReferenceForModel';
 import { VMGenericLikeEntityKind } from '../../types/vmLike';

@@ -1,4 +1,4 @@
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { getOS } from '../../../../components/create-vm-wizard/selectors/combined';
 import { getImportProvidersFieldValue } from '../../../../components/create-vm-wizard/selectors/import-providers';
 import {

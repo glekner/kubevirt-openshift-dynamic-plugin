@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { K8sResourceKind, PodKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PodKind } from '@kubevirt-types';
 import { VMIKind } from '../../../types';
 import { findRDPServiceAndPort } from '../../vmi';
 

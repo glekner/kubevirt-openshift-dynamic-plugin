@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Firehose, FirehoseResult, resourcePath } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel, StorageClassModel } from '@kubevirt-models';
-import { StorageClassResourceKind } from '@kubevirt-types/internal';
+import { StorageClassResourceKind } from '@kubevirt-types';
 import { CombinedDisk } from '../../../../k8s/wrapper/vm/combined-disk';
 import { VolumeWrapper } from '../../../../k8s/wrapper/vm/volume-wrapper';
 import { getName } from '../../../../selectors';

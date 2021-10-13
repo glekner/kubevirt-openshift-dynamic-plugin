@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { Prompt } from 'react-router';
 import { history } from '@console/internal/components/utils';
 import { k8sKill } from '@console/internal/module/k8s';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import {
   ErrorStatus,
   GreenCheckCircleIcon,

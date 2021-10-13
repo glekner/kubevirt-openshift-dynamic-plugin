@@ -7,7 +7,7 @@ import {
   getAccessModeForProvisioner,
   getAccessModeRadios,
 } from '@console/internal/components/storage/shared';
-import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind } from '@kubevirt-types';
 
 export const getPVCAccessModes = (resource: PersistentVolumeClaimKind, key: string) =>
   _.reduce(

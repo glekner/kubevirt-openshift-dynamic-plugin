@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
-import { K8sKind, TemplateKind } from '@kubevirt-types/internal';
+import { K8sKind, TemplateKind } from '@kubevirt-types';
 import { VMWizardMode, VMWizardName } from '../../constants/vm';
 import { CustomizeSourceFunction } from '../../hooks/use-customize-source-modal';
 import { SupportModalFunction } from '../../hooks/use-support-modal';

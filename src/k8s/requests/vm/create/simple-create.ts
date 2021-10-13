@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash';
 import { k8sCreate } from '@console/internal/module/k8s';
-import { ConfigMapKind, TemplateKind } from '@kubevirt-types/internal';
+import { ConfigMapKind, TemplateKind } from '@kubevirt-types';
 import { windowsToolsStorage } from '../../../../components/create-vm-wizard/redux/initial-state/storage-tab-initial-state';
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
 import { BootSourceState } from '../../../../components/create-vm/forms/boot-source-form-reducer';

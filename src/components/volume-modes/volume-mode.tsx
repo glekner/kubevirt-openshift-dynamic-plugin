@@ -8,7 +8,7 @@ import {
   initialVolumeModes,
 } from '@console/internal/components/storage/shared';
 import { FieldLevelHelp } from '@console/internal/components/utils';
-import { PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind } from '@kubevirt-types';
 
 export const VolumeModeSelector: React.FC<VolumeModeSelectorProps> = (props) => {
   const {

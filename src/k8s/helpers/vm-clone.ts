@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types';
 import {
   ANNOTATION_DESCRIPTION,
   TEMPLATE_OS_NAME_ANNOTATION,

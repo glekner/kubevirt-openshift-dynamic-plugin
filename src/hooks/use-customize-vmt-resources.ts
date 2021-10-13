@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types/internal';
+import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { CDI_APP_LABEL, TEMPLATE_VM_NAME_LABEL } from '../constants';
 import { DataVolumeModel, VirtualMachineInstanceModel, VirtualMachineModel } from '../models';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';

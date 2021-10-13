@@ -22,7 +22,7 @@ import { useTranslation } from 'react-i18next';
 import { history, resourcePath } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PodModel } from '@kubevirt-models';
-import { PodKind } from '@kubevirt-types/internal';
+import { PodKind } from '@kubevirt-types';
 import { killUploadPVC } from '../../../k8s/requests/cdi-upload/cdi-upload-requests';
 import { getName, getNamespace } from '../../../selectors/selectors';
 import { V1alpha1DataVolume } from '../../../types/api';

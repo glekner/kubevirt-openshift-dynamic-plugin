@@ -1,4 +1,4 @@
-import { PodKind } from '@kubevirt-types/internal';
+import { PodKind } from '@kubevirt-types';
 import { Status } from '..';
 import {
   findFailingContainerStatus,

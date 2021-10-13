@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StarIcon } from '@patternfly/react-icons';
-import { TemplateKind } from '@kubevirt-types/internal';
+import { TemplateKind } from '@kubevirt-types';
 import { ANNOTATION_ICON } from '../../constants';
 
 import './os-icons.scss';

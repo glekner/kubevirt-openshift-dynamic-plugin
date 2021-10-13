@@ -1,4 +1,4 @@
-import { K8sKind } from '@kubevirt-types/internal';
+import { K8sKind } from '../types/internal';
 
 export const PrometheusModel: K8sKind = {
   kind: 'Prometheus',

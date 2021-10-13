@@ -1,4 +1,4 @@
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import {
   INSUFFICIENT_PERMISSIONS_ERROR_DESC,
   INSUFFICIENT_PERMISSIONS_ERROR_MESSAGE,

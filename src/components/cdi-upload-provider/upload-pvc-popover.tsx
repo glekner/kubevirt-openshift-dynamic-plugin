@@ -11,7 +11,7 @@ import {
 } from '@patternfly/react-core';
 import { InProgressIcon, ErrorCircleOIcon, BanIcon } from '@patternfly/react-icons';
 import { global_danger_color_100 as dangerColor } from '@patternfly/react-tokens/dist/js/global_danger_color_100';
-import { K8sResourceKind } from '@kubevirt-types/internal';
+import { K8sResourceKind } from '@kubevirt-types';
 import { ProgressStatus } from '@console/shared';
 import { killUploadPVC } from '../../k8s/requests/cdi-upload/cdi-upload-requests';
 import { CDIUploadContext } from './cdi-upload-provider';

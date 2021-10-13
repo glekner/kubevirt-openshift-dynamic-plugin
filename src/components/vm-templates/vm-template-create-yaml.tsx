@@ -11,7 +11,7 @@ import {
 import { connectToPlural } from '@console/internal/kinds';
 import { TemplateModel } from '@kubevirt-models';
 import { k8sList } from '@console/internal/module/k8s';
-import { K8sResourceKind, TemplateKind } from '@kubevirt-types/internal';
+import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
 import {
   TEMPLATE_FLAVOR_LABEL,
   TEMPLATE_TYPE_BASE,
