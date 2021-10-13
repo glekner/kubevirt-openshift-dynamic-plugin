@@ -1,4 +1,6 @@
+import { match as RouterMatch } from 'react-router-dom';
 import {
+  FirehoseResource,
   FirehoseResult,
   GroupVersionKind,
   HealthState,
@@ -9,7 +11,7 @@ import {
 } from '@openshift-console/dynamic-plugin-sdk';
 import { BadgeType } from '../constants';
 
-export { K8sResourceCommon };
+export { K8sResourceCommon, GroupVersionKind };
 
 export type K8sKind = {
   abbr: string;
@@ -558,3 +560,94 @@ export type URLHealthHandler<R> = (
   error: any,
   additionalResource?: FirehoseResult<K8sResourceKind | K8sResourceKind[]>,
 ) => SubsystemHealth;
+
+export type CreateYAMLProps = {
+  match: RouterMatch<{ ns: string; plural: string; appName?: string }>;
+  kindsInFlight: boolean;
+  kindObj: K8sKind;
+  template?: string;
+  download?: boolean;
+  header?: string;
+  hideHeader?: boolean;
+  resourceObjPath?: (obj: K8sResourceKind, kind: K8sResourceKindReference) => string;
+  onChange?: (yaml: string) => any;
+};
+
+export type WatchK8sResource = (resource: FirehoseResource) => void;
+export type StopWatchK8sResource = (resource: FirehoseResource) => void;
+
+export type FirehoseResultObject = { [key: string]: K8sResourceCommon | K8sResourceCommon[] };
+
+export type FirehoseResourcesResult<
+  R extends FirehoseResultObject = { [key: string]: K8sResourceCommon | K8sResourceCommon[] },
+> = {
+  [k in keyof R]: FirehoseResult<R[k]>;
+};
+
+export type Flatten<
+  F extends FirehoseResultObject = { [key: string]: K8sResourceCommon | K8sResourceCommon[] },
+  R = any,
+> = (resources: FirehoseResourcesResult<F>) => R;
+
+export type GetModalContainer = (onClose: (e?: React.SyntheticEvent) => void) => React.ReactElement;
+
+export type HandlePromiseProps = {
+  handlePromise: <T>(
+    promise: Promise<T>,
+    onFulfill?: (res) => void,
+    onError?: (errorMsg: string) => void,
+  ) => void;
+  inProgress: boolean;
+  errorMessage: string;
+};
+
+export type AccessReviewResourceAttributes = {
+  group?: string;
+  resource?: string;
+  subresource?: string;
+  verb?: K8sVerb;
+  name?: string;
+  namespace?: string;
+};
+
+export type KebabOption = {
+  hidden?: boolean;
+  label?: React.ReactNode;
+  labelKey?: string;
+  labelKind?: { [key: string]: string | string[] };
+  href?: string;
+  callback?: () => any;
+  accessReview?: AccessReviewResourceAttributes;
+  isDisabled?: boolean;
+  tooltip?: string;
+  tooltipKey?: string;
+  // a `/` separated string where each segment denotes a new sub menu entry
+  // Eg. `Menu 1/Menu 2/Menu 3`
+  path?: string;
+  pathKey?: string;
+  icon?: React.ReactNode;
+};
+
+export type KebabAction = (
+  kind: K8sKind,
+  obj: K8sResourceKind,
+  resources?: any,
+  customData?: any,
+) => KebabOption;
+
+export type ResourceKebabProps = {
+  kindObj: K8sKind;
+  actions: KebabAction[];
+  kind: K8sResourceKindReference;
+  resource: K8sResourceKind;
+  isDisabled?: boolean;
+  customData?: { [key: string]: any };
+};
+
+export type KebabSubMenu = {
+  label?: string;
+  labelKey?: string;
+  children: KebabMenuOption[];
+};
+
+export type KebabMenuOption = KebabSubMenu | KebabOption;

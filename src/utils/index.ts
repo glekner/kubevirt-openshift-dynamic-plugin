@@ -19,6 +19,7 @@ import {
 import { ValidationObject, asValidationObject, ValidationErrorType } from '../selectors/types';
 // eslint-disable-next-line import/order
 import { getTemplateName } from '../selectors/vm-template/basic';
+import { pluralize } from '@kubevirt-utils';
 
 export type EntityMap<A> = { [propertyName: string]: A };
 export type K8sEntityMap<A extends K8sResourceKind> = EntityMap<A>;
@@ -29,9 +30,6 @@ const alphanumericRegex = '[a-zA-Z0-9]';
 const alphanumericRegexWithDash = '[-a-zA-Z0-9]';
 const DNS1123_MAX_LENGTH = 253;
 export const DASH = '-';
-
-export const pluralize = (i: number, singular: string, plural: string = `${singular}s`) =>
-  i === 1 ? singular : plural;
 
 export const getBasicID = <A extends K8sResourceKind = K8sResourceKind>(entity: A) =>
   `${getNamespace(entity)}-${getName(entity)}`;
