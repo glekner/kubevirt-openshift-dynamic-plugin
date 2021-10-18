@@ -12,7 +12,6 @@
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
     "build-sdk": "yarn --cwd console/frontend build-plugin-sdk",
     "dev": "rm -rf dist && yarn ts-node ./node_modules/.bin/webpack serve --progress",
-    "http-server": "./http-server.sh ./dist",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
   "dependencies": {
@@ -40,6 +39,7 @@
   "devDependencies": {
     "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/core",
     "@openshift-console/dynamic-plugin-sdk-webpack": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/webpack",
+    "@openshift-console/dynamic-plugin-sdk-kubevirt-internal": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/internal-kubevirt",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",

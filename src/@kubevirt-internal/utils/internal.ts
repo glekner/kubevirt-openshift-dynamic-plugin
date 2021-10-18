@@ -94,3 +94,5 @@ export const pluralize = (
   const pluralized = `${i === 1 ? singular : plural}`;
   return includeCount ? `${i || 0} ${pluralized}` : pluralized;
 };
+
+export const isMac = window.navigator.platform.includes('Mac');

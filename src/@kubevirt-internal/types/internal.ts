@@ -1,4 +1,5 @@
 import { match as RouterMatch } from 'react-router-dom';
+import { Node } from '@patternfly/react-topology';
 import {
   FirehoseResource,
   FirehoseResult,
@@ -9,6 +10,7 @@ import {
   MatchLabels,
   Selector,
 } from '@openshift-console/dynamic-plugin-sdk';
+import { StatusGroup } from '@kubevirt-constants/status-group';
 import { BadgeType } from '../constants';
 
 export { K8sResourceCommon, GroupVersionKind };
@@ -651,3 +653,12 @@ export type KebabSubMenu = {
 };
 
 export type KebabMenuOption = KebabSubMenu | KebabOption;
+
+export type StatusGroupMapper<
+  T extends K8sResourceCommon = K8sResourceCommon,
+  R extends { [key: string]: K8sResourceCommon[] } = { [key: string]: K8sResourceCommon[] },
+> = (resources: T[], additionalResources?: R) => StatusGroup;
+
+export type NodeComponentProps = {
+  element: Node;
+};
