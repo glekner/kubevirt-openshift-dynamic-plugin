@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/core",
-    "@openshift-console/dynamic-plugin-sdk-webpack": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/webpack",
     "@openshift-console/dynamic-plugin-sdk-kubevirt-internal": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/internal-kubevirt",
+    "@openshift-console/dynamic-plugin-sdk-webpack": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/webpack",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",
@@ -52,6 +52,7 @@
     "@types/webpack-dev-server": "^3.11.5",
     "comment-json": "4.x",
     "css-loader": "6.2.0",
+    "eslint": "7.x",
     "file-loader": "1.1.11",
     "http-server": "^13.0.1",
     "node-sass": "^6.0.1",
