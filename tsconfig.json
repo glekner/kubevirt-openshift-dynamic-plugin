@@ -12,12 +12,6 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "noUnusedLocals": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "console/frontend/node_modules/@types",
-      "console/frontend/@types"
-    ],
-    "types": ["node", "jest", "console"],
     "paths": {
       "@kubevirt-types": ["src/@kubevirt-internal/types"],
       "@kubevirt-types/*": ["src/types/*", "src/@kubevirt-internal/types/*"],
@@ -28,12 +22,7 @@
       "@kubevirt-utils": ["src/@kubevirt-internal/utils"],
       "@kubevirt-utils/*": ["src/utils/*", "src/@kubevirt-internal/utils/*"],
       "@kubevirt-constants": ["src/@kubevirt-internal/constants"],
-      "@kubevirt-constants/*": ["src/constants/*", "src/@kubevirt-internal/constants/*"],
-
-      // TODO: remove this once we have @openshift-console-kubevirt-internal
-      "@console/internal/*": ["console/frontend/public/*"],
-      "@console/shared/*": ["console/frontend/packages/console-shared/*"],
-      "*": ["*", "console/frontend/node_modules/*"]
+      "@kubevirt-constants/*": ["src/constants/*", "src/@kubevirt-internal/constants/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],

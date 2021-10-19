@@ -3,11 +3,8 @@ import {
   WatchK8sResources,
 } from '@openshift-console/dynamic-plugin-sdk';
 import { ResolvedExtension } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
-import {
-  modelForGroupKind,
-  referenceForExtensionModel,
-  referenceForModel,
-} from '@console/internal/module/k8s';
+import { modelForGroupKind } from '@kubevirt-utils';
+import { referenceForExtensionModel, referenceForModel } from '@console/internal/module/k8s';
 import { HorizontalPodAutoscalerModel } from '@kubevirt-models';
 
 export enum NamespacedPageVariants {

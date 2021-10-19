@@ -3,14 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "pre-build": "rm -rf dist && yarn --cwd console/frontend build-plugin-sdk",
-    "postinstall": "if [ -z ${SKIP_POSTINSTALL+x} ] ; then yarn install-console ; fi",
-    "install-console": "./install-console.sh",
-    "update-console": "git submodule update --remote --merge && (cd console ; ./build-frontend.sh)",
-    "reinstall-console": "rm -rf console/frontend/public/dist && yarn install-console",
     "build": "yarn pre-build && NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "yarn pre-build && NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
-    "build-sdk": "yarn --cwd console/frontend build-plugin-sdk",
     "dev": "rm -rf dist && yarn ts-node ./node_modules/.bin/webpack serve --progress",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'"
   },
@@ -37,9 +31,8 @@
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
-    "@openshift-console/dynamic-plugin-sdk": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/core",
-    "@openshift-console/dynamic-plugin-sdk-kubevirt-internal": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/internal-kubevirt",
-    "@openshift-console/dynamic-plugin-sdk-webpack": "link:./console/frontend/packages/console-dynamic-plugin-sdk/dist/webpack",
+    "@openshift-console/dynamic-plugin-sdk": "^0.0.2",
+    "@openshift-console/dynamic-plugin-sdk-webpack": "^0.0.2",
     "@types/json-schema": "^7.0.7",
     "@types/lodash-es": "4.17.x",
     "@types/node": "10.x",

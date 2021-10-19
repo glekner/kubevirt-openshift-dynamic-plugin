@@ -1,5 +1,5 @@
 import { SetFeatureFlag } from '@openshift-console/dynamic-plugin-sdk';
-import { fetchSwagger } from '@console/internal/module/k8s';
+import { fetchSwagger } from '@kubevirt-utils';
 import {
   FLAG_KUBEVIRT,
   FLAG_KUBEVIRT_HAS_PRINTABLESTATUS,
