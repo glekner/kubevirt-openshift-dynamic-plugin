@@ -18,9 +18,8 @@ import {
   UnknownIcon,
 } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { ResourceLink, resourcePath } from '@console/internal/components/utils';
-import { history } from '@console/internal/components/utils/router';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
@@ -116,6 +115,7 @@ export const PendingChangesPopoverContent: React.FC<PendingChangesPopoverContent
   vmi,
 }) => {
   const { t } = useTranslation();
+  const history = useHistory();
   return (
     <VMStatusPopoverContent
       key="pcPopover"

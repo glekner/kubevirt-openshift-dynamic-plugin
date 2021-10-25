@@ -22,9 +22,11 @@ import { getVMIVolumes } from '../../../selectors/vmi';
 import { VMIKind } from '../../../types';
 import { redirectToList } from './utils';
 import { VMIUsersAlert } from './vmi-users-alert';
+import { useHistory } from 'react-router-dom';
 
 export const DeleteVMIModal = withHandlePromise((props: DeleteVMIProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vmi } = props;
+  const history = useHistory();
 
   const { t } = useTranslation();
 
@@ -58,7 +60,7 @@ export const DeleteVMIModal = withHandlePromise((props: DeleteVMIProps) => {
 
     return handlePromise(promise, () => {
       close();
-      redirectToList(vmiUpToDate);
+      redirectToList(history, vmiUpToDate);
     });
   };
 

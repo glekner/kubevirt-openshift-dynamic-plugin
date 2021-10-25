@@ -19,9 +19,11 @@ import { getName, getNamespace } from '../../../selectors';
 import { getVolumes } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';
 import { redirectToList } from './utils';
+import { useHistory } from 'react-router-dom';
 
 export const DeleteVMTemplateModal = withHandlePromise((props: DeleteVMTemplateModalProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vmTemplate } = props;
+  const history = useHistory();
 
   const { t } = useTranslation();
 
@@ -55,7 +57,7 @@ export const DeleteVMTemplateModal = withHandlePromise((props: DeleteVMTemplateM
 
     return handlePromise(promise, () => {
       close();
-      redirectToList(vmTemplateUpToDate, 'templates');
+      redirectToList(history, vmTemplateUpToDate, 'templates');
     });
   };
 

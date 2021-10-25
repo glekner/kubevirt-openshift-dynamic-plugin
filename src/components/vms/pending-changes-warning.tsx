@@ -25,6 +25,7 @@ import { PendingChangesAlert } from '../Alerts/PendingChangesAlert';
 import { PendingChanges, PendingChangesByTab } from './types';
 
 import './pending-changes-warning.scss';
+import { useHistory } from 'react-router';
 
 type PendingChangesWarningProps = {
   vmi?: FirehoseResult<VMIKind>;
@@ -93,6 +94,7 @@ export const PendingChangesWarning: React.FC<PendingChangesWarningProps> = ({
   vmLikeEntity,
   vmi: vmiProp,
 }) => {
+  const history = useHistory();
   const vm: VMKind = asVM(getLoadedData(vmLikeEntity));
   const vmi = getLoadedData(vmiProp);
   if (!isVMRunningOrExpectedRunning(vm, vmi)) {
@@ -102,8 +104,8 @@ export const PendingChangesWarning: React.FC<PendingChangesWarningProps> = ({
   const vmWrapper = new VMWrapper(vm);
   const vmiWrapper = new VMIWrapper(vmi);
 
-  const pendingChanges = getPendingChanges(vmWrapper, vmiWrapper);
-  const arePendingChanges = hasPendingChanges(vm, vmi, pendingChanges);
+  const pendingChanges = getPendingChanges(history, vmWrapper, vmiWrapper);
+  const arePendingChanges = hasPendingChanges(history, vm, vmi, pendingChanges);
 
   if (_.isEmpty(pendingChanges) || !arePendingChanges) {
     return <></>;

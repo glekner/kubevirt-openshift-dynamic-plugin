@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { history } from '@console/internal/components/utils/router';
 import { TemplateKind } from '@kubevirt-types';
 import customizeSourceModal from '../components/modals/template-customization/CustomizeSourceModal';
 import { TEMPLATE_CUSTOMIZE_SOURCE } from '../constants';
 import { useLocalStorage } from './use-local-storage';
 import { useNamespace } from './use-namespace';
+import { useHistory } from 'react-router-dom';
 
 export type CustomizeSourceFunction = (template: TemplateKind) => void;
 
 export const useCustomizeSourceModal = (): CustomizeSourceFunction => {
+  const history = useHistory();
   const [showCustomizeModal, setShowCustomizeModal] = useLocalStorage(TEMPLATE_CUSTOMIZE_SOURCE);
   const namespace = useNamespace();
   return React.useCallback<CustomizeSourceFunction>(

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Alert, Button } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
-import { history } from '@console/internal/components/utils';
+import { useHistory } from 'react-router-dom';
 import { useGuestAgentInfo } from '../../../hooks/use-guest-agent-info';
 import { GuestAgentInfoWrapper } from '../../../k8s/wrapper/vm/guest-agent-info/guest-agent-info-wrapper';
 import { getName, getNamespace } from '../../../selectors';
@@ -22,6 +22,7 @@ export const VMIUsersAlert: React.FC<VMIUsersAlertProps> = ({
   alertTitle,
   alertHref,
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const [guestAgentInfoRaw] = useGuestAgentInfo({ vmi });
   const guestAgentInfo = new GuestAgentInfoWrapper(guestAgentInfoRaw);

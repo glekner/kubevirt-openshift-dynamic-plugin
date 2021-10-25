@@ -13,8 +13,7 @@ import {
   Title,
 } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { Prompt } from 'react-router';
-import { history } from '@console/internal/components/utils';
+import { Prompt, useHistory } from 'react-router';
 import { k8sKill } from '@console/internal/module/k8s';
 import { TemplateKind } from '@kubevirt-types';
 import {
@@ -59,6 +58,7 @@ type CustomizeSourceFinishProps = {
 };
 
 const CustomizeSourceFinish: React.FC<CustomizeSourceFinishProps> = ({ vm }) => {
+  const history = useHistory();
   const { t } = useTranslation();
 
   const [vmtError, setVMTError] = React.useState();

@@ -9,13 +9,13 @@ import {
   WizardContextType,
 } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router';
-import { history, LoadingBox } from '@console/internal/components/utils';
+import { RouteComponentProps, useHistory } from 'react-router-dom';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ProjectModel } from '@kubevirt-models';
+import { LoadingBox } from '@kubevirt-internal';
 import { K8sResourceCommon, TemplateKind } from '@kubevirt-types';
 import { DataVolumeSourceType, VMWizardMode, VMWizardName, VolumeType } from '../../constants';
 import { useStorageClassConfigMap } from '../../hooks/storage-class-config-map';
@@ -157,6 +157,7 @@ const Footer: React.FC<FooterProps> = ({
 
 export const CreateVM: React.FC<RouteComponentProps> = ({ location }) => {
   const { t } = useTranslation();
+  const history = useHistory();
   const searchParams = new URLSearchParams(location && location.search);
   const initData = parseVMWizardInitialData(searchParams);
   const [namespace, setNamespace] = React.useState(searchParams.get('namespace'));

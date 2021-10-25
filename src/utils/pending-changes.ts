@@ -1,3 +1,4 @@
+import { History } from 'history';
 import { vmFlavorModal } from '../components/modals';
 import { BootOrderModal } from '../components/modals/boot-order-modal';
 import { IsPendingChange, PendingChanges, VMTabEnum, VMTabURLEnum } from '../components/vms/types';
@@ -13,7 +14,11 @@ import {
 import { VMIKind, VMKind } from '../types';
 import { getVMTabURL, redirectToTab } from './url';
 
-export const getPendingChanges = (vmWrapper: VMWrapper, vmiWrapper: VMIWrapper): PendingChanges => {
+export const getPendingChanges = (
+  history: History,
+  vmWrapper: VMWrapper,
+  vmiWrapper: VMIWrapper,
+): PendingChanges => {
   const vm = vmWrapper.asResource();
   const modifiedEnvDisks = changedEnvDisks(vmWrapper, vmiWrapper);
   const modifiedNics = changedNics(vmWrapper, vmiWrapper);
@@ -22,7 +27,7 @@ export const getPendingChanges = (vmWrapper: VMWrapper, vmiWrapper: VMIWrapper):
     [IsPendingChange.flavor]: {
       isPendingChange: isFlavorChanged(vmWrapper, vmiWrapper),
       execAction: () => {
-        redirectToTab(getVMTabURL(vm, VMTabURLEnum.details));
+        redirectToTab(history, getVMTabURL(vm, VMTabURLEnum.details));
         vmFlavorModal({ vmLike: vm, blocking: true });
       },
       vmTab: VMTabEnum.details,
@@ -30,32 +35,37 @@ export const getPendingChanges = (vmWrapper: VMWrapper, vmiWrapper: VMIWrapper):
     [IsPendingChange.bootOrder]: {
       isPendingChange: isBootOrderChanged(vmWrapper, vmiWrapper),
       execAction: () => {
-        redirectToTab(getVMTabURL(vm, VMTabURLEnum.details));
+        redirectToTab(history, getVMTabURL(vm, VMTabURLEnum.details));
         BootOrderModal({ vmLikeEntity: vm, modalClassName: 'modal-lg' });
       },
       vmTab: VMTabEnum.details,
     },
     [IsPendingChange.env]: {
       isPendingChange: modifiedEnvDisks.length > 0,
-      execAction: () => redirectToTab(getVMTabURL(vm, VMTabURLEnum.env)),
+      execAction: () => redirectToTab(history, getVMTabURL(vm, VMTabURLEnum.env)),
       resourceNames: modifiedEnvDisks,
       vmTab: VMTabEnum.env,
     },
     [IsPendingChange.nics]: {
       isPendingChange: modifiedNics.length > 0,
-      execAction: () => redirectToTab(getVMTabURL(vm, VMTabURLEnum.nics)),
+      execAction: () => redirectToTab(history, getVMTabURL(vm, VMTabURLEnum.nics)),
       resourceNames: modifiedNics,
       vmTab: VMTabEnum.nics,
     },
   };
 };
 
-export const hasPendingChanges = (vm: VMKind, vmi: VMIKind, pc?: PendingChanges): boolean => {
+export const hasPendingChanges = (
+  history: History,
+  vm: VMKind,
+  vmi: VMIKind,
+  pc?: PendingChanges,
+): boolean => {
   const pendingChanges =
     pc ||
     (!!vmi &&
       vmi.status.phase !== VMIPhase.Succeeded &&
-      getPendingChanges(new VMWrapper(vm), new VMIWrapper(vmi)));
+      getPendingChanges(history, new VMWrapper(vm), new VMIWrapper(vmi)));
   return Object.keys(pendingChanges || {}).reduce(
     (boolVal, k) => boolVal || pendingChanges[k].isPendingChange,
     false,

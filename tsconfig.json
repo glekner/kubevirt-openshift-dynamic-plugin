@@ -17,6 +17,8 @@
       "@kubevirt-types/*": ["src/types/*", "src/@kubevirt-internal/types/*"],
       "@kubevirt-models": ["src/@kubevirt-internal/models"],
       "@kubevirt-models/*": ["src/models/*", "src/@kubevirt-internal/models/*"],
+      "@kubevirt-internal": ["src/@kubevirt-internal"],
+      "@kubevirt-internal/*": ["src/@kubevirt-internal/*"],
       "@kubevirt-components": ["src/@kubevirt-internal/components"],
       "@kubevirt-components/*": ["src/components/*", "src/@kubevirt-internal/components/*"],
       "@kubevirt-utils": ["src/@kubevirt-internal/utils"],

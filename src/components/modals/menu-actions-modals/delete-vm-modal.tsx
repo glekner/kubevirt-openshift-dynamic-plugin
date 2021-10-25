@@ -31,6 +31,7 @@ import { getVolumes } from '../../../selectors/vm/selectors';
 import { VMIKind, VMKind, VMSnapshot } from '../../../types/vm';
 import { redirectToList } from './utils';
 import { VMIUsersAlert } from './vmi-users-alert';
+import { useHistory } from 'react-router';
 
 export const DeleteVMModal = withHandlePromise((props: DeleteVMModalProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vm, vmi } = props;
@@ -43,6 +44,7 @@ export const DeleteVMModal = withHandlePromise((props: DeleteVMModalProps) => {
   };
 
   const vmUpToDate = useUpToDateVMLikeEntity<VMKind>(vm);
+  const history = useHistory();
   const { t } = useTranslation();
   const [deleteDisks, setDeleteDisks] = React.useState<boolean>(true);
   const [deleteVMImport, setDeleteVMImport] = React.useState<boolean>(true);
@@ -79,7 +81,7 @@ export const DeleteVMModal = withHandlePromise((props: DeleteVMModalProps) => {
 
     return handlePromise(promise, () => {
       close();
-      redirectToList(vmUpToDate);
+      redirectToList(history, vmUpToDate);
     });
   };
 

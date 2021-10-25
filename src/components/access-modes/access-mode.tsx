@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FormGroup } from '@patternfly/react-core';
 import * as _ from 'lodash';
 import { useTranslation } from 'react-i18next';
-import { RadioInput } from '@console/internal/components/radio';
+import { RadioInput } from '@kubevirt-components';
 import {
   getAccessModeForProvisioner,
   getAccessModeRadios,

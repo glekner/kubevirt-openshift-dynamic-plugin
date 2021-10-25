@@ -7,6 +7,7 @@ export * from './headings';
 export * from './inject';
 export * from './StatusBox/status-box';
 export * from './AsyncComponent/async';
+export * from './RadioInput';
 
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
@@ -67,7 +68,6 @@ export {
   getTopologyGroupItems,
   getTopologyNodeItem,
   mergeGroup,
-  getResource,
   withEditReviewAccess,
   CreateConnector,
   createConnectorCallback,

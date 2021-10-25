@@ -4,9 +4,9 @@ import { Location } from 'history';
 import * as _ from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { match as RouterMatch } from 'react-router';
+import { match as RouterMatch, useHistory } from 'react-router';
 import { compose } from 'redux';
-import { Firehose, history } from '@console/internal/components/utils';
+import { Firehose } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
@@ -415,6 +415,7 @@ export const CreateVMWizardPageComponent: React.FC<CreateVMWizardPageComponentPr
   commonTemplates,
   hasCompleted,
 }) => {
+  const history = useHistory();
   const activeNamespace = match && match.params && match.params.ns;
   const searchParams = new URLSearchParams(location && location.search);
   const userMode = searchParams.get(VMWizardURLParams.MODE) || VMWizardMode.VM;

@@ -19,7 +19,6 @@ import {
 } from '@patternfly/react-core';
 import { ErrorCircleOIcon, InProgressIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
-import { history, resourcePath } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
@@ -29,6 +28,8 @@ import { V1alpha1DataVolume } from '../../../types/api';
 import { DataUpload } from '../cdi-upload-provider';
 import { UPLOAD_STATUS } from '../consts';
 import { getProgressVariant } from '../upload-pvc-popover';
+import { resourcePath } from '@kubevirt-components';
+import { useHistory } from 'react-router-dom';
 
 export enum uploadErrorType {
   MISSING = 'missing',
@@ -147,6 +148,7 @@ const ErrorStatus: React.FC<ErrorStatusProps> = ({ error, onErrorClick }) => (
 
 const CDIInitErrorStatus: React.FC<CDIInitErrorStatus> = ({ onErrorClick, pvcName, namespace }) => {
   const { t } = useTranslation();
+  const history = useHistory();
   const [shouldKillDv, setShouldKillDv] = React.useState(true);
   const [pod, podLoaded, podError] = useK8sWatchResource<PodKind>({
     kind: PodModel.kind,

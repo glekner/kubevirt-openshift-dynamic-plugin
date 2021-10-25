@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { history } from '@console/internal/components/utils/router';
+import { History } from 'history';
 import { VMTabURLEnum } from '../components/vms/types';
 import { VMWizardURLParams } from '../constants/url-params';
 import { VMWizardMode, VMWizardName, VMWizardView } from '../constants/vm';
@@ -14,7 +14,7 @@ const ELLIPSIS = '…';
 
 const ellipsizeLeft = (word) => `${ELLIPSIS}${word}`;
 
-export const redirectToTab = (tabPath: string) => {
+export const redirectToTab = (history: History, tabPath: string) => {
   const currLocation = history.location?.pathname;
   if (currLocation && currLocation.includes(tabPath)) {
     return;

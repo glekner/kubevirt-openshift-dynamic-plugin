@@ -1,4 +1,4 @@
-import { history } from '@console/internal/components/utils';
+import { History } from 'history';
 import { TemplateKind } from '@kubevirt-types';
 import { VMWizardName } from '../../constants';
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
@@ -70,6 +70,7 @@ export const filterTemplates = (templates: TemplateKind[]): TemplateItem[] => {
 };
 
 export const createVMAction = (
+  history: History,
   template: TemplateKind,
   sourceStatus: TemplateSourceStatus,
   namespace: string,

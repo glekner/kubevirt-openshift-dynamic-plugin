@@ -13,12 +13,12 @@ import { CheckIcon } from '@patternfly/react-icons';
 import { global_palette_light_green_400 as globalLightGreen400 } from '@patternfly/react-tokens/dist/js/global_palette_light_green_400';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { history } from '@console/internal/components/utils';
 import { getVMLikeModelDetailPath, getVMLikeModelListPath } from '../../../../utils/utils';
 import { isOvirtProvider } from '../../selectors/immutable/provider/ovirt/selectors';
 import { iGetCommonData } from '../../selectors/immutable/selectors';
 import { iGetVmSettingValue } from '../../selectors/immutable/vm-settings';
 import { VMSettingsField, VMWizardProps } from '../../types';
+import { useHistory } from 'react-router-dom';
 
 export const SuccessResultsComponent: React.FC<SuccessResultsProps> = ({
   isCreateTemplate,
@@ -29,6 +29,7 @@ export const SuccessResultsComponent: React.FC<SuccessResultsProps> = ({
   className,
   onClick,
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const modelDetailPath = `${getVMLikeModelDetailPath(isCreateTemplate, namespace, name)}`;
   const modelListPath = `${getVMLikeModelListPath(

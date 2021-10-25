@@ -3,7 +3,6 @@ import { Alert, AlertActionLink, Stack, StackItem } from '@patternfly/react-core
 import { useTranslation } from 'react-i18next';
 import { SectionHeading } from '@console/internal/components/utils/headings';
 import { asAccessReview, useAccessReview } from '@console/internal/components/utils/rbac';
-import { history } from '@console/internal/components/utils/router';
 import { ScrollToTopOnMount } from '@console/internal/components/utils/scroll-to-top-on-mount';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
@@ -21,11 +20,13 @@ import {
   VMTemplateResourceSummary,
   VMTemplateSchedulingList,
 } from './vm-template-resource';
+import { useHistory } from 'react-router';
 
 export const VMTemplateDetails: React.FC<VMTemplateDetailsProps> = ({
   obj: template,
   customData,
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const canUpdate =
     useAccessReview(asAccessReview(TemplateModel, template, 'patch')) &&

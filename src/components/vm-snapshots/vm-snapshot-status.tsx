@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Split, SplitItem, Stack, StackItem } from '@patternfly/react-core';
-import { history, resourcePath } from '@console/internal/components/utils';
+import { resourcePath } from '@console/internal/components/utils';
 import { ErrorStatus, ProgressStatus, Status } from '@console/shared';
 import { VirtualMachineRestoreModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
@@ -13,8 +13,10 @@ import {
 } from '../../selectors/snapshot/snapshot';
 import { VMRestore, VMSnapshot } from '../../types';
 import snapshotRestoreModal from '../modals/snapshot-restore-modal/snapshot-restore-modal';
+import { useHistory } from 'react-router-dom';
 
 export const VMSnapshotStatus: React.FC<VMSnapshotStatusProps> = ({ snapshot, restore }) => {
+  const history = useHistory();
   const snapshotError = getVMSnapshotError(snapshot);
   const restoreError = getVMRestoreError(restore);
   const isRestoreProgressing = isVmRestoreProgressing(restore);

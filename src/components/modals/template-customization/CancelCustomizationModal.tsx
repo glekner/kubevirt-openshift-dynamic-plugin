@@ -7,7 +7,8 @@ import {
   ModalSubmitFooter,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { HandlePromiseProps, history, withHandlePromise } from '@console/internal/components/utils';
+import { useHistory } from 'react-router-dom';
+import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
 import { k8sKill } from '@console/internal/module/k8s';
 import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
 import { VirtualMachineModel } from '../../../models';
@@ -16,6 +17,7 @@ import { VMKind } from '../../../types';
 
 const CancelCustomizationModal = withHandlePromise<CancelCustomizationModalProps>(
   ({ inProgress, errorMessage, handlePromise, close, cancel, vm, backToVirt }) => {
+    const history = useHistory();
     const { t } = useTranslation();
 
     // hack to close template source popup
