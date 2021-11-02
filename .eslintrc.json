@@ -30,6 +30,12 @@
     }
   },
   "rules": {
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "consistent-return": "off",
     "import/no-unresolved": "off",
     "no-nested-ternary": "off",
@@ -79,12 +85,6 @@
           ["^.+\\.s?css$"]
         ]
       }
-    ],
-    "import/no-anonymous-default-export": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "no-unused-vars": "off"
+    ]
   }
 }
