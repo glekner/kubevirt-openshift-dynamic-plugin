@@ -1,5 +1,7 @@
 import * as _ from 'lodash';
+
 import { referenceForModel } from '@console/internal/module/k8s';
+
 import { VirtualMachineModel } from '../models';
 import { getName, getNamespace } from '../selectors';
 
@@ -28,17 +30,16 @@ export const getNextIDResolver = (entities: { id?: string }[] = []) => {
   return () => _.toString(++lastID);
 };
 
-export const wrapWithProgress = (setProgress: (inProgress: boolean) => void) => (
-  promise: Promise<any>,
-) => {
-  setProgress(true);
-  promise
-    .then(() => setProgress(false))
-    .catch((reason) => {
-      setProgress(false);
-      throw reason;
-    });
-};
+export const wrapWithProgress =
+  (setProgress: (inProgress: boolean) => void) => (promise: Promise<any>) => {
+    setProgress(true);
+    promise
+      .then(() => setProgress(false))
+      .catch((reason) => {
+        setProgress(false);
+        throw reason;
+      });
+  };
 
 export const getVMLikeModelListPath = (isCreateTemplate: boolean, namespace: string) =>
   isCreateTemplate

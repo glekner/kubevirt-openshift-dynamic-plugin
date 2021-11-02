@@ -1,13 +1,15 @@
 import * as _ from 'lodash';
+
 import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
+
 import { TEMPLATE_FLAVOR_LABEL, TEMPLATE_VM_SIZE_LABEL } from '../../../constants';
 import { getLabels } from '../../../selectors';
 import { isTemplate, isVM } from '../../../selectors/check-type';
 import { getAnnotations, getDescription } from '../../../selectors/selectors';
-import { isCustomFlavor } from '../../../selectors/vm-like/flavor';
-import { selectVM } from '../../../selectors/vm-template/basic';
 import { DEFAULT_CPU, parseCPU } from '../../../selectors/vm/cpu';
 import { getCPU, getFlavor, getMemory } from '../../../selectors/vm/selectors';
+import { isCustomFlavor } from '../../../selectors/vm-like/flavor';
+import { selectVM } from '../../../selectors/vm-template/basic';
 import { CPU, VMITemplate, VMKind } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
 import { Patch, PatchBuilder } from '../../helpers/patch';

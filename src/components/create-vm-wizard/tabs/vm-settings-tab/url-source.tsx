@@ -1,6 +1,8 @@
-import * as React from 'react';
-import { TextInput } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
+
+import { TextInput } from '@patternfly/react-core';
+
 import { DataVolumeSourceType } from '../../../../constants/vm/storage';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { toShallowJS } from '../../../../utils/immutable';
@@ -40,6 +42,7 @@ export const URLSource: React.FC<URLSourceProps> = React.memo(
     );
   },
 );
+URLSource.displayName = 'URLSource';
 
 type URLSourceProps = {
   field: any;

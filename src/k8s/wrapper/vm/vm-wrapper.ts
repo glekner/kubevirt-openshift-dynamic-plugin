@@ -1,5 +1,6 @@
 /* eslint-disable lines-between-class-members */
 import * as _ from 'lodash';
+
 import { VMWizardNetwork, VMWizardStorage } from '../../../components/create-vm-wizard/types';
 import {
   CLOUD_INIT_CONFIG_DRIVE,
@@ -34,11 +35,12 @@ import {
 } from '../../../types';
 import { V1alpha1DataVolume, V1Disk, V1Volume } from '../../../types/api';
 import {
-  findKeySuffixValue,
   buildOwnerReferenceForModel,
   compareOwnerReference,
+  findKeySuffixValue,
 } from '../../../utils';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
+
 import { BootDevice, VMILikeMethods } from './types';
 import { VolumeWrapper } from './volume-wrapper';
 

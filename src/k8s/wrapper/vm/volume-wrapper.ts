@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import {
   ConfigMapModel,
   PersistentVolumeClaimModel,
@@ -6,6 +7,7 @@ import {
   ServiceAccountModel,
 } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types';
+
 import { VolumeType } from '../../../constants/vm/storage';
 import { DataVolumeModel } from '../../../models';
 import {

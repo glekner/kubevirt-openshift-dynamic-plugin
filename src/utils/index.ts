@@ -3,10 +3,13 @@ import { JSONSchema6 } from 'json-schema';
 import * as _ from 'lodash';
 import { toPath } from 'lodash';
 import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generator';
-import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+
 import { FirehoseResult } from '@console/internal/components/utils';
 import { NamespaceModel, ProjectModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types';
+import { pluralize } from '@kubevirt-utils';
+import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {
   getAPIVersion,
@@ -16,10 +19,8 @@ import {
   getParameterValue,
   getUID,
 } from '../selectors';
-import { ValidationObject, asValidationObject, ValidationErrorType } from '../selectors/types';
-// eslint-disable-next-line import/order
+import { asValidationObject, ValidationErrorType, ValidationObject } from '../selectors/types';
 import { getTemplateName } from '../selectors/vm-template/basic';
-import { pluralize } from '@kubevirt-utils';
 
 export type EntityMap<A> = { [propertyName: string]: A };
 export type K8sEntityMap<A extends K8sResourceKind> = EntityMap<A>;

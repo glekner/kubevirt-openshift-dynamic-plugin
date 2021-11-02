@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
+
 import { LoadingBox } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { ConsoleType } from '../../../constants/vm/console-type';
 import { useEventListener } from '../../../hooks/use-event-listener';
 import { useRenderVNCConsole } from '../../../hooks/use-render-vnc-console';
@@ -19,6 +21,7 @@ import { getVMStatus } from '../../../statuses/vm/vm-status';
 import { V1alpha1DataVolume } from '../../../types/api';
 import { VMIKind, VMKind } from '../../../types/vm';
 import { VMImportKind } from '../../../types/vm-import/ovirt/vm-import';
+
 import VMConsoles from './VMConsoles';
 
 const StandaloneVMConsolePage: React.FC<RouteComponentProps<{ name: string; ns: string }>> = ({

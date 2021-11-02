@@ -1,4 +1,8 @@
+import * as _ from 'lodash';
 import * as React from 'react';
+import { useHistory } from 'react-router';
+
+import { Firehose, FirehoseResult } from '@console/internal/components/utils';
 import {
   Breadcrumb,
   BreadcrumbHeading,
@@ -8,8 +12,7 @@ import {
   List,
   ListItem,
 } from '@patternfly/react-core';
-import * as _ from 'lodash';
-import { Firehose, FirehoseResult } from '@console/internal/components/utils';
+
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
 import { VMIWrapper } from '../../k8s/wrapper/vm/vmi-wrapper';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';
@@ -22,10 +25,10 @@ import { VMLikeEntityKind } from '../../types/vmLike';
 import { getLoadedData } from '../../utils';
 import { getPendingChanges, hasPendingChanges } from '../../utils/pending-changes';
 import { PendingChangesAlert } from '../Alerts/PendingChangesAlert';
+
 import { PendingChanges, PendingChangesByTab } from './types';
 
 import './pending-changes-warning.scss';
-import { useHistory } from 'react-router';
 
 type PendingChangesWarningProps = {
   vmi?: FirehoseResult<VMIKind>;

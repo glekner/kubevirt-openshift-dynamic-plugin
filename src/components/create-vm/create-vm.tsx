@@ -1,4 +1,13 @@
+import classNames from 'classnames';
+import { isEmpty } from 'lodash';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { RouteComponentProps, useHistory } from 'react-router-dom';
+
+import { LoadingBox } from '@kubevirt-internal';
+import { ProjectModel } from '@kubevirt-models';
+import { K8sResourceCommon, TemplateKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   AlertActionCloseButton,
@@ -9,14 +18,7 @@ import {
   WizardContextType,
 } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import classNames from 'classnames';
-import { isEmpty } from 'lodash';
-import { useTranslation } from 'react-i18next';
-import { RouteComponentProps, useHistory } from 'react-router-dom';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { ProjectModel } from '@kubevirt-models';
-import { LoadingBox } from '@kubevirt-internal';
-import { K8sResourceCommon, TemplateKind } from '@kubevirt-types';
+
 import { DataVolumeSourceType, VMWizardMode, VMWizardName, VolumeType } from '../../constants';
 import { useStorageClassConfigMap } from '../../hooks/storage-class-config-map';
 import { useErrorTranslation } from '../../hooks/use-error-translation';
@@ -36,6 +38,7 @@ import { getVMWizardCreateLink, parseVMWizardInitialData } from '../../utils/url
 import { SuccessResultsComponent } from '../create-vm-wizard/tabs/result-tab/success-results';
 import { AUTHORIZED_SSH_KEYS } from '../ssh-service/SSHForm/ssh-form-utils';
 import { filterTemplates } from '../vm-templates/utils';
+
 import {
   BOOT_ACTION_TYPE,
   bootFormReducer,
@@ -47,6 +50,7 @@ import { useVmTemplatesResources } from './hooks/use-vm-templates-resources';
 import { BootSource } from './tabs/boot-source';
 import { ReviewAndCreate } from './tabs/review-create';
 import { SelectTemplate } from './tabs/select-template';
+
 import '../create-vm-wizard/create-vm-wizard.scss';
 import './create-vm.scss';
 

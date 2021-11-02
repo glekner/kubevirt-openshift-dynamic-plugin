@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { VMTemplateLink } from '../vm-templates/vm-template-link';
+
 import VMDetailsItem from './VMDetailsItem';
 
 const VMDetailsItemTemplate: React.FC<VMDetailsItemTemplateProps> = ({ name, namespace }) => {

@@ -1,5 +1,7 @@
 import * as _ from 'lodash';
+
 import { TemplateKind } from '@kubevirt-types';
+
 import {
   CUSTOM_FLAVOR,
   TEMPLATE_DEFAULT_LABEL,
@@ -9,6 +11,7 @@ import {
 } from '../../constants/vm';
 import { getLabel, getLabelValue } from '../selectors';
 import { isCustomFlavor } from '../vm-like/flavor';
+
 import {
   getTemplateFlavors,
   getTemplatesWithLabels,

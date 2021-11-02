@@ -1,7 +1,9 @@
 import * as _ from 'lodash';
-import { TemplateModel } from '@kubevirt-models';
+
 import { k8sCreate, k8sPatchByName } from '@console/internal/module/k8s';
+import { TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
+
 import { VMSettingsField } from '../../../components/create-vm-wizard/types';
 import {
   AccessMode,
@@ -20,8 +22,8 @@ import {
   VM_TEMPLATE_NAME_PARAMETER,
   VolumeMode,
 } from '../../../constants';
-import { TemplateSupport } from '../../../constants/vm-templates/support';
 import { DataVolumeSourceType } from '../../../constants/vm/storage';
+import { TemplateSupport } from '../../../constants/vm-templates/support';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';
 import { getKubevirtAvailableModel } from '../../../models/kubevirtReferenceForModel';
 import { isCommonTemplate } from '../../../selectors/vm-template/basic';

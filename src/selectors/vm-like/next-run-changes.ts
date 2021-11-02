@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { DiskWrapper } from '../../k8s/wrapper/vm/disk-wrapper';
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
 import { VMIWrapper } from '../../k8s/wrapper/vm/vmi-wrapper';
@@ -6,7 +7,7 @@ import { VolumeWrapper } from '../../k8s/wrapper/vm/volume-wrapper';
 import { V1Disk } from '../../types/api';
 import { BootableDeviceType } from '../../types/types';
 import { V1NetworkInterface } from '../../types/vm/index';
-import { getSimpleName, createBasicLookup } from '../../utils';
+import { createBasicLookup, getSimpleName } from '../../utils';
 import { getBootableDevicesInOrder, getTransformedDevices } from '../vm/devices';
 import { getVMIBootableDevicesInOrder, getVMIDevices } from '../vmi/devices';
 

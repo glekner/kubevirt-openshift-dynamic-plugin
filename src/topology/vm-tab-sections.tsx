@@ -1,17 +1,20 @@
 import * as React from 'react';
-import { GraphElement } from '@patternfly/react-topology';
 import { Link } from 'react-router-dom';
+
+import { ResourceIcon, resourcePathFromModel } from '@console/internal/components/utils';
+import { getResource } from '@console/topology/src/utils';
 import {
   AdapterDataType,
   K8sResourceCommon,
   NetworkAdapterType,
   PodsAdapterDataType,
 } from '@openshift-console/dynamic-plugin-sdk';
-import { ResourceIcon, resourcePathFromModel } from '@console/internal/components/utils';
-import { getResource } from '@console/topology/src/utils';
+import { GraphElement } from '@patternfly/react-topology';
+
 import { VirtualMachineModel } from '../models';
 import { getKubevirtAvailableModel } from '../models/kubevirtReferenceForModel';
 import { usePodsForVm } from '../utils/usePodsForVm';
+
 import { TYPE_VIRTUAL_MACHINE } from './components/const';
 import { TopologyVmDetailsPanel } from './TopologyVmDetailsPanel';
 import { VMNode } from './types';

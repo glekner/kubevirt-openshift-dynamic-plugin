@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+
+import { LoadingInline } from '@console/internal/components/utils';
 import { AccessConsoles } from '@patternfly/react-console';
 import {
   Accordion,
@@ -12,8 +15,7 @@ import {
   Stack,
   StackItem,
 } from '@patternfly/react-core';
-import { Trans, useTranslation } from 'react-i18next';
-import { LoadingInline } from '@console/internal/components/utils';
+
 import { ConsoleType } from '../../../constants/vm/console-type';
 import { VMStatus } from '../../../constants/vm/vm-status';
 import { CloudInitDataHelper } from '../../../k8s/wrapper/vm/cloud-init-data-helper';
@@ -28,6 +30,7 @@ import { isVMIPaused, isVMIRunning } from '../../../selectors/vmi';
 import { VMStatusBundle } from '../../../statuses/vm/types';
 import { VMIKind, VMKind } from '../../../types/vm';
 import { CLOUD_INIT_MISSING_USERNAME } from '../../../utils/strings';
+
 import SerialConsoleConnector from './connectors/SerialConsoleConnector';
 import VncConsoleConnector from './connectors/VncConsoleConnector';
 import DesktopViewerSelector from './DesktopViewerSelector';
@@ -113,7 +116,7 @@ const VMConsoles: React.FC<VMConsolesProps> = ({
 
   // const consoleType = typeNotSupported || type == null ? getAvailableType() : type;
 
-  const isPaused = isVMIPaused(((vm as any) as VMIKind) || vmi);
+  const isPaused = isVMIPaused((vm as any as VMIKind) || vmi);
 
   return (
     <Stack hasGutter>

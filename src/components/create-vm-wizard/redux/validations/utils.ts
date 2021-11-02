@@ -1,5 +1,6 @@
 import { Map as ImmutableMap } from 'immutable';
 import * as _ from 'lodash';
+
 import { ValidationErrorType, ValidationObject } from '../../../../selectors';
 import { BinaryUnit } from '../../../form/size-unit-utils';
 import { iGetFieldKey, isFieldRequired } from '../../selectors/immutable/field';

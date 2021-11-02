@@ -1,7 +1,9 @@
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import * as _ from 'lodash';
+
 import { Kebab } from '@console/internal/components/utils';
 import { NodeKind } from '@kubevirt-types';
+
 import { getName } from '../../../../selectors';
 import {
   getNodeAffinityPreferredTerms,
@@ -9,6 +11,7 @@ import {
   getPodAffinityPreferredTerms,
   getPodAffinityRequiredTerms,
 } from '../../../../selectors/affinity/selectors';
+
 import {
   Affinity,
   AffinityCondition,
@@ -75,7 +78,7 @@ const getNodeAffinityRows = (nodeAffinity: NodeAffinity): AffinityRowData[] => {
 
 const getPodLikeAffinityRows = (
   podLikeAffinity: PodAffinity,
-  isAnti: boolean = false,
+  isAnti = false,
 ): AffinityRowData[] => {
   const requiredTerms = getPodAffinityRequiredTerms(podLikeAffinity) || [];
   const preferredTerms = getPodAffinityPreferredTerms(podLikeAffinity) || [];

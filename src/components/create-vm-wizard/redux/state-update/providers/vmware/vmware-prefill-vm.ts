@@ -6,7 +6,9 @@
  * The vmwareToKubevirtOsConfigMap is usually created by the web-ui-operator and can be missing.
  */
 import * as _ from 'lodash';
+
 import { ConfigMapKind, StorageClassResourceKind } from '@kubevirt-types';
+
 import { VMwareFirmware } from '../../../../../../constants/v2v-import/vmware/vmware-firmware';
 import {
   CUSTOM_FLAVOR,

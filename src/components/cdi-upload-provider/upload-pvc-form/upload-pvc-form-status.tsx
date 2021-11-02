@@ -1,4 +1,11 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+
+import { resourcePath } from '@kubevirt-components';
+import { PodModel } from '@kubevirt-models';
+import { PodKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   AlertVariant,
@@ -18,18 +25,13 @@ import {
   Title,
 } from '@patternfly/react-core';
 import { ErrorCircleOIcon, InProgressIcon } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { PodModel } from '@kubevirt-models';
-import { PodKind } from '@kubevirt-types';
+
 import { killUploadPVC } from '../../../k8s/requests/cdi-upload/cdi-upload-requests';
 import { getName, getNamespace } from '../../../selectors/selectors';
 import { V1alpha1DataVolume } from '../../../types/api';
 import { DataUpload } from '../cdi-upload-provider';
 import { UPLOAD_STATUS } from '../consts';
 import { getProgressVariant } from '../upload-pvc-popover';
-import { resourcePath } from '@kubevirt-components';
-import { useHistory } from 'react-router-dom';
 
 export enum uploadErrorType {
   MISSING = 'missing',

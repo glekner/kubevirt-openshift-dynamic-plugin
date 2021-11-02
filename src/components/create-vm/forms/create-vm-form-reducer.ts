@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { ValidationObject } from '../../../selectors';
 
 export type FormState = {

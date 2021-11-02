@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Alert } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -9,12 +9,15 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { ExternalLink } from '@console/internal/components/utils';
+import { Alert } from '@patternfly/react-core';
+
 import {
   createInstallUrl,
   PackageManifestKind,
   SubscriptionsKind,
 } from '../../../utils/migration-tool-utils';
 import { ModalFooter } from '../../modals/modal/modal-footer';
+
 import './migration-tool.scss';
 
 type MigrationToolProps = ModalComponentProps & {

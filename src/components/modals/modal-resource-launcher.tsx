@@ -1,7 +1,8 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
+
 import { createModal, GetModalContainer } from '@console/internal/components/factory';
 import { ModalErrorContent } from '@console/internal/components/modals/error-modal';
 import {
@@ -65,27 +66,24 @@ const ModalComponentWrapper: React.FC<ModalComponentWrapperProps> = ({
   );
 };
 
-export const createModalResourceLauncher: CreateModalResourceLauncher = (
-  Component,
-  resources,
-  resourcesToProps,
-) => (props) => {
-  const getModalContainer: GetModalContainer = (onClose) => (
-    <Provider store={store}>
-      <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
-        <Firehose resources={resources}>
-          <ModalComponentWrapper
-            Component={Component}
-            onClose={onClose}
-            resourcesToProps={resourcesToProps}
-            modalProps={props}
-          />
-        </Firehose>
-      </Router>
-    </Provider>
-  );
-  return createModal(getModalContainer);
-};
+export const createModalResourceLauncher: CreateModalResourceLauncher =
+  (Component, resources, resourcesToProps) => (props) => {
+    const getModalContainer: GetModalContainer = (onClose) => (
+      <Provider store={store}>
+        <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
+          <Firehose resources={resources}>
+            <ModalComponentWrapper
+              Component={Component}
+              onClose={onClose}
+              resourcesToProps={resourcesToProps}
+              modalProps={props}
+            />
+          </Firehose>
+        </Router>
+      </Provider>
+    );
+    return createModal(getModalContainer);
+  };
 
 type NotFoundProps = {
   message: string;

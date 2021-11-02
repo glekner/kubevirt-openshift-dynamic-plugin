@@ -1,6 +1,8 @@
 import * as React from 'react';
+
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { VirtualMachineRestoreModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getVmRestoreSnapshotName, getVmRestoreTime } from '../../selectors/snapshot/snapshot';

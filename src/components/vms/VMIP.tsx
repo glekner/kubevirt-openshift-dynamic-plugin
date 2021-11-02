@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Popover, PopoverPosition } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { Button, ButtonVariant, Popover, PopoverPosition } from '@patternfly/react-core';
 
 import './vm-ip.scss';
 
@@ -19,7 +20,7 @@ const VMIP: React.FC<VMIPProps> = ({ data }) => {
           headerContent={
             <div>{t('kubevirt-plugin~IP Addresses ({{ips}})', { ips: data.length })}</div>
           }
-          bodyContent={Array.isArray(data) && data?.map((ip) => <div>{ip}</div>)}
+          bodyContent={Array.isArray(data) && data?.map((ip) => <div key={ip}>{ip}</div>)}
           hasAutoWidth
           position={PopoverPosition.top}
         >

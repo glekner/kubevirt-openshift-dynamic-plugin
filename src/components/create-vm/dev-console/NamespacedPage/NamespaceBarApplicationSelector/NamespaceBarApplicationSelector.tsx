@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect, Dispatch } from 'react-redux';
+
 import { setActiveApplication } from '@console/internal/actions/ui';
-import { getActiveNamespace, getActiveApplication } from '@console/internal/reducers/ui';
+import { getActiveApplication, getActiveNamespace } from '@console/internal/reducers/ui';
 import { RootState } from '@console/internal/redux';
 import {
-  ALL_NAMESPACES_KEY,
   ALL_APPLICATIONS_KEY,
-  UNASSIGNED_APPLICATIONS_KEY,
-  APPLICATION_USERSETTINGS_PREFIX,
+  ALL_NAMESPACES_KEY,
   APPLICATION_LOCAL_STORAGE_KEY,
+  APPLICATION_USERSETTINGS_PREFIX,
+  UNASSIGNED_APPLICATIONS_KEY,
 } from '@console/shared';
+
 import ApplicationDropdown from './ApplicationDropdown';
 
 interface NamespaceBarApplicationSelectorProps {

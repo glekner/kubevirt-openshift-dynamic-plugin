@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
+
 import useSSHService from '../../hooks/use-ssh-service';
 import { VMIKind, VMKind } from '../../types';
 import { ModalFooter } from '../modals/modal/modal-footer';
+
 import SSHCreateService from './SSHCreateService/SSHCreateService';
 
 import './ssh-modal.scss';

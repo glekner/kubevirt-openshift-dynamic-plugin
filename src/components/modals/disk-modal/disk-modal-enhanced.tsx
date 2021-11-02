@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
 import { Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { k8sPatch } from '@console/internal/module/k8s';
 import {
   NamespaceModel,
   PersistentVolumeClaimModel,
   ProjectModel,
   StorageClassModel,
 } from '@kubevirt-models';
-import { k8sPatch } from '@console/internal/module/k8s';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types';
+
 import { useStorageClassConfigMapWrapped } from '../../../hooks/storage-class-config-map';
 import { getUpdateDiskPatches } from '../../../k8s/patches/vm/vm-disk-patches';
 import { CombinedDiskFactory } from '../../../k8s/wrapper/vm/combined-disk';
@@ -26,6 +28,7 @@ import { V1alpha1DataVolume, V1Disk, V1Volume } from '../../../types/api';
 import { VMLikeEntityKind } from '../../../types/vmLike';
 import { getLoadedData } from '../../../utils';
 import { TemplateValidations } from '../../../utils/validations/template/template-validations';
+
 import { DiskModal } from './disk-modal';
 
 const DiskModalFirehoseComponent: React.FC<DiskModalFirehoseComponentProps> = (props) => {

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Button, ButtonVariant, Text, TextVariants } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import {
   ExternalLink,
@@ -9,13 +9,15 @@ import {
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { NodeModel } from '@kubevirt-models';
 import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
+import { NodeModel } from '@kubevirt-models';
+import { Button, ButtonVariant, Text, TextVariants } from '@patternfly/react-core';
+
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { useIDEntities } from '../../../../hooks/use-id-entities';
 import { getTolerationsPatch } from '../../../../k8s/patches/vm/vm-scheduling-patches';
-import { getVMLikeTolerations } from '../../../../selectors/vm-like/selectors';
 import { getVMLikeModel } from '../../../../selectors/vm/vmlike';
+import { getVMLikeTolerations } from '../../../../selectors/vm-like/selectors';
 import { VMLikeEntityKind } from '../../../../types/vmLike';
 import { getLoadedData, getLoadError, isLoaded } from '../../../../utils';
 import { LabelsList } from '../../../LabelsList/labels-list';
@@ -23,6 +25,7 @@ import { ModalFooter } from '../../modal/modal-footer';
 import { TOLERATIONS_EFFECTS } from '../shared/consts';
 import { useNodeQualifier } from '../shared/hooks';
 import { NodeChecker } from '../shared/NodeChecker/node-checker';
+
 import { TolerationHeader } from './toleration-header';
 import { TolerationRow } from './toleration-row';
 import { TolerationLabel } from './types';

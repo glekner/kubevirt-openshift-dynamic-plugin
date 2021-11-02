@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ExternalLink, HintBlock } from '@console/internal/components/utils';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models/index';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getOwnerReferences } from '../../selectors';

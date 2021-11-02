@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Checkbox, SelectOption, Text } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+
 import { ResourceLink, useAccessReview } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
+import { Button, ButtonVariant, Checkbox, SelectOption, Text } from '@patternfly/react-core';
+
 import { getPVCUploadURL } from '../../../../constants';
 import { operatingSystemsNative } from '../../../../constants/vm-templates/os';
 import { asValidationObject, ValidationErrorType } from '../../../../selectors';
@@ -24,9 +26,9 @@ import {
 } from '../../../../utils/immutable';
 import { flavorSort, ignoreCaseSort } from '../../../../utils/sort';
 import {
+  CDI_PVC_PHASE_RUNNING,
   CDI_UPLOAD_OS_URL_PARAM,
   CDI_UPLOAD_POD_ANNOTATION,
-  CDI_PVC_PHASE_RUNNING,
 } from '../../../cdi-upload-provider/consts';
 import { FormPFSelect } from '../../../form/form-pf-select';
 import { FormField, FormFieldType } from '../../form/form-field';

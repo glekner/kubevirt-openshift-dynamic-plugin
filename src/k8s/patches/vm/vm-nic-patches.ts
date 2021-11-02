@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { getDisks, getInterfaces, getNetworks } from '../../../selectors/vm/selectors';
 import { V1Network, V1NetworkInterface } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
@@ -7,6 +8,7 @@ import { Patch, PatchBuilder } from '../../helpers/patch';
 import { NetworkInterfaceWrapper } from '../../wrapper/vm/network-interface-wrapper';
 import { NetworkWrapper } from '../../wrapper/vm/network-wrapper';
 import { getVMLikePatches } from '../vm-template';
+
 import { getShiftBootOrderPatches } from './utils';
 
 export const getRemoveNICPatches = (

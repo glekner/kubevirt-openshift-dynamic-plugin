@@ -1,13 +1,16 @@
 import * as React from 'react';
-import { Grid, GridItem } from '@patternfly/react-core';
-import { observer } from '@patternfly/react-topology';
+
 import { asAccessReview, useAccessReview } from '@console/internal/components/utils';
 import { PodKind } from '@kubevirt-types';
+import { Grid, GridItem } from '@patternfly/react-core';
+import { observer } from '@patternfly/react-topology';
+
 import { VMDetailsList, VMResourceSummary } from '../components/vms/vm-resource';
 import { VirtualMachineModel } from '../models';
 import { getKubevirtAvailableModel } from '../models/kubevirtReferenceForModel';
 import { VMKind } from '../types/vm';
 import { usePodsForVm } from '../utils/usePodsForVm';
+
 import { VMNode } from './types';
 
 type TopologyVmDetailsPanelProps = {

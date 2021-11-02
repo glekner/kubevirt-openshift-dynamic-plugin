@@ -1,5 +1,7 @@
 import * as _ from 'lodash';
+
 import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+
 import { CONVERSION_PROGRESS_ANNOTATION } from '../../constants/v2v';
 import { VMStatus } from '../../constants/vm/vm-status';
 import { VMIPhase } from '../../constants/vmi/phase';
@@ -17,12 +19,12 @@ import {
 } from '../../selectors/selectors';
 import { findConversionPod } from '../../selectors/vm/combined';
 import { isVMCreated, isVMExpectedRunning } from '../../selectors/vm/selectors';
+import { isVMIPaused } from '../../selectors/vmi/basic';
 import {
   findVMIMigration,
   getMigrationStatusPhase,
   isMigrating,
 } from '../../selectors/vmi-migration';
-import { isVMIPaused } from '../../selectors/vmi/basic';
 import { PAUSED_VM_MODAL_MESSAGE } from '../../strings/vm/messages';
 import {
   IMPORT_CDI_PENDING_MESSAGE,
@@ -37,10 +39,10 @@ import { VMIKind, VMKind } from '../../types';
 import { V1alpha1DataVolume } from '../../types/api';
 import { VMImportKind } from '../../types/vm-import/ovirt/vm-import';
 import {
-  compareOwnerReference,
-  createBasicLookup,
   buildOwnerReference,
   buildOwnerReferenceForModel,
+  compareOwnerReference,
+  createBasicLookup,
   parseNumber,
   parsePercentage,
 } from '../../utils';
@@ -53,6 +55,7 @@ import {
 } from '../pod/constants';
 import { getPodStatus } from '../pod/pod';
 import { getVMImportStatus } from '../vm-import/vm-import-status';
+
 import { VMStatusBundle } from './types';
 
 const isPaused = (vmi: VMIKind): VMStatusBundle =>

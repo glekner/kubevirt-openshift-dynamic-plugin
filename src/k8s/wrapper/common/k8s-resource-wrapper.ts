@@ -1,4 +1,5 @@
 import { K8sKind, K8sResourceCommon, OwnerReference } from '@kubevirt-types';
+
 /* eslint-disable lines-between-class-members */
 import {
   getAnnotations,
@@ -11,6 +12,7 @@ import {
 } from '../../../selectors';
 import { compareOwnerReference } from '../../../utils';
 import { K8sResourceKindMethods } from '../types/types';
+
 import { clearRuntimeMetadata, initK8sObject, K8sInitAddon } from './util/k8s-mixin';
 import { Wrapper } from './wrapper';
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Alert, AlertVariant } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
+
+import { Alert, AlertVariant } from '@patternfly/react-core';
 
 export const RemovalDiskAlert: React.FC<{
   hotplugDiskNames?: string[];

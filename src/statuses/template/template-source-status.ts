@@ -1,4 +1,5 @@
 import { K8sResourceCommon, PersistentVolumeClaimKind } from '@kubevirt-types';
+
 import {
   ANNOTATION_SOURCE_PROVIDER,
   BOOT_SOURCE_AVAILABLE,
@@ -20,6 +21,7 @@ import { getAnnotation, getParameterValue } from '../../selectors/selectors';
 import { isCommonTemplate } from '../../selectors/vm-template/basic';
 import { V1alpha1DataVolume } from '../../types/api';
 import { DVStatusType, getDVStatus } from '../dv/dv-status';
+
 import { GetTemplateSourceStatus, SOURCE_TYPE } from './types';
 
 const supportedDVSources = [

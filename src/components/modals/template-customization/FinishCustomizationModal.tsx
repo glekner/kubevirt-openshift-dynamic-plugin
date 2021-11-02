@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Checkbox, Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -10,8 +10,11 @@ import {
 import { ExternalLink, ResourceLink } from '@console/internal/components/utils';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { Checkbox, Stack, StackItem } from '@patternfly/react-core';
+
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants/vm-templates';
 import { ModalFooter } from '../modal/modal-footer';
+
 import './finish-customization-modal.scss';
 
 const FinishCustomizationModal: React.FC<FinishCustomizationModalProps> = ({

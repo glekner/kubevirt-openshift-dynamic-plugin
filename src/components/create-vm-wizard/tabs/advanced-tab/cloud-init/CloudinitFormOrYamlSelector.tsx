@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Radio, Text, TextVariants } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { Radio, Text, TextVariants } from '@patternfly/react-core';
+
 import { ViewComponent } from '../../../../form-with-editor/FormWithEditor';
 
 type CloudinitFormOrYamlSelectorProps = {

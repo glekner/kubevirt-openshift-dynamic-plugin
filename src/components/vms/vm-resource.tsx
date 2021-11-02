@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { NodeLink, ResourceLink, ResourceSummary } from '@console/internal/components/utils';
 import { Selector } from '@console/internal/components/utils/selector';
 import { PodModel } from '@kubevirt-models';
 import { K8sKind, PodKind, ServiceKind } from '@kubevirt-types';
+
 import { LABEL_USED_TEMPLATE_NAME, LABEL_USED_TEMPLATE_NAMESPACE } from '../../constants';
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';
 import { asVMILikeWrapper } from '../../k8s/wrapper/utils/convert';
@@ -14,7 +16,6 @@ import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';
 import { getLabel, getName, getNamespace, getNodeName } from '../../selectors';
 import { findVMIPod } from '../../selectors/pod/selectors';
 import { getDescription } from '../../selectors/selectors';
-import { isBootOrderChanged, isFlavorChanged } from '../../selectors/vm-like/next-run-changes';
 import { getFlavorData } from '../../selectors/vm/flavor-data';
 import {
   getOperatingSystem,
@@ -23,6 +24,7 @@ import {
   isVMRunningOrExpectedRunning,
 } from '../../selectors/vm/selectors';
 import { getVMLikeModel } from '../../selectors/vm/vmlike';
+import { isBootOrderChanged, isFlavorChanged } from '../../selectors/vm-like/next-run-changes';
 import { getVMINodeName, isVMIPaused } from '../../selectors/vmi';
 import { getVmiIpAddresses } from '../../selectors/vmi/ip-address';
 import { VMStatusBundle } from '../../statuses/vm/types';
@@ -42,6 +44,7 @@ import tolerationsModal from '../modals/scheduling-modals/tolerations-modal/conn
 import { vmStatusModal } from '../modals/vm-status-modal/vm-status-modal';
 import SSHDetailsPage from '../ssh-service/SSHDetailsPage/SSHDetailsPage';
 import { VMStatus } from '../vm-status/vm-status';
+
 import VMDetailsItem from './VMDetailsItem';
 import VMDetailsItemTemplate from './VMDetailsItemTemplate';
 import VMEditWithPencil from './VMEditWithPencil';

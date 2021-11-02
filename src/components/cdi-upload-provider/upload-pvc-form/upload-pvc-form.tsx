@@ -1,4 +1,35 @@
+import axios from 'axios';
+import cx from 'classnames';
+import { TFunction } from 'i18next';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { Trans, useTranslation } from 'react-i18next';
+import { match } from 'react-router';
+
+import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
+import {
+  ButtonBar,
+  ExternalLink,
+  history,
+  LoadingInline,
+  RequestSizeInput,
+  resourcePath,
+  useAccessReview2,
+  useMultipleAccessReviews,
+} from '@console/internal/components/utils';
+import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
+import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
+import {
+  ConfigMapKind,
+  K8sResourceKind,
+  PersistentVolumeClaimKind,
+  StorageClassResourceKind,
+  TemplateKind,
+} from '@kubevirt-types';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ActionGroup,
   Alert,
@@ -12,38 +43,7 @@ import {
   Stack,
   StackItem,
 } from '@patternfly/react-core';
-import axios from 'axios';
-import cx from 'classnames';
-import { TFunction } from 'i18next';
-import { Helmet } from 'react-helmet';
-import { Trans, useTranslation } from 'react-i18next';
-import { match } from 'react-router';
-import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
-import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
-import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
-import {
-  ButtonBar,
-  ExternalLink,
-  history,
-  LoadingInline,
-  RequestSizeInput,
-  resourcePath,
-  useAccessReview2,
-  useMultipleAccessReviews,
-} from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
-import { K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
-import {
-  ConfigMapKind,
-  K8sResourceKind,
-  PersistentVolumeClaimKind,
-  StorageClassResourceKind,
-  TemplateKind,
-} from '@kubevirt-types';
-import { AccessModeSelector } from '../../access-modes/access-mode';
-import { VolumeModeSelector } from '../../volume-modes/volume-mode';
+
 import {
   TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER,
   TEMPLATE_TYPE_BASE,
@@ -66,15 +66,19 @@ import { getName, getNamespace, getParameterValue } from '../../../selectors/sel
 import { getTemplateOperatingSystems } from '../../../selectors/vm-template/advanced';
 import { OperatingSystemRecord } from '../../../types';
 import { V1alpha1DataVolume } from '../../../types/api';
+import { AccessModeSelector } from '../../access-modes/access-mode';
 import { FormSelectPlaceholderOption } from '../../form/form-select-placeholder-option';
 import { BinaryUnit, convertToBytes } from '../../form/size-unit-utils';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import { CDIUploadContext } from '../cdi-upload-provider';
 import {
   CDI_UPLOAD_OS_URL_PARAM,
   CDI_UPLOAD_SUPPORTED_TYPES_URL,
   CDI_UPLOAD_URL_BUILDER,
 } from '../consts';
+
 import { uploadErrorType, UploadPVCFormStatus } from './upload-pvc-form-status';
+
 import './upload-pvc-form.scss';
 
 const templatesResource: WatchK8sResource = {
@@ -119,7 +123,6 @@ export const UploadPVCForm: React.FC<UploadPVCFormProps> = ({
   isLoading,
   setIsFileRejected,
   setDisableFormSubmit,
-  scConfigMap,
   storageClasses,
   ...props
 }) => {

@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import { FirehoseResult } from '@console/internal/components/utils';
+import { k8sGet } from '@console/internal/module/k8s';
 import { ConfigMapModel } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types';
-import { k8sGet } from '@console/internal/module/k8s';
+
 import {
   STORAGE_CLASS_CONFIG_MAP_NAME,
   STORAGE_CLASS_CONFIG_MAP_NAMESPACES,

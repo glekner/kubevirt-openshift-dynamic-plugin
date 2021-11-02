@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ListDropdown } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
+
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { toShallowJS } from '../../../../utils/immutable';
 import { ProjectDropdown } from '../../../form/project-dropdown';
@@ -64,6 +66,7 @@ export const ClonePVCSource: React.FC<ClonePVCSourceProps> = React.memo(
     );
   },
 );
+ClonePVCSource.displayName = 'ClonePVCSource';
 
 type ClonePVCSourceProps = {
   nsField: any;

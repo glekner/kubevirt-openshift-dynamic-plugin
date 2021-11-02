@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { GridItem, Text, TextVariants } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 export const NodeSelectorHeader = () => {
   const { t } = useTranslation();

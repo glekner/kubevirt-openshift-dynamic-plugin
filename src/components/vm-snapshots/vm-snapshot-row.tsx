@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { Button, Tooltip } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import { Kebab, ResourceKebab, ResourceLink, Timestamp } from '@console/internal/components/utils';
+import { Button, Tooltip } from '@patternfly/react-core';
+
 import { VirtualMachineSnapshotModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getCreationTimestamp, getName, getNamespace } from '../../selectors';
@@ -15,6 +17,7 @@ import { VMRestore, VMSnapshot } from '../../types';
 import { DASH, dimensifyRow } from '../../utils';
 import snapshotRestoreModal from '../modals/snapshot-restore-modal/snapshot-restore-modal';
 import { VMLabel } from '../VMLabel';
+
 import { VMSnapshotRowCustomData } from './types';
 import { VMSnapshotStatus } from './vm-snapshot-status';
 

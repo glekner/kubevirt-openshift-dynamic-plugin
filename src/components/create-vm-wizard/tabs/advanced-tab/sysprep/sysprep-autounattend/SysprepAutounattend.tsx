@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { Text, TextVariants } from '@patternfly/react-core';
+
 import SysprepFileField from '../SysprepFileField';
 import { AUTOUNATTEND } from '../utils/sysprep-utils';
+
 import SysprepAutounattendHelperPopup from './SysprepAutounattendHelperPopup';
 
 const SysprepAutounattend = () => {

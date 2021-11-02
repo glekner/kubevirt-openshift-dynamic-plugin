@@ -1,5 +1,7 @@
 import * as React from 'react';
+
 import { PodKind } from '@kubevirt-types';
+
 import { VMStatusBundle } from '../../statuses/vm/types';
 import { VMIKind, VMKind } from '../../types';
 

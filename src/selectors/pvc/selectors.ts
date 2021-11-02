@@ -1,9 +1,10 @@
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
+
 import {
   CDI_CLONE_TOKEN_ANNOTAION,
+  CDI_PVC_PHASE_RUNNING,
   CDI_UPLOAD_POD_ANNOTATION,
   CDI_UPLOAD_POD_NAME_ANNOTATION,
-  CDI_PVC_PHASE_RUNNING,
 } from '../../components/cdi-upload-provider/consts';
 import { CDI_KUBEVIRT_IO, STORAGE_IMPORT_POD_LABEL } from '../../constants';
 import { DataVolumeModel } from '../../models';

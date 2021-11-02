@@ -1,7 +1,8 @@
-/* eslint-disable camelcase, @typescript-eslint/camelcase,no-await-in-loop */
 import * as _ from 'lodash';
+
 import { SecretModel } from '@kubevirt-models';
 import { SecretKind } from '@kubevirt-types';
+
 import {
   getOvirtAttribute,
   getOvirtField,
@@ -19,12 +20,12 @@ import { VMImportType } from '../../../../constants/v2v-import/ovirt/vm-import-t
 import { ANNOTATION_DESCRIPTION } from '../../../../constants/vm';
 import { NetworkType } from '../../../../constants/vm/network';
 import { DiskMapping, NetworkMapping } from '../../../../types/vm-import/ovirt/vm-import';
-import { compareOwnerReference, buildOwnerReference } from '../../../../utils';
+import { buildOwnerReference, compareOwnerReference } from '../../../../utils';
 import { PatchBuilder } from '../../../helpers/patch';
 import { SecretWrappper } from '../../../wrapper/k8s/secret-wrapper';
-import { VMImportWrappper } from '../../../wrapper/vm-import/vm-import-wrapper';
 import { NetworkWrapper } from '../../../wrapper/vm/network-wrapper';
 import { PersistentVolumeClaimWrapper } from '../../../wrapper/vm/persistent-volume-claim-wrapper';
+import { VMImportWrappper } from '../../../wrapper/vm-import/vm-import-wrapper';
 import { CreateVMParams } from '../../vm/create/types';
 import { ImporterResult } from '../../vm/types';
 

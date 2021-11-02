@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -7,10 +9,10 @@ import {
   ModalSubmitFooter,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { useHistory } from 'react-router-dom';
 import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
 import { k8sKill } from '@console/internal/module/k8s';
 import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+
 import { VirtualMachineModel } from '../../../models';
 import { getKubevirtAvailableModel } from '../../../models/kubevirtReferenceForModel';
 import { VMKind } from '../../../types';

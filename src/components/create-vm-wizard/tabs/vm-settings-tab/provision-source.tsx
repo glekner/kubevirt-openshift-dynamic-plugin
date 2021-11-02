@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Button, ButtonVariant, SelectOption, Text, TextContent } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
+
+import { Button, ButtonVariant, SelectOption, Text, TextContent } from '@patternfly/react-core';
+
 import { ProvisionSource } from '../../../../constants/vm/provision-source';
 import { ValidationErrorType } from '../../../../selectors';
 import { iGet, iGetIn } from '../../../../utils/immutable';
@@ -149,6 +151,7 @@ export const ProvisionSourceComponent: React.FC<ProvisionSourceComponentProps> =
     );
   },
 );
+ProvisionSourceComponent.displayName = 'ProvisionSourceComponent';
 
 type ProvisionSourceDiskHelpMsgProps = {
   provisionSourceValue: string;

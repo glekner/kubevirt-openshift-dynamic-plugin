@@ -1,5 +1,6 @@
-import * as _ from 'lodash';
 import i18n from 'i18next';
+import * as _ from 'lodash';
+
 import { getLastLanguage } from './internal';
 
 // The maximum allowed clock skew in milliseconds where we show a date as "Just now" even if it is from the future.

@@ -1,5 +1,9 @@
-import * as _ from 'lodash';
 import { History } from 'history';
+import * as _ from 'lodash';
+
+import { TemplateKind } from '@kubevirt-types';
+import { k8sBasePath } from '@kubevirt-utils';
+
 import { VMTabURLEnum } from '../components/vms/types';
 import { VMWizardURLParams } from '../constants/url-params';
 import { VMWizardMode, VMWizardName, VMWizardView } from '../constants/vm';
@@ -7,8 +11,6 @@ import { getName, getNamespace } from '../selectors';
 import { isCommonTemplate } from '../selectors/vm-template/basic';
 import { VMKind } from '../types';
 import { VMWizardBootSourceParams, VMWizardInitialData } from '../types/url';
-import { k8sBasePath } from '@kubevirt-utils';
-import { TemplateKind } from '@kubevirt-types';
 
 const ELLIPSIS = '…';
 

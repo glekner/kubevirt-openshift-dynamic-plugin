@@ -1,5 +1,6 @@
-import * as React from 'react';
 import { safeLoad } from 'js-yaml';
+import * as React from 'react';
+
 /* eslint-disable lines-between-class-members */
 import { CreateYAMLProps } from '@console/internal/components/create-yaml';
 import { ErrorPage404 } from '@console/internal/components/error';
@@ -9,17 +10,18 @@ import {
   resourcePathFromModel,
 } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
-import { TemplateModel } from '@kubevirt-models';
 import { k8sList } from '@console/internal/module/k8s';
+import { TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
+
 import {
   TEMPLATE_FLAVOR_LABEL,
   TEMPLATE_TYPE_BASE,
   TEMPLATE_TYPE_LABEL,
   TEMPLATE_WORKLOAD_LABEL,
 } from '../../constants/vm';
-import { VM_TEMPLATE_CREATE_HEADER } from '../../constants/vm-templates';
 import { OSSelection } from '../../constants/vm/default-os-selection';
+import { VM_TEMPLATE_CREATE_HEADER } from '../../constants/vm-templates';
 import { resolveDefaultVMTemplate } from '../../k8s/requests/vm/create/default-template';
 import { VMTemplateWrapper } from '../../k8s/wrapper/vm/vm-template-wrapper';
 import { VMTemplateYAMLTemplates } from '../../models/templates';

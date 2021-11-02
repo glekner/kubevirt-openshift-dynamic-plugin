@@ -1,5 +1,6 @@
-import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
 import { TaintEffect } from '@kubevirt-types';
+import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+
 import { IDEntity } from '../../types';
 
 export type IDLabel = IDEntity & {

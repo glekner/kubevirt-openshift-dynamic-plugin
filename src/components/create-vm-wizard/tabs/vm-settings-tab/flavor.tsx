@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { SelectOption } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { SelectOption } from '@patternfly/react-core';
+
 import { CUSTOM_FLAVOR } from '../../../../constants';
 import { Flavor } from '../../../../constants/vm/flavor';
-import { asValidationObject, ValidationErrorType, getLabelValue } from '../../../../selectors';
+import { asValidationObject, getLabelValue, ValidationErrorType } from '../../../../selectors';
+import { getFlavor } from '../../../../selectors/vm/selectors';
 import { getTemplateFlavorData } from '../../../../selectors/vm-template/advanced';
 import {
   getFlavorLabel,
@@ -11,7 +14,6 @@ import {
   getOsDefaultTemplate,
   getWorkloadProfiles,
 } from '../../../../selectors/vm-template/combined-dependent';
-import { getFlavor } from '../../../../selectors/vm/selectors';
 import {
   iGetIsLoaded,
   iGetLoadedData,

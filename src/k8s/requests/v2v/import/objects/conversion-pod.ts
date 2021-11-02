@@ -1,4 +1,5 @@
 import { ImagePullPolicy } from '@kubevirt-types';
+
 import {
   CONVERSION_BASE_NAME,
   CONVERSION_GENERATE_NAME,

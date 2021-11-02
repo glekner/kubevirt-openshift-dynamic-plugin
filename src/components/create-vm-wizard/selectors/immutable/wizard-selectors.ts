@@ -11,6 +11,7 @@ import {
   VMWizardTab,
   VMWizardTabsMetadata,
 } from '../../types';
+
 import { iGetCreateVMWizardTabs } from './common';
 import { iGetCommonData } from './selectors';
 

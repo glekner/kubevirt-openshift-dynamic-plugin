@@ -3,6 +3,7 @@ import { NetworkInterfaceWrapper } from '../../../../k8s/wrapper/vm/network-inte
 import { NetworkWrapper } from '../../../../k8s/wrapper/vm/network-wrapper';
 import { getSequenceName } from '../../../../utils';
 import { CommonData, VMWizardNetwork, VMWizardNetworkType } from '../../types';
+
 import { InitialStepStateGetter } from './types';
 
 export const podNetwork: VMWizardNetwork = {

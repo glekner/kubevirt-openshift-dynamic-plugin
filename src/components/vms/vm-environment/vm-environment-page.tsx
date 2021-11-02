@@ -1,6 +1,7 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   AsyncComponent,
   FieldLevelHelp,
@@ -10,6 +11,7 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { k8sPatch } from '@console/internal/module/k8s';
+import { PatchBuilder } from '@console/shared/src/k8s/patch';
 import { ConfigMapModel, SecretModel, ServiceAccountModel, TemplateModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
@@ -18,21 +20,23 @@ import {
   ServiceAccountKind,
   TemplateKind,
 } from '@kubevirt-types';
-import { PatchBuilder } from '@console/shared/src/k8s/patch';
+
+import { Patch } from '../../../k8s/helpers/patch';
 import { getVMLikePatches } from '../../../k8s/patches/vm-template';
 import { VMWrapper } from '../../../k8s/wrapper/vm/vm-wrapper';
 import { VirtualMachineModel } from '../../../models';
 import { getNamespace } from '../../../selectors';
 import { isVM } from '../../../selectors/check-type';
+import { getVMLikeModel } from '../../../selectors/vm/vmlike';
 import {
   getTemplateValidationsFromTemplate,
   getVMTemplateNamespacedName,
 } from '../../../selectors/vm-template/selectors';
-import { getVMLikeModel } from '../../../selectors/vm/vmlike';
 import { V1Disk, V1Volume } from '../../../types/api';
 import { VMKind } from '../../../types/vm';
 import { getRandomChars, getResource } from '../../../utils';
 import { VMTabProps } from '../types';
+
 import {
   configMapKind,
   configMapList,
@@ -64,7 +68,6 @@ import {
 } from './selectors';
 import { EnvDisk, NameValuePairs, SOURCES } from './types';
 import { VMEnvironmentFooter } from './vm-environment-footer';
-import { Patch } from '../../../k8s/helpers/patch';
 
 import './vm-environment.scss';
 

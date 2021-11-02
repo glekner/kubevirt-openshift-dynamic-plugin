@@ -1,12 +1,15 @@
 import * as React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { K8sKind } from '@kubevirt-types';
+
 import { FirehoseResult } from '@console/internal/components/utils';
+import { K8sKind } from '@kubevirt-types';
 import { K8sResourceKind } from '@kubevirt-types';
+import { FormSelect, FormSelectOption } from '@patternfly/react-core';
+
 import { getName, ValidationErrorType, ValidationObject } from '../../selectors';
 import { getLoadedData, getLoadError, isLoaded } from '../../utils';
 import { ignoreCaseSort } from '../../utils/sort';
+
 import { FormRow } from './form-row';
 import { asFormSelectValue, FormSelectPlaceholderOption } from './form-select-placeholder-option';
 

@@ -1,20 +1,22 @@
-import * as React from 'react';
-import { Button, ButtonVariant } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+
 import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import {
   FirehoseResult,
   HandlePromiseProps,
   withHandlePromise,
 } from '@console/internal/components/utils';
-import { NodeModel } from '@kubevirt-models';
 import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
+import { NodeModel } from '@kubevirt-models';
+import { Button, ButtonVariant } from '@patternfly/react-core';
+
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { useIDEntities } from '../../../../hooks/use-id-entities';
 import { getNodeSelectorPatches } from '../../../../k8s/patches/vm/vm-scheduling-patches';
-import { getVMLikeNodeSelector } from '../../../../selectors/vm-like/selectors';
 import { getVMLikeModel } from '../../../../selectors/vm/vmlike';
+import { getVMLikeNodeSelector } from '../../../../selectors/vm-like/selectors';
 import { VMLikeEntityKind } from '../../../../types/vmLike';
 import { getLoadedData, getLoadError, isLoaded } from '../../../../utils';
 import { LabelRow } from '../../../LabelsList/LabelRow/label-row';
@@ -23,6 +25,7 @@ import { IDLabel } from '../../../LabelsList/types';
 import { ModalFooter } from '../../modal/modal-footer';
 import { useNodeQualifier } from '../shared/hooks';
 import { NodeChecker } from '../shared/NodeChecker/node-checker';
+
 import { nodeSelectorToIDLabels } from './helpers';
 import { NodeSelectorHeader } from './node-selector-header';
 

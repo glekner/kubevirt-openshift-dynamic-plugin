@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { getName } from '../../selectors';
 import { isUpstream } from '../../utils/common';
 import { ObjectEnum } from '../object-enum';

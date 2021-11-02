@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { getDeviceBootOrder } from '../../../selectors/vm/devices';
 import { getSimpleName } from '../../../utils';
 import { PatchBuilder } from '../../helpers/patch';
@@ -7,7 +8,7 @@ export const getShiftBootOrderPatches = (
   path: string,
   devices: any[],
   removedDeviceName: string,
-  removedDeviceBootOrder: number = -1,
+  removedDeviceBootOrder = -1,
 ) => {
   const devicesWithoutRemovedDevice =
     removedDeviceName == null

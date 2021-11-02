@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
 import {
   DiskBus,
@@ -23,6 +24,7 @@ import { DiskWrapper } from '../../../wrapper/vm/disk-wrapper';
 import { NetworkInterfaceWrapper } from '../../../wrapper/vm/network-interface-wrapper';
 import { VMTemplateWrapper } from '../../../wrapper/vm/vm-template-wrapper';
 import { VolumeWrapper } from '../../../wrapper/vm/volume-wrapper';
+
 import { initializeCommonMetadata, initializeCommonTemplateMetadata } from './common';
 import { DefaultVMLikeEntityParams } from './types';
 

@@ -1,6 +1,8 @@
 import * as React from 'react';
+
 import Dashboard from '@console/shared/src/components/dashboard/Dashboard';
 import DashboardGrid from '@console/shared/src/components/dashboard/DashboardGrid';
+
 import { isVM, isVMI } from '../../selectors/check-type';
 import { asVM } from '../../selectors/vm/vm';
 import { getVMStatus } from '../../statuses/vm/vm-status';
@@ -11,6 +13,7 @@ import {
   VMStatusCard,
   VMUtilizationCard,
 } from '../dashboards-page/vm-dashboard';
+
 import { VMTabProps } from './types';
 import { VMDashboardContext } from './vm-dashboard-context';
 

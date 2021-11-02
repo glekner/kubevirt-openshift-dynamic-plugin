@@ -1,15 +1,6 @@
 import * as React from 'react';
-import {
-  Alert,
-  AlertVariant,
-  Checkbox,
-  Form,
-  SelectOption,
-  Stack,
-  StackItem,
-  TextInput,
-} from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
+
 import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import { initialAccessModes } from '@console/internal/components/storage/shared';
 import {
@@ -20,15 +11,24 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { NamespaceModel, PersistentVolumeClaimModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
+import { NamespaceModel, PersistentVolumeClaimModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
 } from '@kubevirt-types';
-import { AccessModeSelector } from '../../access-modes/access-mode';
-import { VolumeModeSelector } from '../../volume-modes/volume-mode';
+import {
+  Alert,
+  AlertVariant,
+  Checkbox,
+  Form,
+  SelectOption,
+  Stack,
+  StackItem,
+  TextInput,
+} from '@patternfly/react-core';
+
 import {
   AccessMode,
   DataVolumeSourceType,
@@ -70,6 +70,7 @@ import { isFieldDisabled } from '../../../utils/ui/edit-config';
 import { isValidationError } from '../../../utils/validations/common';
 import { TemplateValidations } from '../../../utils/validations/template/template-validations';
 import { validateDisk } from '../../../utils/validations/vm';
+import { AccessModeSelector } from '../../access-modes/access-mode';
 import { VMImportProvider } from '../../create-vm-wizard/types';
 import { FormPFSelect } from '../../form/form-pf-select';
 import { FormRow } from '../../form/form-row';
@@ -79,9 +80,12 @@ import { URLSourceHelp } from '../../form/helper/url-source-help';
 import { K8sResourceSelectRow } from '../../form/k8s-resource-select-row';
 import { SizeUnitFormRow } from '../../form/size-unit-form-row';
 import { BinaryUnit, stringValueUnitSplit } from '../../form/size-unit-utils';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
 import { ModalFooter } from '../modal/modal-footer';
+
 import { HotplugFieldLevelHelp } from './HotplugFieldLevelHelp';
 import { StorageUISource } from './storage-ui-source';
+
 import './disk-modal.scss';
 
 export const DiskModal = withHandlePromise((props: DiskModalProps) => {
@@ -116,7 +120,9 @@ export const DiskModal = withHandlePromise((props: DiskModalProps) => {
   const asId = prefixedID.bind(null, 'disk');
   const disk = props.disk || new DiskWrapper();
   const volume = props.volume || new VolumeWrapper();
-  const dataVolume = props.dataVolume || new DataVolumeWrapper();
+  const dataVolume = React.useMemo(() => {
+    return props.dataVolume || new DataVolumeWrapper();
+  }, [props.dataVolume]);
   const tValidations = templateValidations || new TemplateValidations();
   const [autoDetach, setAutoDetach] = React.useState(false);
 
@@ -394,7 +400,7 @@ export const DiskModal = withHandlePromise((props: DiskModalProps) => {
     setPVCName(newPVCName);
     if (source === StorageUISource.ATTACH_CLONED_DISK) {
       const newSizeBundle = getPvcStorageSize(
-        getLoadedData(persistentVolumeClaims).find((p) => getName(p) === newPVCName),
+        getLoadedData(persistentVolumeClaims).find((p) => getName(p) === newPVCName) as any,
       );
       const [newSize, newUnit] = stringValueUnitSplit(newSizeBundle);
       setSize(newSize);

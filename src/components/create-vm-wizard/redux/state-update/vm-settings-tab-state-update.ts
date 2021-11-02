@@ -1,4 +1,5 @@
 import { FLAGS } from '@console/shared';
+
 import {
   CUSTOM_FLAVOR,
   TEMPLATE_BASE_IMAGE_NAME_PARAMETER,
@@ -16,8 +17,8 @@ import {
 } from '../../../../selectors/immutable/template/combined';
 import { iGetIsLoaded, iGetLoadError, toShallowJS } from '../../../../utils/immutable';
 import {
-  CDI_UPLOAD_POD_ANNOTATION,
   CDI_PVC_PHASE_RUNNING,
+  CDI_UPLOAD_POD_ANNOTATION,
 } from '../../../cdi-upload-provider/consts';
 import {
   getInitialData,
@@ -41,6 +42,7 @@ import { VMSettingsField, VMWizardProps, VMWizardStorage } from '../../types';
 import { asDisabled, asHidden, asRequired } from '../../utils/utils';
 import { vmWizardInternalActions } from '../internal-actions';
 import { InternalActionType, UpdateOptions } from '../types';
+
 import { prefillVmTemplateUpdater } from './prefill-vm-template-state-update';
 import { commonTemplatesUpdater } from './vm-common-templates-updater';
 

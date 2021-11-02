@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import {
   Button,
   ButtonVariant,
@@ -9,12 +11,13 @@ import {
   TextInput,
 } from '@patternfly/react-core';
 import { MinusCircleIcon, PlusCircleIcon } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
+
 import { CloudInitDataFormKeys } from '../../../../../k8s/wrapper/vm/cloud-init-data-helper';
 import { joinIDs } from '../../../../../utils/index';
 import { ValidationStatus } from '../../../../../utils/validations/cloudint-utils';
-import CloudInitAuthKeyHelp from './CloudInitAuthKeyHelp';
+
 import { cloudinitIDGenerator } from './utils/cloudinit-utils';
+import CloudInitAuthKeyHelp from './CloudInitAuthKeyHelp';
 
 type CloudinitFormProps = {
   validationStatus: ValidationStatus;
@@ -75,7 +78,6 @@ const CloudinitForm: React.FC<CloudinitFormProps> = ({
           return (
             <Split key={uiIDX} className="kv-cloudint-advanced-tab-with-editor--ssh-key-row">
               <SplitItem isFilled>
-                {/* eslint-disable-next-line jsx-a11y/no-access-key */}
                 <TextInput
                   id={inputID}
                   type="text"

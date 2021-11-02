@@ -1,15 +1,17 @@
-import * as React from 'react';
-import { Alert, AlertVariant } from '@patternfly/react-core';
-import { InProgressIcon } from '@patternfly/react-icons';
 import classNames from 'classnames';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { resourcePath } from '@console/internal/components/utils';
+import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
 import { DeploymentModel, PodModel } from '@kubevirt-models';
 import { K8sResourceKind, PodKind } from '@kubevirt-types';
-import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
+import { Alert, AlertVariant } from '@patternfly/react-core';
+import { InProgressIcon } from '@patternfly/react-icons';
+
 import { getName, getNamespace } from '../../../../../selectors';
 import { PodDeploymentStatus } from '../../../../../statuses/pod-deployment/constants';
 import { getPodDeploymentStatus } from '../../../../../statuses/pod-deployment/pod-deployment-status';
@@ -157,6 +159,7 @@ const VmwareControllerStatusRowComponent: React.FC<VmwareControllerStatusRowComp
       </FormRow>
     );
   });
+VmwareControllerStatusRowComponent.displayName = 'VmwareControllerStatusRowComponent';
 
 type VmwareControllerStatusRowComponentProps = {
   id: string;

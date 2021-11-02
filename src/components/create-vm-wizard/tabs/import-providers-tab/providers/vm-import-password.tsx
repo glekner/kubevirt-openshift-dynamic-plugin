@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Split, SplitItem, TextInput } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
+import { Button, ButtonVariant, Split, SplitItem, TextInput } from '@patternfly/react-core';
+
 import { ValidationErrorType } from '../../../../../selectors';
 import { iGet } from '../../../../../utils/immutable';
 import { FormField, FormFieldType } from '../../../form/form-field';
@@ -55,6 +57,7 @@ const VMImportPasswordConnected: React.FC<VMImportPasswordConnectedProps> = Reac
     );
   },
 );
+VMImportPasswordConnected.displayName = 'VMImportPasswordConnected';
 
 type VMImportPasswordConnectedProps = {
   rememberPassword: boolean;

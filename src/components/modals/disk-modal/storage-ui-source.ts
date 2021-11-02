@@ -1,5 +1,5 @@
 /* eslint-disable lines-between-class-members */
-import { VolumeType, ObjectEnum } from '../../../constants';
+import { ObjectEnum, VolumeType } from '../../../constants';
 import {
   SelectDropdownData,
   SelectDropdownObjectEnum,
@@ -117,7 +117,7 @@ export class StorageUISource extends SelectDropdownObjectEnum<string> {
   static fromTypes = (
     volumeType: VolumeType,
     dataVolumeSourceType?: DataVolumeSourceType,
-    hasNewPVC: boolean = false,
+    hasNewPVC = false,
   ) =>
     StorageUISource.ALL.find(
       (storageUIType) =>

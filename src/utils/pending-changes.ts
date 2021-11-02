@@ -1,4 +1,5 @@
 import { History } from 'history';
+
 import { vmFlavorModal } from '../components/modals';
 import { BootOrderModal } from '../components/modals/boot-order-modal';
 import { IsPendingChange, PendingChanges, VMTabEnum, VMTabURLEnum } from '../components/vms/types';
@@ -12,6 +13,7 @@ import {
   isFlavorChanged,
 } from '../selectors/vm-like/next-run-changes';
 import { VMIKind, VMKind } from '../types';
+
 import { getVMTabURL, redirectToTab } from './url';
 
 export const getPendingChanges = (

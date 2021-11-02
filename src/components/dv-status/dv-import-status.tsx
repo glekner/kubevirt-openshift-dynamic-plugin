@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Alert, Progress, ProgressSize, Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
+
+import { ErrorStatus, ProgressStatus } from '@console/shared';
 import { PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
-import { ErrorStatus, ProgressStatus } from '@console/shared';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
+import { Alert, Progress, ProgressSize, Stack, StackItem } from '@patternfly/react-core';
+
 import { DataVolumeSourceType } from '../../constants/vm';
 import { DataVolumeWrapper } from '../../k8s/wrapper/vm/data-volume-wrapper';
 import { DVStatusType, getDVStatus } from '../../statuses/dv/dv-status';

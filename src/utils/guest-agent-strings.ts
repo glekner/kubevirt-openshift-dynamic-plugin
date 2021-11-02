@@ -1,4 +1,5 @@
 import { TFunction } from 'i18next';
+
 import { VMStatus, VMStatusSimpleLabel } from '../constants/vm/vm-status';
 
 export const getNumLoggedInUsersMessage = (t: TFunction, numLoggedInUsers: number | null) => {

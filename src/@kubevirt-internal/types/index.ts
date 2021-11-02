@@ -2,5 +2,5 @@
 export * from '../../types';
 
 // console types
-export * from './internal';
 export * from './dashboard';
+export * from './internal';

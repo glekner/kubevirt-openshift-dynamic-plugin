@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Firehose } from '@console/internal/components/utils';
+import { ResourceDropdown } from '@console/shared';
 import {
   isTopologyDataModelFactory as isDynamicTopologyDataModelFactory,
   isTopologyDataModelFactory,
@@ -7,9 +10,8 @@ import {
   TopologyDataModelFactory,
   useResolvedExtensions,
 } from '@openshift-console/dynamic-plugin-sdk';
-import { Firehose } from '@console/internal/components/utils';
-import { ResourceDropdown } from '@console/shared';
-import { getNamespacedDynamicModelFactories, getBaseWatchedResources } from './utils';
+
+import { getBaseWatchedResources, getNamespacedDynamicModelFactories } from './utils';
 
 interface ApplicationDropdownProps {
   id?: string;

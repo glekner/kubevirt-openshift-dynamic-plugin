@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   PrometheusMultilineUtilizationItem,
   PrometheusUtilizationItem,
@@ -14,9 +15,11 @@ import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboa
 import UtilizationBody from '@console/shared/src/components/dashboard/utilization-card/UtilizationBody';
 import { UtilizationDurationDropdown } from '@console/shared/src/components/dashboard/utilization-card/UtilizationDurationDropdown';
 import { ByteDataTypes } from '@console/shared/src/graph-helper/data-utils';
+
 import { getCreationTimestamp, getName, getNamespace } from '../../../selectors';
 import { findVMIPod } from '../../../selectors/pod/selectors';
 import { VMDashboardContext } from '../../vms/vm-dashboard-context';
+
 import { getMultilineUtilizationQueries, getUtilizationQueries, VMQueries } from './queries';
 
 // TODO: extend humanizeCpuCores() from @console/internal for the flexibility of space
@@ -67,9 +70,10 @@ export const VMUtilizationCard: React.FC = () => {
   );
 
   const createdAt = getCreationTimestamp(vmi);
-  const adjustDuration = React.useCallback((start) => adjustDurationForStart(start, createdAt), [
-    createdAt,
-  ]);
+  const adjustDuration = React.useCallback(
+    (start) => adjustDurationForStart(start, createdAt),
+    [createdAt],
+  );
 
   return (
     <DashboardCard>

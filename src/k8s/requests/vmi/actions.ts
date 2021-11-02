@@ -1,5 +1,6 @@
 import { coFetch } from '@console/internal/co-fetch';
 import { groupVersionFor, k8sKill, resourceURL } from '@console/internal/module/k8s';
+
 import { VirtualMachineInstanceModel } from '../../../models';
 import {
   getKubevirtAvailableModel,

@@ -1,13 +1,14 @@
-import * as React from 'react';
-import { FormGroup } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { RadioInput } from '@kubevirt-components';
+
 import {
   getAccessModeForProvisioner,
   getAccessModeRadios,
 } from '@console/internal/components/storage/shared';
+import { RadioInput } from '@kubevirt-components';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
+import { FormGroup } from '@patternfly/react-core';
 
 export const getPVCAccessModes = (resource: PersistentVolumeClaimKind, key: string) =>
   _.reduce(

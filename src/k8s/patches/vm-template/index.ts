@@ -1,10 +1,12 @@
 import * as _ from 'lodash';
+
 import { TemplateKind } from '@kubevirt-types';
+
+import { Patch } from '../../../k8s/helpers/patch';
 import { isVM } from '../../../selectors/check-type';
 import { selectVM } from '../../../selectors/vm-template/basic';
 import { VMKind } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
-import { Patch } from '../../../k8s/helpers/patch';
 
 export const addPrefixToPatch = (prefix: string, patch: Patch): Patch => ({
   ...patch,

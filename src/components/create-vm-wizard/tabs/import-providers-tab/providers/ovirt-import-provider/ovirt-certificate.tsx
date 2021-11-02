@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { FileUpload } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
+import { FileUpload } from '@patternfly/react-core';
+
 import { ValidationErrorType, ValidationObject } from '../../../../../../selectors';
 import { iGet } from '../../../../../../utils/immutable';
 import { FormField, FormFieldType } from '../../../../form/form-field';

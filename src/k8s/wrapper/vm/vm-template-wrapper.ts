@@ -1,6 +1,7 @@
 import { TemplateModel } from '@kubevirt-models';
 /* eslint-disable lines-between-class-members */
 import { TemplateKind } from '@kubevirt-types';
+
 import {
   TEMPLATE_FLAVOR_LABEL,
   TEMPLATE_OS_LABEL,
@@ -10,6 +11,7 @@ import { selectVM } from '../../../selectors/vm-template/basic';
 import { findHighestKeyBySuffixValue, findKeySuffixValue } from '../../../utils';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
 import { K8sInitAddon } from '../common/util/k8s-mixin';
+
 import { VMWrapper } from './vm-wrapper';
 
 export class VMTemplateWrapper extends K8sResourceWrapper<TemplateKind, VMTemplateWrapper> {

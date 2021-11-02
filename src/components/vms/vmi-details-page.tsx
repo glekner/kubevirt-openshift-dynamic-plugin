@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { DetailsPage } from '@console/internal/components/factory';
 import { navFactory } from '@console/internal/components/utils';
 import { PodModel } from '@kubevirt-models';
+
 import {
   VM_DETAIL_CONSOLES_HREF,
   VM_DETAIL_DETAILS_HREF,
@@ -19,8 +21,9 @@ import { getResource } from '../../utils';
 import VMIDetailsPageInfoMessage from '../info-messages/VMIDetailsPageInfoMessage';
 import { VMDisksAndFileSystemsPage } from '../vm-disks/vm-disks';
 import { VMNics } from '../vm-nics';
-import { vmiMenuActionsCreator } from './menu-actions';
+
 import VMConsoleDetailsPage from './vm-console/VMConsoleDetailsPage';
+import { vmiMenuActionsCreator } from './menu-actions';
 import { VMDashboard } from './vm-dashboard';
 import { VMDetailsFirehose } from './vm-details';
 import { breadcrumbsForVMPage } from './vm-details-page';

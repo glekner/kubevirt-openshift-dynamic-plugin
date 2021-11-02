@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -8,18 +10,19 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { TemplateModel } from '@kubevirt-models';
-import { TemplateKind } from '@kubevirt-types';
 import { apiVersionForModel } from '@console/internal/module/k8s';
 import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+import { TemplateModel } from '@kubevirt-models';
+import { TemplateKind } from '@kubevirt-types';
+
 import { useOwnedVolumeReferencedResources } from '../../../hooks/use-owned-volume-referenced-resources';
 import { useUpToDateVMLikeEntity } from '../../../hooks/use-vm-like-entity';
 import { deleteVMTemplate } from '../../../k8s/requests/vmtemplate/actions';
 import { getName, getNamespace } from '../../../selectors';
 import { getVolumes } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';
+
 import { redirectToList } from './utils';
-import { useHistory } from 'react-router-dom';
 
 export const DeleteVMTemplateModal = withHandlePromise((props: DeleteVMTemplateModalProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vmTemplate } = props;

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -7,8 +8,9 @@ import {
   ModalSubmitFooter,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { k8sKill } from '@console/internal/module/k8s';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
+
 import { DataVolumeModel } from '../../../models';
 import { TemplateSourceStatus } from '../../../statuses/template/types';
 

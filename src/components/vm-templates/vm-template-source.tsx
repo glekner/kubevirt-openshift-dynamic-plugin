@@ -1,4 +1,19 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/components/utils';
+import { referenceForModel } from '@console/internal/module/k8s';
+import {
+  ErrorStatus,
+  GreenCheckCircleIcon,
+  RedExclamationCircleIcon,
+  SuccessStatus,
+  WarningStatus,
+  YellowExclamationTriangleIcon,
+} from '@console/shared';
+import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+import { TemplateKind } from '@kubevirt-types';
 import {
   Alert,
   Button,
@@ -10,20 +25,7 @@ import {
   StackItem,
 } from '@patternfly/react-core';
 import { InProgressIcon, PlusCircleIcon } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
-import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { referenceForModel } from '@console/internal/module/k8s';
-import { TemplateKind } from '@kubevirt-types';
-import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
-import {
-  ErrorStatus,
-  GreenCheckCircleIcon,
-  RedExclamationCircleIcon,
-  SuccessStatus,
-  WarningStatus,
-  YellowExclamationTriangleIcon,
-} from '@console/shared';
+
 import { BOOT_SOURCE_AVAILABLE, DataVolumeSourceType } from '../../constants';
 import { useCustomizeSourceModal } from '../../hooks/use-customize-source-modal';
 import { DataVolumeWrapper } from '../../k8s/wrapper/vm/data-volume-wrapper';

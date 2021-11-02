@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 
 import { LoadingBox } from '../StatusBox/status-box';
 
@@ -18,9 +18,9 @@ export class AsyncComponent extends React.Component<AsyncComponentProps, AsyncCo
   state: AsyncComponentState = { Component: null, loader: null };
   props: AsyncComponentProps;
 
-  private retryCount: number = 0;
-  private maxRetries: number = 25;
-  private isAsyncMounted: boolean = false;
+  private retryCount = 0;
+  private maxRetries = 25;
+  private isAsyncMounted = false;
 
   static getDerivedStateFromProps(props, state) {
     if (!sameLoader(props.loader)(state.loader)) {

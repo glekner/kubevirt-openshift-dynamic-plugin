@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { Button } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { ExternalLink } from '@console/internal/components/utils';
+import { Button } from '@patternfly/react-core';
+
 import useMigrationTool from '../../../hooks/use-migration-tool';
+
 import MigrationToolContent from './MigrationToolContent';
 
 const MigrationTool = () => {
   const { t } = useTranslation();
-  const [
-    mtvSubscription,
-    mtvOperator,
-    mtvForkLift,
-    mtvUIRoute,
-    createForkLift,
-  ] = useMigrationTool();
+  const [mtvSubscription, mtvOperator, mtvForkLift, mtvUIRoute, createForkLift] =
+    useMigrationTool();
 
   return (
     <div className="kv-migration-tool--main">

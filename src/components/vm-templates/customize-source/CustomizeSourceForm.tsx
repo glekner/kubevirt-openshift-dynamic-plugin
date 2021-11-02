@@ -1,4 +1,18 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
+import { RouteComponentProps } from 'react-router';
+
+import { dropdownUnits } from '@console/internal/components/storage/shared';
+import {
+  convertToBaseValue,
+  history,
+  RequestSizeInput,
+  StatusBox,
+} from '@console/internal/components/utils';
+import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
+import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ActionGroup,
   Alert,
@@ -16,19 +30,7 @@ import {
   TextInput,
   Title,
 } from '@patternfly/react-core';
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router';
-import { dropdownUnits } from '@console/internal/components/storage/shared';
-import {
-  convertToBaseValue,
-  history,
-  RequestSizeInput,
-  StatusBox,
-} from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
+
 import {
   TEMPLATE_PROVIDER_ANNOTATION,
   TEMPLATE_SUPPORT_LEVEL,
@@ -37,8 +39,8 @@ import {
   TEMPLATE_TYPE_VM,
   VM_CUSTOMIZE_LABEL,
 } from '../../../constants';
-import { TemplateSupport } from '../../../constants/vm-templates/support';
 import { TEMPLATE_CUSTOMIZED_ANNOTATION } from '../../../constants/vm/constants';
+import { TemplateSupport } from '../../../constants/vm-templates/support';
 import { useBaseImages } from '../../../hooks/use-base-images';
 import useV2VConfigMap from '../../../hooks/use-v2v-config-map';
 import { createVMForCustomization } from '../../../k8s/requests/vmtemplate/customize';
@@ -47,10 +49,10 @@ import { VMTemplateWrapper } from '../../../k8s/wrapper/vm/vm-template-wrapper';
 import { VirtualMachineModel } from '../../../models/index';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
 import { getAnnotation } from '../../../selectors/selectors';
-import { getTemplateFlavorData, getTemplateMemory } from '../../../selectors/vm-template/advanced';
-import { selectVM } from '../../../selectors/vm-template/basic';
 import { vCPUCount } from '../../../selectors/vm/cpu';
 import { getCPU } from '../../../selectors/vm/selectors';
+import { getTemplateFlavorData, getTemplateMemory } from '../../../selectors/vm-template/advanced';
+import { selectVM } from '../../../selectors/vm-template/basic';
 import { getTemplateSourceStatus } from '../../../statuses/template/template-source-status';
 import { isTemplateSourceError } from '../../../statuses/template/types';
 import { VMKind } from '../../../types';
@@ -60,6 +62,7 @@ import { FormRow } from '../../form/form-row';
 import { ProjectDropdown } from '../../form/project-dropdown';
 import { preventDefault } from '../../form/utils';
 import { filterTemplates } from '../utils';
+
 import { FORM_ACTION_TYPE, formReducer, initFormState } from './customize-source-form-reducer';
 
 import './customize-source.scss';

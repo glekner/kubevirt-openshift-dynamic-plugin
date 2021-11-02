@@ -1,7 +1,9 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { inject } from '@console/internal/components/utils';
+
 import { ValidationErrorType } from '../../../selectors';
 import { iGetIn } from '../../../utils/immutable';
 import {
@@ -12,6 +14,7 @@ import {
 } from '../selectors/immutable/field';
 import { VMSettingsField } from '../types';
 import { getFieldId, getFieldTitleKey, getPlaceholderKey } from '../utils/renderable-field-utils';
+
 import { FormFieldContext } from './form-field-context';
 
 export enum FormFieldType {

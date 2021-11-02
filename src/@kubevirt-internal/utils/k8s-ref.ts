@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
-import { K8sKind, GroupVersionKind } from '@kubevirt-types';
+
+import { GroupVersionKind, K8sKind } from '@kubevirt-types';
 
 // TODO(alecmerdler): Replace all manual string building with this function
 export const referenceForGroupVersionKind =

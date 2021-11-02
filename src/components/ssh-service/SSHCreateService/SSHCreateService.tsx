@@ -1,8 +1,11 @@
-import * as React from 'react';
-import { Alert, Checkbox, Stack, StackItem } from '@patternfly/react-core';
 import { isEmpty } from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Alert, Checkbox, Stack, StackItem } from '@patternfly/react-core';
+
 import useSSHKeys from '../../../hooks/use-ssh-keys';
+
 import SSHCreateServiceMessage from './SSHCreateServiceMessage';
 import SSHCreateServicePopup from './SSHCreateServicePopup';
 

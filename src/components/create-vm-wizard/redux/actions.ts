@@ -16,11 +16,12 @@ import {
   VMWizardStorage,
   VMWizardTab,
 } from '../types';
+
 import { getTabInitialState } from './initial-state/initial-state';
-import { vmWizardInternalActions } from './internal-actions';
 import { createVMAction } from './main-actions/create-vm';
 import { disposeWizard } from './main-actions/dispose-wizard';
 import { withUpdateAndValidateState } from './main-actions/utils';
+import { vmWizardInternalActions } from './internal-actions';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ActionType, InternalActionType, WizardActionDispatcher } from './types';
 
@@ -144,21 +145,16 @@ export const vmWizardActions: VMWizardActions = {
         ),
       ),
     ),
-  [ActionType.SetResults]: (
-    id,
-    value: any,
-    isValid: boolean,
-    isLocked: boolean,
-    isPending: boolean,
-  ) => (dispatch) => {
-    dispatch(
-      vmWizardInternalActions[InternalActionType.SetResults](
-        id,
-        value,
-        isValid,
-        isLocked,
-        isPending,
-      ),
-    );
-  },
+  [ActionType.SetResults]:
+    (id, value: any, isValid: boolean, isLocked: boolean, isPending: boolean) => (dispatch) => {
+      dispatch(
+        vmWizardInternalActions[InternalActionType.SetResults](
+          id,
+          value,
+          isValid,
+          isLocked,
+          isPending,
+        ),
+      );
+    },
 };

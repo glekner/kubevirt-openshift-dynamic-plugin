@@ -1,5 +1,6 @@
 import { K8sResourceKind, OwnerReference } from '@kubevirt-types';
 import { K8sKind } from '@kubevirt-types';
+
 /* eslint-disable lines-between-class-members */
 import { ObjectEnum } from '../../../constants/object-enum';
 import {
@@ -12,8 +13,9 @@ import {
 } from '../../../selectors';
 import { compareOwnerReference } from '../../../utils';
 import { K8sResourceKindMethods } from '../types/types';
-import { ObjectWithTypePropertyWrapper } from './object-with-type-property-wrapper';
+
 import { clearMetadata, clearRuntimeMetadata, initK8sObject, K8sInitAddon } from './util/k8s-mixin';
+import { ObjectWithTypePropertyWrapper } from './object-with-type-property-wrapper';
 
 export abstract class K8sResourceObjectWithTypePropertyWrapper<
     RESOURCE extends K8sResourceKind,

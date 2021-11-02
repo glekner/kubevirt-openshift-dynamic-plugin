@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { constants, SerialConsole } from '@patternfly/react-console';
+
 import { WSFactory } from '@console/internal/module/ws-factory';
+import { constants, SerialConsole } from '@patternfly/react-console';
+
 import { ConsoleType } from '../../../../constants/vm/console-type';
 import { getName } from '../../../../selectors';
 import { getSerialConsoleConnectionDetails } from '../../../../selectors/vmi';

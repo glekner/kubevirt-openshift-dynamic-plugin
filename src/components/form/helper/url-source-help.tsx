@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+
 import {
   CENTOS_IMAGE_LINK,
   FEDORA_IMAGE_LINK,

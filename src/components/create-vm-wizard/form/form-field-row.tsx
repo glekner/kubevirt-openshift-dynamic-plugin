@@ -1,11 +1,13 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ValidationObject } from '../../../selectors';
 import { iGet, iGetIn, iGetIsLoaded } from '../../../utils/immutable';
 import { FormRow } from '../../form/form-row';
 import { iGetFieldValue, isFieldHidden, isFieldRequired } from '../selectors/immutable/field';
 import { getFieldHelpKey, getFieldId, getFieldTitleKey } from '../utils/renderable-field-utils';
+
 import { FormFieldType } from './form-field';
 import { FormFieldContext } from './form-field-context';
 
@@ -42,6 +44,7 @@ export const FormFieldInnerRow: React.FC<FieldFormInnerRowProps> = React.memo(
     );
   },
 );
+FormFieldInnerRow.displayName = 'FormFieldInnerRow';
 
 type FieldFormInnerRowProps = {
   field: any;

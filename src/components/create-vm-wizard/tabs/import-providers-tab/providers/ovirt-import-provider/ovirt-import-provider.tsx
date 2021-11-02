@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Checkbox, TextInput } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
+import { Checkbox, TextInput } from '@patternfly/react-core';
+
 import { iGet } from '../../../../../../utils/immutable';
 import { FormField, FormFieldType } from '../../../../form/form-field';
 import { FormFieldMemoRow } from '../../../../form/form-field-row';
@@ -22,6 +24,7 @@ import { VMImportProviderControllerErrors } from '../vm-import-provider-controll
 import { VMImportProviderControllerStatusRow } from '../vm-import-provider-controller-status-row';
 import { VMImportProviderObjectStatus } from '../vm-import-provider-object-status';
 import { VMImportSecrets } from '../vm-import-secrets';
+
 import { OvirtCertificate } from './ovirt-certificate';
 import { OvirtProviderClustersVMs } from './ovirt-provider-clusters-vms';
 
@@ -36,9 +39,10 @@ const OvirtImportProviderConnected: React.FC<OvirtImportProviderProps> = ({
   onFieldChange,
 }) => {
   const { t } = useTranslation();
-  const getField = React.useCallback((key: OvirtProviderRenderableField) => iGet(ovirtData, key), [
-    ovirtData,
-  ]);
+  const getField = React.useCallback(
+    (key: OvirtProviderRenderableField) => iGet(ovirtData, key),
+    [ovirtData],
+  );
   const onChange = React.useCallback(
     (key: OvirtProviderRenderableField) => (value) => onFieldChange(key, { value }),
     [onFieldChange],

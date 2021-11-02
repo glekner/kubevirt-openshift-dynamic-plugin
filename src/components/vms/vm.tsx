@@ -1,20 +1,10 @@
-import * as React from 'react';
-import { QuickStart } from '@patternfly/quickstarts';
-import {
-  Button,
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateSecondaryActions,
-  Title,
-} from '@patternfly/react-core';
-import { RocketIcon, VirtualMachineIcon } from '@patternfly/react-icons';
-import { sortable } from '@patternfly/react-table';
 import { TFunction } from 'i18next';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
+
 import {
   MultiListPage,
   RowFunctionArgs,
@@ -29,20 +19,32 @@ import {
   ResourceLink,
   Timestamp,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   DataVolumeModel,
-  VirtualMachineImportModel,
-  VirtualMachineInstanceMigrationModel,
-  VirtualMachineInstanceModel,
-  VirtualMachineModel,
   NamespaceModel,
   NodeModel,
   PersistentVolumeClaimModel,
   PodModel,
   QuickStartModel,
+  VirtualMachineImportModel,
+  VirtualMachineInstanceMigrationModel,
+  VirtualMachineInstanceModel,
+  VirtualMachineModel,
 } from '@kubevirt-models';
 import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { QuickStart } from '@patternfly/quickstarts';
+import {
+  Button,
+  EmptyState,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStateSecondaryActions,
+  Title,
+} from '@patternfly/react-core';
+import { RocketIcon, VirtualMachineIcon } from '@patternfly/react-icons';
+import { sortable } from '@patternfly/react-table';
+
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
 import { useNamespace } from '../../hooks/use-namespace';
@@ -51,9 +53,9 @@ import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForMode
 import { getCreationTimestamp, getLabels, getName, getNamespace, getUID } from '../../selectors';
 import { isVM, isVMI, isVMImport } from '../../selectors/check-type';
 import { getVmiIpAddresses, getVMINodeName } from '../../selectors/vmi';
-import { getVMImportStatusAsVMStatus } from '../../statuses/vm-import/vm-import-status';
 import { VMStatusBundle } from '../../statuses/vm/types';
 import { getVMStatus } from '../../statuses/vm/vm-status';
+import { getVMImportStatusAsVMStatus } from '../../statuses/vm-import/vm-import-status';
 import { VMIKind, VMKind } from '../../types';
 import { V1alpha1DataVolume } from '../../types/api';
 import { VMImportKind } from '../../types/vm-import/ovirt/vm-import';
@@ -68,6 +70,7 @@ import {
 import { hasPendingChanges } from '../../utils/pending-changes';
 import { getVMWizardCreateLink } from '../../utils/url';
 import { VMStatus } from '../vm-status/vm-status';
+
 import { vmiMenuActions, vmImportMenuActions, vmMenuActions } from './menu-actions';
 import { vmStatusFilter } from './table-filters';
 import VMIP from './VMIP';

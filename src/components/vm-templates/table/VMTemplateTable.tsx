@@ -1,12 +1,14 @@
-import * as React from 'react';
-import { Bullseye, Stack, StackItem, Tooltip, TooltipPosition } from '@patternfly/react-core';
-import { StarIcon } from '@patternfly/react-icons';
-import { info, sortable } from '@patternfly/react-table';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
 import { FirehoseResult } from '@console/internal/components/utils';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { Bullseye, Stack, StackItem, Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { StarIcon } from '@patternfly/react-icons';
+import { info, sortable } from '@patternfly/react-table';
+
 import { useBaseImages } from '../../../hooks/use-base-images';
 import { useNamespace } from '../../../hooks/use-namespace';
 import { usePinnedTemplates } from '../../../hooks/use-pinned-templates';
@@ -15,6 +17,7 @@ import { VMIKind } from '../../../types';
 import { V1alpha1DataVolume } from '../../../types/api';
 import { dimensifyHeader } from '../../../utils';
 import VMTemplateSupport from '../VMTemplateSupport';
+
 import { VirtualMachineTemplateBundle } from './types';
 import { tableColumnClasses } from './utils';
 import VMCustomizeRow from './VMCustomizeRow';

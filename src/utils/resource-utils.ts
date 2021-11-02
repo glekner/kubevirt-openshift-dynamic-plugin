@@ -1,9 +1,11 @@
 import * as _ from 'lodash';
-import { ReplicationControllerModel, DeploymentConfigModel } from '@kubevirt-models';
-import { K8sResourceKind, K8sResourceCommon, PodKind, K8sKind } from '@kubevirt-types';
-import { getAnnotation } from '../selectors';
-import { ExtPodKind, OverviewItemAlerts, AllPodStatus } from '../types/pod';
+
 import { apiVersionForModel } from '@console/internal/module/k8s';
+import { DeploymentConfigModel, ReplicationControllerModel } from '@kubevirt-models';
+import { K8sKind, K8sResourceCommon, K8sResourceKind, PodKind } from '@kubevirt-types';
+
+import { getAnnotation } from '../selectors';
+import { AllPodStatus, ExtPodKind, OverviewItemAlerts } from '../types/pod';
 
 // Annotation key for deployment config latest version
 export const DEPLOYMENT_CONFIG_LATEST_VERSION_ANNOTATION =
@@ -77,7 +79,7 @@ const isDeploymentInProgressOrCompleted = (resource: K8sResourceKind): boolean =
 const sortByRevision = (
   replicators: K8sResourceKind[],
   getRevision: Function,
-  descending: boolean = true,
+  descending = true,
 ): K8sResourceKind[] => {
   const compare = (left, right) => {
     const leftVersion = getRevision(left);
@@ -153,7 +155,7 @@ const getIdledStatus = (
 };
 
 // Only show an alert once if multiple pods have the same error for the same owner.
-const podAlertKey = (alert: any, pod: K8sResourceKind, containerName: string = 'all'): string => {
+const podAlertKey = (alert: any, pod: K8sResourceKind, containerName = 'all'): string => {
   const id = _.get(pod, 'metadata.ownerReferences[0].uid', pod.metadata.uid);
   return `${alert}--${id}--${containerName}`;
 };

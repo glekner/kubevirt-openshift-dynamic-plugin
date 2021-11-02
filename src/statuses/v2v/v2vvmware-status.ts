@@ -1,5 +1,7 @@
 import { K8sResourceKind } from '@kubevirt-types';
+
 import { getStatusPhase } from '../../selectors/selectors';
+
 import { V2VProviderStatus } from './constants';
 
 type V2VProviderStatusFlags = {

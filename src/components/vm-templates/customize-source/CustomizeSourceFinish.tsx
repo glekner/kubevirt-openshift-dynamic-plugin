@@ -1,4 +1,15 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Prompt, useHistory } from 'react-router';
+
+import { k8sKill } from '@console/internal/module/k8s';
+import {
+  ErrorStatus,
+  GreenCheckCircleIcon,
+  ProgressStatus,
+  SuccessStatus,
+} from '@console/shared/src';
+import { TemplateKind } from '@kubevirt-types';
 import {
   Alert,
   Bullseye,
@@ -12,16 +23,7 @@ import {
   StackItem,
   Title,
 } from '@patternfly/react-core';
-import { useTranslation } from 'react-i18next';
-import { Prompt, useHistory } from 'react-router';
-import { k8sKill } from '@console/internal/module/k8s';
-import { TemplateKind } from '@kubevirt-types';
-import {
-  ErrorStatus,
-  GreenCheckCircleIcon,
-  ProgressStatus,
-  SuccessStatus,
-} from '@console/shared/src';
+
 import { createTemplateFromVM, patchVMDisks } from '../../../k8s/requests/vmtemplate/customize';
 import { VirtualMachineModel } from '../../../models';
 import { getKubevirtAvailableModel } from '../../../models/kubevirtReferenceForModel';

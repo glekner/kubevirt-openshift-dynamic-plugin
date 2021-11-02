@@ -9,8 +9,8 @@ import {
   VolumeType,
 } from '../../../../constants/vm';
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../../../constants/vm-templates/constants';
-import { isCustomFlavor } from '../../../../selectors/vm-like/flavor';
 import { getVolumeCloudInitNoCloud } from '../../../../selectors/vm/volume';
+import { isCustomFlavor } from '../../../../selectors/vm-like/flavor';
 import { resolveDataVolumeName } from '../../../../utils';
 import {
   CloudInitDataFormKeys,
@@ -22,6 +22,7 @@ import { NetworkInterfaceWrapper } from '../../../wrapper/vm/network-interface-w
 import { NetworkWrapper } from '../../../wrapper/vm/network-wrapper';
 import { VMWrapper } from '../../../wrapper/vm/vm-wrapper';
 import { VolumeWrapper } from '../../../wrapper/vm/volume-wrapper';
+
 import { CreateVMParams } from './types';
 
 const initializeStorage = (params: CreateVMParams, vm: VMWrapper) => {

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
 import { Firehose, FirehoseResult } from '@console/internal/components/utils';
 import {
@@ -9,6 +10,7 @@ import {
   StorageClassModel,
 } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types';
+
 import { DUMMY_VM_NAME } from '../../../../constants/vm';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { DiskWrapper } from '../../../../k8s/wrapper/vm/disk-wrapper';

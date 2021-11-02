@@ -1,4 +1,5 @@
 import { K8sKind, K8sResourceCommon, Patch } from '@console/internal/module/k8s';
+
 import { VirtualMachineModel } from '../../../models';
 import { PatchBuilder } from '../../helpers/patch';
 import { VMWrapper } from '../../wrapper/vm/vm-wrapper';

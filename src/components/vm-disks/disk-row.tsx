@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import {
   asAccessReview,
@@ -8,6 +9,7 @@ import {
   ResourceLink,
 } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
+
 import { CombinedDisk } from '../../k8s/wrapper/vm/combined-disk';
 import { VirtualMachineModel } from '../../models';
 import { getDeletetionTimestamp } from '../../selectors';
@@ -25,6 +27,7 @@ import { diskModalEnhanced } from '../modals/disk-modal/disk-modal-enhanced';
 import { ValidationCell } from '../table/validation-cell';
 import { VMNicRowActionOpts } from '../vm-nics/types';
 import { VMLabel } from '../VMLabel';
+
 import {
   StorageBundle,
   StorageSimpleData,

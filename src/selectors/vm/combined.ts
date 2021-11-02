@@ -1,8 +1,10 @@
 import { PodKind } from '@kubevirt-types';
+
 import { OS_WINDOWS_PREFIX } from '../../constants';
 import { VMGenericLikeEntityKind, VMILikeEntityKind } from '../../types/vmLike';
 import { buildOwnerReference, compareOwnerReference } from '../../utils';
 import { getName, getNamespace, getOwnerReferences } from '../selectors';
+
 import { getOperatingSystem } from './selectors';
 
 export const isWindows = (vm: VMGenericLikeEntityKind): boolean =>

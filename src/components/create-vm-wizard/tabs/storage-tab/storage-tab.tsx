@@ -1,4 +1,9 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+
+import { ExternalLink, Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import {
   Alert,
   AlertVariant,
@@ -14,16 +19,13 @@ import {
   Title,
 } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { ExternalLink, Firehose, FirehoseResult } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel } from '@kubevirt-models';
+
 import { DeviceType } from '../../../../constants/vm';
 import { ProvisionSource } from '../../../../constants/vm/provision-source';
 import { CombinedDisk } from '../../../../k8s/wrapper/vm/combined-disk';
 import { VolumeWrapper } from '../../../../k8s/wrapper/vm/volume-wrapper';
 import { getName } from '../../../../selectors';
-import { isLoaded, createLookup } from '../../../../utils';
+import { createLookup, isLoaded } from '../../../../utils';
 import {
   STORAGE_CLASS_SUPPORTED_RHV_LINK,
   STORAGE_CLASS_SUPPORTED_VMWARE_LINK,
@@ -50,6 +52,7 @@ import {
   VMWizardStorage,
   VMWizardTab,
 } from '../../types';
+
 import { StorageBootSource } from './storage-boot-source';
 import { VMWizardStorageBundle } from './types';
 import { vmWizardStorageModalEnhanced } from './vm-wizard-storage-modal-enhanced';

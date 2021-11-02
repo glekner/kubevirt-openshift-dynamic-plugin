@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useRef, useState } from 'react';
+
 import { consoleFetchJSON } from '@openshift-console/dynamic-plugin-sdk';
 export const URL_POLL_DEFAULT_DELAY = 15000; // 15 seconds
 

@@ -1,4 +1,14 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
+import {
+  FirehoseResult,
+  HandlePromiseProps,
+  withHandlePromise,
+} from '@console/internal/components/utils';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+import { K8sResourceKind } from '@kubevirt-types';
 import {
   Alert,
   AlertVariant,
@@ -8,15 +18,7 @@ import {
   SelectOption,
   TextInput,
 } from '@patternfly/react-core';
-import { useTranslation } from 'react-i18next';
-import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
-import {
-  FirehoseResult,
-  HandlePromiseProps,
-  withHandlePromise,
-} from '@console/internal/components/utils';
-import { K8sResourceKind } from '@kubevirt-types';
-import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+
 import {
   NetworkInterfaceModel,
   NetworkInterfaceType,
@@ -28,12 +30,12 @@ import { NetworkWrapper } from '../../../k8s/wrapper/vm/network-wrapper';
 import { getName, ValidationErrorType } from '../../../selectors';
 import { UINetworkEditConfig } from '../../../types/ui/nic';
 import {
+  getDialogUIError,
   getLoadedData,
   getLoadError,
+  getSequenceName,
   isLoaded,
   prefixedID,
-  getDialogUIError,
-  getSequenceName,
 } from '../../../utils';
 import { ignoreCaseSort } from '../../../utils/sort';
 import { isFieldDisabled } from '../../../utils/ui/edit-config';

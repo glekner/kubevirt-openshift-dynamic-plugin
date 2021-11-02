@@ -1,62 +1,62 @@
 // console components
-export * from './field-level-help';
-export * from './hint-block';
-export * from './modal';
-export * from './scroll-to-top-on-mount';
-export * from './headings';
-export * from './inject';
-export * from './StatusBox/status-box';
 export * from './AsyncComponent/async';
+export * from './field-level-help';
+export * from './headings';
+export * from './hint-block';
+export * from './inject';
+export * from './modal';
 export * from './RadioInput';
+export * from './scroll-to-top-on-mount';
+export * from './StatusBox/status-box';
 
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
 */
 export {
-  Firehose,
+  BlueInfoCircleIcon,
+  CommonActionFactory,
   Conditions,
-  DetailsPage,
-  MultiListPage,
-  ListDropdown,
-  ListPage,
-  Dropdown,
-  ErrorPage404,
-  Kebab,
-  LabelList,
-  ModalErrorContent,
-  NodeLink,
-  ResourceIcon,
-  ResourceKebab,
-  ResourceName,
-  ResourceSummary,
-  ResourcesEventStream,
-  Selector,
-  ServicesList,
-  StatusBox,
-  Table,
-  TableData,
-  Timestamp,
   confirmModal,
   createModalLauncher,
   createProjectModal,
-  getImageForIconClass,
-  navFactory,
-  resourcePath,
-  useAccessReview,
-  useAccessReview2,
-  useK8sGet,
-  CommonActionFactory,
-  BlueInfoCircleIcon,
+  DashboardCardLink,
+  DetailsPage,
+  Dropdown,
+  ErrorPage404,
   ErrorStatus,
+  EventItem,
+  Firehose,
+  getImageForIconClass,
+  InventoryItem,
+  Kebab,
+  LabelList,
+  ListDropdown,
+  ListPage,
+  ModalErrorContent,
+  MultiListPage,
+  navFactory,
+  NodeLink,
   PendingStatus,
   ProgressStatus,
   RedExclamationCircleIcon,
+  ResourceIcon,
+  ResourceKebab,
+  ResourceName,
+  resourcePath,
+  ResourcesEventStream,
+  ResourceSummary,
+  Selector,
+  ServicesList,
+  StatusBox,
   SuccessStatus,
-  YellowExclamationTriangleIcon,
-  EventItem,
-  DashboardCardLink,
-  InventoryItem,
+  Table,
+  TableData,
+  Timestamp,
+  useAccessReview,
+  useAccessReview2,
+  useK8sGet,
   withStartGuide,
+  YellowExclamationTriangleIcon,
 } from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';
 
 /*
@@ -64,29 +64,29 @@ export {
  topology components
 */
 export {
-  ModifyApplication,
-  getTopologyGroupItems,
-  getTopologyNodeItem,
-  mergeGroup,
-  withEditReviewAccess,
+  CpuCellComponent,
   CreateConnector,
   createConnectorCallback,
   createMenuItems,
-  nodeDragSourceSpec,
-  nodeDropTargetSpec,
-  withContextMenu,
+  getFilterById,
+  getPodMetricStats,
+  getTopologyGroupItems,
+  getTopologyNodeItem,
+  getTopologyResourceObject,
+  MemoryCellComponent,
+  mergeGroup,
+  ModifyApplication,
   NODE_SHADOW_FILTER_ID,
   NODE_SHADOW_FILTER_ID_HOVER,
+  nodeDragSourceSpec,
+  nodeDropTargetSpec,
   NodeShadows,
-  getFilterById,
   SHOW_LABELS_FILTER_ID,
+  TopologyListViewNode,
   useAllowEdgeCreation,
   useDisplayFilters,
-  useSearchFilter,
-  getPodMetricStats,
-  getTopologyResourceObject,
   useOverviewMetrics,
-  CpuCellComponent,
-  MemoryCellComponent,
-  TopologyListViewNode,
+  useSearchFilter,
+  withContextMenu,
+  withEditReviewAccess,
 } from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';

@@ -22,6 +22,7 @@ import { OvirtProviderField, VMImportProvider, VMWizardProps } from '../../../..
 import { asDisabled, asHidden } from '../../../../utils/utils';
 import { vmWizardInternalActions } from '../../../internal-actions';
 import { InternalActionType, UpdateOptions } from '../../../types';
+
 import { forceUpdateWSQueries } from './update-ws-queries';
 
 const { info: consoleInfo, warn: consoleWarn, error: consoleError } = console;
@@ -46,7 +47,6 @@ export const startVMImportOperatorWithCleanup = ({ getState, id, dispatch }: Upd
       ),
     )
     .catch((e) =>
-      // eslint-disable-next-line promise/no-nesting
       cleanupAndGetResults(enhancedK8sMethods, e, { prettyPrintPermissionErrors: true }).then(
         (results) => {
           const errors = errorsFirstSort([...results.errors, ...results.requestResults]);
@@ -125,7 +125,8 @@ export const createConnectionObjects = async (
           VMImportProvider.OVIRT,
           {
             [OvirtProviderField.CURRENT_OVIRT_PROVIDER_CR_NAME]: activeOvirtProviderCRName,
-            [OvirtProviderField.CURRENT_RESOLVED_OVIRT_ENGINE_SECRET_NAME]: activeOvirtProviderSecretName,
+            [OvirtProviderField.CURRENT_RESOLVED_OVIRT_ENGINE_SECRET_NAME]:
+              activeOvirtProviderSecretName,
           },
         ),
       );
@@ -153,72 +154,72 @@ export const createConnectionObjects = async (
     });
 };
 
-export const getCheckConnectionAction = (id, prevState = null) => (dispatch, getState) => {
-  const state = getState();
+export const getCheckConnectionAction =
+  (id, prevState = null) =>
+  (dispatch, getState) => {
+    const state = getState();
 
-  const beforeMetadata = {
-    isDisabled: asDisabled(true, OvirtProviderField.PASSWORD),
-  };
-  const afterMetadata = {
-    isDisabled: asDisabled(false, OvirtProviderField.PASSWORD),
-  };
+    const beforeMetadata = {
+      isDisabled: asDisabled(true, OvirtProviderField.PASSWORD),
+    };
+    const afterMetadata = {
+      isDisabled: asDisabled(false, OvirtProviderField.PASSWORD),
+    };
 
-  const namespace = iGetCommonData(state, id, VMWizardProps.activeNamespace);
-  const url = iGetOvirtFieldValue(state, id, OvirtProviderField.API_URL);
-  const username = iGetOvirtFieldValue(state, id, OvirtProviderField.USERNAME);
-  const password = iGetOvirtFieldValue(state, id, OvirtProviderField.PASSWORD);
-  const caCertificate = iGetOvirtFieldValue(state, id, OvirtProviderField.CERTIFICATE);
+    const namespace = iGetCommonData(state, id, VMWizardProps.activeNamespace);
+    const url = iGetOvirtFieldValue(state, id, OvirtProviderField.API_URL);
+    const username = iGetOvirtFieldValue(state, id, OvirtProviderField.USERNAME);
+    const password = iGetOvirtFieldValue(state, id, OvirtProviderField.PASSWORD);
+    const caCertificate = iGetOvirtFieldValue(state, id, OvirtProviderField.CERTIFICATE);
 
-  if (!namespace || !url || !username || !password || !caCertificate) {
-    return;
-  }
+    if (!namespace || !url || !username || !password || !caCertificate) {
+      return;
+    }
 
-  // start connecting
-  dispatch(
-    vmWizardInternalActions[InternalActionType.UpdateImportProvider](id, VMImportProvider.OVIRT, {
-      [OvirtProviderField.API_URL]: beforeMetadata,
-      [OvirtProviderField.USERNAME]: beforeMetadata,
-      [OvirtProviderField.PASSWORD]: beforeMetadata,
-      [OvirtProviderField.CERTIFICATE]: beforeMetadata,
-      [OvirtProviderField.REMEMBER_PASSWORD]: beforeMetadata,
-    }),
-  );
-
-  // side effect
-  // eslint-disable-next-line promise/catch-or-return
-  createConnectionObjects(
-    { id, dispatch },
-    {
-      namespace,
-      url,
-      username,
-      password,
-      caCertificate,
-      prevNamespace: iGetCommonData(prevState || state, id, VMWizardProps.activeNamespace),
-      prevOvirtProviderName: iGetOvirtField(
-        prevState || state,
-        id,
-        OvirtProviderField.CURRENT_OVIRT_PROVIDER_CR_NAME,
-      ),
-    },
-  )
-    .catch(consoleError)
-    .then(() =>
-      dispatch(
-        vmWizardInternalActions[InternalActionType.UpdateImportProvider](
-          id,
-          VMImportProvider.OVIRT,
-          {
-            [OvirtProviderField.API_URL]: afterMetadata,
-            [OvirtProviderField.USERNAME]: afterMetadata,
-            [OvirtProviderField.PASSWORD]: afterMetadata,
-            [OvirtProviderField.CERTIFICATE]: afterMetadata,
-            [OvirtProviderField.REMEMBER_PASSWORD]: afterMetadata,
-          },
-        ),
-      ),
+    // start connecting
+    dispatch(
+      vmWizardInternalActions[InternalActionType.UpdateImportProvider](id, VMImportProvider.OVIRT, {
+        [OvirtProviderField.API_URL]: beforeMetadata,
+        [OvirtProviderField.USERNAME]: beforeMetadata,
+        [OvirtProviderField.PASSWORD]: beforeMetadata,
+        [OvirtProviderField.CERTIFICATE]: beforeMetadata,
+        [OvirtProviderField.REMEMBER_PASSWORD]: beforeMetadata,
+      }),
     );
-};
+
+    createConnectionObjects(
+      { id, dispatch },
+      {
+        namespace,
+        url,
+        username,
+        password,
+        caCertificate,
+        prevNamespace: iGetCommonData(prevState || state, id, VMWizardProps.activeNamespace),
+        prevOvirtProviderName: iGetOvirtField(
+          prevState || state,
+          id,
+          OvirtProviderField.CURRENT_OVIRT_PROVIDER_CR_NAME,
+        ),
+      },
+    )
+      .catch(consoleError)
+      .then(() =>
+        dispatch(
+          vmWizardInternalActions[InternalActionType.UpdateImportProvider](
+            id,
+            VMImportProvider.OVIRT,
+            {
+              [OvirtProviderField.API_URL]: afterMetadata,
+              [OvirtProviderField.USERNAME]: afterMetadata,
+              [OvirtProviderField.PASSWORD]: afterMetadata,
+              [OvirtProviderField.CERTIFICATE]: afterMetadata,
+              [OvirtProviderField.REMEMBER_PASSWORD]: afterMetadata,
+            },
+          ),
+        ),
+      );
+  };
 
 export const requestVmDetails = (id: string, vmID: string) => (dispatch, getState) => {
   const state = getState();

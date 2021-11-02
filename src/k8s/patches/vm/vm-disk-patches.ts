@@ -13,6 +13,7 @@ import { getSimpleName } from '../../../utils';
 import { Patch, PatchBuilder } from '../../helpers/patch';
 import { DiskWrapper } from '../../wrapper/vm/disk-wrapper';
 import { getVMLikePatches } from '../vm-template';
+
 import { getShiftBootOrderPatches } from './utils';
 
 export const getRemoveDiskPatches = (vmLikeEntity: VMLikeEntityKind, disk: V1Disk): Patch[] => {

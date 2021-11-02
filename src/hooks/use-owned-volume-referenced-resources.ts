@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import * as React from 'react';
 import * as _ from 'lodash';
-import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+import * as React from 'react';
+
 import { K8sResourceCommon, OwnerReference } from '@kubevirt-types';
+import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+
 import { VolumeReferencedObject, VolumeWrapper } from '../k8s/wrapper/vm/volume-wrapper';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';
 import { getOwnerReferences } from '../selectors';

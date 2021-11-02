@@ -1,5 +1,6 @@
 import { safeDump } from 'js-yaml';
 import * as _ from 'lodash';
+
 import { ResultContentType } from '../../../k8s/enhancedK8sMethods/types';
 import { VMSettingsField } from '../types';
 
@@ -14,10 +15,9 @@ export const asDisabled = (value: any, key: string = VM_SETTINGS_METADATA_ID) =>
   [key]: !!value,
 });
 
-export const nullOnEmptyChange = (
-  onChange: (k: VMSettingsField, v: string) => void,
-  fieldKey: VMSettingsField,
-) => (v) => onChange(fieldKey, v === '' ? null : v);
+export const nullOnEmptyChange =
+  (onChange: (k: VMSettingsField, v: string) => void, fieldKey: VMSettingsField) => (v) =>
+    onChange(fieldKey, v === '' ? null : v);
 
 export const resultContentToString = (data, type: ResultContentType) => {
   switch (type) {

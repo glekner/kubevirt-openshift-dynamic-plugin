@@ -1,4 +1,8 @@
+import * as _ from 'lodash';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+
 import {
   Alert,
   AlertVariant,
@@ -8,9 +12,7 @@ import {
   Button,
   ButtonVariant,
 } from '@patternfly/react-core';
-import * as _ from 'lodash';
-import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+
 import { toJS } from '../../../utils/immutable';
 import { wrapWithProgress } from '../../../utils/utils';
 import { vmWizardActions } from '../redux/actions';
@@ -19,6 +21,7 @@ import { iGetCommonData } from '../selectors/immutable/selectors';
 import { vmWizardNicModalEnhanced } from '../tabs/networking-tab/vm-wizard-nic-modal-enhanced';
 import { vmWizardStorageModalEnhanced } from '../tabs/storage-tab/vm-wizard-storage-modal-enhanced';
 import { VMWizardNetwork, VMWizardProps, VMWizardStorage, VMWizardTab } from '../types';
+
 import { Action, Error } from './types';
 import { computeNetworkErrors, computeStorageErrors, computeVMSettingsErrors } from './utils';
 

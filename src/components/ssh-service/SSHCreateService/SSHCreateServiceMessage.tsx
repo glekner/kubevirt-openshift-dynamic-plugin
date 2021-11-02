@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ExternalLink } from '@console/internal/components/utils';
+
 import { NODE_PORTS_LINK } from '../../../utils/strings';
 
 const SSHCreateServiceMessage = () => {

@@ -1,10 +1,12 @@
-import * as React from 'react';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { DetailsPage } from '@console/internal/components/factory';
 import { navFactory } from '@console/internal/components/utils';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { useK8sModel } from '@openshift-console/dynamic-plugin-sdk';
+
 import {
   VM_DETAIL_CONSOLES_HREF,
   VM_DETAIL_DETAILS_HREF,
@@ -31,12 +33,13 @@ import { getResource } from '../../utils';
 import { VMDisksAndFileSystemsPage } from '../vm-disks/vm-disks';
 import { VMNics } from '../vm-nics';
 import { VMSnapshotsPage } from '../vm-snapshots/vm-snapshots';
+
+import VMConsoleDetailsPage from './vm-console/VMConsoleDetailsPage';
+import { VMEnvironmentFirehose } from './vm-environment/vm-environment-page';
 import { vmMenuActionsCreator } from './menu-actions';
 import { PendingChangesWarningFirehose } from './pending-changes-warning';
-import VMConsoleDetailsPage from './vm-console/VMConsoleDetailsPage';
 import { VMDashboard } from './vm-dashboard';
 import { VMDetailsFirehose } from './vm-details';
-import { VMEnvironmentFirehose } from './vm-environment/vm-environment-page';
 import { VMEvents } from './vm-events';
 
 export const breadcrumbsForVMPage = (t: TFunction, match: any) => () =>

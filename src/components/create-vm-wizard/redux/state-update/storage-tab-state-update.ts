@@ -17,9 +17,9 @@ import {
 } from '../../../../selectors/config-map/sc-defaults';
 import { getDataVolumeStorageClassName } from '../../../../selectors/dv/selectors';
 import { iGetRelevantTemplate } from '../../../../selectors/immutable/template/combined';
-import { isWindowsTemplate } from '../../../../selectors/vm-template/advanced';
 import { getVolumeContainerImage } from '../../../../selectors/vm/volume';
 import { isWinToolsImage } from '../../../../selectors/vm/winimage';
+import { isWindowsTemplate } from '../../../../selectors/vm-template/advanced';
 import { V1alpha1DataVolume } from '../../../../types/api/V1alpha1DataVolume';
 import { toShallowJS } from '../../../../utils/immutable';
 import { getEmptyInstallStorage } from '../../../../utils/storage';

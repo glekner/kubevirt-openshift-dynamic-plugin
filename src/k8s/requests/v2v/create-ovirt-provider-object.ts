@@ -1,4 +1,5 @@
 import { SecretModel } from '@kubevirt-models';
+
 import { OVIRT_TYPE_LABEL, V2V_TEMPORARY_LABEL } from '../../../constants/v2v';
 import { OVirtProviderModel } from '../../../models';
 import { getName, getOwnerReferences } from '../../../selectors';
@@ -7,6 +8,7 @@ import { EnhancedK8sMethods } from '../../enhancedK8sMethods/enhancedK8sMethods'
 import { PatchBuilder } from '../../helpers/patch';
 import { SecretWrappper } from '../../wrapper/k8s/secret-wrapper';
 import { OVirtProviderWrappper } from '../../wrapper/ovirt-provider/ovirt-provider-wrapper';
+
 import { getDefaultSecretName } from './utils/utils';
 
 export const createOvirtProviderObjectWithSecret = async (

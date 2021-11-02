@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { TemplateModel } from '@kubevirt-models';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../models';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../selectors';

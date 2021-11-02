@@ -1,6 +1,8 @@
 import * as React from 'react';
+
 import { TEMPLATE_PIN, TEMPLATE_PIN_PROMOTED } from '../constants';
 import { TemplateItem } from '../types/template';
+
 import { useLocalStorage } from './use-local-storage';
 
 const PROMOTED_TEMPLATES = ['rhel7-server-small', 'rhel8-server-small'];

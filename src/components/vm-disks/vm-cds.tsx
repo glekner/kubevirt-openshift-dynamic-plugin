@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { sortable } from '@patternfly/react-table';
 import { useTranslation } from 'react-i18next';
+
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
+import { sortable } from '@patternfly/react-table';
+
 import { dimensifyHeader } from '../../utils';
 
 export type VMCDsTableProps = {

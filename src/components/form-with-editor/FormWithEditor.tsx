@@ -1,8 +1,10 @@
-import * as React from 'react';
 import cn from 'classnames';
 import yamlParser from 'js-yaml';
+import * as React from 'react';
 import { MonacoEditorProps } from 'react-monaco-editor';
+
 import YAMLEditor from '@console/shared/src/components/editor/YAMLEditor';
+
 import { EditorPosition, formModifier, ViewComponent } from './form-with-editor-utils';
 
 import './form-with-editor.scss';
@@ -116,5 +118,5 @@ const FormWithEditor: React.FC<FormWithEditorProps> = ({
   );
 };
 
-export { FieldsMapper, EditorPosition, ViewComponent };
+export { EditorPosition, FieldsMapper, ViewComponent };
 export default FormWithEditor;

@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Skeleton } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
+import { Button, ButtonVariant, Skeleton } from '@patternfly/react-core';
+
 import {
   VMStatus,
   VMStatus as VMStatusEnum,
@@ -13,18 +15,19 @@ import { VMStatusBundle } from '../../statuses/vm/types';
 import { getVMConditionsStatus } from '../../statuses/vm/vm-status';
 import { VMIKind, VMKind } from '../../types';
 import { hasPendingChanges } from '../../utils/pending-changes';
+
 import { VmStatusResourcesValue } from './use-vm-status-resources';
 import {
-  getVMILikeLink,
+  getPodLink,
   getStatusSuffixLabelKey,
-  VMStatusPopoverContent,
-  PendingChangesPopoverContent,
+  getVMILikeLink,
+  getVMStatusIcon,
   ImporterPods,
+  LinkType,
+  PendingChangesPopoverContent,
   VIEW_POD_LOGS,
   VIEW_VM_EVENTS,
-  getPodLink,
-  getVMStatusIcon,
-  LinkType,
+  VMStatusPopoverContent,
 } from './vm-status';
 
 import './vm-status.scss';

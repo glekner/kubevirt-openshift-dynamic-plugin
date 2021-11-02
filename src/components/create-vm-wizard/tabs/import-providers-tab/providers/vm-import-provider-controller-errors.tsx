@@ -1,9 +1,11 @@
-import * as React from 'react';
-import { AlertVariant } from '@patternfly/react-core';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import { ExternalLink } from '@console/internal/components/utils';
+import { AlertVariant } from '@patternfly/react-core';
+
 import {
   OVIRT_DOCURL,
   V2VProviderErrorSpecialUIMessageRequest,
@@ -51,8 +53,8 @@ const resolveUIMessageTemplating = (t: TFunction, message: string, provider: VMI
   );
 };
 
-const VmImportProviderControllerErrorsComponent: React.FC<VmImportProviderControllerErrorsComponentProps> = React.memo(
-  ({ errors, provider }) => {
+const VmImportProviderControllerErrorsComponent: React.FC<VmImportProviderControllerErrorsComponentProps> =
+  React.memo(({ errors, provider }) => {
     const { t } = useTranslation();
     if (!errors) {
       return null;
@@ -88,8 +90,8 @@ const VmImportProviderControllerErrorsComponent: React.FC<VmImportProviderContro
         )}
       </div>
     );
-  },
-);
+  });
+VmImportProviderControllerErrorsComponent.displayName = 'VmImportProviderControllerErrorsComponent';
 
 type VmImportProviderControllerErrorsComponentProps = {
   errors: any;

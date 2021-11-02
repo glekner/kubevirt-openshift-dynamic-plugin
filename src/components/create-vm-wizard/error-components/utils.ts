@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { joinGrammaticallyListOfItems } from '../../../utils';
 import { iGetIn, toJS } from '../../../utils/immutable';
 import { getValidationNameByKey } from '../../../utils/validations/strings';
@@ -9,6 +10,7 @@ import { iGetVmSettings } from '../selectors/immutable/vm-settings';
 import { TabTitleKeyResolver } from '../strings/strings';
 import { VMWizardTab } from '../types';
 import { getFieldTitleKey, sortFields } from '../utils/renderable-field-utils';
+
 import { Error } from './types';
 
 export const computeVMSettingsErrors = (state, wizardReduxID) => {

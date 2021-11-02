@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
+
 import { FirehoseResult } from '@console/internal/components/utils';
 import { K8sResourceKind } from '@kubevirt-types';
+
 import { StorageUISource } from '../../../components/modals/disk-modal/storage-ui-source';
 import { AccessMode, DiskType, VolumeMode, VolumeType } from '../../../constants/vm/storage';
 import { DataVolumeModel } from '../../../models';
@@ -13,14 +15,15 @@ import { V1DataVolumeTemplateSpec } from '../../../types';
 import { V1alpha1DataVolume, V1Disk, V1PersistentVolumeClaim, V1Volume } from '../../../types/api';
 import { VMGenericLikeEntityKind } from '../../../types/vmLike';
 import {
-  createBasicLookup,
   compareOwnerReference,
-  getSimpleName,
+  createBasicLookup,
   getLoadedData,
+  getSimpleName,
   isLoaded,
 } from '../../../utils';
 import { DYNAMIC } from '../../../utils/strings';
 import { asVMILikeWrapper } from '../utils/convert';
+
 import { DataVolumeWrapper } from './data-volume-wrapper';
 import { DiskWrapper } from './disk-wrapper';
 import { PersistentVolumeClaimWrapper } from './persistent-volume-claim-wrapper';

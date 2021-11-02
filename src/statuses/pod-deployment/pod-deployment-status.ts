@@ -1,6 +1,8 @@
 import { K8sResourceKind, PodKind } from '@kubevirt-types';
+
 import { DeploymentStatus, getDeploymentStatus } from '../deployment';
 import { getPodStatus, getSimplePodStatus, POD_STATUS_ALL_ERROR } from '../pod';
+
 import { PodDeploymentStatus } from './constants';
 
 const getStatus = (deployment: K8sResourceKind, deploymentPods: PodKind[]) => {

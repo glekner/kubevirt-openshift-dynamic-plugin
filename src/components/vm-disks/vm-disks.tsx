@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { sortable } from '@patternfly/react-table';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   Flatten,
   MultiListPage,
@@ -10,9 +10,11 @@ import {
 } from '@console/internal/components/factory';
 import { useSafetyFirst } from '@console/internal/components/safety-first';
 import { FieldLevelHelp, FirehoseResult } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { sortable } from '@patternfly/react-table';
+
 import { CombinedDiskFactory } from '../../k8s/wrapper/vm/combined-disk';
 import { VMTemplateWrapper } from '../../k8s/wrapper/vm/vm-template-wrapper';
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
@@ -21,14 +23,14 @@ import { DataVolumeModel, VirtualMachineInstanceModel, VirtualMachineModel } fro
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getNamespace } from '../../selectors';
 import { isVM, isVMI } from '../../selectors/check-type';
+import { isVMRunningOrExpectedRunning } from '../../selectors/vm/selectors';
+import { asVM } from '../../selectors/vm/vm';
 import { changedDisks } from '../../selectors/vm-like/next-run-changes';
 import { isCommonTemplate } from '../../selectors/vm-template/basic';
 import {
   getTemplateValidationsFromTemplate,
   getVMTemplateNamespacedName,
 } from '../../selectors/vm-template/selectors';
-import { isVMRunningOrExpectedRunning } from '../../selectors/vm/selectors';
-import { asVM } from '../../selectors/vm/vm';
 import { getVMStatus } from '../../statuses/vm/vm-status';
 import { VMIKind } from '../../types';
 import { V1alpha1DataVolume } from '../../types/api';
@@ -37,6 +39,7 @@ import { dimensifyHeader, getResource } from '../../utils';
 import { wrapWithProgress } from '../../utils/utils';
 import { diskModalEnhanced } from '../modals/disk-modal/disk-modal-enhanced';
 import { VMTabProps } from '../vms/types';
+
 import { DiskRow } from './disk-row';
 import { FileSystemsList } from './guest-agent-file-systems';
 import { diskSourceFilter } from './table-filters';

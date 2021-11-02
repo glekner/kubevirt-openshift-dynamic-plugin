@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Button } from '@patternfly/react-core';
-import { sortable } from '@patternfly/react-table';
 import { useTranslation } from 'react-i18next';
-import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { RowFunctionArgs, Table } from '@console/internal/components/factory';
 import { useSafetyFirst } from '@console/internal/components/safety-first';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { Button } from '@patternfly/react-core';
+import { sortable } from '@patternfly/react-table';
+
 import { VirtualMachineSnapshotModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../selectors';
@@ -18,6 +20,7 @@ import { dimensifyHeader } from '../../utils';
 import { wrapWithProgress } from '../../utils/utils';
 import SnapshotModal from '../modals/snapshot-modal/SnapshotsModal';
 import { VMTabProps } from '../vms/types';
+
 import { useMappedVMRestores } from './use-mapped-vm-restores';
 import { snapshotsTableColumnClasses } from './utils';
 import { VMSnapshotRow } from './vm-snapshot-row';

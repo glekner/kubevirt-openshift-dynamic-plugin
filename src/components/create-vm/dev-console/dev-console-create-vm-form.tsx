@@ -1,4 +1,18 @@
+import { TFunction } from 'i18next';
+import { isEmpty } from 'lodash';
 import * as React from 'react';
+import Helmet from 'react-helmet';
+import { Trans, useTranslation } from 'react-i18next';
+import { RouteComponentProps } from 'react-router';
+
+import {
+  ButtonBar,
+  ExternalLink,
+  history,
+  setQueryArgument,
+  StatusBox,
+} from '@console/internal/components/utils';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ActionGroup,
   Button,
@@ -8,21 +22,7 @@ import {
   StackItem,
   Title,
 } from '@patternfly/react-core';
-import { TFunction } from 'i18next';
-import { isEmpty } from 'lodash';
-import Helmet from 'react-helmet';
-import { Trans, useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router';
-import {
-  ButtonBar,
-  ExternalLink,
-  history,
-  setQueryArgument,
-  StatusBox,
-} from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { NamespacedPageVariants } from './NamespacedPage/NamespaceBarApplicationSelector/utils';
-import NamespacedPage from './NamespacedPage/NamespacedPage';
+
 import { ALL_NAMESPACES_KEY } from '../../../constants';
 import { BOOT_SOURCE_AVAILABLE, SUPPORT_URL } from '../../../constants/vm-templates';
 import { useStorageClassConfigMap } from '../../../hooks/storage-class-config-map';
@@ -44,6 +44,9 @@ import { filterTemplates } from '../../vm-templates/utils';
 import { CreateVMForm } from '../forms/create-vm-form';
 import { FORM_ACTION_TYPE, formReducer, initFormState } from '../forms/create-vm-form-reducer';
 import { useVmTemplatesResources } from '../hooks/use-vm-templates-resources';
+
+import { NamespacedPageVariants } from './NamespacedPage/NamespaceBarApplicationSelector/utils';
+import NamespacedPage from './NamespacedPage/NamespacedPage';
 
 const DevConsoleCreateVmFormEmptyState: React.FC<{ templateParam: string; t: TFunction }> = ({
   templateParam,

@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import { vmWizardActions } from '../../redux/actions';
 import { ActionType } from '../../redux/types';
 import { iGetVmSettings } from '../../selectors/immutable/vm-settings';
+
 import { AdvancedReviewTab } from './advanced-tab';
 import { GeneralReview } from './general-tab';
 import { NetworkingReview } from './networking-review';

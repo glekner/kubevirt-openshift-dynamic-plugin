@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Form, FormSelect, FormSelectOption } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { Form, FormSelect, FormSelectOption } from '@patternfly/react-core';
+
 import { DataVolumeSourceType, VolumeType } from '../../../../constants/vm/storage';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
 import { DiskWrapper } from '../../../../k8s/wrapper/vm/disk-wrapper';

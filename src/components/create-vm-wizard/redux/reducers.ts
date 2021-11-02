@@ -1,8 +1,10 @@
 import { fromJS, Map as ImmutableMap } from 'immutable';
 import * as _ from 'lodash';
+
 import { DeviceType } from '../../../constants/vm';
 import { iGet } from '../../../utils/immutable';
 import { ImportProvidersField, VMWizardTab } from '../types';
+
 import { InternalActionType, WizardInternalAction } from './types';
 
 const sequentializeBootOrderIndexes = (state, dialogId: string) => {

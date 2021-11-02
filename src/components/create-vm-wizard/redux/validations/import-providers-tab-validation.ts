@@ -4,6 +4,7 @@ import { checkTabValidityChanged, iGetCommonData } from '../../selectors/immutab
 import { VMWizardProps, VMWizardTab } from '../../types';
 import { vmWizardInternalActions } from '../internal-actions';
 import { InternalActionType, UpdateOptions, Validation } from '../types';
+
 import { getFieldsValidity } from './utils';
 
 export const validateImportProviderTab = (options: UpdateOptions) => {

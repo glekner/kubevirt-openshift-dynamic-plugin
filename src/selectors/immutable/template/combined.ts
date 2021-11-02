@@ -1,4 +1,5 @@
 import { List as ImmutableList, Map as ImmutableMap } from 'immutable';
+
 import {
   TEMPLATE_DEFAULT_LABEL,
   TEMPLATE_FLAVOR_LABEL,
@@ -13,8 +14,8 @@ import { VirtualMachineModel } from '../../../models';
 import { ITemplate } from '../../../types/template';
 import { iGet, iGetIn } from '../../../utils/immutable';
 import { compareVersions } from '../../../utils/sort';
-import { getFlavorLabel, getOsLabel, getWorkloadLabel } from '../../vm-template/combined-dependent';
 import { isWinToolsImage } from '../../vm/winimage';
+import { getFlavorLabel, getOsLabel, getWorkloadLabel } from '../../vm-template/combined-dependent';
 import { iGetCreationTimestamp, iGetLabels } from '../common';
 
 type FindTemplateOptions = {

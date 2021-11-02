@@ -1,7 +1,9 @@
 import { useMemo } from 'react';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import {
   DataVolumeModel,
   VirtualMachineImportModel,

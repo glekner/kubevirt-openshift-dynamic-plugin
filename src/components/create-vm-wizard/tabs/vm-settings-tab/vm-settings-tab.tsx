@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Form, SelectOption, TextArea, TextInput } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import { useAccessReview2 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { Form, SelectOption, TextArea, TextInput } from '@patternfly/react-core';
+
 import { TemplateSupport } from '../../../../constants/vm-templates/support';
 import useV2VConfigMap from '../../../../hooks/use-v2v-config-map';
 import { getDefaultStorageClass } from '../../../../selectors/config-map/sc-defaults';
@@ -29,6 +31,7 @@ import {
   VMWizardTabsMetadata,
 } from '../../types';
 import { getFieldId } from '../../utils/renderable-field-utils';
+
 import { ClonePVCSource } from './clone-pvc-source';
 import { ContainerSource } from './container-source';
 import { FlavorSelect } from './flavor';
@@ -37,6 +40,7 @@ import { OS } from './os';
 import { ProvisionSourceComponent } from './provision-source';
 import { URLSource } from './url-source';
 import { WorkloadSelect } from './workload-profile';
+
 import '../../create-vm-wizard-footer.scss';
 import './vm-settings-tab.scss';
 

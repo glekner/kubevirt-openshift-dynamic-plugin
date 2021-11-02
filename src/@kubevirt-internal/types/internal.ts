@@ -1,5 +1,6 @@
 import { match as RouterMatch } from 'react-router-dom';
-import { Node } from '@patternfly/react-topology';
+
+import { StatusGroup } from '@kubevirt-constants/status-group';
 import {
   FirehoseResource,
   FirehoseResult,
@@ -10,10 +11,11 @@ import {
   MatchLabels,
   Selector,
 } from '@openshift-console/dynamic-plugin-sdk';
-import { StatusGroup } from '@kubevirt-constants/status-group';
+import { Node } from '@patternfly/react-topology';
+
 import { BadgeType } from '../constants';
 
-export { K8sResourceCommon, GroupVersionKind };
+export { GroupVersionKind, K8sResourceCommon };
 
 export type K8sKind = {
   abbr: string;

@@ -1,4 +1,5 @@
 import { useURLPoll } from '@console/internal/components/utils/url-poll-hook';
+
 import { getVMIApiPath, getVMISubresourcePath } from '../selectors/vmi/selectors';
 import { VMIKind } from '../types';
 import { V1VirtualMachineInstanceGuestAgentInfo } from '../types/vmi-guest-data-info/vmi-guest-agent-info';
@@ -19,4 +20,4 @@ type GuestAgentInfoProps = {
   delay?: number;
 };
 
-export { useGuestAgentInfo, GuestAgentInfoProps };
+export { GuestAgentInfoProps, useGuestAgentInfo };

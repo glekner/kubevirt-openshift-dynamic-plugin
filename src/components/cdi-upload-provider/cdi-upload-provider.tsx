@@ -1,11 +1,14 @@
-import * as React from 'react';
 import axios, { Canceler } from 'axios';
+import * as React from 'react';
+
+import { K8sResourceKind } from '@kubevirt-types';
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { K8sResourceKind } from '@kubevirt-types';
+
 import { CDIConfigModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getUploadProxyURL } from '../../selectors/cdi';
+
 import { CDI_UPLOAD_URL_BUILDER, UPLOAD_STATUS } from './consts';
 
 const resource: WatchK8sResource = {

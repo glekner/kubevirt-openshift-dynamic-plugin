@@ -1,5 +1,6 @@
 /* eslint-disable lines-between-class-members */
 import { ObjectEnum } from '../../object-enum';
+
 import { NetworkInterfaceType } from './network-interface-type';
 
 export class NetworkType extends ObjectEnum<string> {

@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { TemplateSupport } from '../../../constants/vm-templates/support';
 
 type CustomizeSourceFormState = {

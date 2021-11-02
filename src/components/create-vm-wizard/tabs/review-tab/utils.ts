@@ -1,4 +1,5 @@
 import { Map as ImmutableMap } from 'immutable';
+
 import { CUSTOM_FLAVOR } from '../../../../constants';
 import { iGetRelevantTemplate } from '../../../../selectors/immutable/template/combined';
 import { isCustomFlavor } from '../../../../selectors/vm-like/flavor';

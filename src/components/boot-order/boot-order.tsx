@@ -1,9 +1,12 @@
-import * as React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Text, TextVariants } from '@patternfly/react-core';
+
 import { BootableDeviceType } from '../../types';
 import { DNDDataList, DNDDataListItem } from '../dnd-list';
+
 import { AddDevice } from './add-device';
 import { BootOrderEmpty } from './boot-order-empty';
 import { deviceKey, deviceLabel } from './constants';

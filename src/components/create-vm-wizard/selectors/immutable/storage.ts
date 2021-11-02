@@ -1,5 +1,6 @@
 import { iGet, iGetIn } from '../../../../utils/immutable';
 import { VMWizardStorageType, VMWizardTab } from '../../types';
+
 import { iGetCreateVMWizardTabs } from './common';
 
 export const iGetStorages = (state, id: string) =>

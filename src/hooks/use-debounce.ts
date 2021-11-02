@@ -1,5 +1,6 @@
-import * as React from 'react';
 import { debounce } from 'lodash';
+import * as React from 'react';
+
 import { useDeepCompareMemoize } from './use-deep-compare-memoize';
 
 interface Cancelable {
@@ -9,7 +10,7 @@ interface Cancelable {
 
 export const useDebounceCallback = <T extends (...args: any[]) => any>(
   callback: T,
-  timeout: number = 500,
+  timeout = 500,
   debounceParams: { leading?: boolean; trailing?: boolean; maxWait?: number } = {
     leading: false,
     trailing: true,

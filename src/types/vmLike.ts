@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { VMIKind, VMKind } from './vm';
 
 export type VMILikeEntityKind = VMKind | VMIKind;

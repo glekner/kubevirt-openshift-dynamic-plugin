@@ -1,4 +1,5 @@
 import { TFunction } from 'i18next';
+
 import { AffinityCondition, AffinityLabel, AffinityRowData, AffinityType } from './types';
 
 export const isWeightValid = (focusedAffinity: AffinityRowData) =>

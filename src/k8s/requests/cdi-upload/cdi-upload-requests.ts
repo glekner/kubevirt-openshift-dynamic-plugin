@@ -1,6 +1,6 @@
 import { k8sCreate, k8sGet, k8sKill } from '@console/internal/module/k8s';
 import { K8sResourceKind } from '@kubevirt-types';
-/* eslint-disable camelcase, @typescript-eslint/camelcase,no-await-in-loop */
+
 import { CDI_BIND_REQUESTED_ANNOTATION } from '../../../components/cdi-upload-provider/consts';
 import { DataVolumeModel, UploadTokenRequestModel } from '../../../models';
 import {
@@ -28,7 +28,7 @@ export const killUploadPVC = async (name: string, namespace: string) => {
   await k8sKill(DataVolumeModel, { metadata: { name, namespace } });
 };
 
-const waitForUploadReady = async (dataVolume: K8sResourceKind, counter: number = 30) => {
+const waitForUploadReady = async (dataVolume: K8sResourceKind, counter = 30) => {
   const dvName = getName(dataVolume);
   const namespace = getNamespace(dataVolume);
   let dv = dataVolume;

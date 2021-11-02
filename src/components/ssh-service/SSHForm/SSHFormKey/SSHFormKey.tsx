@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { Button, FileUpload, Flex, FlexItem } from '@patternfly/react-core';
 import { isEmpty } from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch } from 'react-redux';
 import sshpk from 'sshpk';
+
+import { Button, FileUpload, Flex, FlexItem } from '@patternfly/react-core';
+
 import useSSHKeys from '../../../../hooks/use-ssh-keys';
 import { sshActions, SSHActionsNames } from '../../redux/actions';
 import { ValidatedOptions } from '../ssh-form-utils';
@@ -16,13 +17,8 @@ import './ssh-form-key.scss';
 const SSHFormKey: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const {
-    key,
-    tempSSHKey,
-    updateSSHTempKey,
-    showRestoreKeyButton,
-    setIsValidSSHKey,
-  } = useSSHKeys();
+  const { key, tempSSHKey, updateSSHTempKey, showRestoreKeyButton, setIsValidSSHKey } =
+    useSSHKeys();
   const [filename, setFilename] = React.useState<string>();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [helperText, setHelperText] = React.useState<string>('');

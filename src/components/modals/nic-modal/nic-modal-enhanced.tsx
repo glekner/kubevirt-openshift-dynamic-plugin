@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
 import { Firehose, FirehoseResource, FirehoseResult } from '@console/internal/components/utils';
 import { k8sPatch, referenceForModel } from '@console/internal/module/k8s';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+
 import { getUpdateNICPatches } from '../../../k8s/patches/vm/vm-nic-patches';
 import { NetworkInterfaceWrapper } from '../../../k8s/wrapper/vm/network-interface-wrapper';
 import { NetworkWrapper } from '../../../k8s/wrapper/vm/network-wrapper';
@@ -12,7 +14,8 @@ import { getInterfaces, getUsedNetworks } from '../../../selectors/vm/selectors'
 import { asVM } from '../../../selectors/vm/vm';
 import { getVMLikeModel } from '../../../selectors/vm/vmlike';
 import { VMLikeEntityKind } from '../../../types/vmLike';
-import { getSimpleName, getLoadedData } from '../../../utils';
+import { getLoadedData, getSimpleName } from '../../../utils';
+
 import { NICModal } from './nic-modal';
 
 const NICModalFirehoseComponent: React.FC<NICModalFirehoseComponentProps> = (props) => {

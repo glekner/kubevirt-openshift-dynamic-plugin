@@ -1,4 +1,5 @@
 import { k8sCreate } from '@console/internal/module/k8s';
+
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
 import {
   TEMPLATE_OS_LABEL,
@@ -7,12 +8,13 @@ import {
 } from '../../../../constants/vm';
 import { ProcessedTemplatesModel } from '../../../../models/models';
 import { getAnnotations, getValueByPrefix } from '../../../../selectors/selectors';
-import { selectVM } from '../../../../selectors/vm-template/basic';
 import { getFlavor, getWorkloadProfile } from '../../../../selectors/vm/selectors';
+import { selectVM } from '../../../../selectors/vm-template/basic';
 import { VMKind } from '../../../../types/vm';
 import { findHighestKeyBySuffixValue } from '../../../../utils';
 import { VMTemplateWrapper } from '../../../wrapper/vm/vm-template-wrapper';
 import { VMWrapper } from '../../../wrapper/vm/vm-wrapper';
+
 import { initializeCommonMetadata, initializeCommonVMMetadata } from './common';
 import { resolveDefaultVMTemplate } from './default-template';
 import { DefaultVMLikeEntityParams } from './types';

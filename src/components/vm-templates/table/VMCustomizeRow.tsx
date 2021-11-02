@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Button, Level, LevelItem, Stack, StackItem } from '@patternfly/react-core';
-import { StarIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
+
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import {
   FirehoseResult,
@@ -10,10 +9,13 @@ import {
   LoadingInline,
   ResourceLink,
 } from '@console/internal/components/utils';
-import { NamespaceModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
 import { PendingStatus } from '@console/shared';
 import { SuccessStatus } from '@console/shared/src/components/status/statuses';
+import { NamespaceModel } from '@kubevirt-models';
+import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { Button, Level, LevelItem, Stack, StackItem } from '@patternfly/react-core';
+import { StarIcon } from '@patternfly/react-icons';
+
 import { getTemplateProvider } from '../../../selectors/vm-template/basic';
 import { isVMIRunning } from '../../../selectors/vmi';
 import { VMIKind, VMKind } from '../../../types';
@@ -22,6 +24,7 @@ import { dimensifyRow } from '../../../utils';
 import cancelCustomizationModal from '../../modals/template-customization/CancelCustomizationModal';
 import { customizeTemplateActions } from '../menu-actions';
 import { getTemplateOSIcon } from '../os-icons';
+
 import CustomizeVMTStatus from './CustomizeVMTStatus';
 import RowActions from './RowActions';
 import { VMTemplateRowProps } from './types';

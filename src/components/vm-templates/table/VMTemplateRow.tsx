@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Button } from '@patternfly/react-core';
-import { StarIcon } from '@patternfly/react-icons';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import { Kebab, ResourceLink } from '@console/internal/components/utils';
 import { NamespaceModel, TemplateModel } from '@kubevirt-models';
+import { Button } from '@patternfly/react-core';
+import { StarIcon } from '@patternfly/react-icons';
+
 import { useCustomizeSourceModal } from '../../../hooks/use-customize-source-modal';
 import { useSupportModal } from '../../../hooks/use-support-modal';
 import { getTemplateName, getTemplateProvider } from '../../../selectors/vm-template/basic';
@@ -16,6 +18,7 @@ import { menuActionsCreator } from '../menu-actions';
 import { getTemplateOSIcon } from '../os-icons';
 import { TemplateSource } from '../vm-template-source';
 import { VMTemplateCommnunityLabel } from '../VMTemplateCommnunityLabel';
+
 import RowActions from './RowActions';
 import { VMTemplateRowProps } from './types';
 import { tableColumnClasses } from './utils';

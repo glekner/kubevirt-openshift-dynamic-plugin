@@ -3,9 +3,7 @@ export enum SysprepActionsNames {
   clearValues = 'CLEAR_VALUES',
 }
 
-type SysprepActionsType = (val?: {
-  [key: string]: string;
-}) => {
+type SysprepActionsType = (val?: { [key: string]: string }) => {
   type: string;
   payload?: { [key: string]: string };
 };

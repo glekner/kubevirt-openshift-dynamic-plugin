@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 export const useShowErrorToggler = (
-  initialShowError: boolean = false,
-  initialIsValid: boolean = false,
+  initialShowError = false,
+  initialIsValid = false,
   checkIsValid?: boolean,
 ) => {
   const [showError, setShowError] = React.useState<boolean>(initialShowError);

@@ -1,10 +1,13 @@
 import * as React from 'react';
+
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
 import { Firehose } from '@console/internal/components/utils';
 import { NodeModel } from '@kubevirt-models';
+
 import { getName, getNamespace } from '../../../../selectors';
 import { getVMLikeModel } from '../../../../selectors/vm/vmlike';
 import { VMLikeEntityKind } from '../../../../types/vmLike';
+
 import { DedicatedResourcesModal } from './dedicated-resources-modal';
 
 const FirehoseDedicatedResourcesModal: React.FC<FirehoseDedicatedResourcesModalProps> = (props) => {

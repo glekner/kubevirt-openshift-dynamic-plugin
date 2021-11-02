@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+
 import { K8sResourceCommon, K8sResourceKind, PodKind } from '@kubevirt-types';
+import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+
 import { useDebounceCallback } from '../hooks/use-debounce';
 import { useDeepCompareMemoize } from '../hooks/use-deep-compare-memoize';
 import * as models from '../models';
@@ -8,6 +10,7 @@ import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';
 import { findVMIPod } from '../selectors/pod/selectors';
 import { PodRCData } from '../types/pod';
 import { VMIKind } from '../types/vm';
+
 import { getReplicationControllersForResource } from './resource-utils';
 
 export const usePodsForVm = (

@@ -7,7 +7,7 @@ export class VMwareFirmware extends ObjectEnum<string> {
 
   private readonly supported: boolean;
 
-  protected constructor(value: string, supported: boolean = false) {
+  protected constructor(value: string, supported = false) {
     super(value);
     this.supported = supported;
   }

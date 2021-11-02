@@ -1,5 +1,12 @@
 /* eslint-disable no-underscore-dangle */
+import * as _ from 'lodash';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { Prompt } from 'react-router';
+
+import { getActiveNamespace } from '@console/internal/actions/ui';
+import { useActiveNamespace } from '@console/shared';
 import {
   Alert,
   Button,
@@ -9,15 +16,11 @@ import {
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import * as _ from 'lodash';
-import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { Prompt } from 'react-router';
-import { getActiveNamespace } from '@console/internal/actions/ui';
-import { useActiveNamespace } from '@console/shared';
+
 import { useShowErrorToggler } from '../../hooks/use-show-error-toggler';
 import { getDialogUIError, getSimpleDialogUIError } from '../../utils';
 import { iGetIsLoaded, iGetLoadError } from '../../utils/immutable';
+
 import { vmWizardActions } from './redux/actions';
 import { ActionType } from './redux/types';
 import { iGetCommonData } from './selectors/immutable/selectors';

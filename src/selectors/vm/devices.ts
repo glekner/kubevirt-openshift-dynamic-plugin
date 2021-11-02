@@ -1,9 +1,11 @@
 import * as _ from 'lodash';
+
 import { DeviceType } from '../../constants';
 import { DiskWrapper } from '../../k8s/wrapper/vm/disk-wrapper';
 import { BootableDeviceType, V1NetworkInterface } from '../../types';
 import { V1Disk } from '../../types/api';
 import { VMLikeEntityKind } from '../../types/vmLike';
+
 import { getBootableDisks, getDisks, getInterfaces } from './selectors';
 import { asVM } from './vm';
 

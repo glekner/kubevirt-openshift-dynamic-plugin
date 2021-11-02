@@ -1,5 +1,5 @@
+import classNames from 'classnames';
 import * as React from 'react';
-import * as classNames from 'classnames';
 
 export const SectionHeading: React.SFC<SectionHeadingProps> = ({
   text,

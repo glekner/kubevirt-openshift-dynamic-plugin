@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { match as routerMatch } from 'react-router';
+
 import { DetailsPage } from '@console/internal/components/factory/details';
 import { navFactory } from '@console/internal/components/utils/horizontal-nav';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import {
   K8sResourceKindReference,
@@ -12,6 +12,8 @@ import {
   PodKind,
   TemplateKind,
 } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { useBaseImages } from '../../hooks/use-base-images';
 import { useCustomizeSourceModal } from '../../hooks/use-customize-source-modal';
 import { useSupportModal } from '../../hooks/use-support-modal';
@@ -22,6 +24,7 @@ import { getTemplateSourceStatus } from '../../statuses/template/template-source
 import { V1alpha1DataVolume } from '../../types/api';
 import { VMDisks } from '../vm-disks/vm-disks';
 import { VMNics } from '../vm-nics';
+
 import { menuActionsCreator } from './menu-actions';
 import { VMTemplateDetails } from './vm-template-details';
 

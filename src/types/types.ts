@@ -1,4 +1,5 @@
 import { DeviceType } from '../constants';
+
 import { V1Disk } from './api';
 import { V1NetworkInterface } from './vm';
 

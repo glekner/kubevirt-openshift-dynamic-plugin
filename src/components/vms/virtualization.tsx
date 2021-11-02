@@ -1,4 +1,13 @@
+import { TFunction } from 'i18next';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
+import { Link, Redirect, RouteComponentProps } from 'react-router-dom';
+
+import { withStartGuide } from '@console/internal/components/start-guide';
+import { FLAGS } from '@console/shared';
+import { useFlag } from '@console/shared/src/hooks/flag';
+import { HorizontalNav } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Dropdown,
   DropdownGroup,
@@ -7,20 +16,14 @@ import {
   DropdownSeparator,
   DropdownToggle,
 } from '@patternfly/react-core';
-import { TFunction } from 'i18next';
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
-import { Link, Redirect, RouteComponentProps } from 'react-router-dom';
-import { withStartGuide } from '@console/internal/components/start-guide';
-import { HorizontalNav } from '@openshift-console/dynamic-plugin-sdk';
-import { FLAGS } from '@console/shared';
-import { useFlag } from '@console/shared/src/hooks/flag';
+
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { FLAG_KUBEVIRT_HAS_PRINTABLESTATUS } from '../../flags/const';
 import { VirtualMachineModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getVMWizardCreateLink } from '../../utils/url';
 import { VirtualMachineTemplatesPage } from '../vm-templates/vm-template';
+
 import MigrationTool from './migration-tool/MigrationTool';
 import { VirtualMachinesPage } from './vm';
 import { VirtualMachinesPage as NewVirtualMachinesPage } from './vm-page-new';

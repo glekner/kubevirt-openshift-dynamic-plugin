@@ -1,5 +1,7 @@
 import * as _ from 'lodash';
+
 import { k8sKill } from '@console/internal/module/k8s';
+
 import { OVirtProviderModel } from '../../../models';
 
 export const deleteOvirtProviderObject = async ({

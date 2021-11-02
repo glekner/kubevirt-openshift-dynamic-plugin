@@ -1,9 +1,11 @@
 import { K8sResourceKind } from '@kubevirt-types';
+
 import {
   getConditionReason,
   getStatusConditionOfType,
   isConditionStatusTrue,
 } from '../../selectors/selectors';
+
 import { DeploymentStatus } from './constants';
 
 export const getStatus = (deployment: K8sResourceKind) => {

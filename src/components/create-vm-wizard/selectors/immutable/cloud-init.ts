@@ -1,5 +1,6 @@
 import { iGetIn } from '../../../../utils/immutable';
 import { CloudInitField, VMWizardTab } from '../../types';
+
 import { iGetCreateVMWizardTabs } from './common';
 
 export const iGetCloudInitValue = (

@@ -1,19 +1,21 @@
-import * as React from 'react';
-import { Wizard, WizardStep } from '@patternfly/react-core';
 import { Location } from 'history';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { match as RouterMatch, useHistory } from 'react-router';
 import { compose } from 'redux';
+
 import { Firehose } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { TemplateModel } from '@kubevirt-models';
 import { referenceForModel } from '@console/internal/module/k8s';
 import { connectToFlags } from '@console/internal/reducers/connectToFlags';
 import { featureReducerName, FlagsObject } from '@console/internal/reducers/features';
-import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { FLAGS } from '@console/shared';
+import { TemplateModel } from '@kubevirt-models';
+import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { Wizard, WizardStep } from '@patternfly/react-core';
+
 import { VMWizardURLParams } from '../../constants/url-params';
 import {
   TEMPLATE_TYPE_BASE,
@@ -27,8 +29,8 @@ import { useBaseImages } from '../../hooks/use-base-images';
 import { usePrevious } from '../../hooks/use-previous';
 import { useUpdateStorages } from '../../hooks/use-update-data-volume';
 import { DataVolumeModel, VirtualMachineModel } from '../../models';
-import { getTemplateName } from '../../selectors/vm-template/basic';
 import { isWindows } from '../../selectors/vm/combined';
+import { getTemplateName } from '../../selectors/vm-template/basic';
 import { FirehoseResourceEnhanced } from '../../types/custom';
 import { ITemplate } from '../../types/template';
 import { VMWizardInitialData } from '../../types/url';
@@ -37,7 +39,7 @@ import { iGetLoadedData, immutableListToShallowJS } from '../../utils/immutable'
 import { withReduxID } from '../../utils/redux/common';
 import { IDReferences, makeIDReferences } from '../../utils/redux/id-reference';
 import { parseVMWizardInitialData } from '../../utils/url';
-import { CreateVMWizardFooter } from './create-vm-wizard-footer';
+
 import { ResourceLoadErrors } from './error-components/resource-load-errors';
 import { WizardErrors } from './error-components/wizard-errors';
 import { vmWizardActions } from './redux/actions';
@@ -59,6 +61,7 @@ import { ReviewTab } from './tabs/review-tab/review-tab';
 import { StorageTab } from './tabs/storage-tab/storage-tab';
 import { ValidTabGuard } from './tabs/valid-tab-guard';
 import { VMSettingsTab } from './tabs/vm-settings-tab/vm-settings-tab';
+import { CreateVMWizardFooter } from './create-vm-wizard-footer';
 import {
   ChangedCommonData,
   ChangedCommonDataProp,

@@ -1,4 +1,5 @@
 import { k8sGet, k8sKill } from '@console/internal/module/k8s';
+
 import { VirtualMachineImportModel, VirtualMachineModel } from '../../../models';
 import { getKubevirtAvailableModel } from '../../../models/kubevirtReferenceForModel';
 import { getDeletetionTimestamp, getName, getNamespace } from '../../../selectors';

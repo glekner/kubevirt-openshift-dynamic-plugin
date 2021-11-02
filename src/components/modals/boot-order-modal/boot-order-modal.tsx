@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Button, ButtonVariant } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -15,6 +15,8 @@ import {
   withHandlePromise,
 } from '@console/internal/components/utils';
 import { k8sPatch } from '@console/internal/module/k8s';
+import { Button, ButtonVariant } from '@patternfly/react-core';
+
 import { DeviceType } from '../../../constants';
 import { PatchBuilder } from '../../../k8s/helpers/patch';
 import { getVMLikePatches } from '../../../k8s/patches/vm-template';
@@ -23,7 +25,6 @@ import { VMIWrapper } from '../../../k8s/wrapper/vm/vmi-wrapper';
 import { VirtualMachineInstanceModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../../selectors';
-import { isBootOrderChanged } from '../../../selectors/vm-like/next-run-changes';
 import {
   getBootableDevices,
   getBootableDevicesInOrder,
@@ -32,6 +33,7 @@ import {
 import { isVMRunningOrExpectedRunning } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';
 import { getVMLikeModel } from '../../../selectors/vm/vmlike';
+import { isBootOrderChanged } from '../../../selectors/vm-like/next-run-changes';
 import { BootableDeviceType, VMIKind } from '../../../types';
 import { VMLikeEntityKind } from '../../../types/vmLike';
 import { createBasicLookup, getLoadedData } from '../../../utils';
@@ -53,9 +55,8 @@ const BootOrderModalComponent = withHandlePromise(
     const bootableDevices = getBootableDevices(vmLikeEntity);
     const { t } = useTranslation();
     const [devices, setDevices] = React.useState<BootableDeviceType[]>(bootableDevices);
-    const [initialDeviceList, setInitialDeviceList] = React.useState<BootableDeviceType[]>(
-      bootableDevices,
-    );
+    const [initialDeviceList, setInitialDeviceList] =
+      React.useState<BootableDeviceType[]>(bootableDevices);
     const [showUpdatedAlert, setUpdatedAlert] = React.useState<boolean>(false);
     const [showPatchError, setPatchError] = React.useState<boolean>(false);
     const vm = asVM(vmLikeEntity);

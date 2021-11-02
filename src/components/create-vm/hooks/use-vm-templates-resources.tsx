@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import {
   CDI_APP_LABEL,
   TEMPLATE_TYPE_BASE,

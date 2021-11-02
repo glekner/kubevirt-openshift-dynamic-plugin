@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import { Prompt } from 'react-router';
+
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Button,
   Divider,
@@ -10,9 +14,7 @@ import {
   StackItem,
   Title,
 } from '@patternfly/react-core';
-import { Trans, useTranslation } from 'react-i18next';
-import { Prompt } from 'react-router';
-import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
+
 import { TEMPLATE_CUSTOMIZED_ANNOTATION } from '../../../constants';
 import { useRenderVNCConsole } from '../../../hooks/use-render-vnc-console';
 import { VirtualMachineModel } from '../../../models';

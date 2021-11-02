@@ -1,5 +1,5 @@
 import { PodKind } from '@kubevirt-types';
-import { Status } from '..';
+
 import {
   findFailingContainerStatus,
   getContainerStatusReason,
@@ -9,6 +9,8 @@ import {
   getPodStatusPhase,
   isPodSchedulable,
 } from '../../selectors/pod/selectors';
+import { Status } from '..';
+
 import {
   POD_STATUS_COMPLETED,
   POD_STATUS_CONTAINER_FAILING,

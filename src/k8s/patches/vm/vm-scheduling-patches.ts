@@ -1,4 +1,5 @@
 import { Toleration } from '@kubevirt-types';
+
 import { Affinity } from '../../../components/modals/scheduling-modals/affinity-modal/types';
 import { NodeSelector } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';

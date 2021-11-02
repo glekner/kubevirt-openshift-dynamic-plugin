@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { ProvisionSource } from '../../../../constants/vm/provision-source';
 import { asValidationObject, ValidationErrorType, ValidationObject } from '../../../../selectors';
 import { UIValidation } from '../../../../types/ui/ui';
@@ -25,6 +26,7 @@ import { getTemplateValidations } from '../../selectors/template';
 import { VMSettingsField, VMWizardProps, VMWizardTab } from '../../types';
 import { vmWizardInternalActions } from '../internal-actions';
 import { InternalActionType, UpdateOptions, ValidationConfig, Validator } from '../types';
+
 import { getFieldsValidity, getValidationUpdate } from './utils';
 
 const validateVm: Validator = (field, options) => {

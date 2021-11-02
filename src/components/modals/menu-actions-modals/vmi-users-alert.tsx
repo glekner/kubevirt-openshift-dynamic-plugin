@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Alert, Button } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+
+import { Alert, Button } from '@patternfly/react-core';
+
 import { useGuestAgentInfo } from '../../../hooks/use-guest-agent-info';
 import { GuestAgentInfoWrapper } from '../../../k8s/wrapper/vm/guest-agent-info/guest-agent-info-wrapper';
 import { getName, getNamespace } from '../../../selectors';

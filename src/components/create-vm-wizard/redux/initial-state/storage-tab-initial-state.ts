@@ -1,4 +1,5 @@
 import { ConfigMapKind } from '@kubevirt-types';
+
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../../../constants';
 import {
   DUMMY_VM_NAME,
@@ -49,6 +50,7 @@ import {
   VMWizardStorage,
   VMWizardStorageType,
 } from '../../types';
+
 import { InitialStepStateGetter } from './types';
 
 const WINTOOLS_DISK_NAME = 'windows-guest-tools';

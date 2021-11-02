@@ -1,12 +1,14 @@
-import * as React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import { useAccessReview2 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { FormSelect, FormSelectOption } from '@patternfly/react-core';
+
 import { getDefaultStorageClass } from '../../../../../../selectors/config-map/sc-defaults';
 import { iGet, iGetIn } from '../../../../../../utils/immutable';
 import { ignoreCaseSort } from '../../../../../../utils/sort';

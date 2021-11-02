@@ -1,5 +1,7 @@
 import { History } from 'history';
+
 import { VMGenericLikeEntityKind } from '@kubevirt-types/vmLike';
+
 import { getName, getNamespace } from '../../../selectors';
 
 export const redirectToList = (

@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { OperatingSystemRecord } from '../../types/types';
 import { compareVersions, removeOSDups } from '../sort';
 
@@ -11,16 +12,16 @@ import { compareVersions, removeOSDups } from '../sort';
 
 describe('compareVersions', () => {
   const osVersion0: string = null;
-  const osVersion1: string = 'v1.2.3';
-  const osVersion2: string = 'v1.2.4';
-  const osVersion3: string = '1.1';
-  const osVersion4: string = '1';
-  const osVersion5: string = '2';
-  const osVersion6: string = '1.0';
-  const osVersion7: string = '1.0.0';
-  const osVersion8: string = '0';
-  const osVersion9: string = '0.0.0';
-  const osVersion10: string = 'devel';
+  const osVersion1 = 'v1.2.3';
+  const osVersion2 = 'v1.2.4';
+  const osVersion3 = '1.1';
+  const osVersion4 = '1';
+  const osVersion5 = '2';
+  const osVersion6 = '1.0';
+  const osVersion7 = '1.0.0';
+  const osVersion8 = '0';
+  const osVersion9 = '0.0.0';
+  const osVersion10 = 'devel';
 
   it('check non-equal versions with same length', () => {
     expect(compareVersions(osVersion1, osVersion2)).toEqual(-1);

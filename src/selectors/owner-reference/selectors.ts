@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { OwnerReference } from '@kubevirt-types';
 
 export const getAPIVersion = (ownerReference: OwnerReference) =>

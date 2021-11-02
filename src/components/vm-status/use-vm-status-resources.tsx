@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceCommon, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { useK8sWatchResources } from '@openshift-console/dynamic-plugin-sdk';
+
 import { useDebounceCallback } from '../../hooks/use-debounce';
 import { useDeepCompareMemoize } from '../../hooks/use-deep-compare-memoize';
 import { DataVolumeModel, VirtualMachineInstanceMigrationModel } from '../../models';

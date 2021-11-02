@@ -1,8 +1,10 @@
+import classNames from 'classnames';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from '@patternfly/react-core';
 import { CloseIcon } from '@patternfly/react-icons';
-import * as classNames from 'classnames';
-import { useTranslation } from 'react-i18next';
+
 import './CloseButton.scss';
 
 type CloseButtonProps = {

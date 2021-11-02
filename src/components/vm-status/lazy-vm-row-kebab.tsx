@@ -1,11 +1,14 @@
 import * as React from 'react';
+
 import { Kebab, KebabOption } from '@console/internal/components/utils';
+
 import { useDeepCompareMemoize } from '../../hooks/use-deep-compare-memoize';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';
 import { VMStatusBundle } from '../../statuses/vm/types';
 import { getVMConditionsStatus } from '../../statuses/vm/vm-status';
 import { VMIKind, VMKind } from '../../types';
 import { vmiMenuActions, vmMenuActions } from '../vms/menu-actions';
+
 import { VmStatusResourcesValue } from './use-vm-status-resources';
 
 type LazyVmRowKebabProps = {

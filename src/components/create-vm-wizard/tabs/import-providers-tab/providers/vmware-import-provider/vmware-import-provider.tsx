@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Checkbox, TextInput } from '@patternfly/react-core';
 import { connect } from 'react-redux';
+
+import { Checkbox, TextInput } from '@patternfly/react-core';
+
 import { iGet, iGetIn } from '../../../../../../utils/immutable';
 import { FormField, FormFieldType } from '../../../../form/form-field';
 import { FormFieldMemoRow } from '../../../../form/form-field-row';
@@ -21,6 +23,7 @@ import { VMImportProviderControllerErrors } from '../vm-import-provider-controll
 import { VMImportProviderControllerStatusRow } from '../vm-import-provider-controller-status-row';
 import { VMImportProviderObjectStatus } from '../vm-import-provider-object-status';
 import { VMImportSecrets } from '../vm-import-secrets';
+
 import { VMWareVMs } from './vmware-vms';
 
 import './vmware-import-provider.scss';

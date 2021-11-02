@@ -1,4 +1,5 @@
 import { Set } from 'immutable';
+
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../../../constants';
 import { DiskBus, DiskType, NetworkInterfaceModel, VolumeType } from '../../../../constants/vm';
 import { ROOT_DISK_NAME } from '../../../../constants/vm/constants';
@@ -7,14 +8,6 @@ import { CloudInitDataHelper } from '../../../../k8s/wrapper/vm/cloud-init-data-
 import { DiskWrapper } from '../../../../k8s/wrapper/vm/disk-wrapper';
 import { VolumeWrapper } from '../../../../k8s/wrapper/vm/volume-wrapper';
 import { getName } from '../../../../selectors';
-import { isCustomFlavor, toUIFlavor } from '../../../../selectors/vm-like/flavor';
-import {
-  getTemplateFlavors,
-  getTemplateHostname,
-  getTemplateOperatingSystems,
-  getTemplateWorkloadProfiles,
-} from '../../../../selectors/vm-template/advanced';
-import { isCommonTemplate, selectVM } from '../../../../selectors/vm-template/basic';
 import { DEFAULT_CPU, parseCPU } from '../../../../selectors/vm/cpu';
 import {
   getCPU,
@@ -27,9 +20,17 @@ import {
   hasAutoAttachPodInterface,
 } from '../../../../selectors/vm/selectors';
 import { isWinToolsImage } from '../../../../selectors/vm/winimage';
+import { isCustomFlavor, toUIFlavor } from '../../../../selectors/vm-like/flavor';
+import {
+  getTemplateFlavors,
+  getTemplateHostname,
+  getTemplateOperatingSystems,
+  getTemplateWorkloadProfiles,
+} from '../../../../selectors/vm-template/advanced';
+import { isCommonTemplate, selectVM } from '../../../../selectors/vm-template/basic';
 import { V1alpha1DataVolume, V1Volume } from '../../../../types/api';
 import { V1Network } from '../../../../types/vm';
-import { getSimpleName, createBasicLookup } from '../../../../utils';
+import { createBasicLookup, getSimpleName } from '../../../../utils';
 import { immutableListToShallowJS, toShallowJS } from '../../../../utils/immutable';
 import { getNextIDResolver } from '../../../../utils/utils';
 import { convertToHighestUnitFromUnknown } from '../../../form/size-unit-utils';

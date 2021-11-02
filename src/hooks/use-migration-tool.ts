@@ -1,10 +1,12 @@
-import * as React from 'react';
 import { isEmpty } from 'lodash';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { RouteModel } from '@kubevirt-models';
+import * as React from 'react';
+
 import { k8sCreate } from '@console/internal/module/k8s';
-import { RouteKind } from '@kubevirt-types';
 import { apiVersionForModel } from '@console/internal/module/k8s/k8s';
+import { RouteModel } from '@kubevirt-models';
+import { RouteKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { ForkliftControllerModel, PackageManifestModel, SubscriptionModel } from '../models';
 import {
   filterMtv,
@@ -81,7 +83,6 @@ const useMigrationTool = (): useMigrationResult => {
         kind: ForkliftControllerModel.kind,
         apiVersion: apiVersionForModel(ForkliftControllerModel),
         metadata: { name: 'forklift-controller', namespace: mtvSubscription?.metadata?.namespace },
-        // eslint-disable-next-line @typescript-eslint/camelcase
         spec: { feature_ui: 'true', feature_validation: 'true' },
       });
     } catch (e) {

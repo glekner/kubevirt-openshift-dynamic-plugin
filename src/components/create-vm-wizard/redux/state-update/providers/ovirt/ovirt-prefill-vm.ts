@@ -1,9 +1,11 @@
 import * as _ from 'lodash';
+
 import {
   ConfigMapKind,
   K8sResourceKind,
   StorageClassResourceKind,
 } from '@console/internal/module/k8s';
+
 import { OvirtDiskBus } from '../../../../../../constants/v2v-import/ovirt/ovirt-disk-bus';
 import { OvirtNetworkInterfaceModel } from '../../../../../../constants/v2v-import/ovirt/ovirt-network-interface-model';
 import {
@@ -28,8 +30,8 @@ import {
 } from '../../../../../../selectors/config-map/sc-defaults';
 import { OvirtVM } from '../../../../../../types/vm-import/ovirt/ovirt-vm';
 import {
-  createUniqueNameResolver,
   alignWithDNS1123,
+  createUniqueNameResolver,
   joinGrammaticallyListOfItems,
 } from '../../../../../../utils';
 import { immutableListToShallowJS, toShallowJS } from '../../../../../../utils/immutable';

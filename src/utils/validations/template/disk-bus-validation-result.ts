@@ -1,6 +1,6 @@
-import { joinGrammaticallyListOfItems } from '../..';
 import { DiskBus } from '../../../constants/vm/storage/disk-bus';
-import { ValidationObject, ValidationErrorType, asValidationObject } from '../../../selectors';
+import { asValidationObject, ValidationErrorType, ValidationObject } from '../../../selectors';
+import { joinGrammaticallyListOfItems } from '../..';
 
 export class DiskBusValidationResult {
   allowedBuses: Set<DiskBus>;

@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { Button, Split, SplitItem, Stack, StackItem } from '@patternfly/react-core';
+import { useHistory } from 'react-router-dom';
+
 import { resourcePath } from '@console/internal/components/utils';
 import { ErrorStatus, ProgressStatus, Status } from '@console/shared';
+import { Button, Split, SplitItem, Stack, StackItem } from '@patternfly/react-core';
+
 import { VirtualMachineRestoreModel } from '../../models';
 import { kubevirtReferenceForModel } from '../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../selectors';
@@ -13,7 +16,6 @@ import {
 } from '../../selectors/snapshot/snapshot';
 import { VMRestore, VMSnapshot } from '../../types';
 import snapshotRestoreModal from '../modals/snapshot-restore-modal/snapshot-restore-modal';
-import { useHistory } from 'react-router-dom';
 
 export const VMSnapshotStatus: React.FC<VMSnapshotStatusProps> = ({ snapshot, restore }) => {
   const history = useHistory();

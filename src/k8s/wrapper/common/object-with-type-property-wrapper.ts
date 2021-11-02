@@ -1,13 +1,15 @@
 import * as _ from 'lodash';
+
 import { ObjectEnum } from '../../../constants';
 import { omitEmpty } from '../../../utils/common';
+
 import { Wrapper } from './wrapper';
 
 export abstract class ObjectWithTypePropertyWrapper<
   RESOURCE,
   TYPE extends ObjectEnum<string>,
   COMBINED_TYPE_DATA,
-  SELF extends ObjectWithTypePropertyWrapper<RESOURCE, TYPE, COMBINED_TYPE_DATA, SELF>
+  SELF extends ObjectWithTypePropertyWrapper<RESOURCE, TYPE, COMBINED_TYPE_DATA, SELF>,
 > extends Wrapper<RESOURCE, SELF> {
   private readonly TypeClass: { getAll: () => TYPE[] | Readonly<TYPE[]> };
 
@@ -49,7 +51,7 @@ export abstract class ObjectWithTypePropertyWrapper<
     if (lastWithType) {
       this.appendType(lastWithType.getType(), undefined, false); // removes typeData of other types
     }
-    return (this as any) as SELF;
+    return this as any as SELF;
   }
 
   setType = (type?: TYPE, typeData?: COMBINED_TYPE_DATA, sanitize = true) => {
@@ -76,7 +78,7 @@ export abstract class ObjectWithTypePropertyWrapper<
         typeDataParent[type.getValue()] = finalTypeData;
       }
     }
-    return (this as any) as SELF;
+    return this as any as SELF;
   };
 
   appendType = (type?: TYPE, newTypeData?: COMBINED_TYPE_DATA, sanitize = true) =>

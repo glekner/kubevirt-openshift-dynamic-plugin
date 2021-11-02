@@ -1,8 +1,10 @@
 import { OrderedSet } from 'immutable';
-import { TemplateSupport } from '../../../../constants/vm-templates/support';
+
 import { ProvisionSource } from '../../../../constants/vm/provision-source';
+import { TemplateSupport } from '../../../../constants/vm-templates/support';
 import { CommonData, VMSettingsField, VMWizardProps } from '../../types';
 import { asDisabled, asHidden, asRequired } from '../../utils/utils';
+
 import { InitialStepStateGetter, VMSettings } from './types';
 
 export const getInitialVmSettings = (data: CommonData): VMSettings => {

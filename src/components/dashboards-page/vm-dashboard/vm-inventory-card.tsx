@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { DashboardItemProps } from '@console/internal/components/dashboard/with-dashboard-resources';
 import { resourcePath } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import DashboardCard from '@console/shared/src/components/dashboard/dashboard-card/DashboardCard';
 import DashboardCardBody from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardBody';
 import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
 import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardTitle';
 import InventoryItem from '@console/shared/src/components/dashboard/inventory-card/InventoryItem';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import {
   DiskType,
   VM_DETAIL_DISKS_HREF,

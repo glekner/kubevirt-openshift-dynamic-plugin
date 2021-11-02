@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { VMImportWrappper } from '../k8s/wrapper/vm-import/vm-import-wrapper';
+
 import { VMWrapper } from '../k8s/wrapper/vm/vm-wrapper';
+import { VMImportWrappper } from '../k8s/wrapper/vm-import/vm-import-wrapper';
 import { VirtualMachineImportModel } from '../models';
 import { kubevirtReferenceForModel } from '../models/kubevirtReferenceForModel';
 import { getCreationTimestamp, getName, getNamespace } from '../selectors';

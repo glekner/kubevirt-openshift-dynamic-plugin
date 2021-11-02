@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Form, FormSelect, FormSelectOption } from '@patternfly/react-core';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -15,9 +15,11 @@ import {
   humanizeBinaryBytesWithoutB,
   withHandlePromise,
 } from '@console/internal/components/utils';
+import { k8sPatch } from '@console/internal/module/k8s';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
-import { k8sPatch } from '@console/internal/module/k8s';
+import { Form, FormSelect, FormSelectOption } from '@patternfly/react-core';
+
 import { CUSTOM_FLAVOR } from '../../../constants';
 import { useShowErrorToggler } from '../../../hooks/use-show-error-toggler';
 import { getUpdateFlavorPatches } from '../../../k8s/patches/vm/vm-patches';
@@ -26,17 +28,17 @@ import { VMIWrapper } from '../../../k8s/wrapper/vm/vmi-wrapper';
 import { VirtualMachineInstanceModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../../selectors';
-import { isCustomFlavor, toUIFlavor } from '../../../selectors/vm-like/flavor';
-import { isFlavorChanged } from '../../../selectors/vm-like/next-run-changes';
-import { getTemplateFlavors } from '../../../selectors/vm-template/advanced';
-import { getVMTemplateNamespacedName } from '../../../selectors/vm-template/selectors';
 import { vCPUCount } from '../../../selectors/vm/cpu';
 import { getCPU, getFlavor, getMemory, isVMExpectedRunning } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';
 import { getVMLikeModel } from '../../../selectors/vm/vmlike';
+import { isCustomFlavor, toUIFlavor } from '../../../selectors/vm-like/flavor';
+import { isFlavorChanged } from '../../../selectors/vm-like/next-run-changes';
+import { getTemplateFlavors } from '../../../selectors/vm-template/advanced';
+import { getVMTemplateNamespacedName } from '../../../selectors/vm-template/selectors';
 import { VMIKind } from '../../../types/vm';
 import { VMLikeEntityKind } from '../../../types/vmLike';
-import { getLoadedData, getDialogUIError } from '../../../utils';
+import { getDialogUIError, getLoadedData } from '../../../utils';
 import { flavorSort } from '../../../utils/sort';
 import { isValidationError } from '../../../utils/validations/common';
 import { validateFlavor } from '../../../utils/validations/vm/flavor';

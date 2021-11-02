@@ -1,4 +1,14 @@
 import * as React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+
+import {
+  convertToBaseValue,
+  humanizeBinaryBytes,
+  LoadingBox,
+  useAccessReview2,
+} from '@console/internal/components/utils';
+import { BlueInfoCircleIcon, FLAGS, useFlag } from '@console/shared';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   Checkbox,
@@ -12,19 +22,13 @@ import {
   StackItem,
   TextInput,
 } from '@patternfly/react-core';
-import { Trans, useTranslation } from 'react-i18next';
-import {
-  convertToBaseValue,
-  humanizeBinaryBytes,
-  LoadingBox,
-  useAccessReview2,
-} from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { BlueInfoCircleIcon, FLAGS, useFlag } from '@console/shared';
+
 import { ROOT_DISK_INSTALL_NAME } from '../../../constants';
 import { DataVolumeSourceType, DEFAULT_DISK_SIZE } from '../../../constants/vm';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
+import { vCPUCount } from '../../../selectors/vm/cpu';
+import { getCPU, getWorkloadProfile } from '../../../selectors/vm/selectors';
 import {
   getDefaultDiskBus,
   getTemplateFlavorData,
@@ -32,8 +36,6 @@ import {
   getTemplateSizeRequirementInBytes,
 } from '../../../selectors/vm-template/advanced';
 import { getTemplateName, selectVM } from '../../../selectors/vm-template/basic';
-import { vCPUCount } from '../../../selectors/vm/cpu';
-import { getCPU, getWorkloadProfile } from '../../../selectors/vm/selectors';
 import { isTemplateSourceError, TemplateSourceStatus } from '../../../statuses/template/types';
 import { VMKind } from '../../../types';
 import { TemplateItem } from '../../../types/template';
@@ -52,6 +54,7 @@ import {
   SourceDescription,
   URLSource,
 } from '../../vm-templates/vm-template-source';
+
 import { BootSourceState } from './boot-source-form-reducer';
 import { FORM_ACTION_TYPE, FormAction, FormState } from './create-vm-form-reducer';
 

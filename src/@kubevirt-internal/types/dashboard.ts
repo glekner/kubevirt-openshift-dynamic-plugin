@@ -1,6 +1,8 @@
 import { Map as ImmutableMap } from 'immutable';
+
 import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
-import { StopWatchK8sResource, WatchK8sResource, K8sResourceKind } from './internal';
+
+import { K8sResourceKind, StopWatchK8sResource, WatchK8sResource } from './internal';
 
 export type Fetch = (url: string) => Promise<any>;
 type WatchURL = (url: string, fetch?: Fetch) => void;

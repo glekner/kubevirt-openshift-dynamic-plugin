@@ -1,5 +1,6 @@
 import { SecretModel, ServiceAccountModel } from '@kubevirt-models';
 import { K8sResourceCommon } from '@kubevirt-types';
+
 import { getVmwareField } from '../../../../components/create-vm-wizard/selectors/provider/vmware/selectors';
 import { getFieldValue } from '../../../../components/create-vm-wizard/selectors/vm-settings';
 import {
@@ -13,13 +14,13 @@ import {
   CONVERSION_SERVICEACCOUNT_DELAY,
 } from '../../../../constants/v2v';
 import { VolumeMode, VolumeType } from '../../../../constants/vm/storage';
-import { getName, getNamespace, getGeneratedName } from '../../../../selectors';
+import { getGeneratedName, getName, getNamespace } from '../../../../selectors';
 import {
   getKubevirtV2vConversionContainerImage,
   getV2vImagePullPolicy,
   getVddkInitContainerImage,
 } from '../../../../selectors/v2v';
-import { createBasicLookup, compareOwnerReference, buildOwnerReference } from '../../../../utils';
+import { buildOwnerReference, compareOwnerReference, createBasicLookup } from '../../../../utils';
 import { delay } from '../../../../utils/utils';
 import { PatchBuilder } from '../../../helpers/patch';
 import { PodWrappper } from '../../../wrapper/k8s/pod-wrapper';
@@ -29,10 +30,10 @@ import { SecretWrappper } from '../../../wrapper/k8s/secret-wrapper';
 import { ServiceAccountWrappper } from '../../../wrapper/k8s/service-account-wrapper';
 import { PersistentVolumeClaimWrapper } from '../../../wrapper/vm/persistent-volume-claim-wrapper';
 import { VolumeWrapper } from '../../../wrapper/vm/volume-wrapper';
-/* eslint-disable camelcase, @typescript-eslint/camelcase,no-await-in-loop */
 import { CreateVMParams } from '../../vm/create/types';
 import { ImporterResult } from '../../vm/types';
 import { getVmwareConfigMap } from '../v2vvmware-configmap';
+
 import { buildConversionPod } from './objects/conversion-pod';
 
 const createConversionPodSecret = async ({

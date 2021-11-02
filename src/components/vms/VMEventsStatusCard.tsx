@@ -1,12 +1,14 @@
-import * as React from 'react';
-import { Accordion, Text, TextVariants } from '@patternfly/react-core';
 import cn from 'classnames';
 import { isEmpty } from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
+import EventItem from '@console/shared/src/components/dashboard/activity-card/EventItem';
 import { EventModel } from '@kubevirt-models';
 import { EventKind } from '@kubevirt-types';
-import EventItem from '@console/shared/src/components/dashboard/activity-card/EventItem';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { Accordion, Text, TextVariants } from '@patternfly/react-core';
+
 import { NORMAL } from '../../constants';
 import { getNamespace } from '../../selectors';
 import { getVmEventsFilters } from '../../selectors/event/filters';
@@ -74,6 +76,7 @@ export const VMEventsStatusCard: React.FC<VMEventsStatusCardProps> = ({ vm }) =>
     >
       {filteredEvents.map((event) => (
         <EventItem
+          key={event?.metadata?.uid}
           event={event}
           isExpanded={(key: string) => expanded === key}
           onToggle={(key: string) => setExpanded((value) => (value !== key ? key : ''))}

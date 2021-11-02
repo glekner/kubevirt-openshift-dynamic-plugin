@@ -1,6 +1,6 @@
-import { validateDNS1123SubdomainValue } from '../..';
 import { ValidationErrorType, ValidationObject } from '../../../selectors';
 import { UIValidation, UIValidationType } from '../../../types/ui/ui';
+import { validateDNS1123SubdomainValue } from '../..';
 import { validateEntityAlreadyExists } from '../common';
 
 export const validateVmLikeEntityName = (

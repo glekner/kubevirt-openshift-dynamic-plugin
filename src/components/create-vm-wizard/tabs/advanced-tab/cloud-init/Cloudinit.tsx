@@ -1,10 +1,10 @@
-import * as React from 'react';
 import yamlParser from 'js-yaml';
 import { isEmpty, isEqual } from 'lodash';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+
 import useCloudinitValidations from '../../../../../hooks/use-cloudinit-validations';
 import useSSHKeys from '../../../../../hooks/use-ssh-keys';
 import {
@@ -18,10 +18,12 @@ import FormWithEditor, {
   ViewComponent,
 } from '../../../../form-with-editor/FormWithEditor';
 import { iGetCloudInitNoCloudStorage } from '../../../selectors/immutable/storage';
+
+import { onDataChanged } from './utils/cloudinit-utils';
 import { cloudinitFormChildren } from './CloudinitForm';
 import CloudinitFormOrYamlSelector from './CloudinitFormOrYamlSelector';
 import CloudInitInfoHelper from './CloudinitInfoHelper';
-import { onDataChanged } from './utils/cloudinit-utils';
+
 import './cloud-init.scss';
 
 const fieldsMapper: FieldsMapper = {
@@ -81,7 +83,6 @@ const Cloudinit: React.FC<CloudinitProps> = ({ wizardReduxID }) => {
         yamlParser.dump({
           ...yamlParser.load(yaml),
           ...yamlAsJS,
-          /* eslint-disable-next-line @typescript-eslint/camelcase */
           ssh_authorized_keys: authKeys,
         }),
       );
@@ -104,7 +105,6 @@ const Cloudinit: React.FC<CloudinitProps> = ({ wizardReduxID }) => {
         setYaml(
           yamlParser.dump({
             ...yamlParser.load(yamlData),
-            /* eslint-disable-next-line @typescript-eslint/camelcase */
             ssh_authorized_keys: yamlAsJSData?.ssh_authorized_keys || authKeys,
           }),
         );

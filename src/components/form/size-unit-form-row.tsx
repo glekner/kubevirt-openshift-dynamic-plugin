@@ -1,12 +1,15 @@
 import * as React from 'react';
-import { FormSelect, FormSelectOption, Split, SplitItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
+import { FormSelect, FormSelectOption, Split, SplitItem } from '@patternfly/react-core';
+
 import { ValidationObject } from '../../selectors';
 import { prefixedID } from '../../utils';
 import { getStringEnumValues } from '../../utils/types';
 import { isValidationError } from '../../utils/validations/common';
-import { FormRow } from './form-row';
+
 import { Integer } from './integer/integer';
+import { FormRow } from './form-row';
 import { BinaryUnit, toIECUnit } from './size-unit-utils';
 
 import './size-unit-form-row.scss';

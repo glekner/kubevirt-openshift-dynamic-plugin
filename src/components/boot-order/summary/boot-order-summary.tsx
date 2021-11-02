@@ -1,7 +1,9 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
+
 import { BootableDeviceType } from '../../../types';
 import { deviceKey, deviceLabel } from '../constants';
+
 import { BootOrderEmptySummary } from './boot-order-empty-summary';
 
 // NOTE(yaacov): using <ol> because '@patternfly/react-core' <List> currently miss isOrder parameter.

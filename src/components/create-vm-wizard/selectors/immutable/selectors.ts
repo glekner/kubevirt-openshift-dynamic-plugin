@@ -1,8 +1,11 @@
 import * as _ from 'lodash';
+
 import { K8sResourceKind } from '@kubevirt-types';
+
 import { VMWizardInitialData } from '../../../../types/url';
 import { iGetIn, iGetLoadedData, toShallowJS } from '../../../../utils/immutable';
 import { CommonDataProp, VMWizardProps, VMWizardTab } from '../../types';
+
 import { iGetCreateVMWizard, iGetCreateVMWizardTabs } from './common';
 
 export const checkTabValidityChanged = (

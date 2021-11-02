@@ -1,4 +1,5 @@
 import { K8sResourceKind } from '@kubevirt-types';
+
 import {
   INSUFFICIENT_PERMISSIONS_ERROR_DESC,
   INSUFFICIENT_PERMISSIONS_ERROR_MESSAGE,
@@ -13,6 +14,7 @@ import {
   FAILED_TO_PATCH,
 } from '../../utils/strings';
 import { getFullResourceId } from '../../utils/utils';
+
 import { EnhancedK8sMethods } from './enhancedK8sMethods';
 import { Result, ResultContentType, ResultsWrapper } from './types';
 

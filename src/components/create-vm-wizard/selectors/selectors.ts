@@ -1,6 +1,7 @@
 import { FirehoseResourceEnhanced } from '../../../types/custom';
 import { iGetIn, immutableListToShallowJS, toShallowJS } from '../../../utils/immutable';
 import { VMWizardNetwork, VMWizardStorage, VMWizardTab } from '../types';
+
 import { getCreateVMWizards } from './wizards';
 
 export const getExtraWSQueries = (state, reduxID: string): FirehoseResourceEnhanced[] => {

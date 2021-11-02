@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
+
 import { convertToBaseValue, humanizeBinaryBytes } from '@console/internal/components/utils';
 import { TemplateKind } from '@kubevirt-types';
+
 import { BootSourceState } from '../../components/create-vm/forms/boot-source-form-reducer';
 import { stringValueUnitSplit } from '../../components/form/size-unit-utils';
 import { VM_TEMPLATE_NAME_PARAMETER } from '../../constants';
@@ -32,11 +34,11 @@ import { isTemplateSourceError, TemplateSourceStatus } from '../../statuses/temp
 import { compareVersions, removeOSDups } from '../../utils/sort';
 import { getDataVolumeStorageSize } from '../dv/selectors';
 import {
-  getLabel,
-  getName,
   getAnnotation,
   getAnnotations,
+  getLabel,
   getLabels,
+  getName,
   getParameterValue,
 } from '../selectors';
 import { getFlavorData } from '../vm/flavor-data';
@@ -47,6 +49,7 @@ import {
   getFlavor,
   getMemory,
 } from '../vm/selectors';
+
 import { isCommonTemplate, selectVM } from './basic';
 
 export const getTemplatesWithLabels = (templates: TemplateKind[], labels: string[]) => {

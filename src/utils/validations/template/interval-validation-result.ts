@@ -1,6 +1,8 @@
 import { humanizeBinaryBytes } from '@console/internal/components/utils';
+
 /* eslint-disable lines-between-class-members */
 import { ValidationErrorType } from '../../../selectors';
+
 import { Interval } from './types';
 
 export class IntervalValidationResult implements Interval {

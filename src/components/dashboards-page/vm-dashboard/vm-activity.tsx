@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { CardActions } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import {
   DashboardItemProps,
   withDashboardResources,
 } from '@console/internal/components/dashboard/with-dashboard-resources';
 import { FirehoseResource, FirehoseResult, resourcePath } from '@console/internal/components/utils';
-import { EventModel } from '@kubevirt-models';
-import { EventKind } from '@kubevirt-types';
 import ActivityBody, {
   PauseButton,
   RecentEventsBodyContent,
@@ -17,6 +15,10 @@ import DashboardCardBody from '@console/shared/src/components/dashboard/dashboar
 import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
 import DashboardCardLink from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardLink';
 import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardTitle';
+import { EventModel } from '@kubevirt-models';
+import { EventKind } from '@kubevirt-types';
+import { CardActions } from '@patternfly/react-core';
+
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
 import { getName, getNamespace } from '../../../selectors';

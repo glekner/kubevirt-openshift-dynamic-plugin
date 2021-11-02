@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { Alert, AlertActionLink, Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router';
+
 import { SectionHeading } from '@console/internal/components/utils/headings';
 import { asAccessReview, useAccessReview } from '@console/internal/components/utils/rbac';
 import { ScrollToTopOnMount } from '@console/internal/components/utils/scroll-to-top-on-mount';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { Alert, AlertActionLink, Stack, StackItem } from '@patternfly/react-core';
+
 import { VMWizardMode, VMWizardName } from '../../constants';
 import {
   getTemplateName,
@@ -15,12 +18,12 @@ import {
 import { TemplateSourceStatus } from '../../statuses/template/types';
 import { getVMWizardCreateLink } from '../../utils/url';
 import { HashAnchor } from '../hash-anchor/hash-anchor';
+
 import {
   VMTemplateDetailsList,
   VMTemplateResourceSummary,
   VMTemplateSchedulingList,
 } from './vm-template-resource';
-import { useHistory } from 'react-router';
 
 export const VMTemplateDetails: React.FC<VMTemplateDetailsProps> = ({
   obj: template,

@@ -1,12 +1,15 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionToggle,
 } from '@patternfly/react-core';
-import { useTranslation } from 'react-i18next';
+
 import { CLOUD, SSH, SYSPREP } from '../../../../utils/strings';
+
 import Cloudinit from './cloud-init/Cloudinit';
 import SSHAdvancedTab from './ssh/SSHAdvancedTab';
 import Sysprep from './sysprep/Sysprep';

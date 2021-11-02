@@ -5,6 +5,7 @@ import {
 import { iGetTemplateValidations } from '../../../selectors/immutable/template/selectors';
 import { TemplateValidations } from '../../../utils/validations/template/template-validations';
 import { VMWizardProps } from '../types';
+
 import { iGetLoadedCommonData } from './immutable/selectors';
 import { iGetRelevantTemplateSelectors } from './immutable/vm-settings';
 

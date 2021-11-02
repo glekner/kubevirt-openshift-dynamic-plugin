@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
 import { TemplateModel } from '@kubevirt-models';
+
 import { PENDING_RESTART_LABEL } from '../../constants';
 import { VirtualMachineModel } from '../../models';
 import { getDeletetionTimestamp } from '../../selectors';
@@ -14,6 +16,7 @@ import { DASH, dimensifyRow } from '../../utils';
 import { deleteNICModal } from '../modals/delete-nic-modal/delete-nic-modal';
 import { nicModalEnhanced } from '../modals/nic-modal/nic-modal-enhanced';
 import { ValidationCell } from '../table/validation-cell';
+
 import {
   NetworkBundle,
   NetworkSimpleData,

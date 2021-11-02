@@ -1,13 +1,6 @@
 import * as React from 'react';
-import {
-  Checkbox,
-  ExpandableSection,
-  FileUpload,
-  Form,
-  SelectOption,
-  TextInput,
-} from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import {
   FieldLevelHelp,
@@ -18,13 +11,21 @@ import {
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types';
-import { AccessModeSelector } from '../../access-modes/access-mode';
-import { VolumeModeSelector } from '../../volume-modes/volume-mode';
+import {
+  Checkbox,
+  ExpandableSection,
+  FileUpload,
+  Form,
+  SelectOption,
+  TextInput,
+} from '@patternfly/react-core';
+
 import { AccessMode, ANNOTATION_SOURCE_PROVIDER, VolumeMode } from '../../../constants';
 import { ProvisionSource } from '../../../constants/vm/provision-source';
 import { useStorageProfileSettings } from '../../../hooks/use-storage-profile-settings';
 import { getDefaultStorageClass } from '../../../selectors/config-map/sc-defaults';
 import { getAnnotation } from '../../../selectors/selectors';
+import { AccessModeSelector } from '../../access-modes/access-mode';
 import { getGiBUploadPVCSizeByImage } from '../../cdi-upload-provider/upload-pvc-form/upload-pvc-form';
 import { VMSettingsField } from '../../create-vm-wizard/types';
 import { getFieldId } from '../../create-vm-wizard/utils/renderable-field-utils';
@@ -34,6 +35,8 @@ import { ContainerSourceHelp } from '../../form/helper/container-source-help';
 import { URLSourceHelp } from '../../form/helper/url-source-help';
 import { ProjectDropdown } from '../../form/project-dropdown';
 import { preventDefault } from '../../form/utils';
+import { VolumeModeSelector } from '../../volume-modes/volume-mode';
+
 import { BOOT_ACTION_TYPE, BootSourceAction, BootSourceState } from './boot-source-form-reducer';
 
 type AdvancedSectionProps = {

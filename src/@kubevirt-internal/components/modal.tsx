@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import CloseButton from './close-button';
 
 export const ModalBody: React.SFC<ModalBodyProps> = ({ children }) => (

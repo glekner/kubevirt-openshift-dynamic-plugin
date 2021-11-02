@@ -1,9 +1,12 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
+
 import { RowFunctionArgs } from '@console/internal/components/factory';
 import { Kebab, KebabOption } from '@console/internal/components/utils';
+
 import { DiskSimpleRow } from '../../../vm-disks/disk-row';
 import { VMWizardStorage } from '../../types';
+
 import {
   VMWizardStorageBundle,
   VMWizardStorageRowActionOpts,
@@ -52,10 +55,9 @@ export const getActions = (
   opts: VMWizardStorageRowActionOpts,
 ) => [menuActionEdit, menuActionRemove].map((a) => a(wizardStorageData, opts));
 
-export const VmWizardStorageRow: React.FC<RowFunctionArgs<
-  VMWizardStorageBundle,
-  VMWizardStorageRowCustomData
->> = ({
+export const VmWizardStorageRow: React.FC<
+  RowFunctionArgs<VMWizardStorageBundle, VMWizardStorageRowCustomData>
+> = ({
   obj: { name, wizardStorageData, ...restData },
   customData: {
     isDisabled,

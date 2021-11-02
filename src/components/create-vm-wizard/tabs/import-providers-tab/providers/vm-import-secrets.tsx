@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
+import { FormSelect, FormSelectOption } from '@patternfly/react-core';
+
 import { getName, getUID } from '../../../../../selectors';
 import { iGet, iGetLoadedData, toJS } from '../../../../../utils/immutable';
 import { FormSelectPlaceholderOption } from '../../../../form/form-select-placeholder-option';
@@ -76,6 +78,7 @@ const VMImportSecretsConnected: React.FC<VMImportSecretsReviewProps> = React.mem
     );
   },
 );
+VMImportSecretsConnected.displayName = 'VMImportSecretsConnected';
 
 type VMImportSecretsReviewProps = {
   secretField: any;

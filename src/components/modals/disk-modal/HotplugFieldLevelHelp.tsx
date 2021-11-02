@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { FieldLevelHelp } from '@console/internal/components/utils';
+import { Stack, StackItem } from '@patternfly/react-core';
 
 export const HotplugFieldLevelHelp = () => {
   const { t } = useTranslation();

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
 import { Trans, useTranslation } from 'react-i18next';
+
 import { FieldLevelHelp } from '@console/internal/components/utils';
+import { Text, TextVariants } from '@patternfly/react-core';
 
 import './ssh-popover.scss';
 

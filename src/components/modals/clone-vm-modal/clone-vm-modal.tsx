@@ -1,15 +1,7 @@
 import * as React from 'react';
-import {
-  Checkbox,
-  Form,
-  FormGroup,
-  FormSelect,
-  FormSelectOption,
-  TextArea,
-  TextInput,
-} from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -25,22 +17,33 @@ import {
 } from '@console/internal/components/utils';
 import { NamespaceModel, PersistentVolumeClaimModel, ProjectModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types';
+import {
+  Checkbox,
+  Form,
+  FormGroup,
+  FormSelect,
+  FormSelectOption,
+  TextArea,
+  TextInput,
+} from '@patternfly/react-core';
+
 import { cloneVM } from '../../../k8s/requests/vm/clone';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
-import { getName, getNamespace, ValidationErrorType, getDescription } from '../../../selectors';
+import { getDescription, getName, getNamespace, ValidationErrorType } from '../../../selectors';
 import { getVolumes, isVMExpectedRunning } from '../../../selectors/vm/selectors';
 import {
   getVolumeDataVolumeName,
   getVolumePersistentVolumeClaimName,
 } from '../../../selectors/vm/volume';
-import { VMKind, VMIKind } from '../../../types';
+import { VMIKind, VMKind } from '../../../types';
 import { V1alpha1DataVolume } from '../../../types/api';
 import { getLoadedData, getLoadError, prefixedID } from '../../../utils';
 import { COULD_NOT_LOAD_DATA } from '../../../utils/strings';
 import { validateVmLikeEntityName } from '../../../utils/validations/vm';
 import { Errors } from '../../errors/errors';
 import { ModalFooter } from '../modal/modal-footer';
+
 import { ConfigurationSummary } from './configuration-summary';
 
 import './_clone-vm-modal.scss';

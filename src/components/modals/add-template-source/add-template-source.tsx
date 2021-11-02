@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { ActionGroup, Alert, Button, Stack, StackItem } from '@patternfly/react-core';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+
 import { coFetch } from '@console/internal/co-fetch';
 import {
   createModalLauncher,
@@ -11,10 +11,12 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { LoadingBox, useAccessReview2 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
-import { StorageClassModel } from '@kubevirt-models';
 import { k8sCreate } from '@console/internal/module/k8s';
+import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { ActionGroup, Alert, Button, Stack, StackItem } from '@patternfly/react-core';
+
 import {
   TEMPLATE_BASE_IMAGE_NAME_PARAMETER,
   TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER,

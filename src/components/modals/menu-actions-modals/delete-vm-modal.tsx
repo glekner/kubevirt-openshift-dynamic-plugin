@@ -1,7 +1,8 @@
-import * as React from 'react';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useHistory } from 'react-router';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -10,8 +11,10 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { useOwnedVolumeReferencedResources } from '../../../hooks/use-owned-volume-referenced-resources';
 import { useVirtualMachineImport } from '../../../hooks/use-virtual-machine-import';
 import { useUpToDateVMLikeEntity } from '../../../hooks/use-vm-like-entity';
@@ -29,9 +32,9 @@ import { getName, getNamespace } from '../../../selectors';
 import { getVmSnapshotVmName } from '../../../selectors/snapshot/snapshot';
 import { getVolumes } from '../../../selectors/vm/selectors';
 import { VMIKind, VMKind, VMSnapshot } from '../../../types/vm';
+
 import { redirectToList } from './utils';
 import { VMIUsersAlert } from './vmi-users-alert';
-import { useHistory } from 'react-router';
 
 export const DeleteVMModal = withHandlePromise((props: DeleteVMModalProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vm, vmi } = props;

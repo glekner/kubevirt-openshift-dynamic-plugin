@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { assureEndsWith } from '../../utils';
 
 export type Patch = {
@@ -21,9 +22,9 @@ export class PatchBuilder {
 
   private value: any;
 
-  private valueIndex: number = -1;
+  private valueIndex = -1;
 
-  private valueKey: string = '';
+  private valueKey = '';
 
   private operation: PatchOperation;
 

@@ -1,11 +1,12 @@
 import * as React from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch } from 'react-redux';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
+import { useActiveNamespace } from '@console/shared';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types';
-import { useActiveNamespace } from '@console/shared';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+
 import { sshActions, SSHActionsNames } from '../components/ssh-service/redux/actions';
 import {
   createOrDeleteSSHService,
@@ -13,6 +14,7 @@ import {
 } from '../components/ssh-service/SSHForm/ssh-form-utils';
 import { getServicePort } from '../selectors/service/selectors';
 import { VMIKind, VMKind } from '../types';
+
 import useSSHSelectors from './use-ssh-selectors';
 
 export type useSSHServiceResult = {

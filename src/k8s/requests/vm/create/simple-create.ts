@@ -1,9 +1,11 @@
 import { isEmpty } from 'lodash';
+
 import { k8sCreate } from '@console/internal/module/k8s';
 import { ConfigMapKind, TemplateKind } from '@kubevirt-types';
+
+import { BootSourceState } from '../../../../components/create-vm/forms/boot-source-form-reducer';
 import { windowsToolsStorage } from '../../../../components/create-vm-wizard/redux/initial-state/storage-tab-initial-state';
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
-import { BootSourceState } from '../../../../components/create-vm/forms/boot-source-form-reducer';
 import { AUTHORIZED_SSH_KEYS } from '../../../../components/ssh-service/SSHForm/ssh-form-utils';
 import {
   AccessMode,
@@ -23,12 +25,12 @@ import { winToolsContainerNames } from '../../../../constants/vm/wintools';
 import { VirtualMachineModel } from '../../../../models';
 import { getKubevirtAvailableModel } from '../../../../models/kubevirtReferenceForModel';
 import { ProcessedTemplatesModel } from '../../../../models/models';
+import { getFlavor, getWorkloadProfile } from '../../../../selectors/vm/selectors';
 import {
   getTemplateOperatingSystems,
   isWindowsTemplate,
 } from '../../../../selectors/vm-template/advanced';
 import { isCommonTemplate, selectVM } from '../../../../selectors/vm-template/basic';
-import { getFlavor, getWorkloadProfile } from '../../../../selectors/vm/selectors';
 import { isTemplateSourceError, TemplateSourceStatus } from '../../../../statuses/template/types';
 import { VMKind } from '../../../../types';
 import { ignoreCaseSort } from '../../../../utils/sort';
@@ -38,6 +40,7 @@ import { DiskWrapper } from '../../../wrapper/vm/disk-wrapper';
 import { VMTemplateWrapper } from '../../../wrapper/vm/vm-template-wrapper';
 import { VMWrapper } from '../../../wrapper/vm/vm-wrapper';
 import { VolumeWrapper } from '../../../wrapper/vm/volume-wrapper';
+
 import { initializeCommonMetadata, initializeCommonVMMetadata } from './common';
 
 type GetRootDataVolume = (args: {

@@ -1,6 +1,8 @@
-import * as React from 'react';
 import * as cx from 'classnames';
+import * as React from 'react';
+
 import { NamespaceBar } from '@console/internal/components/namespace';
+
 import NamespaceBarApplicationSelector from './NamespaceBarApplicationSelector/NamespaceBarApplicationSelector';
 
 import './NamespacedPage.scss';

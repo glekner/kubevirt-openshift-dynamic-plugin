@@ -19,6 +19,7 @@ import { CPURaw, VMIKind, VMISpec } from '../../../types';
 import { V1Disk, V1Volume } from '../../../types/api';
 import { findKeySuffixValue } from '../../../utils';
 import { K8sResourceWrapper } from '../common/k8s-resource-wrapper';
+
 import { VMILikeMethods } from './types';
 
 export class VMIWrapper extends K8sResourceWrapper<VMIKind, VMIWrapper> implements VMILikeMethods {

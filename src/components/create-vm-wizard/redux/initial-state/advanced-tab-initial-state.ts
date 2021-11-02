@@ -1,4 +1,5 @@
 import { CloudInitField, CommonData } from '../../types';
+
 import { InitialStepStateGetter } from './types';
 
 export const getAdvancedTabInitialData: InitialStepStateGetter = (data: CommonData) => ({

@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { LabelList, ResourceSummary } from '@console/internal/components/utils';
 import { TemplateKind } from '@kubevirt-types';
+
 import { VMWrapper } from '../../k8s/wrapper/vm/vm-wrapper';
 import { getDescription } from '../../selectors/selectors';
+import { getTransformedDevices } from '../../selectors/vm/devices';
+import { getWorkloadProfile, isDedicatedCPUPlacement } from '../../selectors/vm/selectors';
+import { asVM } from '../../selectors/vm/vm';
+import { getVMLikeModel } from '../../selectors/vm/vmlike';
 import { getTemplateOperatingSystems } from '../../selectors/vm-template/advanced';
 import {
   getTemplateParentProvider,
@@ -12,10 +18,6 @@ import {
   isCommonTemplate,
 } from '../../selectors/vm-template/basic';
 import { getVMTemplateNamespacedName } from '../../selectors/vm-template/selectors';
-import { getTransformedDevices } from '../../selectors/vm/devices';
-import { getWorkloadProfile, isDedicatedCPUPlacement } from '../../selectors/vm/selectors';
-import { asVM } from '../../selectors/vm/vm';
-import { getVMLikeModel } from '../../selectors/vm/vmlike';
 import { TemplateSourceStatus } from '../../statuses/template/types';
 import { getBasicID, prefixedID } from '../../utils';
 import { BootOrderSummary } from '../boot-order';
@@ -29,6 +31,7 @@ import evictionStrategyModal from '../modals/scheduling-modals/eviction-strategy
 import nodeSelectorModal from '../modals/scheduling-modals/node-selector-modal/connected-node-selector-modal';
 import tolerationsModal from '../modals/scheduling-modals/tolerations-modal/connected-tolerations-modal';
 import VMDetailsItem from '../vms/VMDetailsItem';
+
 import { getVMTemplateResourceFlavorData } from './utils';
 import { VMTemplateLink } from './vm-template-link';
 import { TemplateSource } from './vm-template-source';

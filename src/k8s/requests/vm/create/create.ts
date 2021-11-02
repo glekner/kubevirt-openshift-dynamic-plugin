@@ -1,4 +1,5 @@
 import { TemplateKind } from '@kubevirt-types';
+
 import { getOS } from '../../../../components/create-vm-wizard/selectors/combined';
 import { getImportProvidersFieldValue } from '../../../../components/create-vm-wizard/selectors/import-providers';
 import {
@@ -32,6 +33,7 @@ import { VMWrapper } from '../../../wrapper/vm/vm-wrapper';
 import { importV2VOvirtVm } from '../../v2v/import/import-ovirt';
 import { importV2VVMwareVm } from '../../v2v/import/import-v2vvmware';
 import { ImporterResult, OnVMCreate } from '../types';
+
 import {
   initializeCommonMetadata,
   initializeCommonTemplateMetadata,

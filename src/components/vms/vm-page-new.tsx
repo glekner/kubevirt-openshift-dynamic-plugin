@@ -1,20 +1,10 @@
-import * as React from 'react';
-import { QuickStart } from '@patternfly/quickstarts';
-import {
-  Button,
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateSecondaryActions,
-  Title,
-} from '@patternfly/react-core';
-import { RocketIcon, VirtualMachineIcon } from '@patternfly/react-icons';
-import { sortable } from '@patternfly/react-table';
 import { TFunction } from 'i18next';
 import * as _ from 'lodash';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
+
 import {
   MultiListPage,
   RowFunctionArgs,
@@ -28,10 +18,22 @@ import {
   ResourceLink,
   Timestamp,
 } from '@console/internal/components/utils';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import { NamespaceModel, NodeModel, QuickStartModel } from '@kubevirt-models';
 import { K8sKind } from '@kubevirt-types';
-import GenericStatus from '@console/shared/src/components/status/GenericStatus';
+import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { QuickStart } from '@patternfly/quickstarts';
+import {
+  Button,
+  EmptyState,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStateSecondaryActions,
+  Title,
+} from '@patternfly/react-core';
+import { RocketIcon, VirtualMachineIcon } from '@patternfly/react-icons';
+import { sortable } from '@patternfly/react-table';
+
 import { VMWizardMode, VMWizardName } from '../../constants';
 import { V2VVMImportStatus } from '../../constants/v2v-import/ovirt/v2v-vm-import-status';
 import { printableToVMStatus, VMStatus } from '../../constants/vm/vm-status';
@@ -65,6 +67,7 @@ import { LazyVmRowKebab } from '../vm-status/lazy-vm-row-kebab';
 import { LazyVMStatus } from '../vm-status/lazy-vm-status';
 import { useVmStatusResources, VmStatusResourcesValue } from '../vm-status/use-vm-status-resources';
 import { getVMStatusIcon } from '../vm-status/vm-status';
+
 import { vmStatusFilterNew } from './table-filters';
 import VMIP from './VMIP';
 

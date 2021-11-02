@@ -1,4 +1,15 @@
+import { isEmpty } from 'lodash';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import {
+  createModalLauncher,
+  ModalBody,
+  ModalComponentProps,
+  ModalTitle,
+} from '@console/internal/components/factory';
+import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
+import { k8sCreate } from '@console/internal/module/k8s';
 import {
   Alert,
   AlertVariant,
@@ -8,16 +19,7 @@ import {
   TextArea,
   TextInput,
 } from '@patternfly/react-core';
-import { isEmpty } from 'lodash';
-import { useTranslation } from 'react-i18next';
-import {
-  createModalLauncher,
-  ModalBody,
-  ModalComponentProps,
-  ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { k8sCreate } from '@console/internal/module/k8s';
+
 import { VMSnapshotWrapper } from '../../../k8s/wrapper/vm/vm-snapshot-wrapper';
 import { getName, getNamespace } from '../../../selectors';
 import { getVolumeSnapshotStatuses } from '../../../selectors/vm/selectors';
@@ -27,6 +29,7 @@ import { VMLikeEntityKind } from '../../../types/vmLike';
 import { buildOwnerReference, prefixedID } from '../../../utils';
 import { FormRow } from '../../form/form-row';
 import { ModalFooter } from '../modal/modal-footer';
+
 import NoSupportedVolumesSnapshotAlert from './NoSupportedVolumesSnapshotAlert';
 import SupportedSnapshotVolumesList from './SupportedSnapshotVolumesList';
 import UnsupportedVolumesSnapshotAlert from './UnsupportedVolumesSnapshotAlert';

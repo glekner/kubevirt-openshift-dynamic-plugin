@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { FileUpload, Text, TextVariants } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch } from 'react-redux';
+// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import xml from 'xml2js';
+
+import { FileUpload, Text, TextVariants } from '@patternfly/react-core';
+
 import { SysprepActions, SysprepActionsNames } from '../../../../../redux/actions/sysprep-actions';
 import { ValidatedOptions } from '../../../../../utils/validations/common';
 

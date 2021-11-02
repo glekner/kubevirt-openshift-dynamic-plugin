@@ -1,4 +1,5 @@
 import { get } from 'lodash';
+
 import {
   k8sCreate as _k8sCreate,
   k8sGet as _k8sGet,
@@ -11,11 +12,13 @@ import {
   referenceFor,
   referenceForModel,
 } from '@console/internal/module/k8s';
+
 import { VirtualMachineModel } from '../../models';
 import { getKubevirtAvailableModel } from '../../models/kubevirtReferenceForModel';
 import { getFullResourceId } from '../../utils/utils';
 import { Wrapper } from '../wrapper/common/wrapper';
 import { K8sResourceKindMethods } from '../wrapper/types/types';
+
 import {
   K8sCreateError,
   K8sGetError,
@@ -63,7 +66,7 @@ export class EnhancedK8sMethods {
 
   k8sWrapperCreate = async <
     U extends K8sResourceCommon,
-    T extends Wrapper<U, T> & K8sResourceKindMethods
+    T extends Wrapper<U, T> & K8sResourceKindMethods,
   >(
     wrapper: T,
     opts?,
@@ -93,7 +96,7 @@ export class EnhancedK8sMethods {
 
   k8sWrapperPatch = async <
     U extends K8sResourceCommon,
-    T extends Wrapper<U, T> & K8sResourceKindMethods
+    T extends Wrapper<U, T> & K8sResourceKindMethods,
   >(
     wrapper: T,
     patches: Patch[],

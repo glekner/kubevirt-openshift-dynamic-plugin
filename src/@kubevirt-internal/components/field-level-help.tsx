@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Button, Popover, PopoverProps } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
 
 export const FieldLevelHelp: React.FC<FieldLevelHelpProps> = React.memo(
   ({ children, popoverHasAutoWidth, testId }) => {
@@ -28,6 +29,7 @@ export const FieldLevelHelp: React.FC<FieldLevelHelpProps> = React.memo(
     );
   },
 );
+FieldLevelHelp.displayName = 'FieldLevelHelp';
 
 type FieldLevelHelpProps = {
   children: React.ReactNode;

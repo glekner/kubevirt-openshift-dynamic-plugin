@@ -1,12 +1,15 @@
-import * as React from 'react';
-import { Form, Stack, StackItem } from '@patternfly/react-core';
 import { TFunction } from 'i18next';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { CatalogItem, ExtensionHook } from '@openshift-console/dynamic-plugin-sdk';
+
 import { humanizeBinaryBytes, SectionHeading } from '@console/internal/components/utils';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { CatalogItem, ExtensionHook } from '@openshift-console/dynamic-plugin-sdk';
+import { Form, Stack, StackItem } from '@patternfly/react-core';
+
 import { BOOT_SOURCE_AVAILABLE } from '../../../constants';
-import { getNamespace, getDescription } from '../../../selectors/selectors';
+import { getDescription, getNamespace } from '../../../selectors/selectors';
+import { getOperatingSystemName, getWorkloadProfile } from '../../../selectors/vm/selectors';
 import {
   getTemplateFlavorData,
   getTemplateSizeRequirementInBytes,
@@ -17,7 +20,6 @@ import {
   getTemplateProvider,
   templateProviders,
 } from '../../../selectors/vm-template/basic';
-import { getOperatingSystemName, getWorkloadProfile } from '../../../selectors/vm/selectors';
 import { getTemplateSourceStatus } from '../../../statuses/template/template-source-status';
 import { isTemplateSourceError } from '../../../statuses/template/types';
 import { V1alpha1DataVolume } from '../../../types/api';
@@ -38,7 +40,7 @@ const normalizeVmTemplates = (
     pvcs,
     dataVolumes,
   }: { pods: PodKind[]; pvcs: PersistentVolumeClaimKind[]; dataVolumes: V1alpha1DataVolume[] },
-  activeNamespace: string = '',
+  activeNamespace = '',
   t: TFunction,
 ): CatalogItem[] =>
   templates.map((temp) => {

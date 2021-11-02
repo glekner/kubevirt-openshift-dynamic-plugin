@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { Stack, StackItem } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
 import { K8sKind, TemplateKind } from '@kubevirt-types';
+import { Stack, StackItem } from '@patternfly/react-core';
+
 import { VMWizardMode, VMWizardName } from '../../constants/vm';
 import { CustomizeSourceFunction } from '../../hooks/use-customize-source-modal';
 import { SupportModalFunction } from '../../hooks/use-support-modal';
@@ -19,7 +21,8 @@ import { TemplateItem } from '../../types/template';
 import { getVMWizardCreateLink } from '../../utils/url';
 import { deleteVMTemplateModal } from '../modals/menu-actions-modals/delete-vm-template-modal';
 import deleteVMTCustomizationModal from '../modals/menu-actions-modals/DeleteVMTCustomizationModal';
-import { RemovePinnedIcon, PinnedIcon } from './os-icons';
+
+import { PinnedIcon, RemovePinnedIcon } from './os-icons';
 import { createVMAction } from './utils';
 
 type CustomData = {

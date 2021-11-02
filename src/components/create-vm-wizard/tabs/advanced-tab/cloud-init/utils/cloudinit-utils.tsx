@@ -1,5 +1,6 @@
 import yamlParser from 'js-yaml';
 import { isEmpty, omit } from 'lodash';
+
 import { CLOUDINIT_DISK } from '../../../../../../constants/vm';
 import { DiskBus, DiskType, VolumeType } from '../../../../../../constants/vm/storage';
 import { CloudInitDataHelper } from '../../../../../../k8s/wrapper/vm/cloud-init-data-helper';

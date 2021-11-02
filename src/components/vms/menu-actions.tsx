@@ -1,15 +1,17 @@
-import * as React from 'react';
-import { StackItem, Tooltip } from '@patternfly/react-core';
-import { ExternalLinkAltIcon } from '@patternfly/react-icons';
 import cn from 'classnames';
 import * as copy from 'copy-to-clipboard';
 import i18next from 'i18next';
+import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Action } from '@openshift-console/dynamic-plugin-sdk';
+
 import { confirmModal } from '@console/internal/components/modals';
 import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
-import { K8sKind, K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { YellowExclamationTriangleIcon } from '@console/shared';
+import { K8sKind, K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+import { Action } from '@openshift-console/dynamic-plugin-sdk';
+import { StackItem, Tooltip } from '@patternfly/react-core';
+import { ExternalLinkAltIcon } from '@patternfly/react-icons';
+
 import { StatusGroup } from '../../constants/status-group';
 import { VMStatus } from '../../constants/vm/vm-status';
 import useSSHCommand from '../../hooks/use-ssh-command';
@@ -43,6 +45,7 @@ import { confirmVMIModal } from '../modals/menu-actions-modals/confirm-vmi-modal
 import { deleteVMModal } from '../modals/menu-actions-modals/delete-vm-modal';
 import { deleteVMIModal } from '../modals/menu-actions-modals/delete-vmi-modal';
 import { RemovalDiskAlert } from '../vm-disks/RemovalDiskAlert';
+
 import { ActionMessage } from './ActionMessage';
 
 import './menu-actions.scss';

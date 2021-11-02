@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Alert, Bullseye, Button, Spinner, Stack, StackItem, Title } from '@patternfly/react-core';
 import { useTranslation } from 'react-i18next';
+
 import { ExternalLink, ResourceLink } from '@console/internal/components/utils';
+import { Alert, Bullseye, Button, Spinner, Stack, StackItem, Title } from '@patternfly/react-core';
+
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants';
 import { VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
@@ -9,6 +11,7 @@ import { VMStatusBundle } from '../../../statuses/vm/types';
 import { VMIKind, VMKind } from '../../../types';
 import cancelCustomizationModal from '../../modals/template-customization/CancelCustomizationModal';
 import { VMStatus } from '../../vm-status/vm-status';
+
 import './customize-source.scss';
 
 const CustomizeSourceStatus: React.FC<CustomizeSourceStatusProps> = ({

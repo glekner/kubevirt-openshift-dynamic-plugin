@@ -1,4 +1,15 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link, useHistory } from 'react-router-dom';
+
+import { ResourceLink, resourcePath } from '@console/internal/components/utils';
+import GenericStatus from '@console/shared/src/components/status/GenericStatus';
+import {
+  RedExclamationCircleIcon,
+  YellowExclamationTriangleIcon,
+} from '@console/shared/src/components/status/icons';
+import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
+import { PodKind } from '@kubevirt-types';
 import {
   Button,
   ButtonVariant,
@@ -17,16 +28,7 @@ import {
   SyncAltIcon,
   UnknownIcon,
 } from '@patternfly/react-icons';
-import { useTranslation } from 'react-i18next';
-import { Link, useHistory } from 'react-router-dom';
-import { ResourceLink, resourcePath } from '@console/internal/components/utils';
-import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
-import { PodKind } from '@kubevirt-types';
-import GenericStatus from '@console/shared/src/components/status/GenericStatus';
-import {
-  RedExclamationCircleIcon,
-  YellowExclamationTriangleIcon,
-} from '@console/shared/src/components/status/icons';
+
 import { VM_DETAIL_EVENTS_HREF } from '../../constants';
 import { StatusGroup } from '../../constants/status-group';
 import { VMImportType } from '../../constants/v2v-import/ovirt/vm-import-type';

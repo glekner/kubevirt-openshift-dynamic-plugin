@@ -1,6 +1,6 @@
-import * as React from 'react';
+import classNames from 'classnames';
 import * as _ from 'lodash';
-import * as classNames from 'classnames';
+import * as React from 'react';
 
 export type RadioInputProps = {
   checked: boolean;

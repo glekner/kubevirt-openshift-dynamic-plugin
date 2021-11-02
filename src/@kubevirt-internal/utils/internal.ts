@@ -1,6 +1,9 @@
-import { K8sKind, KebabMenuOption, KebabOption, KebabSubMenu } from '@kubevirt-types';
 import * as _ from 'lodash';
+
+import { K8sKind, KebabMenuOption, KebabOption, KebabSubMenu } from '@kubevirt-types';
+
 import { LAST_LANGUAGE_LOCAL_STORAGE_KEY } from '../constants';
+
 import { referenceForModel } from './k8s-ref';
 
 export const k8sBasePath = `${window.SERVER_FLAGS.basePath}api/kubernetes`;
@@ -88,8 +91,8 @@ export const makeReduxID = (k8sKind: K8sKind, query) => {
 export const pluralize = (
   i: number,
   singular: string,
-  plural: string = `${singular}s`,
-  includeCount: boolean = true,
+  plural = `${singular}s`,
+  includeCount = true,
 ) => {
   const pluralized = `${i === 1 ? singular : plural}`;
   return includeCount ? `${i || 0} ${pluralized}` : pluralized;

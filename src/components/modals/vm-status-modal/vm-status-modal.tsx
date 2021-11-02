@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import {
   createModalLauncher,
   ModalBody,
@@ -7,6 +8,7 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
+
 import { unpauseVMI } from '../../../k8s/requests/vmi/actions';
 import { VMIKind } from '../../../types';
 import { ModalFooter } from '../modal/modal-footer';
