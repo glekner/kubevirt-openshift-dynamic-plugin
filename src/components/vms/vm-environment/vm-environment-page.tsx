@@ -3,15 +3,13 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
-  AsyncComponent,
+  EnvFromEditor,
   FieldLevelHelp,
   Firehose,
-  FirehoseResult,
   HandlePromiseProps,
+  k8sPatch,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
-import { PatchBuilder } from '@console/shared/src/k8s/patch';
+} from '@kubevirt-internal';
 import { ConfigMapModel, SecretModel, ServiceAccountModel, TemplateModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
@@ -20,8 +18,9 @@ import {
   ServiceAccountKind,
   TemplateKind,
 } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
-import { Patch } from '../../../k8s/helpers/patch';
+import { Patch, PatchBuilder } from '../../../k8s/helpers/patch';
 import { getVMLikePatches } from '../../../k8s/patches/vm-template';
 import { VMWrapper } from '../../../k8s/wrapper/vm/vm-wrapper';
 import { VirtualMachineModel } from '../../../models';
@@ -107,14 +106,14 @@ export const VMEnvironmentFirehose: React.FC<VMTabProps> = ({
   );
 };
 
-const EnvFromEditorComponent = (props) => (
-  <AsyncComponent
-    loader={() =>
-      import('@console/internal/components/utils/name-value-editor').then((c) => c.EnvFromEditor)
-    }
-    {...props}
-  />
-);
+// const EnvFromEditorComponent = (props) => (
+//   <AsyncComponent
+//     loader={() =>
+//       import('@console/internal/components/utils/name-value-editor').then((c) => c.EnvFromEditor)
+//     }
+//     {...props}
+//   />
+// );
 
 const emptyEnvDisk = (defaultEnvVar: EnvVarSource): EnvDisk => ['', defaultEnvVar, 0];
 
@@ -417,7 +416,7 @@ const VMEnvironment = withHandlePromise<VMEnvironmentProps>(
               )}
             </FieldLevelHelp>
           </h3>
-          <EnvFromEditorComponent
+          <EnvFromEditor
             nameValueId={0}
             nameValuePairs={envDisks}
             updateParentData={updateEnvDisks}

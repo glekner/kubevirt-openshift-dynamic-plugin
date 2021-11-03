@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash';
 
-import { k8sCreate } from '@console/internal/module/k8s';
+import { k8sCreate } from '@kubevirt-internal/utils';
 import { ConfigMapKind, TemplateKind } from '@kubevirt-types';
 
 import { BootSourceState } from '../../../../components/create-vm/forms/boot-source-form-reducer';

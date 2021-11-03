@@ -10,7 +10,7 @@ import {
   resourcePathFromModel,
 } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
-import { k8sList } from '@console/internal/module/k8s';
+import { k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
 

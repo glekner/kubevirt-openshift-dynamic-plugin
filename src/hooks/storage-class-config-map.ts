@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { FirehoseResult } from '@console/internal/components/utils';
-import { k8sGet } from '@console/internal/module/k8s';
+import { k8sGet } from '@kubevirt-internal/utils';
 import { ConfigMapModel } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types';
 

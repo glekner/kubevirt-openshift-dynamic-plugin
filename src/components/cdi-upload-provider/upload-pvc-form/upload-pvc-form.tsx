@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 
-import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import {
   ButtonBar,
   ExternalLink,
@@ -18,6 +17,7 @@ import {
   useMultipleAccessReviews,
 } from '@console/internal/components/utils';
 import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
+import { dropdownUnits, initialAccessModes } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
 import {
   ConfigMapKind,

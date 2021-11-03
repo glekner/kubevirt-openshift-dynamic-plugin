@@ -1,17 +1,19 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { getName, getNamespace } from 'src/selectors';
 
 import {
+  apiVersionForModel,
   createModalLauncher,
+  HandlePromiseProps,
+  k8sPatch,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { apiVersionForModel, k8sPatch } from '@console/internal/module/k8s';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
-import { getName, getNamespace } from '@console/shared/src/selectors/common';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
 
 import { useOwnedVolumeReferencedResources } from '../../../hooks/use-owned-volume-referenced-resources';
 import { getRemoveDiskPatches } from '../../../k8s/patches/vm/vm-disk-patches';
@@ -38,7 +40,7 @@ export const DeleteDiskModal = withHandlePromise((props: DeleteDiskModalProps) =
     close,
     cancel,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const [deleteReferencedResource, setDeleteReferencedResource] = React.useState<boolean>(true);
 
   const entityModel = getVMLikeModel(vmLikeEntity);

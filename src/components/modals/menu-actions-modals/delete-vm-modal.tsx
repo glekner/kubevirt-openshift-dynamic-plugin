@@ -5,13 +5,14 @@ import { useHistory } from 'react-router';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 
@@ -48,7 +49,7 @@ export const DeleteVMModal = withHandlePromise((props: DeleteVMModalProps) => {
 
   const vmUpToDate = useUpToDateVMLikeEntity<VMKind>(vm);
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const [deleteDisks, setDeleteDisks] = React.useState<boolean>(true);
   const [deleteVMImport, setDeleteVMImport] = React.useState<boolean>(true);
   const [snapshots] = useK8sWatchResource<VMSnapshot[]>(snapshotResource);

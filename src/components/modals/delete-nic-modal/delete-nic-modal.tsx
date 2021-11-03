@@ -3,14 +3,15 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
+import { k8sPatch } from '@kubevirt-internal/utils';
 
 import { getRemoveNICPatches } from '../../../k8s/patches/vm/vm-nic-patches';
 import { getVMLikeModel } from '../../../selectors/vm/vmlike';
@@ -20,7 +21,7 @@ import { VMLikeEntityKind } from '../../../types/vmLike';
 export const DeleteNICModal = withHandlePromise((props: DeleteNICModalProps) => {
   const { vmLikeEntity, nic, inProgress, errorMessage, handlePromise, close, cancel } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
 
   const nicName = nic?.name;
 

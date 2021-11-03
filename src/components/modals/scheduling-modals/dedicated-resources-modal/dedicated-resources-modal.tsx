@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import {
-  FirehoseResult,
   HandlePromiseProps,
-  Label,
+  k8sPatch,
+  ModalBody,
+  ModalComponentProps,
+  ModalTitle,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
 import { NodeModel } from '@kubevirt-models';
-import { Button, ButtonVariant, Checkbox, Text, TextVariants } from '@patternfly/react-core';
+import { NodeKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
+import { Button, ButtonVariant, Checkbox, Label, Text, TextVariants } from '@patternfly/react-core';
 
 import { useCollisionChecker } from '../../../../hooks/use-collision-checker';
 import { getDedicatedCpuPatch } from '../../../../k8s/patches/vm/vm-cpu-patches';
@@ -37,7 +39,7 @@ export const DedicatedResourcesModal = withHandlePromise<DedicatedResourcesModal
     errorMessage,
   }) => {
     const { t } = useTranslation();
-    const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity);
+    const vmLikeFinal = getLoadedData<VMLikeEntityKind>(vmLikeEntityLoading, vmLikeEntity);
     const loadError = getLoadError(nodes, NodeModel);
     const isCurrentCPUPinned = isDedicatedCPUPlacement(asVM(vmLikeFinal));
 
@@ -88,7 +90,7 @@ export const DedicatedResourcesModal = withHandlePromise<DedicatedResourcesModal
           <Text className="kubevirt-scheduling__helper-text" component={TextVariants.small}>
             {t('kubevirt-plugin~Available only on Nodes with labels')}
           </Text>
-          <Label kind={NodeModel.kind} name="cpumanager" value="true" expand />
+          <Label kind={NodeModel.kind} name="cpumanager" value="true" />
           <NodeChecker qualifiedNodes={qualifiedNodes} />
         </ModalBody>
         <ModalFooter

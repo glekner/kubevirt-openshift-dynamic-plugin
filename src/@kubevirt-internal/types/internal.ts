@@ -595,15 +595,15 @@ export type Flatten<
 
 export type GetModalContainer = (onClose: (e?: React.SyntheticEvent) => void) => React.ReactElement;
 
-export type HandlePromiseProps = {
-  handlePromise: <T>(
-    promise: Promise<T>,
-    onFulfill?: (res) => void,
-    onError?: (errorMsg: string) => void,
-  ) => void;
-  inProgress: boolean;
-  errorMessage: string;
-};
+// export type HandlePromiseProps = {
+//   handlePromise: <T>(
+//     promise: Promise<T>,
+//     onFulfill?: (res) => void,
+//     onError?: (errorMsg: string) => void,
+//   ) => void;
+//   inProgress: boolean;
+//   errorMessage: string;
+// };
 
 export type AccessReviewResourceAttributes = {
   group?: string;

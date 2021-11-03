@@ -3,15 +3,16 @@ import { Trans, useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
 import {
+  apiVersionForModel,
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { apiVersionForModel } from '@console/internal/module/k8s';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
 
@@ -28,7 +29,7 @@ export const DeleteVMTemplateModal = withHandlePromise((props: DeleteVMTemplateM
   const { inProgress, errorMessage, handlePromise, close, cancel, vmTemplate } = props;
   const history = useHistory();
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
 
   const vmTemplateUpToDate = useUpToDateVMLikeEntity<TemplateKind>(vmTemplate);
   const [deleteDisks, setDeleteDisks] = React.useState<boolean>(true);

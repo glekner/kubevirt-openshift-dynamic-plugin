@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
+  withHandlePromise,
+} from '@kubevirt-internal';
+import { k8sPatch } from '@kubevirt-internal/utils';
 import { Checkbox, Text, TextVariants } from '@patternfly/react-core';
 
 import { getEvictionStrategyPatch } from '../../../../k8s/patches/vm/vm-scheduling-patches';

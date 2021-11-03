@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
+  k8sPatch,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { K8sKind, k8sPatch } from '@console/internal/module/k8s';
-import { K8sResourceKind } from '@kubevirt-types';
+  withHandlePromise,
+} from '@kubevirt-internal';
+import { K8sKind, K8sResourceKind } from '@kubevirt-types';
 import { TextArea } from '@patternfly/react-core';
 
 import { getUpdateDescriptionPatches } from '../../../k8s/patches/vm/vm-patches';

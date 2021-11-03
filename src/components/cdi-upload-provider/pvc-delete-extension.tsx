@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { k8sKill } from '@console/internal/module/k8s';
+import { k8sKill } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';

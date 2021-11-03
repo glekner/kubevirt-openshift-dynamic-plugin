@@ -1,4 +1,4 @@
-import { k8sCreate } from '@console/internal/module/k8s';
+import { k8sCreate } from '@kubevirt-internal/utils';
 import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types';
 
 import { VirtualMachineModel } from '../../../models';

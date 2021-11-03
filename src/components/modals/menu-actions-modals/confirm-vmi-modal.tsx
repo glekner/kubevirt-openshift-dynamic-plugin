@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
+  withHandlePromise,
+} from '@kubevirt-internal';
 
 import { VMIKind } from '../../../types';
 

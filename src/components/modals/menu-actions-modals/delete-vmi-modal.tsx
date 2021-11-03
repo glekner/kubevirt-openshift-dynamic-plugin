@@ -4,13 +4,14 @@ import { useHistory } from 'react-router-dom';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
 
 import { useOwnedVolumeReferencedResources } from '../../../hooks/use-owned-volume-referenced-resources';
 import { useUpToDateVMLikeEntity } from '../../../hooks/use-vm-like-entity';
@@ -31,7 +32,7 @@ export const DeleteVMIModal = withHandlePromise((props: DeleteVMIProps) => {
   const { inProgress, errorMessage, handlePromise, close, cancel, vmi } = props;
   const history = useHistory();
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
 
   const vmiUpToDate = useUpToDateVMLikeEntity<VMIKind>(vmi);
   const [deleteDisks, setDeleteDisks] = React.useState<boolean>(true);

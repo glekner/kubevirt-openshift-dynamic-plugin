@@ -1,4 +1,4 @@
-import { k8sKill } from '@console/internal/module/k8s';
+import { k8sKill } from '@kubevirt-internal/utils';
 import { K8sResourceKind } from '@kubevirt-types';
 
 import { VirtualMachineInstanceMigrationModel } from '../../../models';

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { k8sKill } from '@console/internal/module/k8s';
+import { k8sKill } from '@kubevirt-internal/utils';
 
 import { OVirtProviderModel } from '../../../models';
 

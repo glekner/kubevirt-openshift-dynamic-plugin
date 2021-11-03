@@ -1,4 +1,4 @@
-import { k8sGet } from '@console/internal/module/k8s';
+import { k8sGet } from '@kubevirt-internal/utils';
 import { ConfigMapModel } from '@kubevirt-models';
 
 import {

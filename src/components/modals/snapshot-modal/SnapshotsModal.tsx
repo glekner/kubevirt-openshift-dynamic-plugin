@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { k8sCreate } from '@console/internal/module/k8s';
+  withHandlePromise,
+} from '@kubevirt-internal';
+import { k8sCreate } from '@kubevirt-internal/utils';
 import {
   Alert,
   AlertVariant,

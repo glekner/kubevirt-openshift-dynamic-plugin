@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
 import { Firehose, FirehoseResult } from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
+import { k8sPatch } from '@kubevirt-internal/utils';
 import {
   NamespaceModel,
   PersistentVolumeClaimModel,

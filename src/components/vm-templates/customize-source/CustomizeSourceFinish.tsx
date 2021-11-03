@@ -2,13 +2,13 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Prompt, useHistory } from 'react-router';
 
-import { k8sKill } from '@console/internal/module/k8s';
 import {
   ErrorStatus,
   GreenCheckCircleIcon,
   ProgressStatus,
   SuccessStatus,
 } from '@console/shared/src';
+import { k8sKill } from '@kubevirt-internal/utils';
 import { TemplateKind } from '@kubevirt-types';
 import {
   Alert,

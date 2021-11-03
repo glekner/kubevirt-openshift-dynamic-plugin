@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  k8sKill,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { k8sKill } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 
 import { DataVolumeModel } from '../../../models';

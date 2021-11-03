@@ -1,23 +1,25 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
-import { initialAccessModes } from '@console/internal/components/storage/shared';
 import {
-  ExternalLink,
-  FirehoseResult,
-  HandlePromiseProps,
+  initialAccessModes,
   LoadingInline,
+  ModalBody,
+  ModalComponentProps,
+  ModalTitle,
+  StorageClassDropdown,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { k8sCreate } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
+import { k8sCreate } from '@kubevirt-internal/utils';
 import { NamespaceModel, PersistentVolumeClaimModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
+  HandlePromiseProps,
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
 } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   AlertVariant,

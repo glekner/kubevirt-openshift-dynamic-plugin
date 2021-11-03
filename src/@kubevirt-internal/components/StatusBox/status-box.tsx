@@ -3,10 +3,11 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { TimeoutError } from '@console/dynamic-plugin-sdk/src/utils/error/http-error';
 import { Alert, Button } from '@patternfly/react-core';
 
-import * as restrictedSignImg from './restricted-sign.svg';
+import { TimeoutError } from '../error/http-error';
+
+import restrictedSignImg from './restricted-sign.svg';
 
 export const Box: React.FC<BoxProps> = ({ children, className }) => (
   <div className={classNames('cos-status-box', className)}>{children}</div>

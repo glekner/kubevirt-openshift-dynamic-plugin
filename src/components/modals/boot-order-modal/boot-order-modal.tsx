@@ -4,17 +4,15 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  Firehose,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import {
-  Firehose,
-  FirehoseResult,
-  HandlePromiseProps,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
+import { k8sPatch } from '@kubevirt-internal/utils';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { Button, ButtonVariant } from '@patternfly/react-core';
 
 import { DeviceType } from '../../../constants';
@@ -60,7 +58,7 @@ const BootOrderModalComponent = withHandlePromise(
     const [showUpdatedAlert, setUpdatedAlert] = React.useState<boolean>(false);
     const [showPatchError, setPatchError] = React.useState<boolean>(false);
     const vm = asVM(vmLikeEntity);
-    const vmi = getLoadedData(vmiProp);
+    const vmi = getLoadedData<VMIKind>(vmiProp);
     const isVMRunning = isVMRunningOrExpectedRunning(vm, vmi);
 
     const onReload = React.useCallback(() => {

@@ -5,6 +5,7 @@ export * from './headings';
 export * from './hint-block';
 export * from './inject';
 export * from './modal';
+export * from './promise-component';
 export * from './RadioInput';
 export * from './scroll-to-top-on-mount';
 export * from './StatusBox/status-box';
@@ -22,6 +23,7 @@ export {
   DashboardCardLink,
   DetailsPage,
   Dropdown,
+  EnvFromEditor,
   ErrorPage404,
   ErrorStatus,
   EventItem,
@@ -48,6 +50,7 @@ export {
   Selector,
   ServicesList,
   StatusBox,
+  StorageClassDropdown,
   SuccessStatus,
   Table,
   TableData,

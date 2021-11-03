@@ -11,7 +11,7 @@ import {
   ModalTitle,
 } from '@console/internal/components/factory';
 import { LoadingBox, useAccessReview2 } from '@console/internal/components/utils';
-import { k8sCreate } from '@console/internal/module/k8s';
+import { k8sCreate } from '@kubevirt-internal/utils';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

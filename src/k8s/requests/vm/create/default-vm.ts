@@ -1,4 +1,4 @@
-import { k8sCreate } from '@console/internal/module/k8s';
+import { k8sCreate } from '@kubevirt-internal/utils';
 
 import { VMSettingsField } from '../../../../components/create-vm-wizard/types';
 import {

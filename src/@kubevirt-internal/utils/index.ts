@@ -13,6 +13,13 @@ export * from './url-poll-hook';
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
 */
 export {
+  k8sCreate,
+  k8sGet,
+  k8sKill,
+  k8sList,
+  k8sPatch,
+} from '@openshift-console/dynamic-plugin-sdk';
+export {
   fetchSwagger,
   getSwaggerDefinitions,
   modelForGroupKind,

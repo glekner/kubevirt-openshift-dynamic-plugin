@@ -13,6 +13,7 @@
   "dependencies": {
     "@patternfly/react-core": "4.162.2",
     "@patternfly/react-icons": "4.13.1",
+    "@patternfly/react-topology": "4.9.103",
     "axios": "^0.24.0",
     "browserify-fs": "^1.0.0",
     "classnames": "2.x",
@@ -20,6 +21,7 @@
     "fork-ts-checker-webpack-plugin": "^6.3.2",
     "graphql": "^15.5.2",
     "graphql-tag": "^2.10.3",
+    "i18next": "^21.4.0",
     "js-yaml": "^3.13.1",
     "lodash-es": "^4.17.21",
     "net-browserify": "^0.2.4",

@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import {
-  FirehoseResult,
   HandlePromiseProps,
+  ModalBody,
+  ModalComponentProps,
+  ModalTitle,
   withHandlePromise,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   AlertVariant,

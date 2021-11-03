@@ -5,7 +5,7 @@ import { CreateYAMLProps } from '@console/internal/components/create-yaml';
 import { ErrorPage404 } from '@console/internal/components/error';
 import { AsyncComponent, LoadingBox } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
-import { k8sList } from '@console/internal/module/k8s';
+import { k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 
 import {

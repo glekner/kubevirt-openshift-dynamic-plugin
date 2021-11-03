@@ -3,14 +3,15 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalSubmitFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { HandlePromiseProps, withHandlePromise } from '@console/internal/components/utils';
-import { k8sKill } from '@console/internal/module/k8s';
-import { YellowExclamationTriangleIcon } from '@console/shared/src/components/status/icons';
+  withHandlePromise,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
+import { k8sKill } from '@kubevirt-internal/utils';
 
 import { TEMPLATE_CUSTOMIZED_ANNOTATION } from '../../../constants';
 import { VirtualMachineModel } from '../../../models';
@@ -19,7 +20,7 @@ import { VMKind } from '../../../types';
 
 export const DeleteVMTCustomizationModal = withHandlePromise<DeleteVMTCustomizationModal>(
   ({ inProgress, errorMessage, handlePromise, close, cancel, vm }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('kubevirt-plugin');
 
     const submit = (event) => {
       event.preventDefault();

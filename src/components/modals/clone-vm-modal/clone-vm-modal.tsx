@@ -4,19 +4,16 @@ import { connect } from 'react-redux';
 
 import {
   createModalLauncher,
+  Firehose,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import {
-  Firehose,
-  FirehoseResource,
-  FirehoseResult,
-  HandlePromiseProps,
   withHandlePromise,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 import { NamespaceModel, PersistentVolumeClaimModel, ProjectModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind } from '@kubevirt-types';
+import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Checkbox,
   Form,

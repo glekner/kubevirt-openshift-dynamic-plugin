@@ -4,20 +4,17 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  Firehose,
+  HandlePromiseProps,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import {
-  Firehose,
-  FirehoseResult,
-  HandlePromiseProps,
-  humanizeBinaryBytesWithoutB,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { k8sPatch } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
+import { humanizeBinaryBytesWithoutB, k8sPatch } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { Form, FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 import { CUSTOM_FLAVOR } from '../../../constants';
@@ -77,8 +74,8 @@ const VMFlavorModal = withHandlePromise((props: VMFlavornModalProps) => {
   const { t } = useTranslation();
   const inProgress = props.inProgress || !loaded;
   const vm = asVM(vmLike);
-  const underlyingTemplate = getLoadedData(template);
-  const loadedVMIs = getLoadedData(vmis);
+  const underlyingTemplate = getLoadedData<TemplateKind>(template);
+  const loadedVMIs = getLoadedData<VMIKind[]>(vmis);
   const vmi = loadedVMIs && loadedVMIs.length > 0 && loadedVMIs[0];
 
   const flavors = getAvailableFlavors(underlyingTemplate);

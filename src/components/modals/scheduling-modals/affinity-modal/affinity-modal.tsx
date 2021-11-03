@@ -2,14 +2,17 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ModalBody, ModalComponentProps, ModalTitle } from '@console/internal/components/factory';
 import {
-  FirehoseResult,
   HandlePromiseProps,
+  k8sPatch,
+  ModalBody,
+  ModalComponentProps,
+  ModalTitle,
   withHandlePromise,
-} from '@console/internal/components/utils';
-import { k8sPatch, NodeKind } from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
 import { NodeModel } from '@kubevirt-models';
+import { NodeKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Button,
   ButtonVariant,
@@ -65,7 +68,7 @@ export const AffinityModal = withHandlePromise<AffinityModalProps>(
     errorMessage,
   }) => {
     const { t } = useTranslation();
-    const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity);
+    const vmLikeFinal = getLoadedData<VMLikeEntityKind>(vmLikeEntityLoading, vmLikeEntity);
     const loadError = getLoadError(nodes, NodeModel);
     const currentAffinity = getVMLikeAffinity(vmLikeFinal);
 
