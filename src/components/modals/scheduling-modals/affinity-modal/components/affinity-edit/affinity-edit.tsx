@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ModalBody } from '@console/internal/components/factory';
-import { FirehoseResult } from '@console/internal/components/utils';
+import { FirehoseResult } from '@kubevirt-internal';
 import { NodeKind } from '@kubevirt-types';
 import {
   Divider,

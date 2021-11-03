@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
+import { StatusIconAndText } from '@kubevirt-internal/components';
 import { Alert, AlertVariant } from '@patternfly/react-core';
 import { InProgressIcon } from '@patternfly/react-icons';
 

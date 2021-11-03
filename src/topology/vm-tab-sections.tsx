@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ResourceIcon, resourcePathFromModel } from '@console/internal/components/utils';
 import { getResource } from '@console/topology/src/utils';
+import { ResourceIcon, resourcePathFromModel } from '@kubevirt-internal';
 import {
   AdapterDataType,
   K8sResourceCommon,

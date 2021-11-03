@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import { useAccessReview2 } from '@console/internal/components/utils';
+import { useAccessReview2 } from '@kubevirt-internal';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

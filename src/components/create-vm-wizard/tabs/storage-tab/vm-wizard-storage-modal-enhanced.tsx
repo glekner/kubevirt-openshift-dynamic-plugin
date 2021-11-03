@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { createModalLauncher, Firehose, ModalComponentProps } from '@kubevirt-internal';
 import {
   NamespaceModel,
   PersistentVolumeClaimModel,
@@ -32,6 +31,7 @@ import {
   VMWizardStorage,
   VMWizardStorageType,
 } from '../../types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 const VMWizardStorageModal: React.FC<VMWizardStorageModalProps> = (props) => {
   const {

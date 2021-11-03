@@ -9,7 +9,7 @@ import {
   Table,
 } from '@console/internal/components/factory';
 import { useSafetyFirst } from '@console/internal/components/safety-first';
-import { FieldLevelHelp, FirehoseResult } from '@console/internal/components/utils';
+import { FieldLevelHelp, FirehoseResult } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

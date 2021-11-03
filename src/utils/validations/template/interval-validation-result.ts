@@ -1,4 +1,4 @@
-import { humanizeBinaryBytes } from '@console/internal/components/utils';
+import { humanizeBinaryBytes } from '@kubevirt-internal';
 
 /* eslint-disable lines-between-class-members */
 import { ValidationErrorType } from '../../../selectors';

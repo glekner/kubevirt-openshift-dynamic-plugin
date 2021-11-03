@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { Kebab, ResourceLink } from '@console/internal/components/utils';
+import { Kebab, ResourceLink } from '@kubevirt-internal';
 import { NamespaceModel, TemplateModel } from '@kubevirt-models';
 import { Button } from '@patternfly/react-core';
 import { StarIcon } from '@patternfly/react-icons';

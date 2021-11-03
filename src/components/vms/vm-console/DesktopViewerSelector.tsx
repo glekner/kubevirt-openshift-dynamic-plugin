@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Dropdown } from '@console/internal/components/utils';
+import { Dropdown } from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind, PodKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

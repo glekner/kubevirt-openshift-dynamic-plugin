@@ -4,12 +4,8 @@ import * as React from 'react';
 /* eslint-disable lines-between-class-members */
 import { CreateYAMLProps } from '@console/internal/components/create-yaml';
 import { ErrorPage404 } from '@console/internal/components/error';
-import {
-  AsyncComponent,
-  LoadingBox,
-  resourcePathFromModel,
-} from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
+import { AsyncComponent, LoadingBox, resourcePathFromModel } from '@kubevirt-internal';
 import { k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind, TemplateKind } from '@kubevirt-types';

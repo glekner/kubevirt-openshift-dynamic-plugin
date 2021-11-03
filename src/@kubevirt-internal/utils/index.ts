@@ -18,10 +18,17 @@ export {
   k8sKill,
   k8sList,
   k8sPatch,
+  modelForGroupKind,
+  referenceFor,
+  referenceForExtensionModel,
+  referenceForModel,
 } from '@openshift-console/dynamic-plugin-sdk';
 export {
+  connectToFlags,
   fetchSwagger,
+  getActiveNamespace,
   getSwaggerDefinitions,
   modelForGroupKind,
   openAPItoJSONSchema,
+  useActiveNamespace,
 } from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';

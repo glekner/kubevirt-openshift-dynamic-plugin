@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LoadingInline } from '@console/internal/components/utils';
+import { LoadingInline } from '@kubevirt-internal';
 import { Button } from '@patternfly/react-core';
 
 import { EditButton } from '../edit-button';

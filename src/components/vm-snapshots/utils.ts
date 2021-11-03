@@ -1,3 +1,3 @@
-import { Kebab } from '@console/internal/components/utils';
+import { Kebab } from '@kubevirt-internal';
 
 export const snapshotsTableColumnClasses = ['', '', '', '', '', '', Kebab.columnClass];

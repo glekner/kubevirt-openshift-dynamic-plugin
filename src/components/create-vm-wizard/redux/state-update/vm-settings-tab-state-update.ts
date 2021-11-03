@@ -1,4 +1,4 @@
-import { FLAGS } from '@console/shared';
+import { FLAGS } from '@kubevirt-internal';
 
 import {
   CUSTOM_FLAVOR,

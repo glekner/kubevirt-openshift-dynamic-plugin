@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { KebabOption, kebabOptionsToMenu } from '@console/internal/components/utils';
 import { modelFor, referenceFor } from '@console/internal/module/k8s';
 import { ModifyApplication } from '@console/topology/src/actions';
 import {
@@ -14,6 +13,7 @@ import {
 } from '@console/topology/src/components/graph-view';
 import { TopologyDataObject } from '@console/topology/src/topology-types';
 import { getResource, withEditReviewAccess } from '@console/topology/src/utils';
+import { KebabOption, kebabOptionsToMenu } from '@kubevirt-internal';
 import { K8sResourceKind } from '@kubevirt-types';
 import {
   GraphElement,

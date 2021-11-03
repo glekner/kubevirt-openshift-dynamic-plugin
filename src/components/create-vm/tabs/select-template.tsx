@@ -3,10 +3,15 @@ import * as fuzzy from 'fuzzysearch';
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { createProjectModal } from '@console/internal/components/modals';
-import { humanizeBinaryBytes, ResourceName, StatusBox } from '@console/internal/components/utils';
-import { FLAGS, VirtualizedGrid } from '@console/shared';
-import { useFlag } from '@console/shared/src/hooks/flag';
+import {
+  createProjectModal,
+  FLAGS,
+  humanizeBinaryBytes,
+  ResourceName,
+  StatusBox,
+  useFlag,
+  VirtualizedGrid,
+} from '@kubevirt-internal';
 import { ProjectModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { CatalogTile } from '@patternfly/react-catalog-view-extension';
@@ -157,7 +162,7 @@ export const SelectTemplate: React.FC<SelectTemplateProps> = ({
   loadError,
   templatePreselectError,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const [isPinned] = usePinnedTemplates();
   const [filters, onSelect, clearFilter] = useVmTemplatesFilters();
 

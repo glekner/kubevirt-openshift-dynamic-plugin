@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink, ResourceLink } from '@console/internal/components/utils';
+import { ExternalLink, ResourceLink } from '@kubevirt-internal';
 import { Alert, Bullseye, Button, Spinner, Stack, StackItem, Title } from '@patternfly/react-core';
 
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants';

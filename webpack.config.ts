@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-env node */
 
 import * as webpack from 'webpack';
@@ -24,7 +25,6 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    modules: ['node_modules', path.resolve(__dirname, 'console/frontend/node_modules')],
     alias: {
       '@kubevirt-internal': [path.resolve(__dirname, 'src/@kubevirt-internal/')],
       '@kubevirt-models': [
@@ -55,7 +55,6 @@ const config: webpack.Configuration = {
       net: 'net-browserify',
       fs: 'browserify-fs',
       prettier: false,
-      '@console/active-plugins': false,
     },
   },
   module: {
@@ -67,7 +66,7 @@ const config: webpack.Configuration = {
           {
             loader: 'ts-loader',
             options: {
-              configFile: path.resolve(__dirname, 'console/frontend/tsconfig.json'),
+              configFile: path.resolve(__dirname, 'tsconfig.json'),
               transpileOnly: true,
             },
           },
@@ -110,11 +109,6 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'console/frontend/node_modules/monaco-editor'),
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
         loader: 'file-loader',
         options: {
@@ -132,7 +126,7 @@ const config: webpack.Configuration = {
     new ConsoleRemotePlugin(),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
-        configFile: path.resolve(__dirname, 'console/frontend/tsconfig.json'),
+        configFile: path.resolve(__dirname, 'tsconfig.json'),
         diagnosticOptions: {
           semantic: true,
           syntactic: true,

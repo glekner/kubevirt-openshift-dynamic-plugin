@@ -13,7 +13,7 @@ import {
   ResourceSummary,
   SectionHeading,
   Timestamp,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 
 import { VM_DETAIL_SNAPSHOTS } from '../../constants';
 import { VirtualMachineModel, VirtualMachineSnapshotModel } from '../../models';

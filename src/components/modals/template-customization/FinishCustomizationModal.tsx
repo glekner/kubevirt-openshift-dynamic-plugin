@@ -7,7 +7,7 @@ import {
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { ExternalLink, ResourceLink } from '@console/internal/components/utils';
+import { ExternalLink, ResourceLink } from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
 import { Checkbox, Stack, StackItem } from '@patternfly/react-core';

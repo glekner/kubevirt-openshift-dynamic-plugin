@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink, LoadingInline, ResourceLink } from '@console/internal/components/utils';
 import { referenceForModel } from '@console/internal/module/k8s';
 import {
   ErrorStatus,
@@ -11,6 +10,7 @@ import {
   WarningStatus,
   YellowExclamationTriangleIcon,
 } from '@console/shared';
+import { ExternalLink, LoadingInline, ResourceLink } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';

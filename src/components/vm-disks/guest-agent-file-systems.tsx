@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Table, TableData } from '@console/internal/components/factory';
-import { FieldLevelHelp, humanizeBinaryBytes } from '@console/internal/components/utils';
+import { FieldLevelHelp, humanizeBinaryBytes } from '@kubevirt-internal';
 import { sortable } from '@patternfly/react-table';
 
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';

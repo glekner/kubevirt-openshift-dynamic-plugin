@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 
-import { HealthState } from '@console/shared/src/components/dashboard/status-card/states';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { URLHealthHandler } from '@kubevirt-types';
 
@@ -10,6 +9,7 @@ import {
   VirtualMachineInstanceMigrationModel,
   VirtualMachineInstanceModel,
 } from '../../../models';
+import { HealthState } from '@openshift-console/dynamic-plugin-sdk';
 
 export const getKubevirtHealthState: URLHealthHandler<KubevirtHealthResponse> = (
   response,

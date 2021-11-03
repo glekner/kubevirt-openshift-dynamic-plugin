@@ -1,7 +1,7 @@
-import * as cx from 'classnames';
+import cx from 'classnames';
 import * as React from 'react';
 
-import { NamespaceBar } from '@console/internal/components/namespace';
+import { NamespaceBar } from '@kubevirt-internal';
 
 import NamespaceBarApplicationSelector from './NamespaceBarApplicationSelector/NamespaceBarApplicationSelector';
 

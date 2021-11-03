@@ -1,4 +1,4 @@
-import { convertToBaseValue } from '@console/internal/components/utils';
+import { convertToBaseValue } from '@kubevirt-internal';
 
 import { assureEndsWith } from '../../utils';
 import { getStringEnumValues } from '../../utils/types';

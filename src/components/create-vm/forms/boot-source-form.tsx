@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { dropdownUnits, initialAccessModes } from '@console/internal/components/storage/shared';
 import {
+  dropdownUnits,
   FieldLevelHelp,
+  initialAccessModes,
   ListDropdown,
   LoadingInline,
   RequestSizeInput,
-} from '@console/internal/components/utils';
-import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
+  StorageClassDropdown,
+} from '@kubevirt-internal';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types';
 import {

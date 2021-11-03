@@ -6,11 +6,13 @@ import { connect } from 'react-redux';
 import { match as RouterMatch, useHistory } from 'react-router';
 import { compose } from 'redux';
 
-import { Firehose } from '@console/internal/components/utils';
-import { referenceForModel } from '@console/internal/module/k8s';
-import { connectToFlags } from '@console/internal/reducers/connectToFlags';
-import { featureReducerName, FlagsObject } from '@console/internal/reducers/features';
-import { FLAGS } from '@console/shared';
+import {
+  connectToFlags,
+  Firehose,
+  FLAGS,
+  FlagsObject,
+  referenceForModel,
+} from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
@@ -510,7 +512,7 @@ export const CreateVMWizardPageComponent: React.FC<CreateVMWizardPageComponentPr
   const dataIDReferences = makeIDReferences(resources);
 
   dataIDReferences[VMWizardProps.activeNamespace] = ['UI', 'activeNamespace'];
-  dataIDReferences[VMWizardProps.openshiftFlag] = [featureReducerName, FLAGS.OPENSHIFT];
+  dataIDReferences[VMWizardProps.openshiftFlag] = ['FLAGS', FLAGS.OPENSHIFT];
 
   const isSimpleView =
     userMode === VMWizardMode.IMPORT &&

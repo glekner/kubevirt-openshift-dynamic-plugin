@@ -2,15 +2,9 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import {
-  FirehoseResult,
-  history,
-  Kebab,
-  LoadingInline,
-  ResourceLink,
-} from '@console/internal/components/utils';
 import { PendingStatus } from '@console/shared';
 import { SuccessStatus } from '@console/shared/src/components/status/statuses';
+import { FirehoseResult, history, Kebab, LoadingInline, ResourceLink } from '@kubevirt-internal';
 import { NamespaceModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
 import { Button, Level, LevelItem, Stack, StackItem } from '@patternfly/react-core';

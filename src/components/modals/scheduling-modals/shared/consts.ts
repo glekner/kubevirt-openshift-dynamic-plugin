@@ -1,4 +1,4 @@
-import { pluralize } from '@console/internal/components/utils';
+import { pluralize } from '@kubevirt-internal';
 
 import { AffinityCondition, AffinityType } from '../affinity-modal/types';
 

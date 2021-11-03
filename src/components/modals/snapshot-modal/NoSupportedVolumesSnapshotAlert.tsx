@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Alert, AlertVariant, Stack, StackItem } from '@patternfly/react-core';
 
 import { SNAPSHOT_SUPPORT_URL } from '../../../constants';

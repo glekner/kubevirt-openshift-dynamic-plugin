@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { FirehoseResult } from '@console/internal/components/utils';
+import { FirehoseResult } from '@kubevirt-internal';
 import { K8sKind } from '@kubevirt-types';
 import { K8sResourceKind } from '@kubevirt-types';
 import { FormSelect, FormSelectOption } from '@patternfly/react-core';

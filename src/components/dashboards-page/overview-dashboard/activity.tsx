@@ -1,10 +1,6 @@
 import * as _ from 'lodash';
 import * as React from 'react';
 
-import { referenceForModel } from '@console/internal/module/k8s';
-import ActivityItem, {
-  ActivityProgress,
-} from '@console/shared/src/components/dashboard/activity-card/ActivityItem';
 import { PodModel, TemplateModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types';
 import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
@@ -14,6 +10,7 @@ import { getName } from '../../../selectors';
 import { VMTemplateLink } from '../../vm-templates/vm-template-link';
 
 import { diskImportKindMapping } from './utils';
+import { ActivityItem, ActivityProgress, referenceForModel } from '@kubevirt-internal';
 
 export const DiskImportActivity: React.FC<{
   resource: K8sResourceKind;

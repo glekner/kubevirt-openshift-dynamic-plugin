@@ -7,7 +7,7 @@ import {
   getVolumeModeRadios,
   initialVolumeModes,
 } from '@console/internal/components/storage/shared';
-import { FieldLevelHelp } from '@console/internal/components/utils';
+import { FieldLevelHelp } from '@kubevirt-internal';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { FormGroup } from '@patternfly/react-core';
 

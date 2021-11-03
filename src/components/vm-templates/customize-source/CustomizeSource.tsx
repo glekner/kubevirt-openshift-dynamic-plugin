@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
-import { StatusBox } from '@console/internal/components/utils';
+import { StatusBox } from '@kubevirt-internal';
 import { Alert } from '@patternfly/react-core';
 
 import { TEMPLATE_CUSTOMIZED_ANNOTATION } from '../../../constants';

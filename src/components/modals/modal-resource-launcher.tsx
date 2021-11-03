@@ -5,6 +5,8 @@ import { Router } from 'react-router-dom';
 
 import { createModal, GetModalContainer } from '@console/internal/components/factory';
 import { ModalErrorContent } from '@console/internal/components/modals/error-modal';
+import store from '@console/internal/redux';
+import { RedExclamationCircleIcon } from '@console/shared';
 import {
   AccessDenied,
   Box,
@@ -13,9 +15,7 @@ import {
   FirehoseResult,
   history,
   MsgBox,
-} from '@console/internal/components/utils';
-import store from '@console/internal/redux';
-import { RedExclamationCircleIcon } from '@console/shared';
+} from '@kubevirt-internal';
 
 const NotFound: React.FC<NotFoundProps> = ({ message }) => (
   <Box className="pf-u-text-align-center">

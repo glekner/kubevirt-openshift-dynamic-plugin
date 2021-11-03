@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { resourcePath } from '@console/internal/components/utils';
 import { ErrorStatus, ProgressStatus, Status } from '@console/shared';
+import { resourcePath } from '@kubevirt-internal';
 import { Button, Split, SplitItem, Stack, StackItem } from '@patternfly/react-core';
 
 import { VirtualMachineRestoreModel } from '../../models';

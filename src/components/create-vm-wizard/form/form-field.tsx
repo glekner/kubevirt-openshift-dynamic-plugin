@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { inject } from '@console/internal/components/utils';
+import { inject } from '@kubevirt-internal';
 
 import { ValidationErrorType } from '../../../selectors';
 import { iGetIn } from '../../../utils/immutable';

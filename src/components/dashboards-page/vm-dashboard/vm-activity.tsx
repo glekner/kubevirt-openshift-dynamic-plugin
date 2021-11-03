@@ -1,22 +1,9 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {
-  DashboardItemProps,
-  withDashboardResources,
-} from '@console/internal/components/dashboard/with-dashboard-resources';
-import { FirehoseResource, FirehoseResult, resourcePath } from '@console/internal/components/utils';
-import ActivityBody, {
-  PauseButton,
-  RecentEventsBodyContent,
-} from '@console/shared/src/components/dashboard/activity-card/ActivityBody';
-import DashboardCard from '@console/shared/src/components/dashboard/dashboard-card/DashboardCard';
-import DashboardCardBody from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardBody';
-import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
-import DashboardCardLink from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardLink';
-import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardTitle';
+import { DashboardCardLink, resourcePath } from '@kubevirt-internal';
 import { EventModel } from '@kubevirt-models';
-import { EventKind } from '@kubevirt-types';
+import { DashboardItemProps, EventKind } from '@kubevirt-types';
 import { CardActions } from '@patternfly/react-core';
 
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../../models';
@@ -27,6 +14,15 @@ import { VMILikeEntityKind } from '../../../types/vmLike';
 import { VMDashboardContext } from '../../vms/vm-dashboard-context';
 
 import './vm-activity.scss';
+import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
+import {
+  ActivityBody,
+  DashboardCard,
+  DashboardCardBody,
+  DashboardCardHeader,
+  DashboardCardTitle,
+} from '@openshift-console/dynamic-plugin-sdk-internal';
+import { PauseButton } from '@kubevirt-internal/components/pause-button';
 
 const combinedVmFilter =
   (vm: VMILikeEntityKind): EventFilterFuncion =>

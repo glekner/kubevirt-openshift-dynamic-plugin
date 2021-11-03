@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { FieldLevelHelp } from '@console/internal/components/utils';
+import { FieldLevelHelp } from '@kubevirt-internal';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 export const HotplugFieldLevelHelp = () => {

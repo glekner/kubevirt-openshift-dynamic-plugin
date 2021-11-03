@@ -1,4 +1,4 @@
-import { FirehoseResult } from '@console/internal/components/utils';
+import { FirehoseResult } from '@kubevirt-internal';
 import { DeploymentKind, K8sResourceKind, PodKind, PodPhase } from '@kubevirt-types';
 
 export enum AllPodStatus {

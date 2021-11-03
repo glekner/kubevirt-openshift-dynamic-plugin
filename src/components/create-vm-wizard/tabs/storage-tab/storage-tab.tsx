@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import { ExternalLink, Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { ExternalLink, Firehose, FirehoseResult } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import {
   Alert,

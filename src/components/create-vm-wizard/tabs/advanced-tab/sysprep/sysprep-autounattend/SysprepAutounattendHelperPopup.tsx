@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ExternalLink, FieldLevelHelp } from '@console/internal/components/utils';
+import { FieldLevelHelp } from '@kubevirt-internal';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Text, TextVariants } from '@patternfly/react-core';
 
 const SysprepAutounattendHelperPopup: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <FieldLevelHelp testId="sysprep-autounattend-popover-button">
       <div data-test="sysprep-autounattend-popover">

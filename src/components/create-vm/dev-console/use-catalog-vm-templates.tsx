@@ -2,9 +2,10 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { humanizeBinaryBytes, SectionHeading } from '@console/internal/components/utils';
+import { humanizeBinaryBytes, SectionHeading } from '@kubevirt-internal';
 import { PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
-import { CatalogItem, ExtensionHook } from '@openshift-console/dynamic-plugin-sdk';
+import { CatalogItem } from '@openshift-console/dynamic-plugin-sdk';
+import { ExtensionHook } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 import { Form, Stack, StackItem } from '@patternfly/react-core';
 
 import { BOOT_SOURCE_AVAILABLE } from '../../../constants';

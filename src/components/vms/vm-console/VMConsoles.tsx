@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { LoadingInline } from '@console/internal/components/utils';
+import { LoadingInline } from '@kubevirt-internal';
 import { AccessConsoles } from '@patternfly/react-console';
 import {
   Accordion,

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { humanizeBinaryBytes } from '@console/internal/components/utils';
+import { humanizeBinaryBytes } from '@kubevirt-internal';
 import { TemplateKind } from '@kubevirt-types';
 import { Button, Popover, PopoverPosition, Stack, StackItem } from '@patternfly/react-core';
 

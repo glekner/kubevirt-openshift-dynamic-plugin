@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { Kebab, ResourceKebab, ResourceLink, Timestamp } from '@console/internal/components/utils';
+import { Kebab, ResourceKebab, ResourceLink, Timestamp } from '@kubevirt-internal';
 import { Button, Tooltip } from '@patternfly/react-core';
 
 import { VirtualMachineSnapshotModel } from '../../models';

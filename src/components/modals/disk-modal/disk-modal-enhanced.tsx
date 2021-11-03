@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { Firehose, FirehoseResult } from '@kubevirt-internal';
 import { k8sPatch } from '@kubevirt-internal/utils';
 import {
   NamespaceModel,

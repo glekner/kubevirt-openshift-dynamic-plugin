@@ -10,7 +10,7 @@ import {
   ModalFooter,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { LoadingBox, useAccessReview2 } from '@console/internal/components/utils';
+import { LoadingBox, useAccessReview2 } from '@kubevirt-internal';
 import { k8sCreate } from '@kubevirt-internal/utils';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types';

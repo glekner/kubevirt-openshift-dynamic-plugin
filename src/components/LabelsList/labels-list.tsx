@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink, resourcePath } from '@console/internal/components/utils';
+import { ExternalLink, resourcePath } from '@kubevirt-internal';
 import { K8sResourceKindReference } from '@kubevirt-types';
 import { Button, Grid, Split, SplitItem } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons';

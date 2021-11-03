@@ -3,8 +3,8 @@ import * as React from 'react';
 
 import { CreateYAMLProps } from '@console/internal/components/create-yaml';
 import { ErrorPage404 } from '@console/internal/components/error';
-import { AsyncComponent, LoadingBox } from '@console/internal/components/utils';
 import { connectToPlural } from '@console/internal/kinds';
+import { AsyncComponent, LoadingBox } from '@kubevirt-internal';
 import { k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 

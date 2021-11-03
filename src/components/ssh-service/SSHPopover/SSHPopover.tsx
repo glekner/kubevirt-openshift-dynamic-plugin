@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { FieldLevelHelp } from '@console/internal/components/utils';
+import { FieldLevelHelp } from '@kubevirt-internal';
 import { Text, TextVariants } from '@patternfly/react-core';
 
 import './ssh-popover.scss';

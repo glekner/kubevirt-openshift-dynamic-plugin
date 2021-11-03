@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DetailsPage } from '@console/internal/components/factory';
-import { navFactory } from '@console/internal/components/utils';
+import { navFactory } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { useK8sModel } from '@openshift-console/dynamic-plugin-sdk';
 

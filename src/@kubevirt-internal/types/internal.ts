@@ -664,3 +664,5 @@ export type StatusGroupMapper<
 export type NodeComponentProps = {
   element: Node;
 };
+
+export type FlagsObject = { [key: string]: boolean };

@@ -1,9 +1,6 @@
 import * as _ from 'lodash';
 import * as React from 'react';
 
-import { StatusGroupMapper } from '@console/shared/src/components/dashboard/inventory-card/InventoryItem';
-import { InventoryStatusGroup } from '@console/shared/src/components/dashboard/inventory-card/status-group';
-import { createBasicLookup } from '@console/shared/src/utils/utils';
 import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { OffIcon } from '@patternfly/react-icons';
 
@@ -17,11 +14,12 @@ import { getVMImportStatus } from '../../../statuses/vm-import/vm-import-status'
 import { VMIKind, VMKind } from '../../../types';
 import { V1alpha1DataVolume } from '../../../types/api';
 import { VMImportKind } from '../../../types/vm-import/ovirt/vm-import';
-import { getBasicID } from '../../../utils';
+import { createBasicLookup, getBasicID } from '../../../utils';
 
 import './inventory.scss';
+import { InventoryStatusGroup } from '@kubevirt-internal';
 
-export const getVMStatusGroups: StatusGroupMapper = (
+export const getVMStatusGroups = (
   vms,
   {
     vmis,

@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose, FirehoseResult } from '@console/internal/components/utils';
-import { referenceForModel } from '@console/internal/module/k8s';
+import {
+  createModalLauncher,
+  Firehose,
+  ModalComponentProps,
+  referenceForModel,
+} from '@kubevirt-internal';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 
 import { NetworkInterfaceWrapper } from '../../../../k8s/wrapper/vm/network-interface-wrapper';
@@ -14,6 +17,7 @@ import { ActionType } from '../../redux/types';
 import { iGetCommonData } from '../../selectors/immutable/selectors';
 import { getNetworks } from '../../selectors/selectors';
 import { VMWizardNetwork, VMWizardNetworkType, VMWizardProps } from '../../types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 const VMWizardNICModal: React.FC<VMWizardNICModalProps> = (props) => {
   const {

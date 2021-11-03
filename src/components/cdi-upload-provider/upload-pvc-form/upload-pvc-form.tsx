@@ -4,20 +4,20 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
-import { match } from 'react-router';
+import { match, useHistory } from 'react-router';
 
 import {
-  ButtonBar,
-  ExternalLink,
-  history,
+  dropdownUnits,
+  initialAccessModes,
   LoadingInline,
   RequestSizeInput,
   resourcePath,
+  StorageClassDropdown,
   useAccessReview2,
   useMultipleAccessReviews,
-} from '@console/internal/components/utils';
-import { StorageClassDropdown } from '@console/internal/components/utils/storage-class-dropdown';
-import { dropdownUnits, initialAccessModes } from '@kubevirt-internal';
+} from '@kubevirt-internal';
+import { ButtonBar } from '@kubevirt-internal/components/button-bar';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
@@ -542,6 +542,7 @@ export const UploadPVCForm: React.FC<UploadPVCFormProps> = ({
 
 export const UploadPVCPage: React.FC<UploadPVCPageProps> = (props) => {
   const { t } = useTranslation();
+  const history = useHistory();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isCheckingCertificate, setCheckingCertificate] = React.useState(false);
   const [disableFormSubmit, setDisableFormSubmit] = React.useState(false);

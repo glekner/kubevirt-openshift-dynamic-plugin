@@ -18,7 +18,7 @@ import {
   KebabOption,
   ResourceLink,
   Timestamp,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 import {
   DataVolumeModel,
   NamespaceModel,

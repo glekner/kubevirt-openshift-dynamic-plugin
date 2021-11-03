@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { AlertVariant } from '@patternfly/react-core';
 
 import {

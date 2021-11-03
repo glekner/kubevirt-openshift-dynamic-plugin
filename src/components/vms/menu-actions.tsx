@@ -5,8 +5,8 @@ import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { confirmModal } from '@console/internal/components/modals';
-import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
 import { YellowExclamationTriangleIcon } from '@console/shared';
+import { asAccessReview, Kebab, KebabOption } from '@kubevirt-internal';
 import { K8sKind, K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { Action } from '@openshift-console/dynamic-plugin-sdk';
 import { StackItem, Tooltip } from '@patternfly/react-core';

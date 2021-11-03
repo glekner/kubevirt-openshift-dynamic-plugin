@@ -2,26 +2,24 @@ import { TFunction } from 'i18next';
 import * as _ from 'lodash';
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { match } from 'react-router';
+import { match, useHistory } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
 
 import {
+  GenericStatus,
+  Kebab,
   MultiListPage,
-  RowFunctionArgs,
   Table,
   TableData,
-} from '@console/internal/components/factory';
+  Timestamp,
+} from '@kubevirt-internal';
+import { NamespaceModel, NodeModel, QuickStartModel } from '@kubevirt-models';
+import { K8sKind, RowFunctionArgs } from '@kubevirt-types';
 import {
   FirehoseResult,
-  history,
-  Kebab,
   ResourceLink,
-  Timestamp,
-} from '@console/internal/components/utils';
-import GenericStatus from '@console/shared/src/components/status/GenericStatus';
-import { NamespaceModel, NodeModel, QuickStartModel } from '@kubevirt-models';
-import { K8sKind } from '@kubevirt-types';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+  useK8sWatchResource,
+} from '@openshift-console/dynamic-plugin-sdk';
 import { QuickStart } from '@patternfly/quickstarts';
 import {
   Button,
@@ -129,10 +127,11 @@ const VMRow: React.FC<RowFunctionArgs<VMRowObjType, VmStatusResourcesValue>> = (
   obj,
   customData: vmStatusResources,
 }) => {
+  const history = useHistory();
   const { vm, vmi } = obj;
   const { name, namespace, creationTimestamp, uid, node } = obj.metadata;
   const dimensify = dimensifyRow(tableColumnClasses);
-  const arePendingChanges = hasPendingChanges(vm, vmi);
+  const arePendingChanges = hasPendingChanges(history, vm, vmi);
   const printableStatus = obj?.metadata?.status;
   const status: VMStatus = printableToVMStatus?.[printableStatus];
 
@@ -146,7 +145,7 @@ const VMRow: React.FC<RowFunctionArgs<VMRowObjType, VmStatusResourcesValue>> = (
 
   return (
     <>
-      <TableData className={dimensify()}>
+      <TableData id="name" className={dimensify()}>
         <ResourceLink kind={kubevirtReferenceForModel(model)} name={name} namespace={namespace} />
       </TableData>
       <TableData className={dimensify()}>
@@ -195,6 +194,7 @@ const VMRow: React.FC<RowFunctionArgs<VMRowObjType, VmStatusResourcesValue>> = (
 const VMListEmpty: React.FC = () => {
   const { t } = useTranslation();
   const location = useLocation();
+  const history = useHistory();
   const namespace = useNamespace();
 
   const searchText = 'virtual machine';

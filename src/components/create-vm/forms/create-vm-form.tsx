@@ -2,12 +2,14 @@ import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import {
+  BlueInfoCircleIcon,
   convertToBaseValue,
+  FLAGS,
   humanizeBinaryBytes,
   LoadingBox,
   useAccessReview2,
-} from '@console/internal/components/utils';
-import { BlueInfoCircleIcon, FLAGS, useFlag } from '@console/shared';
+  useFlag,
+} from '@kubevirt-internal';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
@@ -81,7 +83,7 @@ export const CreateVMForm: React.FC<CreateVMFormProps> = ({
   showCreateInfo = true,
   showProjectDropdown = true,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const { name, nameValidation, namespace, startVM, template } = state;
   const [vms, loaded] = useK8sWatchResource<VMKind[]>({
     kind: kubevirtReferenceForModel(VirtualMachineModel),

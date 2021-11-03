@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { NodeLink, ResourceLink, ResourceSummary } from '@console/internal/components/utils';
 import { Selector } from '@console/internal/components/utils/selector';
+import { NodeLink, ResourceLink, ResourceSummary } from '@kubevirt-internal';
 import { PodModel } from '@kubevirt-models';
 import { K8sKind, PodKind, ServiceKind } from '@kubevirt-types';
 

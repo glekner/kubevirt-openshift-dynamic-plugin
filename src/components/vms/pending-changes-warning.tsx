@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { useHistory } from 'react-router';
 
-import { Firehose, FirehoseResult } from '@console/internal/components/utils';
+import { Firehose, FirehoseResult } from '@kubevirt-internal';
 import {
   Breadcrumb,
   BreadcrumbHeading,

@@ -1,5 +1,3 @@
-import '@console/internal/i18n.js';
-
 import './style.scss';
 
 export const FLAG_KUBEVIRT = 'KUBEVIRT';

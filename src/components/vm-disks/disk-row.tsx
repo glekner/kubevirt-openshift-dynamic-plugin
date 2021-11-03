@@ -7,7 +7,7 @@ import {
   KebabOption,
   LoadingInline,
   ResourceLink,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 
 import { CombinedDisk } from '../../k8s/wrapper/vm/combined-disk';

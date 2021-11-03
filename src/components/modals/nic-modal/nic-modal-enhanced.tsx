@@ -2,8 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose, FirehoseResource, FirehoseResult } from '@console/internal/components/utils';
 import { k8sPatch, referenceForModel } from '@console/internal/module/k8s';
+import { Firehose, FirehoseResource, FirehoseResult } from '@kubevirt-internal';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 
 import { getUpdateNICPatches } from '../../../k8s/patches/vm/vm-nic-patches';

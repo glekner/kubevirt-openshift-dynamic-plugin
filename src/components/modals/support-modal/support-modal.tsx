@@ -7,8 +7,8 @@ import {
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { ExternalLink } from '@console/internal/components/utils';
 import { BlueInfoCircleIcon } from '@console/shared';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Checkbox, Label, Stack, StackItem } from '@patternfly/react-core';
 
 import { TEMPLATE_PROVIDER_ANNOTATION, TEMPLATE_SUPPORT_LEVEL } from '../../../constants';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
+import { asAccessReview, Kebab, KebabOption } from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 
 import { PENDING_RESTART_LABEL } from '../../constants';

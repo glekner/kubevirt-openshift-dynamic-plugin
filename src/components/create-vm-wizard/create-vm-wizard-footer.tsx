@@ -5,8 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Prompt } from 'react-router';
 
-import { getActiveNamespace } from '@console/internal/actions/ui';
-import { useActiveNamespace } from '@console/shared';
+import { getActiveNamespace, useActiveNamespace } from '@kubevirt-internal';
 import {
   Alert,
   Button,

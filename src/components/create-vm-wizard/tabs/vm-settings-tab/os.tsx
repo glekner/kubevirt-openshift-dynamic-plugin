@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { ResourceLink, useAccessReview } from '@console/internal/components/utils';
+import { ResourceLink, useAccessReview } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { Button, ButtonVariant, Checkbox, SelectOption, Text } from '@patternfly/react-core';
 

@@ -5,13 +5,7 @@ import Helmet from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
-import {
-  ButtonBar,
-  ExternalLink,
-  history,
-  setQueryArgument,
-  StatusBox,
-} from '@console/internal/components/utils';
+import { ButtonBar, ExternalLink, history, setQueryArgument, StatusBox } from '@kubevirt-internal';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ActionGroup,

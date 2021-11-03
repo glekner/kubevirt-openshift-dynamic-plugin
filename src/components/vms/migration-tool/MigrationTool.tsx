@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Button } from '@patternfly/react-core';
 
 import useMigrationTool from '../../../hooks/use-migration-tool';

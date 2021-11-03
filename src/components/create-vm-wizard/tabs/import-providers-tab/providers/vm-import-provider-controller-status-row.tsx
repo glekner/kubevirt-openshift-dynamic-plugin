@@ -5,8 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { resourcePath } from '@console/internal/components/utils';
-import StatusIconAndText from '@console/shared/src/components/status/StatusIconAndText';
+import { resourcePath, StatusIconAndText } from '@kubevirt-internal';
 import { DeploymentModel, PodModel } from '@kubevirt-models';
 import { K8sResourceKind, PodKind } from '@kubevirt-types';
 import { Alert, AlertVariant } from '@patternfly/react-core';
@@ -95,7 +94,7 @@ const DeploymentFailed: React.FC<DeploymentFailedProps> = ({
   pod,
   message,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   let podMessage;
   if (pod) {
     const podName = getName(deployment);

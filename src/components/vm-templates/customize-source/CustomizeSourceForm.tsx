@@ -4,12 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
 import { dropdownUnits } from '@console/internal/components/storage/shared';
-import {
-  convertToBaseValue,
-  history,
-  RequestSizeInput,
-  StatusBox,
-} from '@console/internal/components/utils';
+import { convertToBaseValue, history, RequestSizeInput, StatusBox } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

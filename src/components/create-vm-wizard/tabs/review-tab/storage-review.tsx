@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { Firehose, FirehoseResult, resourcePath } from '@console/internal/components/utils';
+import { Firehose, FirehoseResult, resourcePath } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
 import { Alert, AlertVariant, Stack, StackItem } from '@patternfly/react-core';

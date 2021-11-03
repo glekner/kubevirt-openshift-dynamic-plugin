@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { FieldLevelHelp, LoadingInline } from '@console/internal/components/utils';
+import { FieldLevelHelp, LoadingInline } from '@kubevirt-internal';
 import { ExpandableSection, FormGroup } from '@patternfly/react-core';
 
 import { ValidationErrorType, ValidationObject } from '../../selectors';

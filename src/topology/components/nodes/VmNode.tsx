@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import * as React from 'react';
 
-import { useAccessReview } from '@console/internal/components/utils';
 import { modelFor, referenceFor } from '@console/internal/module/k8s';
 import {
   NODE_SHADOW_FILTER_ID,
@@ -18,6 +17,7 @@ import {
 } from '@console/topology/src/filters';
 import { TopologyDataObject } from '@console/topology/src/topology-types';
 import { getResource } from '@console/topology/src/utils';
+import { useAccessReview } from '@kubevirt-internal';
 import { Tooltip } from '@patternfly/react-core';
 import { VirtualMachineIcon } from '@patternfly/react-icons';
 import {

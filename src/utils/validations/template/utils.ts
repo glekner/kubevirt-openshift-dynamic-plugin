@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { humanizeBinaryBytes } from '@console/internal/components/utils';
+import { humanizeBinaryBytes } from '@kubevirt-internal';
 
 import { asValidationObject, ValidationErrorType } from '../../../selectors';
 import { intervalBracket, joinGrammaticallyListOfItems } from '../..';

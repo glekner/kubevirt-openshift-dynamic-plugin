@@ -8,7 +8,7 @@ import {
   ModalComponentProps,
   ModalTitle,
 } from '@console/internal/components/factory';
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Alert } from '@patternfly/react-core';
 
 import {

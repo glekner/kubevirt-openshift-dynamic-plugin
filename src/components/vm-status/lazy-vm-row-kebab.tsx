@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Kebab, KebabOption } from '@console/internal/components/utils';
+import { Kebab, KebabOption } from '@kubevirt-internal';
 
 import { useDeepCompareMemoize } from '../../hooks/use-deep-compare-memoize';
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../models';

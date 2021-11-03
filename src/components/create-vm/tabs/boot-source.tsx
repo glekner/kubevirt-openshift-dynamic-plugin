@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { useAccessReview2 } from '@console/internal/components/utils';
+import { useAccessReview2 } from '@kubevirt-internal';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
@@ -23,7 +23,7 @@ type BootSourceProps = {
 };
 
 export const BootSource: React.FC<BootSourceProps> = ({ template, state, dispatch }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const name = getTemplateName(template?.variants[0]);
   const baseImageName = getParameterValue(
     template?.variants[0],

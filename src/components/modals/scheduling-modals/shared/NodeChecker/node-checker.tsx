@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {
-  ExternalLink,
-  pluralize,
-  ResourceLink,
-  resourcePath,
-} from '@console/internal/components/utils';
 import { Status } from '@console/shared';
+import { ExternalLink, pluralize, ResourceLink, resourcePath } from '@kubevirt-internal';
 import { NodeKind } from '@kubevirt-types';
 import {
   Alert,

@@ -1,4 +1,4 @@
-import { makeQuery, makeReduxID } from '@console/internal/components/utils';
+import { makeQuery, makeReduxID } from '@kubevirt-internal';
 
 import { FirehoseResourceEnhanced } from '../../types/custom';
 

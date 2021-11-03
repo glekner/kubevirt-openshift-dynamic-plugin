@@ -2,12 +2,12 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 
-import { ResourceLink, resourcePath } from '@console/internal/components/utils';
 import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import {
   RedExclamationCircleIcon,
   YellowExclamationTriangleIcon,
 } from '@console/shared/src/components/status/icons';
+import { ResourceLink, resourcePath } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
 import {

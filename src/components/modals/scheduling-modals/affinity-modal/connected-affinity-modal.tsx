@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose } from '@console/internal/components/utils';
+import { Firehose } from '@kubevirt-internal';
 import { NodeModel } from '@kubevirt-models';
 
 import { getName, getNamespace } from '../../../../selectors';

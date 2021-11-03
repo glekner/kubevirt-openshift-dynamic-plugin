@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { Kebab } from '@console/internal/components/utils';
+import { Kebab } from '@kubevirt-internal';
 
 export const tableColumnClasses = (showNamespace: boolean) => [
   classNames('pf-c-table__action', Kebab.columnClass),

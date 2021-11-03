@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { asAccessReview, Kebab, KebabOption } from '@console/internal/components/utils';
+import { asAccessReview, Kebab, KebabOption } from '@kubevirt-internal';
 import { K8sKind, TemplateKind } from '@kubevirt-types';
 import { Stack, StackItem } from '@patternfly/react-core';
 

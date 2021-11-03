@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 
 import { SUPPORT_URL } from '../../constants/vm-templates';
 import { isUpstream } from '../../utils/common';

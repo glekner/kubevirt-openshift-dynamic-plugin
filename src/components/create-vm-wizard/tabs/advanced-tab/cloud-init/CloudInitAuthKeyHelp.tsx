@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ExternalLink } from '@console/internal/components/utils';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 
 const CloudInitAuthKeyHelp: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
 
   return (
     <div className="pf-c-form__helper-text" aria-live="polite">

@@ -1,4 +1,4 @@
-import { humanizeBinaryBytes } from '@console/internal/components/utils';
+import { humanizeBinaryBytes } from '@kubevirt-internal';
 
 import { convertToBytes } from '../../components/form/size-unit-utils';
 import { CUSTOM_FLAVOR } from '../../constants';

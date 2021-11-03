@@ -1,6 +1,5 @@
-import { referenceForExtensionModel, referenceForModel } from '@console/internal/module/k8s';
 import { HorizontalPodAutoscalerModel } from '@kubevirt-models';
-import { modelForGroupKind } from '@kubevirt-utils';
+import { modelForGroupKind, referenceForExtensionModel, referenceForModel } from '@kubevirt-utils';
 import {
   TopologyDataModelFactory as DynamicTopologyDataModelFactory,
   WatchK8sResources,

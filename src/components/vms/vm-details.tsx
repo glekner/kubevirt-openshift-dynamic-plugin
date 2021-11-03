@@ -10,7 +10,7 @@ import {
   SectionHeading,
   StatusBox,
   useAccessReview,
-} from '@console/internal/components/utils';
+} from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sKind, PodKind } from '@kubevirt-types';
 import { Alert } from '@patternfly/react-core';

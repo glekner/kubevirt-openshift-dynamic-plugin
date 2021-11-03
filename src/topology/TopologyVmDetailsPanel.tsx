@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { asAccessReview, useAccessReview } from '@console/internal/components/utils';
+import { asAccessReview, useAccessReview } from '@kubevirt-internal';
 import { PodKind } from '@kubevirt-types';
 import { Grid, GridItem } from '@patternfly/react-core';
 import { observer } from '@patternfly/react-topology';

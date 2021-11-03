@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as _ from 'lodash';
 
-import { Kebab } from '@console/internal/components/utils';
+import { Kebab } from '@kubevirt-internal';
 import { NodeKind } from '@kubevirt-types';
 
 import { getName } from '../../../../selectors';

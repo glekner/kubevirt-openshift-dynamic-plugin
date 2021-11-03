@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Firehose } from '@console/internal/components/utils';
-import { ResourceDropdown } from '@console/shared';
+import { Firehose, ResourceDropdown } from '@kubevirt-internal';
 import {
   isTopologyDataModelFactory as isDynamicTopologyDataModelFactory,
   isTopologyDataModelFactory,
