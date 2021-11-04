@@ -2,17 +2,16 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { FieldLevelHelp, MultiListPage, Table, useSafetyFirst } from '@kubevirt-internal';
+import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import {
   Flatten,
-  MultiListPage,
+  K8sResourceKind,
+  PersistentVolumeClaimKind,
   RowFunctionArgs,
-  Table,
-} from '@console/internal/components/factory';
-import { useSafetyFirst } from '@console/internal/components/safety-first';
-import { FieldLevelHelp, FirehoseResult } from '@kubevirt-internal';
-import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
-import { K8sResourceKind, PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+  TemplateKind,
+} from '@kubevirt-types';
+import { FirehoseResult, useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { sortable } from '@patternfly/react-table';
 
 import { CombinedDiskFactory } from '../../k8s/wrapper/vm/combined-disk';

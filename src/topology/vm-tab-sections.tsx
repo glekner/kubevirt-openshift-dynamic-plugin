@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getResource } from '@console/topology/src/utils';
-import { ResourceIcon, resourcePathFromModel } from '@kubevirt-internal';
+import { getTopologyResource, ResourceIcon, resourcePathFromModel } from '@kubevirt-internal';
 import {
   AdapterDataType,
   K8sResourceCommon,
@@ -36,20 +35,20 @@ export const getVmSidePanelPodsAdapter = (
   element: GraphElement,
 ): AdapterDataType<PodsAdapterDataType> => {
   if (element.getType() !== TYPE_VIRTUAL_MACHINE) return undefined;
-  const resource = getResource(element);
+  const resource = getTopologyResource(element);
   return { resource, provider: usePodsAdapterForVm };
 };
 
 export const getVmSidePanelNetworkAdapter = (element: GraphElement): NetworkAdapterType => {
   if (element.getType() !== TYPE_VIRTUAL_MACHINE) return undefined;
-  const resource = getResource(element);
+  const resource = getTopologyResource(element);
   return { resource };
 };
 
 export const getVmSideBarResourceLink = (element: GraphElement) => {
   if (element.getType() !== TYPE_VIRTUAL_MACHINE) return undefined;
   const name = element.getLabel();
-  const resource = getResource(element);
+  const resource = getTopologyResource(element);
   return (
     <>
       <ResourceIcon className="co-m-resource-icon--lg" kind={resource.kind} />

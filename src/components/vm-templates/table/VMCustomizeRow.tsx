@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router';
 
-import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { PendingStatus } from '@console/shared';
-import { SuccessStatus } from '@console/shared/src/components/status/statuses';
-import { FirehoseResult, history, Kebab, LoadingInline, ResourceLink } from '@kubevirt-internal';
+import { Kebab, LoadingInline, PendingStatus, SuccessStatus, TableData } from '@kubevirt-internal';
 import { NamespaceModel } from '@kubevirt-models';
-import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { PersistentVolumeClaimKind, PodKind, RowFunctionArgs, TemplateKind } from '@kubevirt-types';
+import { FirehoseResult, ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { Button, Level, LevelItem, Stack, StackItem } from '@patternfly/react-core';
 import { StarIcon } from '@patternfly/react-icons';
 
@@ -41,6 +40,7 @@ const VMCustomizeStatus: React.FC<VMCustomizeStatusProps> = ({
   dataVolumes,
   pods,
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   if (!vmis.loaded) {
     return <LoadingInline />;

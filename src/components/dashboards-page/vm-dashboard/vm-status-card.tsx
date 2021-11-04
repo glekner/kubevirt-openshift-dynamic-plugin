@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DashboardItemProps } from '@console/internal/components/dashboard/with-dashboard-resources';
-import DashboardCard from '@console/shared/src/components/dashboard/dashboard-card/DashboardCard';
-import DashboardCardBody from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardBody';
-import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
-import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardTitle';
-import HealthBody from '@console/shared/src/components/dashboard/status-card/HealthBody';
+import { DashboardItemProps } from '@kubevirt-types';
+import {
+  DashboardCard,
+  DashboardCardBody,
+  DashboardCardHeader,
+  DashboardCardTitle,
+  HealthBody,
+} from '@openshift-console/dynamic-plugin-sdk-internal';
 import { Gallery } from '@patternfly/react-core';
 
 import { VMStatus as VMStatusEnum } from '../../../constants/vm/vm-status';

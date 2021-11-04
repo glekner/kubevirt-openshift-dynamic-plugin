@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ErrorStatus, ProgressStatus } from '@console/shared';
+import { ErrorStatus, ProgressStatus } from '@kubevirt-internal';
 import { PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
 import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';

@@ -1,5 +1,5 @@
-import { FirehoseResult } from '@kubevirt-internal';
 import { DeploymentKind, K8sResourceKind, PodKind, PodPhase } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 export enum AllPodStatus {
   Running = 'Running',

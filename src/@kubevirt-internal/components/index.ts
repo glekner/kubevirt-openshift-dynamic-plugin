@@ -1,5 +1,6 @@
 // console components
 export * from './AsyncComponent/async';
+export * from './details-item';
 export * from './field-level-help';
 export * from './headings';
 export * from './hint-block';
@@ -14,15 +15,20 @@ export * from './StatusBox/status-box';
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
 */
 export {
+  ActivityItem,
+  ActivityProgress,
   BlueInfoCircleIcon,
   CommonActionFactory,
   Conditions,
   confirmModal,
+  createModal,
   createModalLauncher,
   createProjectModal,
+  Dashboard,
   DashboardCardLink,
   DetailsPage,
   Dropdown,
+  DroppableEditYAML,
   EnvFromEditor,
   ErrorPage404,
   ErrorStatus,
@@ -31,6 +37,7 @@ export {
   FLAGS,
   GenericStatus,
   getImageForIconClass,
+  GreenCheckCircleIcon,
   InventoryItem,
   Kebab,
   LabelList,
@@ -43,6 +50,9 @@ export {
   NodeLink,
   PendingStatus,
   ProgressStatus,
+  PrometheusMultilineUtilizationItem,
+  PrometheusUtilizationItem,
+  RecentEventsBodyContent,
   RedExclamationCircleIcon,
   RequestSizeInput,
   ResourceDropdown,
@@ -54,6 +64,7 @@ export {
   ResourceSummary,
   Selector,
   ServicesList,
+  Status,
   StatusBox,
   StatusIconAndText,
   StorageClassDropdown,
@@ -67,10 +78,11 @@ export {
   useK8sGet,
   useMultipleAccessReviews,
   VirtualizedGrid,
+  WarningStatus,
+  withDashboardResources,
   withStartGuide,
+  YAMLEditor,
   YellowExclamationTriangleIcon,
-  ActivityItem,
-  ActivityProgress,
 } from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';
 
 /*

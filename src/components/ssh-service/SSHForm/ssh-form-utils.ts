@@ -1,4 +1,4 @@
-import { k8sCreate, k8sKill } from '@console/internal/module/k8s';
+import { k8sCreate, k8sKill } from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 
 import {

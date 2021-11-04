@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { apiVersionForModel } from '@console/internal/module/k8s';
+import { apiVersionForModel } from '@kubevirt-internal';
 import { DeploymentConfigModel, ReplicationControllerModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceCommon, K8sResourceKind, PodKind } from '@kubevirt-types';
 
@@ -54,7 +54,7 @@ export const getOwnedResources = <T extends K8sResourceKind>(
 };
 
 const getDeploymentPhase = (rc: K8sResourceKind): DEPLOYMENT_PHASE =>
-  _.get(rc, ['metadata', 'annotations', DEPLOYMENT_PHASE_ANNOTATION]);
+  _.get(rc, ['metadata', 'annotations', DEPLOYMENT_PHASE_ANNOTATION]) as DEPLOYMENT_PHASE;
 
 export const getOwnerNameByKind = (obj: K8sResourceCommon, kind: K8sKind): string => {
   return obj?.metadata?.ownerReferences?.find(

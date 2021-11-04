@@ -2,12 +2,13 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
+  BlueInfoCircleIcon,
   createModalLauncher,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { BlueInfoCircleIcon, RedExclamationCircleIcon } from '@console/shared';
+  RedExclamationCircleIcon,
+} from '@kubevirt-internal';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 import { TemplateSourceStatusError } from '../../../statuses/template/types';

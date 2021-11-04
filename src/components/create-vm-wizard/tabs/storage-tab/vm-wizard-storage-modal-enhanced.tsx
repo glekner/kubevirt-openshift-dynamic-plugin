@@ -9,6 +9,7 @@ import {
   StorageClassModel,
 } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { DUMMY_VM_NAME } from '../../../../constants/vm';
 import { DataVolumeWrapper } from '../../../../k8s/wrapper/vm/data-volume-wrapper';
@@ -31,7 +32,6 @@ import {
   VMWizardStorage,
   VMWizardStorageType,
 } from '../../types';
-import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 const VMWizardStorageModal: React.FC<VMWizardStorageModalProps> = (props) => {
   const {

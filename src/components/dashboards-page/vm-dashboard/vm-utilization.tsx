@@ -2,16 +2,19 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
+  humanizeBinaryBytes,
+  humanizeCpuCores as humanizeCpuCoresUtil,
   PrometheusMultilineUtilizationItem,
   PrometheusUtilizationItem,
-} from '@console/internal/components/dashboard/dashboards-page/cluster-dashboard/utilization-card';
-import DashboardCard from '@console/shared/src/components/dashboard/dashboard-card/DashboardCard';
-import DashboardCardHeader from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardHeader';
-import DashboardCardTitle from '@console/shared/src/components/dashboard/dashboard-card/DashboardCardTitle';
-import UtilizationBody from '@console/shared/src/components/dashboard/utilization-card/UtilizationBody';
-import { UtilizationDurationDropdown } from '@console/shared/src/components/dashboard/utilization-card/UtilizationDurationDropdown';
-import { ByteDataTypes } from '@console/shared/src/graph-helper/data-utils';
-import { humanizeBinaryBytes, humanizeCpuCores as humanizeCpuCoresUtil } from '@kubevirt-internal';
+} from '@kubevirt-internal';
+import {
+  DashboardCard,
+  DashboardCardHeader,
+  DashboardCardTitle,
+  UtilizationBody,
+  UtilizationDurationDropdown,
+} from '@openshift-console/dynamic-plugin-sdk-internal';
+import { ByteDataTypes } from '@openshift-console/dynamic-plugin-sdk-internal/lib/api/internal-types';
 
 import { getCreationTimestamp, getName, getNamespace } from '../../../selectors';
 import { findVMIPod } from '../../../selectors/pod/selectors';

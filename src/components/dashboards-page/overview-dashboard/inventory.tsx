@@ -1,6 +1,7 @@
 import * as _ from 'lodash';
 import * as React from 'react';
 
+import { InventoryStatusGroup } from '@kubevirt-internal';
 import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { OffIcon } from '@patternfly/react-icons';
 
@@ -17,7 +18,6 @@ import { VMImportKind } from '../../../types/vm-import/ovirt/vm-import';
 import { createBasicLookup, getBasicID } from '../../../utils';
 
 import './inventory.scss';
-import { InventoryStatusGroup } from '@kubevirt-internal';
 
 export const getVMStatusGroups = (
   vms,

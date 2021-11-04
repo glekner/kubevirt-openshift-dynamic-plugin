@@ -1,23 +1,21 @@
 import classNames from 'classnames';
 import * as React from 'react';
 
-import { modelFor, referenceFor } from '@console/internal/module/k8s';
 import {
+  getFilterById,
+  getTopologyResource,
+  modelFor,
   NODE_SHADOW_FILTER_ID,
   NODE_SHADOW_FILTER_ID_HOVER,
   NodeShadows,
-} from '@console/topology/src/components/graph-view';
-import SvgBoxedText from '@console/topology/src/components/svg/SvgBoxedText';
-import {
-  getFilterById,
+  referenceFor,
   SHOW_LABELS_FILTER_ID,
   useAllowEdgeCreation,
   useDisplayFilters,
   useSearchFilter,
-} from '@console/topology/src/filters';
-import { TopologyDataObject } from '@console/topology/src/topology-types';
-import { getResource } from '@console/topology/src/utils';
+} from '@kubevirt-internal';
 import { useAccessReview } from '@kubevirt-internal';
+import { TopologyDataObject } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import { Tooltip } from '@patternfly/react-core';
 import { VirtualMachineIcon } from '@patternfly/react-icons';
 import {
@@ -38,6 +36,7 @@ import {
 
 import { VMStatus } from '../../../constants/vm/vm-status';
 import { VMNodeData } from '../../types';
+import { SvgBoxedText } from '../svg';
 
 import './VmNode.scss';
 
@@ -89,7 +88,7 @@ const ObservedVmNode: React.FC<VmNodeProps> = ({
   const showLabelsFilter = getFilterById(SHOW_LABELS_FILTER_ID, displayFilters);
   const showLabels = showLabelsFilter?.value || hover;
   const tipContent = `Create a visual connector`;
-  const resourceObj = getResource(element);
+  const resourceObj = getTopologyResource(element);
   const resourceModel = modelFor(referenceFor(resourceObj));
   const editAccess = useAccessReview({
     group: resourceModel.apiGroup,

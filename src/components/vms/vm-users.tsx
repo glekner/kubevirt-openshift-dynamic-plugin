@@ -3,9 +3,7 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RowFunctionArgs, Table, TableData } from '@console/internal/components/factory';
-import { fromNow } from '@console/internal/components/utils/datetime';
-import { Timestamp } from '@console/internal/components/utils/timestamp';
+import { fromNow, RowFunctionArgs, Table, TableData, Timestamp } from '@kubevirt-internal';
 import { sortable } from '@patternfly/react-table';
 
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';

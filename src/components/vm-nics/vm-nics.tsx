@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RowFunctionArgs, Table } from '@console/internal/components/factory';
-import { useSafetyFirst } from '@console/internal/components/safety-first';
+import { RowFunctionArgs, Table, useSafetyFirst } from '@kubevirt-internal';
 import { Button, ButtonVariant } from '@patternfly/react-core';
 import { sortable } from '@patternfly/react-table';
 

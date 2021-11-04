@@ -2,14 +2,15 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 
-import GenericStatus from '@console/shared/src/components/status/GenericStatus';
 import {
+  GenericStatus,
   RedExclamationCircleIcon,
+  resourcePath,
   YellowExclamationTriangleIcon,
-} from '@console/shared/src/components/status/icons';
-import { ResourceLink, resourcePath } from '@kubevirt-internal';
+} from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { PodKind } from '@kubevirt-types';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Button,
   ButtonVariant,

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { getName, getNamespace } from '@console/shared';
 import { K8sResourceCommon } from '@kubevirt-types';
 import { Stack, StackItem } from '@patternfly/react-core';
+
+import { getName, getNamespace } from '../../selectors';
 
 export const ActionMessage: React.FC<{
   obj: K8sResourceCommon;

@@ -4,11 +4,10 @@ import * as _ from 'lodash';
 import { toPath } from 'lodash';
 import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generator';
 
-import { FirehoseResult } from '@kubevirt-internal';
 import { NamespaceModel, ProjectModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types';
 import { pluralize } from '@kubevirt-utils';
-import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+import { FirehoseResult, MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
 
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {
@@ -67,7 +66,7 @@ export const resolveDataVolumeName = ({
 export const isLoaded = (result: FirehoseResult<K8sResourceKind | K8sResourceKind[]>) =>
   result && result.loaded;
 
-export const getLoadedData = <T extends K8sResourceKind | K8sResourceKind[] = K8sResourceKind[]>(
+export const getLoadedData = <T extends K8sResourceKind | K8sResourceKind[] = K8sResourceKind>(
   result: FirehoseResult<T>,
   defaultValue = null,
 ): T => (result && result.loaded && !result.loadError ? result.data : defaultValue);

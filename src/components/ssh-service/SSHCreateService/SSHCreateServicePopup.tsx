@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { ResourceIcon } from '@console/internal/components/utils/resource-icon';
+import { ResourceIcon } from '@kubevirt-internal';
 import { Popover, PopoverPosition } from '@patternfly/react-core';
 import { HelpIcon } from '@patternfly/react-icons';
 

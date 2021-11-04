@@ -1,19 +1,21 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { referenceForModel } from '@console/internal/module/k8s';
 import {
   ErrorStatus,
   GreenCheckCircleIcon,
+  LoadingInline,
   RedExclamationCircleIcon,
+  referenceForModel,
   SuccessStatus,
   WarningStatus,
   YellowExclamationTriangleIcon,
-} from '@console/shared';
-import { ExternalLink, LoadingInline, ResourceLink } from '@kubevirt-internal';
+} from '@kubevirt-internal';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   Button,

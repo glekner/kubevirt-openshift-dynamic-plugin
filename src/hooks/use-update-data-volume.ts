@@ -2,7 +2,7 @@ import * as React from 'react';
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch, useSelector } from 'react-redux';
 
-import { PersistentVolumeClaimModel } from '@console/internal/models/index';
+import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 

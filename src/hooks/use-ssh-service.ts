@@ -2,7 +2,7 @@ import * as React from 'react';
 // @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import { useDispatch } from 'react-redux';
 
-import { useActiveNamespace } from '@console/shared';
+import { useActiveNamespace } from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

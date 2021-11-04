@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useK8sGet } from '@console/internal/components/utils/k8s-get-hook';
+import { useK8sGet } from '@kubevirt-internal';
 import { RouteModel } from '@kubevirt-models';
 import { ListKind, RouteKind } from '@kubevirt-types';
 

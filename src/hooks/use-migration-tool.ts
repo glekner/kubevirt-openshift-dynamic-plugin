@@ -1,8 +1,7 @@
 import { isEmpty } from 'lodash';
 import * as React from 'react';
 
-import { apiVersionForModel } from '@console/internal/module/k8s/k8s';
-import { k8sCreate } from '@kubevirt-internal/utils';
+import { apiVersionForModel, k8sCreate } from '@kubevirt-internal/utils';
 import { RouteModel } from '@kubevirt-models';
 import { RouteKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

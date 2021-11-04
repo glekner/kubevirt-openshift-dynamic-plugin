@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
 import {
   asAccessReview,
   Kebab,
   KebabOption,
   LoadingInline,
-  ResourceLink,
+  RowFunctionArgs,
+  TableData,
 } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 
 import { CombinedDisk } from '../../k8s/wrapper/vm/combined-disk';
 import { VirtualMachineModel } from '../../models';

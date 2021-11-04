@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router';
 
-import GenericStatus from '@console/shared/src/components/status/GenericStatus';
+import { GenericStatus } from '@kubevirt-internal';
 import { Button, ButtonVariant, Skeleton } from '@patternfly/react-core';
 
 import {
@@ -43,6 +44,7 @@ export const LazyVMStatus: React.FC<LazyVMStatusProps> = ({
   vmStatusResources,
   printableStatus,
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const vmiLike = vm || vmi;
   const { pods, migrations, pvcs, dvs, loaded } = vmStatusResources;
@@ -70,7 +72,7 @@ export const LazyVMStatus: React.FC<LazyVMStatusProps> = ({
   const message = vmStatus?.message || vmStatus?.detailedMessage;
   const detailedMessage = vmStatus?.message ? vmStatus?.detailedMessage : null;
   const title = t(status?.getLabelKey()) || status?.toString(t(getStatusSuffixLabelKey(vmStatus)));
-  const arePendingChanges = hasPendingChanges(vm, vmi);
+  const arePendingChanges = hasPendingChanges(history, vm, vmi);
   const popoverTitle = arePendingChanges ? 'Pending Changes' : null;
 
   const isPaused = status === VMStatusEnum.PAUSED;

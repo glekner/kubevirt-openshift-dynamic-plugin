@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RowFunctionArgs, Table } from '@console/internal/components/factory';
-import { useSafetyFirst } from '@console/internal/components/safety-first';
+import { RowFunctionArgs, Table, useSafetyFirst } from '@kubevirt-internal';
 import { WatchK8sResource } from '@openshift-console/dynamic-plugin-sdk';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { Button } from '@patternfly/react-core';

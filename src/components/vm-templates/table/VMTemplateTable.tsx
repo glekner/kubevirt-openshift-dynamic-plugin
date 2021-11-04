@@ -2,9 +2,9 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RowFunctionArgs, Table } from '@console/internal/components/factory';
-import { FirehoseResult } from '@kubevirt-internal';
+import { RowFunctionArgs, Table } from '@kubevirt-internal';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { Bullseye, Stack, StackItem, Tooltip, TooltipPosition } from '@patternfly/react-core';
 import { StarIcon } from '@patternfly/react-icons';
 import { info, sortable } from '@patternfly/react-table';

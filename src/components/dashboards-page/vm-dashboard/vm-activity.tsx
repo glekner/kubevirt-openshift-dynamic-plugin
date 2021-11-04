@@ -1,9 +1,23 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DashboardCardLink, resourcePath } from '@kubevirt-internal';
+import {
+  DashboardCardLink,
+  RecentEventsBodyContent,
+  resourcePath,
+  withDashboardResources,
+} from '@kubevirt-internal';
+import { PauseButton } from '@kubevirt-internal/components/pause-button';
 import { EventModel } from '@kubevirt-models';
 import { DashboardItemProps, EventKind } from '@kubevirt-types';
+import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
+import {
+  ActivityBody,
+  DashboardCard,
+  DashboardCardBody,
+  DashboardCardHeader,
+  DashboardCardTitle,
+} from '@openshift-console/dynamic-plugin-sdk-internal';
 import { CardActions } from '@patternfly/react-core';
 
 import { VirtualMachineInstanceModel, VirtualMachineModel } from '../../../models';
@@ -14,15 +28,6 @@ import { VMILikeEntityKind } from '../../../types/vmLike';
 import { VMDashboardContext } from '../../vms/vm-dashboard-context';
 
 import './vm-activity.scss';
-import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
-import {
-  ActivityBody,
-  DashboardCard,
-  DashboardCardBody,
-  DashboardCardHeader,
-  DashboardCardTitle,
-} from '@openshift-console/dynamic-plugin-sdk-internal';
-import { PauseButton } from '@kubevirt-internal/components/pause-button';
 
 const combinedVmFilter =
   (vm: VMILikeEntityKind): EventFilterFuncion =>

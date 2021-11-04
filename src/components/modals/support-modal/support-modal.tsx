@@ -2,12 +2,12 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
+  BlueInfoCircleIcon,
   createModalLauncher,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { BlueInfoCircleIcon } from '@console/shared';
+} from '@kubevirt-internal';
 import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Checkbox, Label, Stack, StackItem } from '@patternfly/react-core';
 

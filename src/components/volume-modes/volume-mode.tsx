@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { RadioInput } from '@console/internal/components/radio';
 import {
+  FieldLevelHelp,
   getVolumeModeForProvisioner,
   getVolumeModeRadios,
   initialVolumeModes,
-} from '@console/internal/components/storage/shared';
-import { FieldLevelHelp } from '@kubevirt-internal';
+  RadioInput,
+} from '@kubevirt-internal';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { FormGroup } from '@patternfly/react-core';
 
@@ -23,7 +23,7 @@ export const VolumeModeSelector: React.FC<VolumeModeSelectorProps> = (props) => 
     loaded,
   } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('console-app');
   const pvcInitialVolumeMode: string = pvcResource
     ? pvcResource?.spec?.volumeMode
     : availableVolumeMode ?? initialVolumeModes[0];

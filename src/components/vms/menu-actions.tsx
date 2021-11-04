@@ -4,9 +4,13 @@ import i18next from 'i18next';
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { confirmModal } from '@console/internal/components/modals';
-import { YellowExclamationTriangleIcon } from '@console/shared';
-import { asAccessReview, Kebab, KebabOption } from '@kubevirt-internal';
+import {
+  asAccessReview,
+  confirmModal,
+  Kebab,
+  KebabOption,
+  YellowExclamationTriangleIcon,
+} from '@kubevirt-internal';
 import { K8sKind, K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
 import { Action } from '@openshift-console/dynamic-plugin-sdk';
 import { StackItem, Tooltip } from '@patternfly/react-core';

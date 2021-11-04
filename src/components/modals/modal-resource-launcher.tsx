@@ -1,21 +1,19 @@
 import * as _ from 'lodash';
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { Router, useHistory } from 'react-router-dom';
 
-import { createModal, GetModalContainer } from '@console/internal/components/factory';
-import { ModalErrorContent } from '@console/internal/components/modals/error-modal';
-import store from '@console/internal/redux';
-import { RedExclamationCircleIcon } from '@console/shared';
 import {
   AccessDenied,
   Box,
+  createModal,
   Firehose,
-  FirehoseResource,
-  FirehoseResult,
-  history,
+  GetModalContainer,
+  ModalErrorContent,
   MsgBox,
+  RedExclamationCircleIcon,
 } from '@kubevirt-internal';
+import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 const NotFound: React.FC<NotFoundProps> = ({ message }) => (
   <Box className="pf-u-text-align-center">
@@ -68,8 +66,10 @@ const ModalComponentWrapper: React.FC<ModalComponentWrapperProps> = ({
 
 export const createModalResourceLauncher: CreateModalResourceLauncher =
   (Component, resources, resourcesToProps) => (props) => {
+    const history = useHistory();
     const getModalContainer: GetModalContainer = (onClose) => (
-      <Provider store={store}>
+      // <Provider store={InternalReduxStore}>
+      <Provider>
         <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
           <Firehose resources={resources}>
             <ModalComponentWrapper

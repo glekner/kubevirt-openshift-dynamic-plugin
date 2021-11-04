@@ -13,7 +13,7 @@
     "sourceMap": true,
     "noUnusedLocals": true,
     "typeRoots": ["node_modules/@types", "@types"],
-    "types": ["node", "console"],
+    "types": ["node", "jest", "console"],
     "paths": {
       "@kubevirt-types": ["src/@kubevirt-internal/types"],
       "@kubevirt-types/*": ["src/types/*", "src/@kubevirt-internal/types/*"],

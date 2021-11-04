@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import HealthItem from '@console/shared/src/components/dashboard/status-card/HealthItem';
-import { HealthState } from '@console/shared/src/components/dashboard/status-card/states';
+import { HealthState } from '@openshift-console/dynamic-plugin-sdk';
+import { HealthItem } from '@openshift-console/dynamic-plugin-sdk-internal';
 import { OffIcon } from '@patternfly/react-icons';
 
 import { VMIKind } from '../../../../types';

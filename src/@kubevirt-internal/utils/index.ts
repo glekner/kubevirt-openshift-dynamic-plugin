@@ -22,12 +22,17 @@ export {
   referenceFor,
   referenceForExtensionModel,
   referenceForModel,
+  resourcePathFromModel,
 } from '@openshift-console/dynamic-plugin-sdk';
 export {
   connectToFlags,
+  connectToPlural,
+  createConnectorCallback,
   fetchSwagger,
   getActiveNamespace,
+  getPropertyDescription,
   getSwaggerDefinitions,
+  modelFor,
   modelForGroupKind,
   openAPItoJSONSchema,
   useActiveNamespace,

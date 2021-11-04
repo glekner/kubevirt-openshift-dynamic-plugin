@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 import * as React from 'react';
 
-import { FirehoseResult } from '@kubevirt-internal';
 import { NodeKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { getLabels, getNodeTaints } from '../../../../selectors';
 import { getLoadedData, isLoaded } from '../../../../utils';

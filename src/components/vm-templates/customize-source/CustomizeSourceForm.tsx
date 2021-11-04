@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, useHistory } from 'react-router';
 
-import { dropdownUnits } from '@console/internal/components/storage/shared';
-import { convertToBaseValue, history, RequestSizeInput, StatusBox } from '@kubevirt-internal';
+import { convertToBaseValue, dropdownUnits, RequestSizeInput, StatusBox } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
@@ -63,6 +62,7 @@ import { FORM_ACTION_TYPE, formReducer, initFormState } from './customize-source
 import './customize-source.scss';
 
 const CustomizeSourceForm: React.FC<RouteComponentProps> = ({ location }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const urlParams = new URLSearchParams(location.search);
   const templateName = urlParams.get('template');

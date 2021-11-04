@@ -1,8 +1,8 @@
-import { alignWithDNS1123 } from '@console/shared/src';
-
 /**
  * Based on V2V Provider Pod manifest.yaml
  */
+
+import { alignWithDNS1123 } from '@kubevirt-internal/utils';
 
 const MAX_LEN = 30;
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { FirehoseResult } from '@kubevirt-internal';
 import { K8sKind } from '@kubevirt-types';
 import { K8sResourceKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 import { getName, ValidationErrorType, ValidationObject } from '../../selectors';

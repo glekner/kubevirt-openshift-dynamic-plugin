@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { Kebab, KebabOption, pluralize } from '@kubevirt-internal';
+import { Kebab, KebabOption, pluralize, RowFunctionArgs, TableData } from '@kubevirt-internal';
 
 import { isVMI } from '../../../../../../selectors/check-type';
 import { VMLikeEntityKind } from '../../../../../../types/vmLike';

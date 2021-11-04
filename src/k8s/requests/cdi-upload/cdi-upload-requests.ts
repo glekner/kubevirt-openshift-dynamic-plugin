@@ -1,4 +1,4 @@
-import { k8sCreate, k8sGet, k8sKill } from '@console/internal/module/k8s';
+import { k8sCreate, k8sGet, k8sKill } from '@kubevirt-internal';
 import { K8sResourceKind } from '@kubevirt-types';
 
 import { CDI_BIND_REQUESTED_ANNOTATION } from '../../../components/cdi-upload-provider/consts';

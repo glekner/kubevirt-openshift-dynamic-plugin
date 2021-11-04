@@ -2,13 +2,17 @@ import { safeLoad } from 'js-yaml';
 import * as React from 'react';
 
 /* eslint-disable lines-between-class-members */
-import { CreateYAMLProps } from '@console/internal/components/create-yaml';
-import { ErrorPage404 } from '@console/internal/components/error';
-import { connectToPlural } from '@console/internal/kinds';
-import { AsyncComponent, LoadingBox, resourcePathFromModel } from '@kubevirt-internal';
+import {
+  AsyncComponent,
+  connectToPlural,
+  DroppableEditYAML,
+  ErrorPage404,
+  LoadingBox,
+  resourcePathFromModel,
+} from '@kubevirt-internal';
 import { k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
-import { K8sResourceKind, TemplateKind } from '@kubevirt-types';
+import { CreateYAMLProps, K8sResourceKind, TemplateKind } from '@kubevirt-types';
 
 import {
   TEMPLATE_FLAVOR_LABEL,
@@ -77,8 +81,6 @@ const CreateVMTemplateYAMLConnected = connectToPlural(
         getName(o),
         getNamespace(o),
       );
-    const DroppableEditYAML = () =>
-      import('@console/internal/components/droppable-edit-yaml').then((c) => c.DroppableEditYAML);
 
     return (
       <AsyncComponent

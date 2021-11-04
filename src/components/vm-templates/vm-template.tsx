@@ -3,9 +3,9 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { match } from 'react-router';
 
-import { Flatten, ListPage, MultiListPage } from '@console/internal/components/factory';
+import { ListPage, MultiListPage } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
-import { TemplateKind } from '@kubevirt-types';
+import { Flatten, TemplateKind } from '@kubevirt-types';
 import { RowFilter } from '@openshift-console/dynamic-plugin-sdk';
 
 import { CDI_APP_LABEL } from '../../constants';

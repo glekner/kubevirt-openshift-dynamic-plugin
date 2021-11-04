@@ -8,6 +8,7 @@ import {
   referenceForModel,
 } from '@kubevirt-internal';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { NetworkInterfaceWrapper } from '../../../../k8s/wrapper/vm/network-interface-wrapper';
 import { NetworkWrapper } from '../../../../k8s/wrapper/vm/network-wrapper';
@@ -17,7 +18,6 @@ import { ActionType } from '../../redux/types';
 import { iGetCommonData } from '../../selectors/immutable/selectors';
 import { getNetworks } from '../../selectors/selectors';
 import { VMWizardNetwork, VMWizardNetworkType, VMWizardProps } from '../../types';
-import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 const VMWizardNICModal: React.FC<VMWizardNICModalProps> = (props) => {
   const {

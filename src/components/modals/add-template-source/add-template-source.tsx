@@ -2,19 +2,19 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { coFetch } from '@console/internal/co-fetch';
 import {
   createModalLauncher,
+  LoadingBox,
   ModalBody,
   ModalComponentProps,
   ModalFooter,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { LoadingBox, useAccessReview2 } from '@kubevirt-internal';
+  useAccessReview2,
+} from '@kubevirt-internal';
 import { k8sCreate } from '@kubevirt-internal/utils';
 import { StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind, TemplateKind } from '@kubevirt-types';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { consoleFetchJSON, useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import { ActionGroup, Alert, Button, Stack, StackItem } from '@patternfly/react-core';
 
 import {
@@ -82,7 +82,7 @@ type AddTemplateSourceModalProps = CDIUploadContextProps & {
 
 export const AddTemplateSourceModal: React.FC<ModalComponentProps & AddTemplateSourceModalProps> =
   ({ cancel, uploadData, close, template, uploads, uploadProxyURL }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('kubevirt-plugin');
     const baseImageName = getParameterValue(template, TEMPLATE_BASE_IMAGE_NAME_PARAMETER);
     const baseImageNamespace = getParameterValue(template, TEMPLATE_BASE_IMAGE_NAMESPACE_PARAMETER);
     const upload = uploads.find(
@@ -150,7 +150,7 @@ export const AddTemplateSourceModal: React.FC<ModalComponentProps & AddTemplateS
       if (dataSource?.value === ProvisionSource.UPLOAD.getValue()) {
         try {
           setCheckingCert(true);
-          await coFetch(CDI_UPLOAD_URL_BUILDER(uploadProxyURL));
+          await consoleFetchJSON(CDI_UPLOAD_URL_BUILDER(uploadProxyURL));
           setCheckingCert(false);
         } catch (err) {
           if (err?.response === undefined) {

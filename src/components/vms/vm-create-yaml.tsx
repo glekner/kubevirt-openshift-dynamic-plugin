@@ -1,11 +1,14 @@
 import { safeLoad } from 'js-yaml';
 import * as React from 'react';
 
-import { CreateYAMLProps } from '@console/internal/components/create-yaml';
-import { ErrorPage404 } from '@console/internal/components/error';
-import { connectToPlural } from '@console/internal/kinds';
-import { AsyncComponent, LoadingBox } from '@kubevirt-internal';
-import { k8sList } from '@kubevirt-internal/utils';
+import {
+  AsyncComponent,
+  CreateYAMLProps,
+  DroppableEditYAML,
+  ErrorPage404,
+  LoadingBox,
+} from '@kubevirt-internal';
+import { connectToPlural, k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
 
 import {
@@ -69,9 +72,6 @@ const VMCreateYAMLConnected = connectToPlural(
     if (!kindObj) {
       return <ErrorPage404 />;
     }
-
-    const DroppableEditYAML = () =>
-      import('@console/internal/components/droppable-edit-yaml').then((c) => c.DroppableEditYAML);
 
     return (
       <AsyncComponent

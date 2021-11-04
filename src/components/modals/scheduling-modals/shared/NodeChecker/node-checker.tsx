@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Status } from '@console/shared';
-import { ExternalLink, pluralize, ResourceLink, resourcePath } from '@kubevirt-internal';
+import { pluralize, resourcePath, Status } from '@kubevirt-internal';
+import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { NodeKind } from '@kubevirt-types';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Alert,
   Button,

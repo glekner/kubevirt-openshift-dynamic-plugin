@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import EventItem from '@console/shared/src/components/dashboard/activity-card/EventItem';
+import { EventItem } from '@kubevirt-internal';
 import { EventModel } from '@kubevirt-models';
 import { EventKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

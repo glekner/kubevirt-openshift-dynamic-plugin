@@ -3,8 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { match as routerMatch } from 'react-router';
 
-import { DetailsPage } from '@console/internal/components/factory/details';
-import { navFactory } from '@console/internal/components/utils/horizontal-nav';
+import { DetailsPage, navFactory } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import {
   K8sResourceKindReference,

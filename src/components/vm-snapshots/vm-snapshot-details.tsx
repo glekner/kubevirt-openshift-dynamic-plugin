@@ -2,11 +2,10 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
-import { Conditions } from '@console/internal/components/conditions';
-import { DetailsPage } from '@console/internal/components/factory';
 import {
+  Conditions,
   DetailsItem,
-  FirehoseResource,
+  DetailsPage,
   Kebab,
   LoadingBox,
   navFactory,
@@ -14,6 +13,7 @@ import {
   SectionHeading,
   Timestamp,
 } from '@kubevirt-internal';
+import { FirehoseResource } from '@openshift-console/dynamic-plugin-sdk';
 
 import { VM_DETAIL_SNAPSHOTS } from '../../constants';
 import { VirtualMachineModel, VirtualMachineSnapshotModel } from '../../models';

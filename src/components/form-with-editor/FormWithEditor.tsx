@@ -1,9 +1,8 @@
 import cn from 'classnames';
 import yamlParser from 'js-yaml';
 import * as React from 'react';
-import { MonacoEditorProps } from 'react-monaco-editor';
 
-import YAMLEditor from '@console/shared/src/components/editor/YAMLEditor';
+import { YAMLEditor } from '@kubevirt-internal/components';
 
 import { EditorPosition, formModifier, ViewComponent } from './form-with-editor-utils';
 
@@ -28,7 +27,7 @@ type FormWithEditorProps = {
     event: React.SyntheticEvent,
   ) => void;
   editorPosition?: EditorPosition;
-  editorProps?: MonacoEditorProps;
+  editorProps?: any;
   view?: string;
   alertTitle: string;
   setIsYamlValid?: Function;

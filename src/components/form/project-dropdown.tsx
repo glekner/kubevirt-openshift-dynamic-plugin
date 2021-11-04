@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import { FLAGS } from '@console/shared';
-import { useFlag } from '@console/shared/src/hooks/flag';
-import { ListDropdown } from '@kubevirt-internal';
+import { FLAGS, ListDropdown, useFlag } from '@kubevirt-internal';
 import { NamespaceModel, ProjectModel } from '@kubevirt-models';
 
 type ProjectDropdownProps = {

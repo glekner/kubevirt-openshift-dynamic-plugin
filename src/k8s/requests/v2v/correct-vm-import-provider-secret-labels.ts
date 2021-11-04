@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { k8sGet, k8sPatch } from '@console/internal/module/k8s';
+import { k8sGet, k8sPatch } from '@kubevirt-internal';
 import { SecretModel } from '@kubevirt-models';
 import { SecretKind } from '@kubevirt-types';
 

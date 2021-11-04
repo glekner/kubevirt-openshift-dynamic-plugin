@@ -59,9 +59,7 @@ export const utcDateTimeFormatter = new Intl.DateTimeFormat(getLastLanguage() ||
   timeZoneName: 'short',
 });
 
-export const relativeTimeFormatter = Intl.RelativeTimeFormat
-  ? new Intl.RelativeTimeFormat(getLastLanguage() || undefined)
-  : null;
+export const relativeTimeFormatter = null;
 
 export const getDuration = (ms: number) => {
   if (!ms || ms < 0) {

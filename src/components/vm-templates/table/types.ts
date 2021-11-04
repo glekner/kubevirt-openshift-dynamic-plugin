@@ -1,5 +1,5 @@
-import { FirehoseResult } from '@console/internal/components/utils/types';
 import { PersistentVolumeClaimKind, PodKind, TemplateKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/console-types';
 
 import { VMIKind, VMKind } from '../../../types';
 import { V1alpha1DataVolume } from '../../../types/api';

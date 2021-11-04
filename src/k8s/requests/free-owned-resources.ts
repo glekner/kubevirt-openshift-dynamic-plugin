@@ -1,4 +1,4 @@
-import { k8sKill, k8sPatch } from '@console/internal/module/k8s';
+import { k8sKill, k8sPatch } from '@kubevirt-internal';
 import { OwnerReference } from '@kubevirt-types';
 
 import { getOwnerReferences } from '../../selectors';

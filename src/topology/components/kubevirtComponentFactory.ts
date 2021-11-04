@@ -1,20 +1,22 @@
 import * as React from 'react';
 
-import { modelFor, referenceFor } from '@console/internal/module/k8s';
-import { ModifyApplication } from '@console/topology/src/actions';
 import {
   CreateConnector,
   createConnectorCallback,
   createMenuItems,
-  NodeComponentProps,
+  getTopologyResource,
+  KebabOption,
+  kebabOptionsToMenu,
+  modelFor,
+  ModifyApplication,
   nodeDragSourceSpec,
   nodeDropTargetSpec,
+  referenceFor,
   withContextMenu,
-} from '@console/topology/src/components/graph-view';
-import { TopologyDataObject } from '@console/topology/src/topology-types';
-import { getResource, withEditReviewAccess } from '@console/topology/src/utils';
-import { KebabOption, kebabOptionsToMenu } from '@kubevirt-internal';
-import { K8sResourceKind } from '@kubevirt-types';
+  withEditReviewAccess,
+} from '@kubevirt-internal';
+import { K8sResourceKind, NodeComponentProps } from '@kubevirt-types';
+import { TopologyDataObject } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import {
   GraphElement,
   Node,
@@ -54,7 +56,9 @@ export const vmActions = (
 };
 
 export const vmContextMenu = (element: Node) => {
-  return createMenuItems(kebabOptionsToMenu(vmActions(getResource(element), element.getData())));
+  return createMenuItems(
+    kebabOptionsToMenu(vmActions(getTopologyResource(element), element.getData())),
+  );
 };
 
 export const getKubevirtComponentFactory = (

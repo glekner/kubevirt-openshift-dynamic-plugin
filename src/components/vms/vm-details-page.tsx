@@ -2,8 +2,7 @@ import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DetailsPage } from '@console/internal/components/factory';
-import { navFactory } from '@kubevirt-internal';
+import { DetailsPage, navFactory } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
 import { useK8sModel } from '@openshift-console/dynamic-plugin-sdk';
 

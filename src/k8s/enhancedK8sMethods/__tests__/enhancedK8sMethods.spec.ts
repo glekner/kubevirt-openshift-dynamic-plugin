@@ -1,7 +1,8 @@
-import { K8sKind, K8sResourceCommon, Patch } from '@console/internal/module/k8s';
+import { K8sResourceCommon } from '@openshift-console/dynamic-plugin-sdk';
+import { K8sKind } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 
 import { VirtualMachineModel } from '../../../models';
-import { PatchBuilder } from '../../helpers/patch';
+import { Patch, PatchBuilder } from '../../helpers/patch';
 import { VMWrapper } from '../../wrapper/vm/vm-wrapper';
 import { EnhancedK8sMethods } from '../enhancedK8sMethods';
 import { K8sKillError } from '../errors';

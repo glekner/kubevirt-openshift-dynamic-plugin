@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 
-import { FirehoseResult } from '@kubevirt-internal';
 import { K8sResourceKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { StorageUISource } from '../../../components/modals/disk-modal/storage-ui-source';
 import { AccessMode, DiskType, VolumeMode, VolumeType } from '../../../constants/vm/storage';

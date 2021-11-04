@@ -1,5 +1,5 @@
-import { coFetch } from '@console/internal/co-fetch';
-import { groupVersionFor, k8sKill, k8sPatch, resourceURL } from '@console/internal/module/k8s';
+import { groupVersionFor, k8sKill, k8sPatch, resourceURL } from '@kubevirt-internal';
+import { consoleFetch } from '@openshift-console/dynamic-plugin-sdk';
 
 import { VirtualMachineModel } from '../../../models';
 import {
@@ -45,11 +45,11 @@ const VMActionRequest = async (
   url = `${url}/${action}`;
 
   const response = body
-    ? await coFetch(url, {
+    ? await consoleFetch(url, {
         method,
         body: JSON.stringify(body),
       })
-    : await coFetch(url, { method });
+    : await consoleFetch(url, { method });
   const text = await response.text();
 
   return text;

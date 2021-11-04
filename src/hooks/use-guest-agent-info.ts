@@ -1,4 +1,4 @@
-import { useURLPoll } from '@console/internal/components/utils/url-poll-hook';
+import { useURLPoll } from '@kubevirt-internal';
 
 import { getVMIApiPath, getVMISubresourcePath } from '../selectors/vmi/selectors';
 import { VMIKind } from '../types';

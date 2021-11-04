@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { Firehose, FirehoseResult } from '@kubevirt-internal';
+import { createModalLauncher, Firehose, ModalComponentProps } from '@kubevirt-internal';
 import { k8sPatch } from '@kubevirt-internal/utils';
 import {
   NamespaceModel,
@@ -11,6 +10,7 @@ import {
   StorageClassModel,
 } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, StorageClassResourceKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { useStorageClassConfigMapWrapped } from '../../../hooks/storage-class-config-map';
 import { getUpdateDiskPatches } from '../../../k8s/patches/vm/vm-disk-patches';
@@ -44,7 +44,7 @@ const DiskModalFirehoseComponent: React.FC<DiskModalFirehoseComponentProps> = (p
     ...restProps
   } = props;
 
-  const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity); // default old snapshot before loading a new one
+  const vmLikeFinal = getLoadedData<VMLikeEntityKind>(vmLikeEntityLoading, vmLikeEntity); // default old snapshot before loading a new one
 
   const diskWrapper = new DiskWrapper(disk);
   const volumeWrapper = new VolumeWrapper(volume);

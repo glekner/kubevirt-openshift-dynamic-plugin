@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { FirehoseResult } from '@kubevirt-internal';
 import { k8sGet } from '@kubevirt-internal/utils';
 import { ConfigMapModel } from '@kubevirt-models';
 import { ConfigMapKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import {
   STORAGE_CLASS_CONFIG_MAP_NAME,

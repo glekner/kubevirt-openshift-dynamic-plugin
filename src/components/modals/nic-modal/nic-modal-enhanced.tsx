@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { createModalLauncher, ModalComponentProps } from '@console/internal/components/factory';
-import { k8sPatch, referenceForModel } from '@console/internal/module/k8s';
-import { Firehose, FirehoseResource, FirehoseResult } from '@kubevirt-internal';
+import {
+  createModalLauncher,
+  Firehose,
+  k8sPatch,
+  ModalComponentProps,
+  referenceForModel,
+} from '@kubevirt-internal';
 import { NetworkAttachmentDefinitionModel } from '@kubevirt-models';
+import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
 import { getUpdateNICPatches } from '../../../k8s/patches/vm/vm-nic-patches';
 import { NetworkInterfaceWrapper } from '../../../k8s/wrapper/vm/network-interface-wrapper';
@@ -21,7 +26,7 @@ import { NICModal } from './nic-modal';
 const NICModalFirehoseComponent: React.FC<NICModalFirehoseComponentProps> = (props) => {
   const { nic, network, vmLikeEntity, vmLikeEntityLoading, isVMRunning, ...restProps } = props;
 
-  const vmLikeFinal = getLoadedData(vmLikeEntityLoading, vmLikeEntity); // default old snapshot before loading a new one
+  const vmLikeFinal = getLoadedData<VMLikeEntityKind>(vmLikeEntityLoading, vmLikeEntity); // default old snapshot before loading a new one
   const vm = asVM(vmLikeFinal);
 
   const nicWrapper = new NetworkInterfaceWrapper(nic);

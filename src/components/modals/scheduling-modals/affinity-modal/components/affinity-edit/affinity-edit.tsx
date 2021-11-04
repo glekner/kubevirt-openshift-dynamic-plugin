@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ModalBody } from '@console/internal/components/factory';
-import { FirehoseResult } from '@kubevirt-internal';
+import { ModalBody } from '@kubevirt-internal';
 import { NodeKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import {
   Divider,
   Form,

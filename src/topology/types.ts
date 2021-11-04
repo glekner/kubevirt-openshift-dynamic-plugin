@@ -1,4 +1,4 @@
-import { TopologyDataObject } from '@console/topology/src/topology-types';
+import { TopologyDataObject } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import { Node } from '@patternfly/react-topology';
 
 import { VMStatusBundle } from '../statuses/vm/types';

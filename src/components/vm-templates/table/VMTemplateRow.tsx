@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { RowFunctionArgs, TableData } from '@console/internal/components/factory';
-import { Kebab, ResourceLink } from '@kubevirt-internal';
+import { Kebab, RowFunctionArgs, TableData } from '@kubevirt-internal';
 import { NamespaceModel, TemplateModel } from '@kubevirt-models';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { Button } from '@patternfly/react-core';
 import { StarIcon } from '@patternfly/react-icons';
 

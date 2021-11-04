@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ResourcesEventStream } from '@console/internal/components/events';
+import { ResourcesEventStream } from '@kubevirt-internal';
 
 import { getNamespace } from '../../selectors';
 import { getVmEventsFilters } from '../../selectors/event';

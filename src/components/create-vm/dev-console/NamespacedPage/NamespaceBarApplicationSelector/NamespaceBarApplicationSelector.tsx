@@ -11,7 +11,7 @@ import {
   APPLICATION_LOCAL_STORAGE_KEY,
   APPLICATION_USERSETTINGS_PREFIX,
   UNASSIGNED_APPLICATIONS_KEY,
-} from '@console/shared';
+} from '@kubevirt-internal';
 
 import ApplicationDropdown from './ApplicationDropdown';
 

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DetailsPage } from '@console/internal/components/factory';
-import { navFactory } from '@kubevirt-internal';
+import { DetailsPage, navFactory } from '@kubevirt-internal';
 import { PodModel } from '@kubevirt-models';
 
 import {

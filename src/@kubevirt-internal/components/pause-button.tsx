@@ -1,8 +1,9 @@
+import classNames from 'classnames';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Button, ButtonProps } from '@patternfly/react-core';
-import { PlayIcon, PauseIcon } from '@patternfly/react-icons';
-import classNames from 'classnames';
+import { PauseIcon, PlayIcon } from '@patternfly/react-icons';
 
 export const DashboardCardButtonLink: React.FC<DashboardCardButtonLinkProps> = React.memo(
   ({ children, className, ...rest }) => (

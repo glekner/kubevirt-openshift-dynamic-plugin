@@ -106,15 +106,6 @@ export const VMEnvironmentFirehose: React.FC<VMTabProps> = ({
   );
 };
 
-// const EnvFromEditorComponent = (props) => (
-//   <AsyncComponent
-//     loader={() =>
-//       import('@console/internal/components/utils/name-value-editor').then((c) => c.EnvFromEditor)
-//     }
-//     {...props}
-//   />
-// );
-
 const emptyEnvDisk = (defaultEnvVar: EnvVarSource): EnvDisk => ['', defaultEnvVar, 0];
 
 /*

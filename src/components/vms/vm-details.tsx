@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ServicesList } from '@console/internal/components/service';
 import {
   asAccessReview,
   Firehose,
-  FirehoseResult,
   ScrollToTopOnMount,
   SectionHeading,
+  ServicesList,
   StatusBox,
   useAccessReview,
 } from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sKind, PodKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { Alert } from '@patternfly/react-core';
 
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { referenceForModel } from '@console/internal/module/k8s';
+import { referenceForModel } from '@kubevirt-internal';
 
 import { VirtualMachineModel } from '../models';
 import { getName, getNamespace } from '../selectors';

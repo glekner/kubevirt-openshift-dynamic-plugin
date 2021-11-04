@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Selector } from '@console/internal/components/utils/selector';
-import { NodeLink, ResourceLink, ResourceSummary } from '@kubevirt-internal';
+import { NodeLink, ResourceSummary, Selector } from '@kubevirt-internal';
 import { PodModel } from '@kubevirt-models';
 import { K8sKind, PodKind, ServiceKind } from '@kubevirt-types';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 
 import { LABEL_USED_TEMPLATE_NAME, LABEL_USED_TEMPLATE_NAMESPACE } from '../../constants';
 import { useGuestAgentInfo } from '../../hooks/use-guest-agent-info';

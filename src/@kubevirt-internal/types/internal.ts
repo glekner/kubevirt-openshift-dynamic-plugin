@@ -666,3 +666,22 @@ export type NodeComponentProps = {
 };
 
 export type FlagsObject = { [key: string]: boolean };
+
+export type TableProps = any;
+
+export const DEFAULT_NODE_PAD = 20;
+export const DEFAULT_GROUP_PAD = 40;
+
+export const NODE_WIDTH = 104;
+export const NODE_HEIGHT = 104;
+export const NODE_PADDING = [0, DEFAULT_NODE_PAD];
+
+export const WorkloadModelProps = {
+  width: NODE_WIDTH,
+  height: NODE_HEIGHT,
+  group: false,
+  visible: true,
+  style: {
+    padding: NODE_PADDING,
+  },
+};

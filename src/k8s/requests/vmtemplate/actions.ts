@@ -1,4 +1,4 @@
-import { apiVersionForModel } from '@console/internal/module/k8s';
+import { apiVersionForModel } from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
 

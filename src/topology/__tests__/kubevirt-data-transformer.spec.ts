@@ -1,9 +1,4 @@
-import { TEST_KINDS_MAP } from '@console/topology/src/__tests__/topology-test-data';
-import { baseDataModelGetter } from '@console/topology/src/data-transforms/data-transformer';
-import { getWorkloadResources } from '@console/topology/src/data-transforms/transform-utils';
-import { TopologyDataResources } from '@console/topology/src/topology-types';
-import { WORKLOAD_TYPES } from '@console/topology/src/utils';
-
+import { TopologyDataResources } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import { VMStatus } from '../../constants/vm/vm-status';
 import { VirtualMachineModel } from '../../models';
 import { getKubevirtTopologyDataModel } from '../kubevirt-data-transformer';

@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 
 import { PersistentVolumeClaimModel, PodModel } from '@kubevirt-models';
 import { URLHealthHandler } from '@kubevirt-types';
+import { HealthState } from '@openshift-console/dynamic-plugin-sdk';
 
 import {
   DataVolumeModel,
@@ -9,7 +10,6 @@ import {
   VirtualMachineInstanceMigrationModel,
   VirtualMachineInstanceModel,
 } from '../../../models';
-import { HealthState } from '@openshift-console/dynamic-plugin-sdk';
 
 export const getKubevirtHealthState: URLHealthHandler<KubevirtHealthResponse> = (
   response,

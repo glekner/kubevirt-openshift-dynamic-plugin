@@ -1,14 +1,21 @@
-import { getImageForIconClass } from '@console/internal/components/catalog/catalog-item-icon';
-import { referenceFor } from '@console/internal/module/k8s';
-import { OverviewItem } from '@console/shared';
 import {
+  getImageForIconClass,
   getTopologyGroupItems,
   getTopologyNodeItem,
   mergeGroup,
+  referenceFor,
+} from '@kubevirt-internal';
+import {
+  K8sResourceKind,
+  PersistentVolumeClaimKind,
+  PodKind,
   WorkloadModelProps,
-} from '@console/topology/src/data-transforms/transform-utils';
-import { TopologyDataObject, TopologyDataResources } from '@console/topology/src/topology-types';
-import { K8sResourceKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
+} from '@kubevirt-types';
+import {
+  OverviewItem,
+  TopologyDataObject,
+  TopologyDataResources,
+} from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import { Model } from '@patternfly/react-topology';
 
 import { VirtualMachineModel } from '../models';

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { k8sCreate, k8sPatchByName } from '@console/internal/module/k8s';
+import { k8sCreate, k8sPatchByName } from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind, TemplateKind } from '@kubevirt-types';
 

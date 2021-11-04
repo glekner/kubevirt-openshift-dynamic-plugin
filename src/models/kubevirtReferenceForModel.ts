@@ -1,4 +1,4 @@
-import { apiVersionForModel, referenceForModel } from '@console/internal/module/k8s/k8s-ref';
+import { apiVersionForModel, referenceForModel } from '@kubevirt-internal';
 import { K8sKind } from '@kubevirt-types';
 import { modelForGroupKind } from '@kubevirt-utils';
 

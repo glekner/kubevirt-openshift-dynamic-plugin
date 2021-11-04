@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RowFunctionArgs, Table } from '@console/internal/components/factory';
+import { RowFunctionArgs, Table } from '@kubevirt-internal';
 import { sortable } from '@patternfly/react-table';
 
 import { dimensifyHeader } from '../../utils';
