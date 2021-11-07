@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { ResourceLink, useAccessReview } from '@kubevirt-internal';
+import { useAccessReview } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { Button, ButtonVariant, Checkbox, SelectOption, Text } from '@patternfly/react-core';
 
 import { getPVCUploadURL } from '../../../../constants';
@@ -54,7 +55,7 @@ export const OS: React.FC<OSProps> = React.memo(
     openshiftFlag,
     goToStorageStep,
   }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('kubevirt-plugin');
     const os = iGetFieldValue(operatinSystemField);
     const display = iGet(operatinSystemField, 'display');
     const displayOnly = !!display;

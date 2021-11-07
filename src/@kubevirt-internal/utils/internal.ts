@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as _ from 'lodash';
 
 import { getTopologyResourceObject, k8sPatch } from '@kubevirt-internal';
@@ -5,12 +6,13 @@ import {
   AccessReviewResourceAttributes,
   K8sKind,
   K8sResourceKind,
+  K8sResourceKindReference,
   KebabMenuOption,
   KebabOption,
   KebabSubMenu,
   Options,
 } from '@kubevirt-types';
-import { K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
+import { GroupVersionKind, K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
 import { GraphElement } from '@patternfly/react-topology';
 
 import { Patch } from '../../k8s/helpers/patch';
@@ -238,3 +240,46 @@ export const truncateMiddle = (text: string, options: TruncateOptions = {}): str
   const endFragment = text.substr(text.length - endLength);
   return `${startFragment}${omission}${endFragment}`;
 };
+
+export const resourcePathFromModel = (model: K8sKind, name?: string, namespace?: string) => {
+  const { plural, namespaced, crd } = model;
+
+  let url = '/k8s/';
+
+  if (!namespaced) {
+    url += 'cluster/';
+  }
+
+  if (namespaced) {
+    url += namespace ? `ns/${namespace}/` : 'all-namespaces/';
+  }
+
+  if (crd) {
+    url += referenceForModel(model);
+  } else if (plural) {
+    url += plural;
+  }
+
+  if (name) {
+    // Some resources have a name that needs to be encoded. For instance,
+    // Users can have special characters in the name like `#`.
+    url += `/${encodeURIComponent(name)}`;
+  }
+
+  return url;
+};
+
+export const setQueryArgument = (k: string, v: string, history: History) => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get(k) !== v) {
+    params.set(k, v);
+    const url = new URL(window.location.href);
+    history.replace(`${url.pathname}?${params.toString()}${url.hash}`);
+  }
+};
+
+export const isGroupVersionKind = (ref: GroupVersionKind | string) => ref.split('~').length === 3;
+export const kindForReference = (ref: K8sResourceKindReference) =>
+  isGroupVersionKind(ref) ? ref.split('~')[2] : ref;
+export const apiVersionForReference = (ref: GroupVersionKind) =>
+  isGroupVersionKind(ref) ? `${ref.split('~')[0]}/${ref.split('~')[1]}` : ref;

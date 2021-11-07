@@ -5,7 +5,10 @@ import { VirtualMachineModel } from '../../models';
 import { getKubevirtTopologyDataModel } from '../kubevirt-data-transformer';
 import { VMNodeData } from '../types';
 
+import { baseDataModelGetter } from './data-transformer';
 import { kubevirtResources } from './topology-kubevirt-test-data';
+import { TEST_KINDS_MAP, WORKLOAD_TYPES } from './topology-test-data';
+import { getWorkloadResources } from './utils';
 
 const kindsMap = { ...TEST_KINDS_MAP, virtualmachines: VirtualMachineModel.kind };
 const workloadTypes = [...WORKLOAD_TYPES, 'virtualmachines'];

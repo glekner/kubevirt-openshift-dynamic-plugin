@@ -1,8 +1,6 @@
-import { Map as ImmutableMap } from 'immutable';
-
 import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 
-import { K8sResourceKind, StopWatchK8sResource, WatchK8sResource } from './internal';
+import { K8sResourceKind, RequestMap, StopWatchK8sResource, WatchK8sResource } from './internal';
 
 export type Fetch = (url: string) => Promise<any>;
 type WatchURL = (url: string, fetch?: Fetch) => void;
@@ -12,15 +10,6 @@ type StopWatchPrometheus = (query: string, timespan?: number) => void;
 type WatchAlerts = () => void;
 type StopWatchAlerts = () => void;
 
-type Request<R> = {
-  active: boolean;
-  timeout: NodeJS.Timer;
-  inFlight: boolean;
-  data: R;
-  error: any;
-};
-
-export type RequestMap<R> = ImmutableMap<string, Request<R>>;
 export type PrometheusLabels = { [key: string]: string };
 export type PrometheusValue = [number, string];
 

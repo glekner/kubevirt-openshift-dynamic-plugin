@@ -2,11 +2,8 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {
-  getAccessModeForProvisioner,
-  getAccessModeRadios,
-} from '@console/internal/components/storage/shared';
 import { RadioInput } from '@kubevirt-components';
+import { getAccessModeForProvisioner, getAccessModeRadios } from '@kubevirt-internal';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { FormGroup } from '@patternfly/react-core';
 

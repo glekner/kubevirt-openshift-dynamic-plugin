@@ -7,7 +7,8 @@ import { adjectives, animals, uniqueNamesGenerator } from 'unique-names-generato
 import { NamespaceModel, ProjectModel } from '@kubevirt-models';
 import { K8sKind, K8sResourceKind, OwnerReference, TemplateKind } from '@kubevirt-types';
 import { pluralize } from '@kubevirt-utils';
-import { FirehoseResult, MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
+import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 
 import { TEMPLATE_BASE_IMAGE_NAME_PARAMETER, VM_TEMPLATE_NAME_PARAMETER } from '../constants';
 import {
@@ -297,7 +298,10 @@ export const alignWithDNS1123 = (str) => {
   const chars = str.toLowerCase().replace(/\./g, '-').split('');
 
   const firstValidCharIndex = chars.findIndex((c) => c.match(alphanumericRegex));
-  const lastValidCharIndex = _.findLastIndex(chars, (c: string) => c.match(alphanumericRegex));
+  const lastValidCharIndex = _.findLastIndex(
+    chars,
+    (c: string) => c.match(alphanumericRegex) as any,
+  );
 
   if (firstValidCharIndex < 0) {
     return '';

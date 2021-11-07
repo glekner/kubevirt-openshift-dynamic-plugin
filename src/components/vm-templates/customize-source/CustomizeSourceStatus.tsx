@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ExternalLink, ResourceLink } from '@kubevirt-internal';
+import { ExternalLink } from '@kubevirt-internal';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { Alert, Bullseye, Button, Spinner, Stack, StackItem, Title } from '@patternfly/react-core';
 
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants';

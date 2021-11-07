@@ -7,7 +7,7 @@ import {
   GreenCheckCircleIcon,
   ProgressStatus,
   SuccessStatus,
-} from '@console/shared/src';
+} from '@kubevirt-internal';
 import { k8sKill } from '@kubevirt-internal/utils';
 import { TemplateKind } from '@kubevirt-types';
 import {

@@ -19,13 +19,11 @@ export {
   referenceFor,
   referenceForExtensionModel,
   referenceForModel,
-  resourcePathFromModel,
 } from '@openshift-console/dynamic-plugin-sdk-internal';
 export {
   connectToFlags,
   connectToPlural,
   createConnectorCallback,
-  fetchSwagger,
   getActiveNamespace,
   getPropertyDescription,
   getSwaggerDefinitions,

@@ -39,36 +39,44 @@ export const createOrDeleteSSHService = async (
   { metadata }: VMKind | VMIKind,
   enableSSHService: boolean,
 ) => {
-  const createOrDelete = enableSSHService ? k8sCreate : k8sKill;
   try {
-    await createOrDelete(ServiceModel, {
-      kind: ServiceModel.kind,
-      apiVersion: ServiceModel.apiVersion,
-      metadata: {
-        name: `${metadata?.name}-ssh-service`,
-        namespace: metadata?.namespace,
-      },
-      spec: {
-        ports: [
-          {
-            port: PORT,
-            targetPort: TARGET_PORT,
-          },
-        ],
-        type: 'NodePort',
-        selector: {
-          ...Object.fromEntries(
-            Object.entries(metadata?.labels).filter(
-              ([objectKey]) => !objectKey.startsWith('vm') && !objectKey.startsWith('app'),
-            ),
-          ),
-          'kubevirt.io/domain': metadata?.name,
-          'vm.kubevirt.io/name': metadata?.name,
+    if (enableSSHService) {
+      await k8sCreate(ServiceModel, {
+        kind: ServiceModel.kind,
+        apiVersion: ServiceModel.apiVersion,
+        metadata: {
+          name: `${metadata?.name}-ssh-service`,
+          namespace: metadata?.namespace,
         },
-      },
-    });
+        spec: {
+          ports: [
+            {
+              port: PORT,
+              targetPort: TARGET_PORT,
+            },
+          ],
+          type: 'NodePort',
+          selector: {
+            ...Object.fromEntries(
+              Object.entries(metadata?.labels).filter(
+                ([objectKey]) => !objectKey.startsWith('vm') && !objectKey.startsWith('app'),
+              ),
+            ),
+            'kubevirt.io/domain': metadata?.name,
+            'vm.kubevirt.io/name': metadata?.name,
+          },
+        },
+      });
+    } else {
+      await k8sKill(ServiceModel, {
+        metadata: {
+          name: `${metadata?.name}-ssh-service`,
+          namespace: metadata?.namespace,
+        },
+      });
+    }
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.log(e.message);
+    console.error(e.message);
   }
 };

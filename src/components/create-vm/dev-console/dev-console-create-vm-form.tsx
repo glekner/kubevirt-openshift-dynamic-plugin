@@ -141,7 +141,7 @@ export const DevConsoleCreateVmForm: React.FC<RouteComponentProps> = () => {
         payload: { value: newNamespace, validation },
       });
 
-      setQueryArgument('namespace', newNamespace);
+      setQueryArgument('namespace', newNamespace, history);
     }
   };
 

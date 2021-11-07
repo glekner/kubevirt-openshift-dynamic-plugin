@@ -1,5 +1,5 @@
 import { TaintEffect } from '@kubevirt-types';
-import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk';
+import { MatchExpression } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 
 import { IDEntity } from '../../types';
 

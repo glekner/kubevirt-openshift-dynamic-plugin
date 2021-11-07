@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import {
+  HandlePromiseProps,
   initialAccessModes,
   LoadingInline,
   ModalBody,
@@ -15,7 +16,6 @@ import { k8sCreate } from '@kubevirt-internal/utils';
 import { NamespaceModel, PersistentVolumeClaimModel } from '@kubevirt-models';
 import {
   ConfigMapKind,
-  HandlePromiseProps,
   PersistentVolumeClaimKind,
   StorageClassResourceKind,
 } from '@kubevirt-types';
@@ -117,7 +117,7 @@ export const DiskModal = withHandlePromise((props: DiskModalProps) => {
     importProvider,
     baseImageName,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
 
   const asId = prefixedID.bind(null, 'disk');
   const disk = props.disk || new DiskWrapper();

@@ -3,22 +3,9 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { match } from 'react-router';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
-import {
-  MultiListPage,
-  RowFunctionArgs,
-  Table,
-  TableData,
-} from '@console/internal/components/factory';
-import {
-  FirehoseResult,
-  history,
-  Kebab,
-  KebabOption,
-  ResourceLink,
-  Timestamp,
-} from '@kubevirt-internal';
+import { Kebab, KebabOption, MultiListPage, Table, TableData, Timestamp } from '@kubevirt-internal';
 import {
   DataVolumeModel,
   NamespaceModel,
@@ -31,8 +18,12 @@ import {
   VirtualMachineInstanceModel,
   VirtualMachineModel,
 } from '@kubevirt-models';
-import { K8sKind, PersistentVolumeClaimKind, PodKind } from '@kubevirt-types';
-import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { K8sKind, PersistentVolumeClaimKind, PodKind, RowFunctionArgs } from '@kubevirt-types';
+import {
+  FirehoseResult,
+  ResourceLink,
+  useK8sWatchResource,
+} from '@openshift-console/dynamic-plugin-sdk';
 import { QuickStart } from '@patternfly/quickstarts';
 import {
   Button,
@@ -131,6 +122,7 @@ const PendingChanges: React.FC = () => {
 };
 
 const VMRow: React.FC<RowFunctionArgs<VMRowObjType>> = ({ obj }) => {
+  const history = useHistory();
   const { vm, vmi, vmImport } = obj;
   const { name, namespace, node, creationTimestamp, uid, vmStatusBundle } = obj.metadata;
   const dimensify = dimensifyRow(tableColumnClasses);
@@ -154,7 +146,7 @@ const VMRow: React.FC<RowFunctionArgs<VMRowObjType>> = ({ obj }) => {
     options = vmiMenuActions.map((action) => action(model, vmi));
   }
 
-  const arePendingChanges = hasPendingChanges(vm, vmi);
+  const arePendingChanges = hasPendingChanges(history, vm, vmi);
 
   return (
     <>
@@ -191,6 +183,7 @@ const VMRow: React.FC<RowFunctionArgs<VMRowObjType>> = ({ obj }) => {
 
 const VMListEmpty: React.FC = () => {
   const { t } = useTranslation();
+  const history = useHistory();
   const location = useLocation();
   const namespace = useNamespace();
   const searchText = 'virtual machine';
@@ -274,7 +267,6 @@ VMList.displayName = 'VMList';
 
 export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) => {
   const { t } = useTranslation();
-  const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData;
   const namespace = props.match.params.ns;
 
   const resources = [
@@ -450,15 +442,14 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
   };
   const debouncedFlatten = _.throttle(flatten, 1000);
 
-  const createAccessReview = skipAccessReview ? null : { model: VirtualMachineModel, namespace };
-  const modifiedProps = Object.assign({}, { mock: noProjectsAvailable }, props);
+  const createAccessReview = { model: VirtualMachineModel, namespace };
   return (
     <MultiListPage
-      {...modifiedProps}
+      {...props}
       createAccessReview={createAccessReview}
       createButtonText={t('kubevirt-plugin~Create virtual machine')}
       title={VirtualMachineModel.labelPlural}
-      showTitle={showTitle}
+      showTitle={false}
       rowFilters={[vmStatusFilter]}
       ListComponent={VMList}
       resources={resources}
@@ -494,9 +485,4 @@ type VMListProps = {
 
 type VirtualMachinesPageProps = {
   match: match<{ ns?: string }>;
-  customData: {
-    showTitle?: boolean;
-    skipAccessReview?: boolean;
-    noProjectsAvailable?: boolean;
-  };
 };

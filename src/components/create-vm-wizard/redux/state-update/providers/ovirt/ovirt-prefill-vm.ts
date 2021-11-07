@@ -1,10 +1,6 @@
 import * as _ from 'lodash';
 
-import {
-  ConfigMapKind,
-  K8sResourceKind,
-  StorageClassResourceKind,
-} from '@console/internal/module/k8s';
+import { ConfigMapKind, K8sResourceKind, StorageClassResourceKind } from '@kubevirt-types';
 
 import { OvirtDiskBus } from '../../../../../../constants/v2v-import/ovirt/ovirt-disk-bus';
 import { OvirtNetworkInterfaceModel } from '../../../../../../constants/v2v-import/ovirt/ovirt-network-interface-model';

@@ -6,7 +6,7 @@ import {
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
+} from '@kubevirt-internal';
 
 import useSSHService from '../../hooks/use-ssh-service';
 import { VMIKind, VMKind } from '../../types';

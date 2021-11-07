@@ -3,9 +3,10 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { Firehose, FirehoseResult, resourcePath } from '@kubevirt-internal';
+import { Firehose, resourcePath } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, StorageClassModel } from '@kubevirt-models';
 import { StorageClassResourceKind } from '@kubevirt-types';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/console-types';
 import { Alert, AlertVariant, Stack, StackItem } from '@patternfly/react-core';
 import { Table, TableBody, TableHeader, TableVariant } from '@patternfly/react-table';
 
@@ -25,7 +26,7 @@ type DefaultSCUsedProps = {
 };
 
 const DefaultSCUsed: React.FC<DefaultSCUsedProps> = ({ defaultSCName }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <p>
       <Trans t={t} ns="kubevirt-plugin">
@@ -43,7 +44,7 @@ const DefaultSCUsed: React.FC<DefaultSCUsedProps> = ({ defaultSCName }) => {
 };
 
 const NoDefaultSC: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <p className="kubevirt-create-vm-modal__review-tab-storage-class-alert-p">
       <Stack>

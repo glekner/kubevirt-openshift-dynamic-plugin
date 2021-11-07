@@ -6,7 +6,7 @@ import {
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
+} from '@kubevirt-internal';
 import { Checkbox, Stack, StackItem } from '@patternfly/react-core';
 
 import { ModalFooter } from '../modal/modal-footer';

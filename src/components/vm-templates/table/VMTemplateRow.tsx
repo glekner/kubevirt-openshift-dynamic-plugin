@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { Kebab, RowFunctionArgs, TableData } from '@kubevirt-internal';
 import { NamespaceModel, TemplateModel } from '@kubevirt-models';
@@ -29,6 +29,7 @@ const VMTemplateRow: React.FC<RowFunctionArgs<TemplateItem, VMTemplateRowProps>>
   obj,
   customData: { dataVolumes, pvcs, pods, namespace, loaded, togglePin, isPinned, sourceLoadError },
 }) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const [template] = obj.variants;
   const dimensify = dimensifyRow(tableColumnClasses(!namespace));
@@ -92,6 +93,7 @@ const VMTemplateRow: React.FC<RowFunctionArgs<TemplateItem, VMTemplateRowProps>>
             sourceLoaded: true,
             sourceLoadError,
             withCustomizeModal,
+            history,
           })}
           key={`kebab-for-${template.metadata.uid}`}
           id={`kebab-for-${template.metadata.uid}`}

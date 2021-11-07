@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { humanizeBinaryBytes } from '@kubevirt-internal';
 import { TemplateKind } from '@kubevirt-types';
@@ -95,6 +95,7 @@ const RowActions: React.FC<RowActionsProps> = ({
   disableCreate,
 }) => {
   const { t } = useTranslation();
+  const history = useHistory();
   const withSupportModal = useSupportModal();
   return (
     <>
@@ -121,7 +122,9 @@ const RowActions: React.FC<RowActionsProps> = ({
         isDisabled={disableCreate}
         data-test="create-from-template"
         onClick={() =>
-          withSupportModal(template, () => createVMAction(template, sourceStatus, namespace))
+          withSupportModal(template, () =>
+            createVMAction(history, template, sourceStatus, namespace),
+          )
         }
         variant="secondary"
         className="kubevirt-vm-template-details"

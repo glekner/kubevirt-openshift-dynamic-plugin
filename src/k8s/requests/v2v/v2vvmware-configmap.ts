@@ -1,5 +1,6 @@
 import { k8sGet } from '@kubevirt-internal/utils';
 import { ConfigMapModel } from '@kubevirt-models';
+import { ConfigMapKind } from '@kubevirt-types';
 
 import {
   VMWARE_KUBEVIRT_VMWARE_CONFIG_MAP_NAME,
@@ -14,7 +15,7 @@ export const getVmwareConfigMap = async () => {
   for (const namespace of VMWARE_KUBEVIRT_VMWARE_CONFIG_MAP_NAMESPACES) {
     try {
       // eslint-disable-next-line no-await-in-loop
-      const configMap = await k8sGet(
+      const configMap = await k8sGet<ConfigMapKind>(
         ConfigMapModel,
         VMWARE_KUBEVIRT_VMWARE_CONFIG_MAP_NAME,
         namespace,

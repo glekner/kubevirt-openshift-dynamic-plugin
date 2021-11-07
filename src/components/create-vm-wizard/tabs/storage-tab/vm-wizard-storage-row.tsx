@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import * as React from 'react';
 
 import { Kebab, KebabOption, RowFunctionArgs } from '@kubevirt-internal';
@@ -42,7 +41,7 @@ const menuActionRemove = (
   isDisabled: isDeleteDisabled,
   callback: () =>
     withProgress(
-      new Promise((resolve) => {
+      new Promise<void>((resolve) => {
         removeStorage(id);
         resolve();
       }),
@@ -68,7 +67,7 @@ export const VmWizardStorageRow: React.FC<
     isUpdateDisabled,
   },
 }) => {
-  const validations = _.get(wizardStorageData, ['validation', 'validations'], {});
+  const validations = wizardStorageData?.validation?.validations;
   return (
     <DiskSimpleRow
       data={{ ...restData, name }}

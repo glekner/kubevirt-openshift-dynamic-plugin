@@ -15,7 +15,7 @@ export const requestOvirtProviderCRVMDetail = async (
   const safeVMID = (vmID || '').trim();
 
   // OvirtPRovider object can be reused or re-queried here. The later option helps to minimize conflicts.
-  const ovirtProviderCR = await k8sGet(OVirtProviderModel, ovirtProviderCRName, namespace);
+  const ovirtProviderCR = await k8sGet<any>(OVirtProviderModel, ovirtProviderCRName, namespace);
 
   // Strategic merge patches seem not to work, so let's do mapping via positional arrays.
   // Probably not a big deal as the controller is designed to avoid VMs list refresh

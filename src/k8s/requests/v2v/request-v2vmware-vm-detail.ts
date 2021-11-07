@@ -15,7 +15,7 @@ export const requestV2VMwareVMDetail = async (
   const safeVMName = (vmName || '').trim();
 
   // V2VVMWare object can be reused or re-queried here. The later option helps to minimize conflicts.
-  const v2vvmware = await k8sGet(V2VVMwareModel, v2vwmwareName, namespace);
+  const v2vvmware = await k8sGet<any>(V2VVMwareModel, v2vwmwareName, namespace);
 
   // Strategic merge patches seem not to work, so let's do mapping via positional arrays.
   // Probably not a big deal as the controller is designed to avoid VMs list refresh

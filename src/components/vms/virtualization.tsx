@@ -92,7 +92,7 @@ export const WrappedVirtualizationPage: React.FC<VirtualizationPageProps> = (pro
 
   const namespace = props.match.params.ns;
 
-  const obj = { loaded: true, data: { kind: kubevirtReferenceForModel(VirtualMachineModel) } };
+  const obj = { kind: kubevirtReferenceForModel(VirtualMachineModel) };
   const pages = [
     {
       href: '',
@@ -177,13 +177,7 @@ export const WrappedVirtualizationPage: React.FC<VirtualizationPageProps> = (pro
           />
         </div>
       </div>
-      <HorizontalNav
-        {...props}
-        pages={pages}
-        match={props.match}
-        obj={obj}
-        customData={{ showTitle: false, noProjectsAvailable: props.noProjectsAvailable }}
-      />
+      <HorizontalNav {...props} pages={pages} resource={obj} />
     </>
   );
 };

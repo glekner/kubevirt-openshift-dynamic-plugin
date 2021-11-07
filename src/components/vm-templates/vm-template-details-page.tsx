@@ -1,7 +1,7 @@
 import { TFunction } from 'i18next';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { match as routerMatch } from 'react-router';
+import { match as routerMatch, useHistory } from 'react-router';
 
 import { DetailsPage, navFactory } from '@kubevirt-internal';
 import { PersistentVolumeClaimModel, PodModel, TemplateModel } from '@kubevirt-models';
@@ -44,6 +44,7 @@ export const breadcrumbsForVMTemplatePage = (t: TFunction, match: VMTemplateMatc
   ];
 
 export const VMTemplateDetailsPage: React.FC<VMTemplateDetailsPageProps> = (props) => {
+  const history = useHistory();
   const { t } = useTranslation();
   const { name } = props.match.params;
   const namespace = props.match.params.ns;
@@ -120,6 +121,7 @@ export const VMTemplateDetailsPage: React.FC<VMTemplateDetailsPageProps> = (prop
         withCustomizeModal,
         isCommonTemplate: isCommon,
         namespace,
+        history,
       }}
     />
   );

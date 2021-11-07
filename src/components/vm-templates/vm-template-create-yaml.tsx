@@ -32,7 +32,7 @@ const CreateVMTemplateYAMLConnected = connectToPlural(
     const [defaultTemplate, setDefaultTemplate] = React.useState<TemplateKind>(null);
 
     React.useEffect(() => {
-      k8sList(TemplateModel, {
+      k8sList<TemplateKind>(TemplateModel, {
         ns: 'openshift',
         labelSelector: {
           [TEMPLATE_TYPE_LABEL]: TEMPLATE_TYPE_BASE,

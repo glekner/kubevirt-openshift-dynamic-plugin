@@ -1,6 +1,8 @@
 // console components
 export * from './AsyncComponent/async';
+export * from './button-bar';
 export * from './details-item';
+export * from './ExternalLink';
 export * from './field-level-help';
 export * from './headings';
 export * from './hint-block';

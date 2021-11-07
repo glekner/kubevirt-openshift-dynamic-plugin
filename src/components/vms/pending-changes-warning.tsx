@@ -2,7 +2,8 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { useHistory } from 'react-router';
 
-import { Firehose, FirehoseResult } from '@kubevirt-internal';
+import { Firehose } from '@kubevirt-internal';
+import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/console-types';
 import {
   Breadcrumb,
   BreadcrumbHeading,
@@ -99,7 +100,7 @@ export const PendingChangesWarning: React.FC<PendingChangesWarningProps> = ({
 }) => {
   const history = useHistory();
   const vm: VMKind = asVM(getLoadedData(vmLikeEntity));
-  const vmi = getLoadedData(vmiProp);
+  const vmi = getLoadedData<VMIKind>(vmiProp);
   if (!isVMRunningOrExpectedRunning(vm, vmi)) {
     return <></>;
   }

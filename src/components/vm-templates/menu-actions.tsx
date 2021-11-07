@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -35,6 +36,7 @@ type CustomData = {
   sourceLoadError: any;
   withCreate?: boolean;
   withCustomizeModal: CustomizeSourceFunction;
+  history: History;
 };
 
 type MenuAction = (kind: K8sKind, vmTemplate: TemplateItem, customData?: CustomData) => KebabOption;
@@ -55,13 +57,13 @@ const newTemplateFromCommon: MenuAction = (kind, vmTemplate, { namespace }) => (
 const vmTemplateCreateVMAction: MenuAction = (
   kind,
   obj,
-  { withSupportModal, sourceStatus, sourceLoaded, sourceLoadError, withCreate, namespace },
+  { withSupportModal, sourceStatus, sourceLoaded, sourceLoadError, withCreate, namespace, history },
 ) => ({
   // t('kubevirt-plugin~Create Virtual Machine')
   labelKey: 'kubevirt-plugin~Create Virtual Machine',
   callback: () =>
     withSupportModal(obj.variants[0], () =>
-      createVMAction(obj.variants[0], sourceStatus, namespace),
+      createVMAction(history, obj.variants[0], sourceStatus, namespace),
     ),
   accessReview: asAccessReview(
     VirtualMachineModel,

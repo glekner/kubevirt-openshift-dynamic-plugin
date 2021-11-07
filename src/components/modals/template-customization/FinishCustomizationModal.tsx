@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import {
   createModalLauncher,
+  ExternalLink,
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
-import { ExternalLink, ResourceLink } from '@kubevirt-internal';
+} from '@kubevirt-internal';
 import { TemplateModel } from '@kubevirt-models';
 import { TemplateKind } from '@kubevirt-types';
+import { ResourceLink } from '@openshift-console/dynamic-plugin-sdk';
 import { Checkbox, Stack, StackItem } from '@patternfly/react-core';
 
 import { SEAL_BOOT_SOURCE_URL } from '../../../constants/vm-templates';

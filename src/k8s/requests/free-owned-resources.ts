@@ -24,7 +24,7 @@ export const freeOwnedResources = async (
           )
           .build(),
       ]);
-    });
+    }) as Promise<any>[];
 
   return Promise.all(freePromises);
 };

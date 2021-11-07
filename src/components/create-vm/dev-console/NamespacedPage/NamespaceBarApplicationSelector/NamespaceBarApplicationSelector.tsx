@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect, Dispatch } from 'react-redux';
+import { action } from 'typesafe-actions';
 
-import { setActiveApplication } from '@console/internal/actions/ui';
-import { getActiveApplication, getActiveNamespace } from '@console/internal/reducers/ui';
-import { RootState } from '@console/internal/redux';
 import {
   ALL_APPLICATIONS_KEY,
   ALL_NAMESPACES_KEY,
   APPLICATION_LOCAL_STORAGE_KEY,
   APPLICATION_USERSETTINGS_PREFIX,
+  RootState,
   UNASSIGNED_APPLICATIONS_KEY,
 } from '@kubevirt-internal';
 
@@ -83,13 +82,13 @@ const NamespaceBarApplicationSelector: React.FC<Props> = ({
 };
 
 const mapStateToProps = (state: RootState): StateProps => ({
-  namespace: getActiveNamespace(state),
-  application: getActiveApplication(state),
+  namespace: state.UI.get('activeNamespace'),
+  application: state.UI.get('activeApplication'),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  onChange: (app: string) => {
-    dispatch(setActiveApplication(app));
+  onChange: (application: string) => {
+    dispatch(action('setActiveApplication', { application }));
   },
 });
 

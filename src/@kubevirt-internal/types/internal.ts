@@ -1,3 +1,4 @@
+import { Map as ImmutableMap } from 'immutable';
 import { match as RouterMatch } from 'react-router-dom';
 
 import { StatusGroup } from '@kubevirt-constants/status-group';
@@ -8,8 +9,15 @@ import {
   HealthState,
   K8sResourceCommon,
   K8sVerb,
+  RowFilter,
 } from '@openshift-console/dynamic-plugin-sdk';
 import { MatchLabels, Selector } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
+import {
+  OnSelect,
+  SortByDirection,
+  TableGridBreakpoint,
+  TableProps as PfTableProps,
+} from '@patternfly/react-table';
 import { Node } from '@patternfly/react-topology';
 
 import { BadgeType } from '../constants';
@@ -666,8 +674,6 @@ export type NodeComponentProps = {
 
 export type FlagsObject = { [key: string]: boolean };
 
-export type TableProps = any;
-
 export const DEFAULT_NODE_PAD = 20;
 export const DEFAULT_GROUP_PAD = 40;
 
@@ -683,4 +689,170 @@ export const WorkloadModelProps = {
   style: {
     padding: NODE_PADDING,
   },
+};
+
+export type TableRowProps = {
+  id: React.ReactText;
+  index: number;
+  title?: string;
+  trKey: string;
+  style: object;
+  className?: string;
+};
+
+export type Filter = { key: string; value: string };
+
+export type ComponentProps<D = any> = {
+  data: D[];
+  filters: Filter[];
+  selected: boolean;
+  match: RouterMatch<any>;
+  kindObj: K8sResourceKindReference;
+};
+
+type RowsArgs<C = any> = {
+  componentProps: ComponentProps;
+  selectedResourcesForKind: string[];
+  customData: C;
+};
+
+export type TableProps<D = any, C = any> = Partial<ComponentProps<D>> & {
+  customData?: C;
+  customSorts?: { [key: string]: (obj: D) => number | string };
+  defaultSortFunc?: string;
+  defaultSortField?: string;
+  defaultSortOrder?: SortByDirection;
+  showNamespaceOverride?: boolean;
+  Header: (componentProps: ComponentProps) => any[];
+  loadError?: string | Object;
+  Row?: React.FC<RowFunctionArgs<D, C>>;
+  Rows?: (args: RowsArgs<C>) => PfTableProps['rows'];
+  'aria-label': string;
+  onSelect?: OnSelect;
+  virtualize?: boolean;
+  NoDataEmptyMsg?: React.ComponentType<{}>;
+  EmptyMsg?: React.ComponentType<{}>;
+  loaded?: boolean;
+  reduxID?: string;
+  reduxIDs?: string[];
+  rowFilters?: RowFilter[];
+  label?: string;
+  columnManagementID?: string;
+  isPinned?: (val: D) => boolean;
+  staticFilters?: Filter[];
+  activeColumns?: Set<string>;
+  gridBreakPoint?: TableGridBreakpoint;
+  selectedResourcesForKind?: string[];
+  mock?: boolean;
+  expand?: boolean;
+  scrollElement?: HTMLElement | (() => HTMLElement);
+  getRowProps?: (obj: D) => Partial<Pick<TableRowProps, 'id' | 'className' | 'title'>>;
+};
+
+type MetricObject = {
+  name: string;
+  selector?: Selector;
+};
+
+type TargetObjcet = {
+  averageUtilization?: number;
+  type: string;
+  averageValue?: string;
+  value?: string;
+};
+type DescribedObject = {
+  apiVersion?: string;
+  kind: string;
+  name: string;
+};
+
+export type HPAMetric = {
+  type: 'Object' | 'Pods' | 'Resource' | 'External';
+  resource?: {
+    name: string;
+    target: TargetObjcet;
+  };
+  external?: {
+    metric: MetricObject;
+    target: TargetObjcet;
+  };
+  object?: {
+    describedObjec: DescribedObject;
+    metric: MetricObject;
+    target: TargetObjcet;
+  };
+  pods?: {
+    metric: MetricObject;
+    target: TargetObjcet;
+  };
+};
+type CurrentObject = {
+  averageUtilization?: number;
+  averageValue?: string;
+  value?: string;
+};
+
+type HPACurrentMetrics = {
+  type: 'Object' | 'Pods' | 'Resource' | 'External';
+  external?: {
+    current: CurrentObject;
+    metric: MetricObject;
+  };
+  object?: {
+    current: CurrentObject;
+    describedObject: DescribedObject;
+    metric: MetricObject;
+  };
+  pods?: {
+    current: CurrentObject;
+    metric: MetricObject;
+  };
+  resource?: {
+    name: string;
+    current: CurrentObject;
+  };
+};
+
+export type HorizontalPodAutoscalerKind = K8sResourceCommon & {
+  spec: {
+    scaleTargetRef: {
+      apiVersion: string;
+      kind: string;
+      name: string;
+    };
+    minReplicas?: number;
+    maxReplicas: number;
+    metrics?: HPAMetric[];
+  };
+  status?: {
+    currentReplicas: number;
+    desiredReplicas: number;
+    currentMetrics?: HPACurrentMetrics[];
+    conditions: NodeCondition[];
+    lastScaleTime?: string;
+  };
+};
+
+type Request<R> = {
+  active: boolean;
+  timeout: NodeJS.Timer;
+  inFlight: boolean;
+  data: R;
+  error: any;
+};
+
+export type K8sState = ImmutableMap<string, any>;
+export type UIState = ImmutableMap<string, any>;
+export type FeatureState = ImmutableMap<string, boolean>;
+export type RequestMap<R> = ImmutableMap<string, Request<R>>;
+export type DashboardsState = ImmutableMap<string, RequestMap<any>>;
+
+export type RootState = {
+  k8s: K8sState;
+  UI: UIState;
+  FLAGS: FeatureState;
+  dashboards: DashboardsState;
+  plugins?: {
+    [namespace: string]: any;
+  };
 };

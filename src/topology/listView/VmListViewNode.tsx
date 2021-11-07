@@ -2,14 +2,12 @@ import * as React from 'react';
 
 import {
   CpuCellComponent,
-  MemoryCellComponent,
-  TopologyListViewNode,
-} from '@console/topology/src/components/list-view';
-import {
   getPodMetricStats,
   getTopologyResourceObject,
+  MemoryCellComponent,
+  TopologyListViewNode,
   useOverviewMetrics,
-} from '@console/topology/src/utils';
+} from '@kubevirt-internal';
 import { DataListCell } from '@patternfly/react-core';
 import { Node, observer } from '@patternfly/react-topology';
 

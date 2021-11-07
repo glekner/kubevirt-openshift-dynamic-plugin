@@ -7,7 +7,7 @@ import {
   ModalBody,
   ModalComponentProps,
   ModalTitle,
-} from '@console/internal/components/factory';
+} from '@kubevirt-internal';
 import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { Alert } from '@patternfly/react-core';
 
@@ -32,7 +32,7 @@ const MigrationTool: React.FC<MigrationToolProps> = ({
   createForkLift,
   close,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const history = useHistory();
 
   const onSubmit = () => {

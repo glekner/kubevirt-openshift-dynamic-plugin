@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { k8sCreate } from '@kubevirt-internal';
+import { k8sCreate, k8sUpdate } from '@kubevirt-internal';
 import { SecretModel } from '@kubevirt-models';
 import { K8sKind, SecretKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';

@@ -1,4 +1,4 @@
-import { EnvVarSource } from '../../../../../../public/module/k8s/index';
+import { EnvVarSource } from '@kubevirt-types';
 
 export enum SOURCES {
   configMapKind = 'configMap',
