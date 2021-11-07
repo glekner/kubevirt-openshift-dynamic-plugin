@@ -5,7 +5,7 @@ import VMIDetailsPageInfoMessage from '../VMIDetailsPageInfoMessage';
 
 import { mockData } from './mock_data';
 
-jest.mock('@console/internal/components/utils/k8s-watch-hook', () => ({
+jest.mock('@openshift-console/dynamic-plugin-sdk/lib/api/core-api', () => ({
   useK8sWatchResource: jest
     .fn(() => {})
     .mockImplementationOnce(() => mockData.testWithVMOwner)
