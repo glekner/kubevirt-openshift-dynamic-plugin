@@ -8,9 +8,8 @@ import {
   HealthState,
   K8sResourceCommon,
   K8sVerb,
-  MatchLabels,
-  Selector,
 } from '@openshift-console/dynamic-plugin-sdk';
+import { MatchLabels, Selector } from '@openshift-console/dynamic-plugin-sdk/lib/api/common-types';
 import { Node } from '@patternfly/react-topology';
 
 import { BadgeType } from '../constants';

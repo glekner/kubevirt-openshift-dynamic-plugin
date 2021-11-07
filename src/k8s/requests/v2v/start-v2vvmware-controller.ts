@@ -148,7 +148,7 @@ export const startV2VVMWareController = async (
     }
 
     try {
-      activeDeployment = await k8sGet(DeploymentModel, name, namespace);
+      activeDeployment = await k8sGet<DeploymentKind>(DeploymentModel, name, namespace);
 
       const container = (activeDeployment?.spec?.template?.spec?.containers || []).find(
         (c) => c.name === name,

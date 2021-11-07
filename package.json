@@ -50,9 +50,9 @@
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
-    "@openshift-console/dynamic-plugin-sdk": "^0.0.2",
-    "@openshift-console/dynamic-plugin-sdk-internal": "^0.0.2",
-    "@openshift-console/dynamic-plugin-sdk-webpack": "^0.0.2",
+    "@openshift-console/dynamic-plugin-sdk": "0.0.2-wp5",
+    "@openshift-console/dynamic-plugin-sdk-internal": "0.0.2-wp5",
+    "@openshift-console/dynamic-plugin-sdk-webpack": "0.0.2-wp5",
     "@types/classnames": "^2.2.7",
     "@types/jest": "21.x",
     "@types/json-schema": "^7.0.7",
@@ -91,7 +91,7 @@
     "ts-loader": "8.3.0",
     "ts-node": "5.0.1",
     "typescript": "3.8.3",
-    "webpack": "5.0.0-beta.16",
+    "webpack": "5.x",
     "webpack-cli": "4.5.x",
     "webpack-dev-server": "^3.11.2"
   },

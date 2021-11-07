@@ -9,21 +9,18 @@ export * from './safety-first';
 export * from './units';
 export * from './url-poll-hook';
 
+// k8s methods
+export * from './k8s-methods';
+
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
 */
 export {
-  k8sCreate,
-  k8sGet,
-  k8sKill,
-  k8sList,
-  k8sPatch,
-  modelForGroupKind,
   referenceFor,
   referenceForExtensionModel,
   referenceForModel,
   resourcePathFromModel,
-} from '@openshift-console/dynamic-plugin-sdk';
+} from '@openshift-console/dynamic-plugin-sdk-internal';
 export {
   connectToFlags,
   connectToPlural,

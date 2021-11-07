@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-env node */
 
-import * as webpack from 'webpack';
 import * as path from 'path';
+
+import * as webpack from 'webpack';
+
 import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk-webpack';
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');

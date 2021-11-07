@@ -1,4 +1,5 @@
 import { TopologyDataResources } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
+
 import { VMStatus } from '../../constants/vm/vm-status';
 import { VirtualMachineModel } from '../../models';
 import { getKubevirtTopologyDataModel } from '../kubevirt-data-transformer';

@@ -8,10 +8,10 @@ import {
   k8sPatch as _k8sPatch,
   K8sResourceCommon,
   K8sResourceKind,
-  Patch,
   referenceFor,
   referenceForModel,
-} from '@console/internal/module/k8s';
+} from '@kubevirt-internal';
+import { Patch } from '@openshift-console/dynamic-plugin-sdk';
 
 import { VirtualMachineModel } from '../../models';
 import { getKubevirtAvailableModel } from '../../models/kubevirtReferenceForModel';
@@ -47,7 +47,7 @@ export class EnhancedK8sMethods {
     }
   };
 
-  k8sGet = async (
+  k8sGet = async <R extends K8sResourceCommon>(
     kind: K8sKind,
     name: string,
     namespace: string,
@@ -56,7 +56,7 @@ export class EnhancedK8sMethods {
   ) => {
     try {
       this.registerKind(kind);
-      const result = await _k8sGet(kind, name, namespace, opts);
+      const result = await _k8sGet<R>(kind, name, namespace, opts);
       this.appendHistory(new HistoryItem(HistoryType.GET, result), enhancedOpts);
       return result;
     } catch (error) {

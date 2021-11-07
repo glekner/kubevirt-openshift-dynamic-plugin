@@ -15,7 +15,6 @@ export enum InventoryStatusGroup {
 
 export const USERSETTINGS_PREFIX = 'console';
 export const ALL_APPLICATIONS_KEY = '#ALL_APPS#';
-export const ALL_NAMESPACES_KEY = '#ALL_NS#';
 export const APPLICATION_LOCAL_STORAGE_KEY = 'dropdown-storage-applications';
 export const APPLICATION_USERSETTINGS_PREFIX = `${USERSETTINGS_PREFIX}.applications`;
 export const UNASSIGNED_APPLICATIONS_KEY = '#UNASSIGNED_APP#';

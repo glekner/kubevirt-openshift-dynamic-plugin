@@ -3,9 +3,9 @@ import { isEmpty } from 'lodash';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, useHistory } from 'react-router';
 
-import { ButtonBar, ExternalLink, history, setQueryArgument, StatusBox } from '@kubevirt-internal';
+import { ButtonBar, ExternalLink, setQueryArgument, StatusBox } from '@kubevirt-internal';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
 import {
   ActionGroup,
@@ -42,10 +42,11 @@ import { useVmTemplatesResources } from '../hooks/use-vm-templates-resources';
 import { NamespacedPageVariants } from './NamespacedPage/NamespaceBarApplicationSelector/utils';
 import NamespacedPage from './NamespacedPage/NamespacedPage';
 
-const DevConsoleCreateVmFormEmptyState: React.FC<{ templateParam: string; t: TFunction }> = ({
-  templateParam,
-  t,
-}) => (
+const DevConsoleCreateVmFormEmptyState: React.FC<{
+  history: any;
+  templateParam: string;
+  t: TFunction;
+}> = ({ history, templateParam, t }) => (
   <EmptyState>
     <Title headingLevel="h4" size="lg">
       {t('kubevirt-plugin~Error Loading Template')}
@@ -62,7 +63,8 @@ const DevConsoleCreateVmFormEmptyState: React.FC<{ templateParam: string; t: TFu
 );
 
 export const DevConsoleCreateVmForm: React.FC<RouteComponentProps> = () => {
-  const { t } = useTranslation();
+  const history = useHistory();
+  const { t } = useTranslation('kubevirt-plugin');
   const urlParams = new URLSearchParams(window.location.search);
   const templateParam = urlParams.get('template');
   const templateNs = urlParams.get('templateNs') || 'openshift';
@@ -161,7 +163,13 @@ export const DevConsoleCreateVmForm: React.FC<RouteComponentProps> = () => {
           loaded={resourcesLoaded && vmsLoaded && V2VConfigMapLoaded}
           loadError={resourcesLoadError}
           label={t('kubevirt-plugin~Virtual Machine Template')}
-          EmptyMsg={() => <DevConsoleCreateVmFormEmptyState templateParam={templateParam} t={t} />}
+          EmptyMsg={() => (
+            <DevConsoleCreateVmFormEmptyState
+              history={history}
+              templateParam={templateParam}
+              t={t}
+            />
+          )}
         >
           <div className="row">
             {template && (

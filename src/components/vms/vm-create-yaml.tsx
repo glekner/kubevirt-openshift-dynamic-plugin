@@ -7,6 +7,7 @@ import {
   DroppableEditYAML,
   ErrorPage404,
   LoadingBox,
+  TemplateKind,
 } from '@kubevirt-internal';
 import { connectToPlural, k8sList } from '@kubevirt-internal/utils';
 import { TemplateModel } from '@kubevirt-models';
@@ -30,7 +31,7 @@ const VMCreateYAMLConnected = connectToPlural(
     const [defaultVM, setDefaultVM] = React.useState<VMKind>(null);
 
     React.useEffect(() => {
-      k8sList(TemplateModel, {
+      k8sList<TemplateKind>(TemplateModel, {
         ns: 'openshift',
         labelSelector: {
           [TEMPLATE_TYPE_LABEL]: TEMPLATE_TYPE_BASE,
