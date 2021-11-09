@@ -21,9 +21,21 @@ const config: webpack.Configuration = {
     ignored: ['node_modules', 'dist'],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    liveReload: true,
     port: 9001,
-    writeToDisk: true,
+    client: {
+      progress: true,
+      webSocketURL: {
+        port: 9001,
+      },
+    },
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
