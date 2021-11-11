@@ -20,7 +20,9 @@ const OvirtCertificateConnected: React.FC<OvirtCertificateProps> = React.memo(
   ({ certField, onCertChange }) => {
     const { t } = useTranslation();
     const mounted = React.useRef(true);
-    React.useEffect(() => () => (mounted.current = false), []);
+    React.useEffect(() => {
+      mounted.current = false;
+    }, []);
 
     const [isCertFileLoading, setCertFileLoading] = React.useState(false);
     const [lastError, setLastError] = React.useState(null);

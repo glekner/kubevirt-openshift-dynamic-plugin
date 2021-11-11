@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { getName, getNamespace } from 'src/selectors';
 
 import {
   apiVersionForModel,
@@ -20,6 +19,7 @@ import { getRemoveDiskPatches } from '../../../k8s/patches/vm/vm-disk-patches';
 import { freeOwnedResources } from '../../../k8s/requests/free-owned-resources';
 import { removeHotplugPersistent } from '../../../k8s/requests/vm/actions';
 import { DataVolumeModel } from '../../../models';
+import { getName, getNamespace } from '../../../selectors';
 import { isHotplugDisk } from '../../../selectors/disks/hotplug';
 import { isVMRunningOrExpectedRunning } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';

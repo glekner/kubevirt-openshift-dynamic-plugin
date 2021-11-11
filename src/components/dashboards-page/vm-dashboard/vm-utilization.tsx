@@ -14,13 +14,19 @@ import {
   UtilizationBody,
   UtilizationDurationDropdown,
 } from '@openshift-console/dynamic-plugin-sdk-internal';
-import { ByteDataTypes } from '@openshift-console/dynamic-plugin-sdk-internal/lib/api/internal-types';
 
 import { getCreationTimestamp, getName, getNamespace } from '../../../selectors';
 import { findVMIPod } from '../../../selectors/pod/selectors';
 import { VMDashboardContext } from '../../vms/vm-dashboard-context';
 
 import { getMultilineUtilizationQueries, getUtilizationQueries, VMQueries } from './queries';
+
+export declare enum ByteDataTypes {
+  BinaryBytes = 'binaryBytes',
+  BinaryBytesWithoutB = 'binaryBytesWithoutB',
+  DecimalBytes = 'decimalBytes',
+  DecimalBytesWithoutB = 'decimalBytesWithoutB',
+}
 
 // TODO: extend humanizeCpuCores() from @console/internal for the flexibility of space
 const humanizeCpuCores = (v) => {

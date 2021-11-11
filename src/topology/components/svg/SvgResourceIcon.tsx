@@ -76,5 +76,5 @@ const ForwardSvgResourceIcon: React.FC<ResourceIconProps> = (
   );
 };
 
-const SvgResourceIcon = React.forwardRef(ForwardSvgResourceIcon);
+const SvgResourceIcon: any = React.forwardRef(ForwardSvgResourceIcon as any);
 export { SvgResourceIcon as default, getKindStringAndAbbreviation };

@@ -8,6 +8,7 @@ import * as webpack from 'webpack';
 import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk-webpack';
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const config: webpack.Configuration = {
   mode: 'development',
@@ -40,24 +41,6 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@kubevirt-internal': [path.resolve(__dirname, 'src/@kubevirt-internal/')],
-      '@kubevirt-models': [
-        path.resolve(__dirname, 'src/models/'),
-        path.resolve(__dirname, 'src/@kubevirt-internal/models/'),
-      ],
-      '@kubevirt-components': [
-        path.resolve(__dirname, 'src/components/'),
-        path.resolve(__dirname, 'src/@kubevirt-internal/components/'),
-      ],
-      '@kubevirt-utils': [
-        path.resolve(__dirname, 'src/utils/'),
-        path.resolve(__dirname, 'src/@kubevirt-internal/utils/'),
-      ],
-      '@kubevirt-constants': [
-        path.resolve(__dirname, 'src/constants/'),
-        path.resolve(__dirname, 'src/@kubevirt-internal/constants/'),
-      ],
-
       stream: 'stream-browserify',
       http: 'stream-http',
       path: 'path-browserify',
@@ -69,7 +52,12 @@ const config: webpack.Configuration = {
       net: 'net-browserify',
       fs: 'browserify-fs',
       prettier: false,
+      buffer: 'buffer',
     },
+    plugins: [new TsconfigPathsPlugin()],
+  },
+  stats: {
+    errorDetails: true,
   },
   module: {
     rules: [
@@ -85,14 +73,6 @@ const config: webpack.Configuration = {
             },
           },
         ],
-      },
-      {
-        test: /node_modules[\\\\|/](yaml-language-server)/,
-        loader: 'umd-compat-loader',
-      },
-      {
-        test: /node_modules[\\\\|/](vscode-json-languageservice)/,
-        loader: 'umd-compat-loader',
       },
       {
         test: /\.(scss|css)$/,
@@ -124,9 +104,9 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff2?|ttf|eot|otf)(\?.*$|$)/,
-        loader: 'file-loader',
-        options: {
-          name: 'assets/[name].[ext]',
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name].[ext]',
         },
       },
       {
@@ -141,6 +121,7 @@ const config: webpack.Configuration = {
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         configFile: path.resolve(__dirname, 'tsconfig.json'),
+        memoryLimit: 4096,
         diagnosticOptions: {
           semantic: true,
           syntactic: true,

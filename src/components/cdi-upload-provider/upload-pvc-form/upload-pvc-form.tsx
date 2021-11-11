@@ -7,6 +7,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { match, useHistory } from 'react-router';
 
 import {
+  ButtonBar,
   dropdownUnits,
   initialAccessModes,
   LoadingInline,
@@ -16,7 +17,6 @@ import {
   useAccessReview2,
   useMultipleAccessReviews,
 } from '@kubevirt-internal';
-import { ButtonBar } from '@kubevirt-internal/components/button-bar';
 import { ExternalLink } from '@kubevirt-internal/components/ExternalLink';
 import { PersistentVolumeClaimModel, StorageClassModel, TemplateModel } from '@kubevirt-models';
 import {

@@ -8,6 +8,7 @@ export * from './k8s-ref';
 export * from './safety-first';
 export * from './units';
 export * from './url-poll-hook';
+export * from './ws-factory';
 
 // k8s methods
 export * from './k8s-methods';

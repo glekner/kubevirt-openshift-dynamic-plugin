@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { WSFactory } from '@kubevirt-internal/utils/ws-factory';
+import { WSFactory } from '@kubevirt-internal';
 import { constants, SerialConsole } from '@patternfly/react-console';
 
 import { ConsoleType } from '../../../../constants/vm/console-type';

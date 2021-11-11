@@ -55,5 +55,5 @@ const CircledIcon: React.FC<SvgTypedIconProps> = (
     </g>
   );
 };
-
-export default React.forwardRef(CircledIcon);
+const SvgCircledIcon: any = React.forwardRef(CircledIcon as any);
+export default SvgCircledIcon;
