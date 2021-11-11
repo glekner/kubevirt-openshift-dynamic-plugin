@@ -1,11 +1,8 @@
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useSelector } from 'react-redux';
-
-import { getActiveNamespace } from '@kubevirt-internal';
+import { useActiveNamespace } from '@kubevirt-internal';
 
 import { ALL_NAMESPACES_KEY } from '../constants';
 
 export const useNamespace = () => {
-  const activeNamespace = useSelector(getActiveNamespace);
+  const [activeNamespace] = useActiveNamespace();
   return activeNamespace === ALL_NAMESPACES_KEY ? undefined : activeNamespace;
 };

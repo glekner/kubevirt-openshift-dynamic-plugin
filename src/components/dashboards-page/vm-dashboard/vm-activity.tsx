@@ -41,7 +41,7 @@ const getEventsResource = (namespace: string): FirehoseResource => ({
   namespace,
 });
 
-const RecentEvent = withDashboardResources<RecentEventProps>(
+const RecentEvent: any = withDashboardResources<RecentEventProps>(
   ({ watchK8sResource, stopWatchK8sResource, resources, vm, paused, setPaused }) => {
     React.useEffect(() => {
       if (vm) {

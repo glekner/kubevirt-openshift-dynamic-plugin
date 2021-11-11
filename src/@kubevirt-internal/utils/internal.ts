@@ -1,7 +1,7 @@
 import { History } from 'history';
 import * as _ from 'lodash';
 
-import { getTopologyResourceObject, k8sPatch } from '@kubevirt-internal';
+import { k8sPatch } from '@kubevirt-internal';
 import {
   AccessReviewResourceAttributes,
   K8sKind,
@@ -13,7 +13,6 @@ import {
   Options,
 } from '@kubevirt-types';
 import { GroupVersionKind, K8sVerb } from '@openshift-console/dynamic-plugin-sdk';
-import { GraphElement } from '@patternfly/react-topology';
 
 import { Patch } from '../../k8s/helpers/patch';
 import { getName, getNamespace } from '../../selectors';
@@ -134,11 +133,6 @@ export const asAccessReview = (
   };
 };
 
-export const groupVersionFor = (apiVersion: string) => ({
-  group: apiVersion.split('/').length === 2 ? apiVersion.split('/')[0] : 'core',
-  version: apiVersion.split('/').length === 2 ? apiVersion.split('/')[1] : apiVersion,
-});
-
 const getK8sAPIPath = ({ apiGroup = 'core', apiVersion }: K8sKind): string => {
   const isLegacy = apiGroup === 'core' && apiVersion === 'v1';
   let p = isLegacy ? '/api/' : '/apis/';
@@ -185,11 +179,6 @@ export const k8sPatchByName = (
   data: Patch[],
   opts: Options = {},
 ) => k8sPatch(kind, { metadata: { name, namespace } }, data, opts);
-
-export const getTopologyResource = <T = K8sResourceKind>(node: GraphElement): T => {
-  const resource = (node as any)?.getResource();
-  return (resource as T) || (getTopologyResourceObject(node?.getData()) as T);
-};
 
 const abbrBlacklist = ['ASS'];
 export const kindToAbbr = (kind) => {

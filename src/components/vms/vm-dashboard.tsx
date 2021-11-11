@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Dashboard } from '@kubevirt-internal';
+import Dashboard from '@kubevirt-internal/components/Dashboard/Dashboard';
 import { DashboardGrid } from '@openshift-console/dynamic-plugin-sdk-internal';
 
 import { isVM, isVMI } from '../../selectors/check-type';

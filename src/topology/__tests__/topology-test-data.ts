@@ -1,4 +1,5 @@
-import { NODE_HEIGHT, NODE_PADDING, NODE_WIDTH, WorkloadModelProps } from '@kubevirt-types';
+import { NODE_HEIGHT, NODE_PADDING, NODE_WIDTH } from '@kubevirt-internal';
+import { WorkloadModelProps } from '@kubevirt-types';
 import { FirehoseResult } from '@openshift-console/dynamic-plugin-sdk';
 import { EventKind } from '@openshift-console/dynamic-plugin-sdk/lib/api/internal-types';
 import {

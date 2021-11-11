@@ -15,20 +15,14 @@ export * from './k8s-methods';
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
 */
-export {
-  referenceFor,
-  referenceForExtensionModel,
-  referenceForModel,
-} from '@openshift-console/dynamic-plugin-sdk-internal';
+
 export {
   connectToFlags,
   connectToPlural,
-  createConnectorCallback,
-  getActiveNamespace,
   getPropertyDescription,
   getSwaggerDefinitions,
   modelFor,
   modelForGroupKind,
   openAPItoJSONSchema,
   useActiveNamespace,
-} from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';
+} from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Prompt } from 'react-router';
 
-import { getActiveNamespace, useActiveNamespace } from '@kubevirt-internal';
+import { useActiveNamespace } from '@kubevirt-internal';
 import {
   Alert,
   Button,
@@ -71,13 +71,11 @@ const CreateVMWizardFooterComponent: React.FC<CreateVMWizardFooterComponentProps
 }) => {
   const { t } = useTranslation();
   const [showError, setShowError, checkValidity] = useShowErrorToggler();
-  const [activeNS, setActiveNS] = useActiveNamespace();
+  const [activeNS] = useActiveNamespace();
   const prevNamespaceRef = React.useRef('');
   React.useEffect(() => {
     prevNamespaceRef.current = activeNS;
   }, [activeNS]);
-
-  const prevNS = prevNamespaceRef.current;
 
   return (
     <WizardContextConsumer>
@@ -107,9 +105,9 @@ const CreateVMWizardFooterComponent: React.FC<CreateVMWizardFooterComponentProps
 
         // When the user try to change namespace and click cancel on prompt the namespaces does change.
         // This line change it back to the previous namespace.
-        if (prevNS && prevNS !== getActiveNamespace()) {
-          setActiveNS(prevNS);
-        }
+        // if (prevNS && prevNS !== getActiveNamespace()) {
+        //   setActiveNS(prevNS);
+        // }
 
         const isFirstStep = isProviderImport
           ? activeStepID === VMWizardTab.IMPORT_PROVIDERS

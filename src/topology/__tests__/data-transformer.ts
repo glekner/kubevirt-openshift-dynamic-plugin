@@ -17,6 +17,15 @@ import {
   StatefulSetModel,
 } from '@kubevirt-internal';
 import {
+  TYPE_APPLICATION_GROUP,
+  TYPE_CONNECTS_TO,
+  TYPE_EVENT_SOURCE,
+  TYPE_EVENT_SOURCE_KAFKA,
+  TYPE_KNATIVE_REVISION,
+  TYPE_TRAFFIC_CONNECTOR,
+  TYPE_WORKLOAD,
+} from '@kubevirt-internal/topology';
+import {
   Alert,
   HorizontalPodAutoscalerKind,
   K8sKind,
@@ -37,14 +46,6 @@ import { EdgeModel, Model, NodeModel } from '@patternfly/react-topology';
 import { OdcNodeModel } from '../isKubevirtResource';
 
 import { WORKLOAD_TYPES } from './topology-test-data';
-
-export const TYPE_WORKLOAD = 'workload';
-export const TYPE_TRAFFIC_CONNECTOR = 'traffic-connector';
-export const TYPE_APPLICATION_GROUP = 'part-of';
-export const TYPE_EVENT_SOURCE = 'event-source';
-export const TYPE_KNATIVE_REVISION = 'knative-revision';
-export const TYPE_EVENT_SOURCE_KAFKA = 'event-source-kafka';
-export const TYPE_CONNECTS_TO = 'connects-to';
 
 export type Alerts = {
   data: Alert[];

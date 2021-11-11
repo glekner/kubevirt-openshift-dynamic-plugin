@@ -107,6 +107,19 @@
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
   integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
 
+"@openshift-console/dynamic-plugin-sdk-internal-kubevirt@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal-kubevirt/-/dynamic-plugin-sdk-internal-kubevirt-0.0.4.tgz#a6c00a6403fbac26391f171b4318bf67ed858416"
+  integrity sha512-Z1Pao/C8zbDYDTAKgYYqwhlsi0P+n9rs9DPESlZRR+GuBM/JB+XXaM3DYzOu7jwvhLKWtMVgannTMgUYvrtIOA==
+  dependencies:
+    "@patternfly/react-core" "4.168.8"
+    "@patternfly/react-table" "4.37.8"
+    react "^17.0.1"
+    react-helmet "^6.1.0"
+    react-i18next "^11.7.3"
+    react-router "5.2.0"
+    react-router-dom "5.2.0"
+
 "@openshift-console/dynamic-plugin-sdk-internal@0.0.2-wp5":
   version "0.0.2-wp5"
   resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal/-/dynamic-plugin-sdk-internal-0.0.2-wp5.tgz#291946915a9a9543b0f47ebaec18977d1583c190"
@@ -120,10 +133,10 @@
     react-router "5.2.0"
     react-router-dom "5.2.0"
 
-"@openshift-console/dynamic-plugin-sdk-webpack@0.0.2-wp5":
-  version "0.0.2-wp5"
-  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-webpack/-/dynamic-plugin-sdk-webpack-0.0.2-wp5.tgz#edd63b6bb9c76e48b29e23424b4a23a2eb3f2373"
-  integrity sha512-7EdwlS7GrwMIs5IyFhrl+sAZlakr2UTJe7qRmky3yW5T0qf/duHgqla9W89Y9QBzzrCGEBw0KuQ+CuryI09BOQ==
+"@openshift-console/dynamic-plugin-sdk-webpack@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-webpack/-/dynamic-plugin-sdk-webpack-0.0.3.tgz#edc768dbdcb2d3d07d3ccb5f60c5a5a01b6293b8"
+  integrity sha512-uHQIpd+Xyyatz6HiyKkvf4JDYnUskxte+sJiYFL6csdbZyvXMgdcclGs+Epe/6clr8oP2N3IoARqV0CIHR9WOQ==
   dependencies:
     ajv "^6.12.3"
     chalk "2.4.x"
@@ -134,13 +147,13 @@
     semver "6.x"
     webpack "^5.53.0"
 
-"@openshift-console/dynamic-plugin-sdk@0.0.2-wp5":
-  version "0.0.2-wp5"
-  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk/-/dynamic-plugin-sdk-0.0.2-wp5.tgz#369121931e600a4fc5b01c5c7b5bdc1a4c0087b4"
-  integrity sha512-28d61P79ZVJX0W5oNRylCEkFKYl10b21md/tG8CEBw3gS7f6QzbdJ053OzKi+umvq89FYW9PtHr7TZQmVVPMUQ==
+"@openshift-console/dynamic-plugin-sdk@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk/-/dynamic-plugin-sdk-0.0.3.tgz#9e30cba4c1bdb375a8cfd4ed5ad4136d597720ed"
+  integrity sha512-2j+hj8XxuP1YZBKNziF2MaJ1QqD4UNb/aAq8qT+mJnlFtsPV1L44FPvS2ZQaQBPEDa0ogwrajeUgvb874Hf94w==
   dependencies:
-    "@patternfly/react-core" "4.157.8"
-    "@patternfly/react-table" "4.30.2"
+    "@patternfly/react-core" "4.168.8"
+    "@patternfly/react-table" "4.37.8"
     react "^17.0.1"
     react-helmet "^6.1.0"
     react-i18next "^11.7.3"
@@ -232,7 +245,7 @@
     tippy.js "5.1.2"
     tslib "^2.0.0"
 
-"@patternfly/react-core@^4.135.15", "@patternfly/react-core@^4.157.2", "@patternfly/react-core@^4.160.2", "@patternfly/react-core@^4.162.2":
+"@patternfly/react-core@4.168.8", "@patternfly/react-core@^4.135.15", "@patternfly/react-core@^4.157.2", "@patternfly/react-core@^4.160.2", "@patternfly/react-core@^4.162.2", "@patternfly/react-core@^4.168.8":
   version "4.168.8"
   resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-4.168.8.tgz#6f200dba7bb83423144db34bbd2ffc833b097566"
   integrity sha512-wfG52saibeAXRoBYytzMgVGANoInbPuhUK0y6AynVp3/QKAPCKHpaI4nCh9ytNZ+UjiT2KGOcunhavsOw5+iMA==
@@ -286,6 +299,18 @@
     "@patternfly/react-icons" "^4.13.0"
     "@patternfly/react-styles" "^4.12.4"
     "@patternfly/react-tokens" "^4.14.0"
+    lodash "^4.17.19"
+    tslib "^2.0.0"
+
+"@patternfly/react-table@4.37.8":
+  version "4.37.8"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-table/-/react-table-4.37.8.tgz#ed45f30d6aff3ad11f8fb429122dd68cac1891a4"
+  integrity sha512-DEaRooSGgfauX5RV3rwNcc9ZgMzR7gcCxsn9V7oNz6UsBgAV5cL7leGdAETdcV/B2+JMmGb+6QPjc54lsvwiuQ==
+  dependencies:
+    "@patternfly/react-core" "^4.168.8"
+    "@patternfly/react-icons" "^4.19.8"
+    "@patternfly/react-styles" "^4.18.8"
+    "@patternfly/react-tokens" "^4.20.8"
     lodash "^4.17.19"
     tslib "^2.0.0"
 

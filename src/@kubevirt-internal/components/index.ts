@@ -1,6 +1,7 @@
 // console components
 export * from './AsyncComponent/async';
 export * from './button-bar';
+export * from './Dashboard/Dashboard';
 export * from './details-item';
 export * from './ExternalLink';
 export * from './field-level-help';
@@ -11,7 +12,9 @@ export * from './modal';
 export * from './promise-component';
 export * from './RadioInput';
 export * from './scroll-to-top-on-mount';
+export * from './Status';
 export * from './StatusBox/status-box';
+export { default as StatusIconAndText } from './StatusIconAndText';
 
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
@@ -26,7 +29,6 @@ export {
   createModal,
   createModalLauncher,
   createProjectModal,
-  Dashboard,
   DashboardCardLink,
   DetailsPage,
   Dropdown,
@@ -36,10 +38,10 @@ export {
   ErrorStatus,
   EventItem,
   Firehose,
-  FLAGS,
   GenericStatus,
   getImageForIconClass,
   GreenCheckCircleIcon,
+  InfoStatus,
   InventoryItem,
   Kebab,
   LabelList,
@@ -66,9 +68,7 @@ export {
   ResourceSummary,
   Selector,
   ServicesList,
-  Status,
   StatusBox,
-  StatusIconAndText,
   StorageClassDropdown,
   SuccessStatus,
   Table,
@@ -85,7 +85,7 @@ export {
   withStartGuide,
   YAMLEditor,
   YellowExclamationTriangleIcon,
-} from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';
+} from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 /*
  TODO: The following modules should be either copied to kubevirt or exposed from the public sdk
@@ -94,27 +94,15 @@ export {
 export {
   CpuCellComponent,
   CreateConnector,
-  createConnectorCallback,
-  createMenuItems,
-  getFilterById,
-  getPodMetricStats,
-  getTopologyGroupItems,
-  getTopologyNodeItem,
-  getTopologyResourceObject,
+  // createConnectorCallback,
+  // createMenuItems,
+  editApplicationModal,
   MemoryCellComponent,
-  mergeGroup,
-  ModifyApplication,
-  NODE_SHADOW_FILTER_ID,
-  NODE_SHADOW_FILTER_ID_HOVER,
-  nodeDragSourceSpec,
-  nodeDropTargetSpec,
+  // nodeDragSourceSpec,
+  // nodeDropTargetSpec,
   NodeShadows,
-  SHOW_LABELS_FILTER_ID,
   TopologyListViewNode,
   useAllowEdgeCreation,
   useDisplayFilters,
-  useOverviewMetrics,
   useSearchFilter,
-  withContextMenu,
-  withEditReviewAccess,
-} from '@openshift-console/dynamic-plugin-sdk-kubevirt-internal';
+} from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';

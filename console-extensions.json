@@ -493,17 +493,17 @@
       "required": ["KUBEVIRT"]
     }
   },
-  {
-    "type": "console.topology/component/factory",
-    "properties": {
-      "getFactory": {
-        "$codeRef": "topology.componentFactory"
-      }
-    },
-    "flags": {
-      "required": ["KUBEVIRT"]
-    }
-  },
+  // {
+  //   "type": "console.topology/component/factory",
+  //   "properties": {
+  //     "getFactory": {
+  //       "$codeRef": "topology.componentFactory"
+  //     }
+  //   },
+  //   "flags": {
+  //     "required": ["KUBEVIRT"]
+  //   }
+  // },
   {
     "type": "console.topology/data/factory",
     "properties": {

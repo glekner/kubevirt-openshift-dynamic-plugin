@@ -2,6 +2,7 @@ import { Map as ImmutableMap } from 'immutable';
 import { match as RouterMatch } from 'react-router-dom';
 
 import { StatusGroup } from '@kubevirt-constants/status-group';
+import { NODE_HEIGHT, NODE_PADDING, NODE_WIDTH } from '@kubevirt-internal/topology/consts';
 import {
   FirehoseResource,
   FirehoseResult,
@@ -673,13 +674,6 @@ export type NodeComponentProps = {
 };
 
 export type FlagsObject = { [key: string]: boolean };
-
-export const DEFAULT_NODE_PAD = 20;
-export const DEFAULT_GROUP_PAD = 40;
-
-export const NODE_WIDTH = 104;
-export const NODE_HEIGHT = 104;
-export const NODE_PADDING = [0, DEFAULT_NODE_PAD];
 
 export const WorkloadModelProps = {
   width: NODE_WIDTH,
