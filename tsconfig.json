@@ -29,6 +29,6 @@
       "@kubevirt-constants/*": ["src/constants/*", "src/@kubevirt-internal/constants/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
+  "include": ["src"],
   "exclude": ["**/node_modules", "**/dist"]
 }

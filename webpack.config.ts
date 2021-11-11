@@ -13,6 +13,7 @@ const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const config: webpack.Configuration = {
   mode: 'development',
+  entry: {},
   context: path.resolve(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
