@@ -1,6 +1,5 @@
 import i18next from 'i18next';
 import * as _ from 'lodash';
-import { ConnectsToData } from 'src/topology/__tests__/data-transformer';
 
 import {
   editApplicationModal,
@@ -18,6 +17,7 @@ import {
 } from '@openshift-console/dynamic-plugin-sdk/lib/extensions/topology-types';
 import { GraphElement, isGraph, Node, NodeModel } from '@patternfly/react-topology';
 
+import { ConnectsToData } from '../../../topology/__tests__/data-transformer';
 import { GROUP_HEIGHT, GROUP_PADDING, GROUP_WIDTH, TYPE_APPLICATION_GROUP } from '../index';
 import OdcBaseNode from '../OdcBaseNode';
 

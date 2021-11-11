@@ -33,7 +33,8 @@ export const DNDDataListItem: React.FC<DNDDataListItemProps> = ({
 }) => {
   // Create a drag item copy.
   const [, drag, preview] = useDrag({
-    item: { type: DNDDataListItemTypeName, id: `${DNDDataListItemTypeName}-${index}`, index },
+    type: DNDDataListItemTypeName,
+    item: { id: `${DNDDataListItemTypeName}-${index}`, index },
   });
   // Move item when hover over onoter item.
   const [{ opacity }, drop] = useDrop({

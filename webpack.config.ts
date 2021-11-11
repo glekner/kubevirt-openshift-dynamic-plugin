@@ -9,6 +9,7 @@ import { ConsoleRemotePlugin } from '@openshift-console/dynamic-plugin-sdk-webpa
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const config: webpack.Configuration = {
   mode: 'development',
@@ -39,21 +40,8 @@ const config: webpack.Configuration = {
     },
   },
   resolve: {
+    modules: [path.join(__dirname, 'node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    alias: {
-      stream: 'stream-browserify',
-      http: 'stream-http',
-      path: 'path-browserify',
-      os: 'os-browserify/browser',
-      crypto: 'crypto-browserify',
-      timers: 'timers-browserify',
-      tty: 'tty-browserify',
-      vm: 'vm-browserify',
-      net: 'net-browserify',
-      fs: 'browserify-fs',
-      prettier: false,
-      buffer: 'buffer',
-    },
     plugins: [new TsconfigPathsPlugin()],
   },
   stats: {
@@ -61,6 +49,12 @@ const config: webpack.Configuration = {
   },
   module: {
     rules: [
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
+      },
       {
         test: /\.(jsx?|tsx?)$/,
         exclude: /node_modules/,
@@ -117,6 +111,9 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
+    new NodePolyfillPlugin({
+      excludeAliases: ['console'],
+    }),
     new ConsoleRemotePlugin(),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
@@ -129,6 +126,9 @@ const config: webpack.Configuration = {
       },
     }),
   ],
+  resolveLoader: {
+    modules: [path.join(__dirname, 'node_modules')],
+  },
   devtool: 'source-map',
   optimization: {
     chunkIds: 'named',
