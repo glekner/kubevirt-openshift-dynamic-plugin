@@ -13,7 +13,7 @@ type URLSourceHelpProps = {
 };
 
 export const URLSourceHelp: React.FC<URLSourceHelpProps> = ({ baseImageName }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   // checking os is RHEL/Windows and adjust link images accordingly, Fedora is default for all other OS.
   const body = baseImageName?.includes('rhel') ? (
     <Trans t={t} ns="kubevirt-plugin">

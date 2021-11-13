@@ -16,7 +16,7 @@ const ProvisionSourceDiskHelpMsg: React.FC<ProvisionSourceDiskHelpMsgProps> = ({
   provisionSourceValue,
   goToStorageStep,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const getStorageMsg = () => {
     switch (ProvisionSource.fromString(provisionSourceValue)) {
       case ProvisionSource.URL:
@@ -82,7 +82,7 @@ const ProvisionSourceDiskHelpMsg: React.FC<ProvisionSourceDiskHelpMsgProps> = ({
 const ProvisionSourceNetHelpMsg: React.FC<ProvisionSourceNetHelpMsgProps> = ({
   goToNetworkingStep,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <div className="pf-c-form__helper-text" aria-live="polite">
       <Trans ns="kubevirt-plugin" t={t}>

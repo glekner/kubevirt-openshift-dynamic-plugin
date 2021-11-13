@@ -51,7 +51,7 @@ const BootOrderModalComponent = withHandlePromise(
     vmi: vmiProp,
   }: BootOrderModalProps) => {
     const bootableDevices = getBootableDevices(vmLikeEntity);
-    const { t } = useTranslation();
+    const { t } = useTranslation('kubevirt-plugin');
     const [devices, setDevices] = React.useState<BootableDeviceType[]>(bootableDevices);
     const [initialDeviceList, setInitialDeviceList] =
       React.useState<BootableDeviceType[]>(bootableDevices);

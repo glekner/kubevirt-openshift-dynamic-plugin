@@ -6,7 +6,7 @@ import { Alert, AlertVariant } from '@patternfly/react-core';
 export const RemovalDiskAlert: React.FC<{
   hotplugDiskNames?: string[];
 }> = ({ hotplugDiskNames }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const diskList = hotplugDiskNames?.join(', ');
   return (
     hotplugDiskNames?.length > 0 && (

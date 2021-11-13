@@ -7,7 +7,7 @@ import { Text, TextVariants } from '@patternfly/react-core';
 import './ssh-popover.scss';
 
 const SSHPopover: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <FieldLevelHelp testId="ssh-popover-button">
       <div data-test="ssh-popover">

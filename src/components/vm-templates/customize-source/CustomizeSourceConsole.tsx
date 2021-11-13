@@ -69,7 +69,7 @@ const CustomizeSourceConsole: React.FC<CustomizeSourceConsoleProps> = ({
     vmName: vm.metadata.name,
     shouldBeFullScreen: false,
   });
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const template = JSON.parse(vm.metadata.annotations[TEMPLATE_CUSTOMIZED_ANNOTATION]);
   const [disablePrompt, setDisablePrompt] = React.useState(false);
   return (

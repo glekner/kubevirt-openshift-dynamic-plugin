@@ -25,7 +25,7 @@ export const VMIUsersAlert: React.FC<VMIUsersAlertProps> = ({
   alertHref,
 }) => {
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   const [guestAgentInfoRaw] = useGuestAgentInfo({ vmi });
   const guestAgentInfo = new GuestAgentInfoWrapper(guestAgentInfoRaw);
   const userListLength = guestAgentInfo.getNumLoggedInUsers();

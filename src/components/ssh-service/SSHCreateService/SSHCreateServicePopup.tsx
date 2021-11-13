@@ -16,7 +16,7 @@ type SSHCreateServicePopupProps = {
 };
 
 const SSHCreateServicePopup: React.FC<SSHCreateServicePopupProps> = ({ vmName, hidePopup }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('kubevirt-plugin');
   return (
     <>
       {vmName ? (
