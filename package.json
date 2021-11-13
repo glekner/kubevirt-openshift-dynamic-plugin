@@ -5,7 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack",
     "build-dev": "NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 yarn ts-node node_modules/.bin/webpack --progress",
-    "dev": "rm -rf dist && yarn ts-node ./node_modules/.bin/webpack serve --progress",
+    "dev": "NODE_ENV=development NODE_OPTIONS=--max-old-space-size=8192 rm -rf dist && yarn ts-node ./node_modules/.bin/webpack serve --progress",
     "ts-node": "ts-node -O '{\"module\":\"commonjs\"}' -I '/node_modules/(?!(@console)/)/'",
     "lint": "eslint src --ext .tsx --ext .ts",
     "lint:fix": "yarn lint --fix"
@@ -63,8 +63,8 @@
     "@types/react-transition-group": "2.x",
     "@types/react-virtualized": "9.x",
     "@types/webpack-dev-server": "^4.3.1",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
     "comment-json": "4.x",
     "css-loader": "6.2.0",
     "enzyme": "3.10.x",
