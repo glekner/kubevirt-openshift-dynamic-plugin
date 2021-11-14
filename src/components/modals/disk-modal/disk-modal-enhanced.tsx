@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { connectWithStore } from 'src/redux/connectWithStore';
 
 import { createModalLauncher, Firehose, ModalComponentProps } from '@kubevirt-internal';
 import { k8sPatch } from '@kubevirt-internal/utils';
@@ -181,6 +181,5 @@ const diskModalStateToProps = ({ k8s }) => {
   };
 };
 
-const DiskModalConnected = connect(diskModalStateToProps)(DiskModalFirehose);
-
+const DiskModalConnected = connectWithStore(diskModalStateToProps, DiskModalFirehose);
 export const diskModalEnhanced = createModalLauncher(DiskModalConnected);

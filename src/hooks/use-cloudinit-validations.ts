@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch } from 'react-redux';
+
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 import { vmWizardInternalActions } from '../components/create-vm-wizard/redux/internal-actions';
 import { InternalActionType } from '../components/create-vm-wizard/redux/types';
@@ -20,7 +20,6 @@ const useCloudinitValidations = (wizardReduxID: string) => {
   const { t } = useTranslation();
   const [validationStatus, setValidationStatus] = React.useState<ValidationStatus>({});
   const [isValid, setIsValid] = React.useState<boolean>();
-  const dispatch = useDispatch();
   const validationSchema = React.useCallback(
     (obj: { [key: string]: string | string[] }) => {
       const errorCatcher = new ErrorCatcher();
@@ -29,7 +28,7 @@ const useCloudinitValidations = (wizardReduxID: string) => {
         func(obj, errorCatcher, t),
       );
 
-      dispatch(
+      InternalReduxStore.dispatch(
         vmWizardInternalActions[InternalActionType.SetTabValidity](
           wizardReduxID,
           VMWizardTab.ADVANCED,
@@ -42,7 +41,7 @@ const useCloudinitValidations = (wizardReduxID: string) => {
       setValidationStatus(errorCatcher.getErrors());
       setIsValid(errorCatcher.isValid);
     },
-    [dispatch, t, wizardReduxID],
+    [t, wizardReduxID],
   );
 
   return { validationSchema, validationStatus, isValid };

@@ -1,11 +1,10 @@
 import * as React from 'react';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch } from 'react-redux';
 
 import { useActiveNamespace } from '@kubevirt-internal';
 import { ServiceModel } from '@kubevirt-models';
 import { K8sResourceKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 import { sshActions, SSHActionsNames } from '../components/ssh-service/redux/actions';
 import {
@@ -23,7 +22,6 @@ export type useSSHServiceResult = {
 };
 
 const useSSHService = (vm?: VMKind | VMIKind): useSSHServiceResult => {
-  const dispatch = useDispatch();
   const { metadata } = vm || {};
   const [activeNamespace] = useActiveNamespace();
   const namespace = metadata?.namespace || activeNamespace;
@@ -47,7 +45,7 @@ const useSSHService = (vm?: VMKind | VMIKind): useSSHServiceResult => {
         ({ metadata: serviceMetadata }) =>
           serviceMetadata?.name === `${metadata?.name}-ssh-service`,
       );
-      dispatch(
+      InternalReduxStore.dispatch(
         sshActions[SSHActionsNames.updateSSHServices](
           !!service,
           getServicePort(service, TARGET_PORT)?.nodePort,
@@ -55,7 +53,7 @@ const useSSHService = (vm?: VMKind | VMIKind): useSSHServiceResult => {
         ),
       );
     }
-  }, [metadata, services, isServicesLoaded, dispatch]);
+  }, [metadata, services, isServicesLoaded]);
 
   const createOrDeleteSSHServiceWithEnableSSHService = (virtualMachine: VMKind | VMIKind) =>
     createOrDeleteSSHService(virtualMachine, enableSSHService);

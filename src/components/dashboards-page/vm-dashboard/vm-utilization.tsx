@@ -21,7 +21,7 @@ import { VMDashboardContext } from '../../vms/vm-dashboard-context';
 
 import { getMultilineUtilizationQueries, getUtilizationQueries, VMQueries } from './queries';
 
-export declare enum ByteDataTypes {
+enum ByteDataTypes {
   BinaryBytes = 'binaryBytes',
   BinaryBytesWithoutB = 'binaryBytesWithoutB',
   DecimalBytes = 'decimalBytes',

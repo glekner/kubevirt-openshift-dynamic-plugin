@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { connectWithStore } from 'src/redux/connectWithStore';
 
 import {
   createModalLauncher,
@@ -144,6 +144,6 @@ const nicModalStateToProps = ({ k8s }) => {
   };
 };
 
-const NICModalConnected = connect(nicModalStateToProps)(NICModalFirehose);
+const NICModalConnected = connectWithStore(nicModalStateToProps, NICModalFirehose);
 
 export const nicModalEnhanced = createModalLauncher(NICModalConnected);

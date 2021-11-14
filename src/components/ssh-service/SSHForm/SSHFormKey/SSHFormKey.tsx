@@ -1,10 +1,9 @@
 import { isEmpty } from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch } from 'react-redux';
 import sshpk from 'sshpk';
 
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 import { Button, FileUpload, Flex, FlexItem } from '@patternfly/react-core';
 
 import useSSHKeys from '../../../../hooks/use-ssh-keys';
@@ -16,7 +15,6 @@ import './ssh-form-key.scss';
 
 const SSHFormKey: React.FC = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const { key, tempSSHKey, updateSSHTempKey, showRestoreKeyButton, setIsValidSSHKey } =
     useSSHKeys();
   const [filename, setFilename] = React.useState<string>();
@@ -27,9 +25,11 @@ const SSHFormKey: React.FC = () => {
   const valueChanged = React.useCallback(
     (val: string) => {
       updateSSHTempKey(val);
-      dispatch(sshActions[SSHActionsNames.disableSaveInNamespaceCheckbox](isEmpty(val)));
+      InternalReduxStore.dispatch(
+        sshActions[SSHActionsNames.disableSaveInNamespaceCheckbox](isEmpty(val)),
+      );
     },
-    [dispatch, updateSSHTempKey],
+    [updateSSHTempKey],
   );
 
   const onChange = (val: string, name: string) => {

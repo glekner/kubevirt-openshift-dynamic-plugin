@@ -96,7 +96,6 @@ export {
   CreateConnector,
   // createConnectorCallback,
   // createMenuItems,
-  editApplicationModal,
   MemoryCellComponent,
   // nodeDragSourceSpec,
   // nodeDropTargetSpec,

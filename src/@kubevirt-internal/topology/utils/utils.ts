@@ -1,13 +1,7 @@
 import i18next from 'i18next';
 import * as _ from 'lodash';
 
-import {
-  editApplicationModal,
-  k8sList,
-  k8sPatch,
-  modelFor,
-  referenceFor,
-} from '@kubevirt-internal';
+import { k8sList, k8sPatch, modelFor, referenceFor } from '@kubevirt-internal';
 import { K8sKind, K8sResourceKind, K8sResourceKindReference, KebabOption } from '@kubevirt-types';
 import {
   DisplayFilters,
@@ -128,13 +122,7 @@ export const ModifyApplication = (kind: K8sKind, obj: K8sResourceKind): KebabOpt
   return {
     // t('topology~Edit Application grouping')
     labelKey: 'topology~Edit Application grouping',
-    callback: () =>
-      editApplicationModal({
-        resourceKind: kind,
-        resource: obj,
-        blocking: true,
-        initialApplication: '',
-      }),
+    callback: () => {},
     accessReview: {
       group: kind.apiGroup,
       resource: kind.plural,

@@ -112,10 +112,10 @@
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
   integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
 
-"@openshift-console/dynamic-plugin-sdk-internal-kubevirt@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal-kubevirt/-/dynamic-plugin-sdk-internal-kubevirt-0.0.4.tgz#a6c00a6403fbac26391f171b4318bf67ed858416"
-  integrity sha512-Z1Pao/C8zbDYDTAKgYYqwhlsi0P+n9rs9DPESlZRR+GuBM/JB+XXaM3DYzOu7jwvhLKWtMVgannTMgUYvrtIOA==
+"@openshift-console/dynamic-plugin-sdk-internal-kubevirt@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal-kubevirt/-/dynamic-plugin-sdk-internal-kubevirt-0.0.9.tgz#c7981da08832319db180c7a48acc0d3a1fb69bde"
+  integrity sha512-7bFfwq7y6FPmcbfOBNRTm7yj3uIure4ncscOuL21ZHSEkFXbCDeDB1rI2dy29jmiJQ+N2yRkfaLBJHQrREH88Q==
   dependencies:
     "@patternfly/react-core" "4.168.8"
     "@patternfly/react-table" "4.37.8"
@@ -395,7 +395,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/classnames@^2.2.7":
+"@types/classnames@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.3.1.tgz#3c2467aa0f1a93f1f021e3b9bcf938bd5dfdc0dd"
   integrity sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==
@@ -2168,7 +2168,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@*, classnames@2.x, classnames@^2.2.5:
+classnames@*, classnames@2.3.1, classnames@^2.2.5:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==

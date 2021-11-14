@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch } from 'react-redux';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
 import xml from 'xml2js';
 
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 import { FileUpload, Text, TextVariants } from '@patternfly/react-core';
 
 import { SysprepActions, SysprepActionsNames } from '../../../../../redux/actions/sysprep-actions';
@@ -23,7 +21,6 @@ type SysprepFileFieldProps = {
 
 const SysprepFileField: React.FC<SysprepFileFieldProps> = ({ id }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const [data, setData] = React.useState<SysprepFile>({
     validated: ValidatedOptions.default,
     fileName: '',
@@ -41,14 +38,17 @@ const SysprepFileField: React.FC<SysprepFileFieldProps> = ({ id }) => {
       }));
 
       xml.parseString(value || '', (parseError, parseResult) => {
-        parseResult && dispatch(SysprepActions[SysprepActionsNames.updateValue]({ [id]: value }));
+        parseResult &&
+          InternalReduxStore.dispatch(
+            SysprepActions[SysprepActionsNames.updateValue]({ [id]: value }),
+          );
         setData((currentSysprepFile) => ({
           ...currentSysprepFile,
           validated: parseError ? ValidatedOptions.error : ValidatedOptions.default,
         }));
       });
     },
-    [dispatch, id],
+    [id],
   );
   return (
     <>

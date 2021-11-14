@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
 
 import {
   createModalLauncher,
@@ -27,6 +26,7 @@ import {
 import { cloneVM } from '../../../k8s/requests/vm/clone';
 import { DataVolumeModel, VirtualMachineModel } from '../../../models';
 import { kubevirtReferenceForModel } from '../../../models/kubevirtReferenceForModel';
+import { connectWithStore } from '../../../redux/connectWithStore';
 import { getDescription, getName, getNamespace, ValidationErrorType } from '../../../selectors';
 import { getVolumes, isVMExpectedRunning } from '../../../selectors/vm/selectors';
 import {
@@ -309,6 +309,6 @@ const cloneVMModalStateToProps = ({ k8s }) => {
   };
 };
 
-const CloneVMModalConnected = connect(cloneVMModalStateToProps)(CloneVMModalFirehose);
+const CloneVMModalConnected = connectWithStore(cloneVMModalStateToProps, CloneVMModalFirehose);
 
 export const cloneVMModal = createModalLauncher(CloneVMModalConnected);

@@ -452,7 +452,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       showTitle={false}
       rowFilters={[vmStatusFilter]}
       ListComponent={VMList}
-      resources={resources}
+      resources={resources as any}
       flatten={debouncedFlatten}
       label={VirtualMachineModel.labelPlural}
     />

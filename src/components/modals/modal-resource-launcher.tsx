@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 import * as React from 'react';
-import { Provider } from 'react-redux';
 import { Router, useHistory } from 'react-router-dom';
 
 import {
@@ -68,19 +67,16 @@ export const createModalResourceLauncher: CreateModalResourceLauncher =
   (Component, resources, resourcesToProps) => (props) => {
     const history = useHistory();
     const getModalContainer: GetModalContainer = (onClose) => (
-      // <Provider store={InternalReduxStore}>
-      <Provider>
-        <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
-          <Firehose resources={resources}>
-            <ModalComponentWrapper
-              Component={Component}
-              onClose={onClose}
-              resourcesToProps={resourcesToProps}
-              modalProps={props}
-            />
-          </Firehose>
-        </Router>
-      </Provider>
+      <Router {...{ history, basename: window.SERVER_FLAGS.basePath }}>
+        <Firehose resources={resources}>
+          <ModalComponentWrapper
+            Component={Component}
+            onClose={onClose}
+            resourcesToProps={resourcesToProps}
+            modalProps={props}
+          />
+        </Firehose>
+      </Router>
     );
     return createModal(getModalContainer);
   };

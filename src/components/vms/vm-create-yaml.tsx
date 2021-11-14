@@ -71,7 +71,7 @@ const VMCreateYAMLConnected = connectToPlural(
       return <LoadingBox />;
     }
     if (!kindObj) {
-      return <ErrorPage404 />;
+      return <ErrorPage404 message="" />;
     }
 
     return (

@@ -1,8 +1,5 @@
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useSelector } from 'react-redux';
-
-import { RootState } from '@kubevirt-types';
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 export const useOverviewMetrics = () => {
-  return useSelector((state: RootState) => state.UI.getIn(['overview', 'metrics']));
+  return InternalReduxStore.getState().UI.getIn(['overview', 'metrics']);
 };

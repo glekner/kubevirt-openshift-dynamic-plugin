@@ -1,10 +1,9 @@
 import * as React from 'react';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch, useSelector } from 'react-redux';
 
 import { PersistentVolumeClaimModel } from '@kubevirt-models';
 import { PersistentVolumeClaimKind } from '@kubevirt-types';
 import { useK8sWatchResource } from '@openshift-console/dynamic-plugin-sdk';
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 import { vmWizardActions } from '../components/create-vm-wizard/redux/actions';
 import { ActionType } from '../components/create-vm-wizard/redux/types';
@@ -12,9 +11,8 @@ import { getStorages } from '../components/create-vm-wizard/selectors/selectors'
 import { VMWizardStorage } from '../components/create-vm-wizard/types';
 
 export const useUpdateStorages = (reduxID) => {
-  const dispatch = useDispatch();
-  const rootDisk = useSelector((state) =>
-    getStorages(state, reduxID)?.find(({ disk }) => disk?.name === 'rootdisk'),
+  const rootDisk = getStorages(InternalReduxStore.getState(), reduxID)?.find(
+    ({ disk }) => disk?.name === 'rootdisk',
   );
 
   const name = rootDisk?.dataVolume?.spec?.source?.pvc?.name;
@@ -30,9 +28,11 @@ export const useUpdateStorages = (reduxID) => {
 
   const updateStorage = React.useCallback(
     (storage: VMWizardStorage) => {
-      dispatch(vmWizardActions[ActionType.UpdateStorage](reduxID, storage));
+      InternalReduxStore.dispatch(
+        vmWizardActions[ActionType.UpdateStorage](reduxID, storage) as any,
+      );
     },
-    [dispatch, reduxID],
+    [reduxID],
   );
 
   const [pvc] = useK8sWatchResource<PersistentVolumeClaimKind>(sourcePvc);

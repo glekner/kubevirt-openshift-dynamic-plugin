@@ -91,7 +91,7 @@ const VirtualMachineTemplatesPage: React.FC<
   VirtualMachineTemplatesPageProps & React.ComponentProps<typeof ListPage>
 > = (props) => {
   const { t } = useTranslation();
-  const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData;
+  const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData ?? {};
   const namespace = props.match.params.ns;
 
   const resources = [
@@ -163,7 +163,7 @@ const VirtualMachineTemplatesPage: React.FC<
         title={t('kubevirt-plugin~Virtual Machine Templates')}
         showTitle={showTitle}
         ListComponent={VMTemplateTable}
-        resources={resources}
+        resources={resources as any}
         flatten={flatten}
         label={t('kubevirt-plugin~Virtual Machine Templates')}
         rowFilters={filters(t)}

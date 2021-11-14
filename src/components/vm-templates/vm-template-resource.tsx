@@ -200,7 +200,7 @@ export const VMTemplateSchedulingList: React.FC<VMTemplateResourceSummaryProps> 
             editButtonId={prefixedID(id, 'node-selector-edit')}
             onEditClick={() => nodeSelectorModal({ vmLikeEntity: template, blocking: true })}
           >
-            <LabelList kind="Node" labels={nodeSelector} />
+            <LabelList kind="Node" labels={nodeSelector} expand />
           </VMDetailsItem>
 
           <VMDetailsItem
@@ -216,7 +216,7 @@ export const VMTemplateSchedulingList: React.FC<VMTemplateResourceSummaryProps> 
               })
             }
           >
-            <LabelList kind="Node" labels={tolerationsLabels} />
+            <LabelList kind="Node" labels={tolerationsLabels} expand />
           </VMDetailsItem>
 
           <VMDetailsItem

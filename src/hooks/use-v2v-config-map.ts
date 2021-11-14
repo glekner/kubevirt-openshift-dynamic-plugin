@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash';
 import * as React from 'react';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { useDispatch } from 'react-redux';
+
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 import { VIRTIO_WIN_IMAGE } from '../constants/vm/constants';
 import { getVmwareConfigMap } from '../k8s/requests/v2v/v2vvmware-configmap';
@@ -15,7 +15,6 @@ const defaultConfigMapData = {
 };
 
 const useV2VConfigMap = () => {
-  const dispatch = useDispatch();
   const [data, setData] = React.useState<any>();
   const [loaded, setLoaded] = React.useState<boolean>(false);
   const [error, setError] = React.useState<any>();
@@ -25,15 +24,19 @@ const useV2VConfigMap = () => {
       const result = await getVmwareConfigMap();
       if (result?.data) {
         setData(!isEmpty(result?.data) ? result?.data : defaultConfigMapData);
-        dispatch(v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](result?.data));
+        InternalReduxStore.dispatch(
+          v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](result?.data),
+        );
       }
     } catch (e) {
       setError(e);
       setData(defaultConfigMapData);
-      dispatch(v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](defaultConfigMapData));
+      InternalReduxStore.dispatch(
+        v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](defaultConfigMapData),
+      );
     }
     setLoaded(true);
-  }, [dispatch]);
+  }, []);
 
   React.useEffect(() => {
     !data && getData();

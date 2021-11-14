@@ -279,7 +279,7 @@ VMList.displayName = 'VMList';
 
 export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) => {
   const { t } = useTranslation();
-  const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData;
+  const { skipAccessReview, noProjectsAvailable, showTitle } = props.customData ?? {};
   const namespace = props.match.params.ns;
   const vmStatusResources = useVmStatusResources(namespace);
 
@@ -364,7 +364,7 @@ export const VirtualMachinesPage: React.FC<VirtualMachinesPageProps> = (props) =
       showTitle={showTitle}
       rowFilters={[vmStatusFilterNew]}
       ListComponent={VMList}
-      resources={resources}
+      resources={resources as any}
       flatten={debouncedFlatten}
       label={VirtualMachineModel.labelPlural}
       customData={vmStatusResources}

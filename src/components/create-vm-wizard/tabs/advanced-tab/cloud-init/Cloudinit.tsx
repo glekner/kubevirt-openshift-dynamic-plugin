@@ -2,8 +2,8 @@ import yamlParser from 'js-yaml';
 import { isEmpty, isEqual } from 'lodash';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore: FIXME missing exports due to out-of-sync @types/react-redux version
-import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+
+import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 import useCloudinitValidations from '../../../../../hooks/use-cloudinit-validations';
 import useSSHKeys from '../../../../../hooks/use-ssh-keys';
@@ -42,10 +42,10 @@ type CloudinitProps = {
 
 const Cloudinit: React.FC<CloudinitProps> = ({ wizardReduxID }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
-  const { iCloudInitStorage } = useSelector((state: RootStateOrAny) => ({
-    iCloudInitStorage: iGetCloudInitNoCloudStorage(state, wizardReduxID),
-  }));
+  const iCloudInitStorage = iGetCloudInitNoCloudStorage(
+    InternalReduxStore.getState(),
+    wizardReduxID,
+  );
 
   const [data, isBase64] = CloudInitDataHelper.getUserData(
     toShallowJS(iGetIn(iCloudInitStorage, ['volume', 'cloudInitNoCloud'])),
@@ -94,7 +94,7 @@ const Cloudinit: React.FC<CloudinitProps> = ({ wizardReduxID }) => {
     yaml &&
       isValid &&
       isYamlValid &&
-      onDataChanged(yaml, isBase64, iCloudInitStorage, wizardReduxID, dispatch);
+      onDataChanged(yaml, isBase64, iCloudInitStorage, wizardReduxID, InternalReduxStore.dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isValid, yaml, isYamlValid]);
 
