@@ -3,7 +3,6 @@ import * as React from 'react';
 
 /* eslint-disable lines-between-class-members */
 import {
-  AsyncComponent,
   connectToPlural,
   DroppableEditYAML,
   ErrorPage404,
@@ -26,6 +25,7 @@ import { resolveDefaultVMTemplate } from '../../k8s/requests/vm/create/default-t
 import { VMTemplateWrapper } from '../../k8s/wrapper/vm/vm-template-wrapper';
 import { VMTemplateYAMLTemplates } from '../../models/templates';
 import { getName, getNamespace } from '../../selectors';
+console.log('connectToPlural', connectToPlural);
 
 const CreateVMTemplateYAMLConnected = connectToPlural(
   ({ match, kindsInFlight, kindObj }: CreateYAMLProps) => {
@@ -83,8 +83,7 @@ const CreateVMTemplateYAMLConnected = connectToPlural(
       );
 
     return (
-      <AsyncComponent
-        loader={DroppableEditYAML}
+      <DroppableEditYAML
         obj={defaultTemplate}
         create
         kind={kindObj.kind}

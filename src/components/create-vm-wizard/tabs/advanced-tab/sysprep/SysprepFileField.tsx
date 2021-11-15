@@ -39,7 +39,7 @@ const SysprepFileField: React.FC<SysprepFileFieldProps> = ({ id }) => {
 
       xml.parseString(value || '', (parseError, parseResult) => {
         parseResult &&
-          InternalReduxStore.dispatch(
+          InternalReduxStore?.dispatch(
             SysprepActions[SysprepActionsNames.updateValue]({ [id]: value }),
           );
         setData((currentSysprepFile) => ({

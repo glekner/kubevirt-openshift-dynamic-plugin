@@ -23,8 +23,8 @@ export class AsyncComponent extends React.Component<AsyncComponentProps, AsyncCo
   private isAsyncMounted = false;
 
   static getDerivedStateFromProps(props, state) {
-    if (!sameLoader(props.loader)(state.loader)) {
-      return { Component: null, loader: props.loader };
+    if (!sameLoader(props?.loader)(state?.loader)) {
+      return { Component: null, loader: props?.loader };
     }
     return null;
   }
@@ -48,7 +48,7 @@ export class AsyncComponent extends React.Component<AsyncComponentProps, AsyncCo
 
   private loadComponent() {
     this.state
-      .loader()
+      ?.loader()
       .then((Component) => {
         if (!Component) {
           return Promise.reject(AsyncComponentError.ComponentNotFound);
@@ -60,7 +60,7 @@ export class AsyncComponent extends React.Component<AsyncComponentProps, AsyncCo
           // eslint-disable-next-line no-console
           console.error('Component does not exist in module');
         } else {
-          setTimeout(() => this.loadComponent(), this.retryAfter);
+          setTimeout(() => this?.loadComponent(), this.retryAfter);
         }
       });
   }

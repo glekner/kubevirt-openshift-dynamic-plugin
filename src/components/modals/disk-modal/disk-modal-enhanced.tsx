@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connectWithStore } from 'src/redux/connectWithStore';
 
 import { createModalLauncher, Firehose, ModalComponentProps } from '@kubevirt-internal';
 import { k8sPatch } from '@kubevirt-internal/utils';
@@ -20,6 +19,7 @@ import { DiskWrapper } from '../../../k8s/wrapper/vm/disk-wrapper';
 import { VMWrapper } from '../../../k8s/wrapper/vm/vm-wrapper';
 import { VMIWrapper } from '../../../k8s/wrapper/vm/vmi-wrapper';
 import { VolumeWrapper } from '../../../k8s/wrapper/vm/volume-wrapper';
+import { connectWithStore } from '../../../redux/connectWithStore';
 import { getName, getNamespace } from '../../../selectors';
 import { isTemplate } from '../../../selectors/check-type';
 import { getVMLikeModel } from '../../../selectors/vm/vmlike';

@@ -25,7 +25,7 @@ const SSHFormKey: React.FC = () => {
   const valueChanged = React.useCallback(
     (val: string) => {
       updateSSHTempKey(val);
-      InternalReduxStore.dispatch(
+      InternalReduxStore?.dispatch(
         sshActions[SSHActionsNames.disableSaveInNamespaceCheckbox](isEmpty(val)),
       );
     },

@@ -24,14 +24,14 @@ const useV2VConfigMap = () => {
       const result = await getVmwareConfigMap();
       if (result?.data) {
         setData(!isEmpty(result?.data) ? result?.data : defaultConfigMapData);
-        InternalReduxStore.dispatch(
+        InternalReduxStore?.dispatch(
           v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](result?.data),
         );
       }
     } catch (e) {
       setError(e);
       setData(defaultConfigMapData);
-      InternalReduxStore.dispatch(
+      InternalReduxStore?.dispatch(
         v2vConfigMapActions[v2vConfigMapActionsNames.updateImages](defaultConfigMapData),
       );
     }

@@ -45,7 +45,7 @@ const useSSHService = (vm?: VMKind | VMIKind): useSSHServiceResult => {
         ({ metadata: serviceMetadata }) =>
           serviceMetadata?.name === `${metadata?.name}-ssh-service`,
       );
-      InternalReduxStore.dispatch(
+      InternalReduxStore?.dispatch(
         sshActions[SSHActionsNames.updateSSHServices](
           !!service,
           getServicePort(service, TARGET_PORT)?.nodePort,

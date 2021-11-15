@@ -94,7 +94,7 @@ const Cloudinit: React.FC<CloudinitProps> = ({ wizardReduxID }) => {
     yaml &&
       isValid &&
       isYamlValid &&
-      onDataChanged(yaml, isBase64, iCloudInitStorage, wizardReduxID, InternalReduxStore.dispatch);
+      onDataChanged(yaml, isBase64, iCloudInitStorage, wizardReduxID, InternalReduxStore?.dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isValid, yaml, isYamlValid]);
 

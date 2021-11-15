@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connectWithStore } from 'src/redux/connectWithStore';
 
 import {
   createModalLauncher,
@@ -14,6 +13,7 @@ import { FirehoseResource, FirehoseResult } from '@openshift-console/dynamic-plu
 import { getUpdateNICPatches } from '../../../k8s/patches/vm/vm-nic-patches';
 import { NetworkInterfaceWrapper } from '../../../k8s/wrapper/vm/network-interface-wrapper';
 import { NetworkWrapper } from '../../../k8s/wrapper/vm/network-wrapper';
+import { connectWithStore } from '../../../redux/connectWithStore';
 import { getName, getNamespace } from '../../../selectors';
 import { getInterfaces, getUsedNetworks } from '../../../selectors/vm/selectors';
 import { asVM } from '../../../selectors/vm/vm';

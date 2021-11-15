@@ -28,7 +28,7 @@ export const useUpdateStorages = (reduxID) => {
 
   const updateStorage = React.useCallback(
     (storage: VMWizardStorage) => {
-      InternalReduxStore.dispatch(
+      InternalReduxStore?.dispatch(
         vmWizardActions[ActionType.UpdateStorage](reduxID, storage) as any,
       );
     },

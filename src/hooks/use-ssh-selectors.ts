@@ -25,34 +25,34 @@ export type useSSHSelectorsResult = SSHState & {
 };
 
 const useSSHSelectors = (): useSSHSelectorsResult => {
-  const sshState = InternalReduxStore.getState()?.plugins?.kubevirt?.authorizedSSHKeys;
+  const sshState = InternalReduxStore?.getState()?.plugins?.kubevirt?.authorizedSSHKeys;
 
   const updateSSHKey = React.useCallback((namespace: string, decodedKey: string) => {
-    InternalReduxStore.dispatch(sshActions[SSHActionsNames.updateKey](namespace, decodedKey));
+    InternalReduxStore?.dispatch(sshActions[SSHActionsNames.updateKey](namespace, decodedKey));
   }, []);
 
   const updateSSHTempKey = React.useCallback((sshKey?: string) => {
-    InternalReduxStore.dispatch(sshActions[SSHActionsNames.setTempSSHKey](sshKey));
+    InternalReduxStore?.dispatch(sshActions[SSHActionsNames.setTempSSHKey](sshKey));
   }, []);
 
   const setIsValidSSHKey = React.useCallback((value: boolean) => {
-    InternalReduxStore.dispatch(sshActions[SSHActionsNames.setIsValidSSHKey](value));
+    InternalReduxStore?.dispatch(sshActions[SSHActionsNames.setIsValidSSHKey](value));
   }, []);
 
   const setUpdateSSHKeyInSecret = React.useCallback((value: boolean) => {
-    InternalReduxStore.dispatch(
+    InternalReduxStore?.dispatch(
       sshActions[SSHActionsNames.updateSSHKeyInGlobalNamespaceSecret](value),
     );
   }, []);
 
   const setEnableSSHService = React.useCallback(
     (val: boolean) =>
-      InternalReduxStore.dispatch(sshActions[SSHActionsNames.enableSSHService](val)),
+      InternalReduxStore?.dispatch(sshActions[SSHActionsNames.enableSSHService](val)),
     [],
   );
 
   const restoreDefaultSSHSettings = React.useCallback(() => {
-    InternalReduxStore.dispatch(sshActions[SSHActionsNames.restoreDefaultSSHSettings]());
+    InternalReduxStore?.dispatch(sshActions[SSHActionsNames.restoreDefaultSSHSettings]());
   }, []);
 
   return {

@@ -112,10 +112,10 @@
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.3.0.tgz#06db5ff55eae646a623d3717d8bffaf131ffb93a"
   integrity sha512-tR87mY5ADtaELadmZfW937JO/p8fRdz3wkPoqwhqB/vY1XnTQeLSWwkp4yMlr4iIDY0iCficfzFYX5EHMh4MHw==
 
-"@openshift-console/dynamic-plugin-sdk-internal-kubevirt@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal-kubevirt/-/dynamic-plugin-sdk-internal-kubevirt-0.0.9.tgz#c7981da08832319db180c7a48acc0d3a1fb69bde"
-  integrity sha512-7bFfwq7y6FPmcbfOBNRTm7yj3uIure4ncscOuL21ZHSEkFXbCDeDB1rI2dy29jmiJQ+N2yRkfaLBJHQrREH88Q==
+"@openshift-console/dynamic-plugin-sdk-internal-kubevirt@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@openshift-console/dynamic-plugin-sdk-internal-kubevirt/-/dynamic-plugin-sdk-internal-kubevirt-0.0.10.tgz#082695a86da3dd2b85348c039c8f0444130ca28f"
+  integrity sha512-vOXTULwUFfVEkM1SuOh05FR0F7dT2i0FSyAvkGwASdQKqUfCtZCmr65qSKGD2VqqJVbEUXXjapjY+0+CizTPmA==
   dependencies:
     "@patternfly/react-core" "4.168.8"
     "@patternfly/react-table" "4.37.8"

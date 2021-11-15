@@ -5,7 +5,7 @@ import { RootState } from '@kubevirt-types';
 import { InternalReduxStore } from '@openshift-console/dynamic-plugin-sdk-internal-kubevirt';
 
 export const connectWithStore = (
-  stateToProps: (state: RootState) => any,
+  stateToProps: (state: RootState, props: any) => any,
   wrapperComponent: React.FC,
 ) => {
   const ConectWithWrapper = connect(stateToProps)(wrapperComponent);

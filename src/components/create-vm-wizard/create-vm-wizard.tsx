@@ -31,6 +31,7 @@ import { useBaseImages } from '../../hooks/use-base-images';
 import { usePrevious } from '../../hooks/use-previous';
 import { useUpdateStorages } from '../../hooks/use-update-data-volume';
 import { DataVolumeModel, VirtualMachineModel } from '../../models';
+import { connectWithStore } from '../../redux/connectWithStore';
 import { isWindows } from '../../selectors/vm/combined';
 import { getTemplateName } from '../../selectors/vm-template/basic';
 import { FirehoseResourceEnhanced } from '../../types/custom';
@@ -549,20 +550,17 @@ type CreateVMWizardPageComponentProps = {
 export const CreateVMWizardPage = compose(
   connectToFlags(FLAGS.OPENSHIFT),
   withReduxID,
-  connect(
+  connectWithStore(
     (state, props: any) => ({
       hasCompleted: isStepValid(state, props.reduxID, VMWizardTab.RESULT),
       wsResources: getExtraWSQueries(state, props.reduxID),
+      areStatePropsEqual: _.isEqual,
       [VMWizardProps.commonTemplates]: iGetCommonData(
         state,
         props.reduxID,
         VMWizardProps.commonTemplates,
       ),
     }),
-    undefined,
-    undefined,
-    {
-      areStatePropsEqual: _.isEqual,
-    },
+    CreateVMWizardPageComponent,
   ),
-)(CreateVMWizardPageComponent);
+);

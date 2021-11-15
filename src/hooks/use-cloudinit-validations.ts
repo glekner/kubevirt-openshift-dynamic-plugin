@@ -28,7 +28,7 @@ const useCloudinitValidations = (wizardReduxID: string) => {
         func(obj, errorCatcher, t),
       );
 
-      InternalReduxStore.dispatch(
+      InternalReduxStore?.dispatch(
         vmWizardInternalActions[InternalActionType.SetTabValidity](
           wizardReduxID,
           VMWizardTab.ADVANCED,
