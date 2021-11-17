@@ -209,7 +209,7 @@
       "exact": true,
       "path": ["/k8s/virtualization/~new-from-template"],
       "component": {
-        "$codeRef": "CreateVM.CreateVM"
+        "$codeRef": "CreateVMComponent.CreateVM"
       }
     },
     "flags": {
