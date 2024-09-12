@@ -18,7 +18,7 @@
     "@patternfly/react-icons": "4.13.1",
     "@patternfly/react-table": "4.31.7",
     "@patternfly/react-topology": "4.9.103",
-    "axios": "^0.24.0",
+    "axios": "0.28.0",
     "classnames": "2.3.1",
     "fork-ts-checker-webpack-plugin": "^6.3.2",
     "fuzzysearch": "1.0.x",
@@ -42,7 +42,7 @@
     "react-router-dom": "5.2.0",
     "typesafe-actions": "^4.2.1",
     "unique-names-generator": "^4.6.0",
-    "validator": "10.x",
+    "validator": "13.7.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
